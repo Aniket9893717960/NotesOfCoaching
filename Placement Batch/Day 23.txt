@@ -1,0 +1,159 @@
+Q) write a program to get a String from user and print all the characters in reverse order?
+                                                 Very Complex time and Space
+                                                 ------------------------------------
+#include <stdio.h>
+#include <string.h>
+void main()
+{
+char ch[5];
+int i,j;
+for(i=0;i<5;i++){
+ch[i] =getchar();
+if(ch[i]==13 || ch[i]==10){
+ch[i]='\0';
+break;
+}
+}
+for(j=strlen(ch)-1;j>=0;j--){
+printf("%c",ch[j]);
+}
+}
+                                                 comparitvely less Complex time and Space
+                                                 ----------------------------------------------------
+#include <stdio.h>
+#include <string.h>
+void main()
+{
+char ch[5];
+int i;
+for(i=0;i<5;i++){
+ch[i] =getchar();
+if(ch[i]==13 || ch[i]==10){
+ch[i]='\0';
+break;
+}
+}
+do {
+printf("%c",ch[i]);
+}
+while(i-->=0);
+}
+                                                      Inbuild Function(strrev)
+                                                     -----------------------------
+#include <stdio.h>
+#include <string.h>
+void main()
+{
+char ch[5];
+int i,j;
+for(i=0;i<5;i++){
+ch[i] =getchar();
+if(ch[i]==13 || ch[i]==10){
+ch[i]='\0';
+break;
+}
+}
+puts(strrev(ch));
+}
+
+--------------------------------------------------------------------------------------------------
+                                                                 H.W
+Q) WAP to get a String from user and make a copy of the String at those String?
+ With the help of Swapping?
+#include <stdio.h>
+#include <string.h>
+void main()
+{
+char ch[]="This is a class";
+int i,temp=15,count;
+
+printf("%s\n",ch);
+count =temp/2;
+for(i=0;i<count;i++)
+{
+  ch[i] = ch[i] ^ ch[temp-1];
+  ch[temp-1] = ch[i] ^ ch[temp-1];
+  ch[i] = ch[i] ^ ch[temp-1];
+temp--;
+}
+printf("%s",ch);
+}
+----------------------------------------------------------------------------------------------------
+Q) write a program to get a String from user and print all the characters in same order in different Array?
+                                                 Very Complex time and Space
+                                                 ------------------------------------
+#include <stdio.h>
+#include <string.h>
+void main()
+{
+char ch[10],ch1[10];
+int i;
+printf("Enter a value \n");
+for(i=0;i<10;i++)
+{
+ch[i] = getchar();
+if(ch[i]==13 || ch[i]==10){
+ch[i]='\0';
+break;
+}
+}
+for(i=0;i<strlen(ch);i++){
+ch1[i]=ch[i];
+}
+puts(ch);
+puts(ch1);
+}
+
+                                                 comparitvely less Complex time and Space
+                                                 ----------------------------------------------------
+#include <stdio.h>
+#include <string.h>
+void main()
+{
+char ch[10],ch1[10];
+int i;
+printf("Enter a value \n");
+for(i=0;i<10;i++)
+{
+ch[i] = getchar();
+if(ch[i]==13 || ch[i]==10){
+ch[i]='\0';
+break;
+}
+}
+i=0;
+do
+{
+ch1[i]=ch[i];
+}
+while(ch[i++]!='\0');
+puts(ch);
+puts(ch);
+}
+                                                      Inbuild Function(strrev)
+                                                     -----------------------------
+#include <stdio.h>
+#include <string.h>
+void char1(char *ch);
+void main()
+{
+char ch[10],ch1[10];
+printf("Enter value at 1 String\n");
+char1(ch);
+printf("Your Copied value is:");
+
+puts(strcpy(ch1,ch));
+
+}
+
+void char1(char *ch)
+{
+int i;
+for(i=0;i<10;i++){
+ch[i] =getche();
+if(ch[i]==13 || ch[i]==10){
+ch[i]='\0';
+break;
+}
+}
+}

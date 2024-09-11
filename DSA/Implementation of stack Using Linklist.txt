@@ -1,0 +1,138 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node
+{
+int data;
+struct node *root;
+};
+struct node *start=NULL,*temp,*New,*next,*prev;
+
+void create();
+void push();
+void pop();
+void display();
+
+void main()
+{
+int ch=0;
+do
+{
+printf("-------------Stack Using Linklist-------\n");
+printf("Press 1: for Create \n");
+printf("Press 2:For Push:\n");
+printf("Press 3: for Pop \n");
+printf("Press 4: for Display \n");
+printf("Press 5: for Exit \n");
+printf("Choose Any of this \n");
+scanf("%d",&ch);
+switch(ch)
+{
+case 1: create();
+break;
+case 2: push();
+break;
+case 3: pop();
+break;
+case 4:display();
+break;
+case 5:break;
+default:
+printf("Invalid Choice \n");
+}
+}
+while(ch!=5);
+}
+
+void create()
+{
+int n;
+char ch;
+printf("Enter the value \n");
+scanf("%d",&n);
+start=(struct node *)malloc(sizeof(struct node));
+start->data =n;
+start ->root =NULL;
+temp=start;
+printf("Press 'Y' for ENtering more values \n");
+scanf(" %c",&ch);
+while(ch=='Y' || ch=='y')
+{
+printf("Enter the next value \n");
+scanf("%d",&n);
+New =(struct node *)malloc(sizeof(struct node));
+New ->data =n;
+New ->root =NULL;
+temp ->root =New;
+temp = New;
+printf("For Entering more Values Press 'Y' ");
+scanf(" %c",&ch);
+}
+}
+
+void display()
+{
+int count=0;
+if(start==NULL)
+{
+printf("Stack is full");
+}
+else
+{
+temp =start;
+while(temp!=NULL)
+{
+printf("%d\t",temp->data);
+temp =temp->root;
+}
+}
+}
+
+void push()
+{
+int count=0,n;
+temp =start;
+while(temp!=NULL)
+{
+count++;
+temp =temp->root;
+}
+if(count>=20)
+{
+printf("Stack is overflow \n");
+}
+else
+{
+printf("Enter the Value \n");
+scanf("%d",&n);
+New = (struct node *)malloc(sizeof(struct node));
+New ->data=n;
+temp=start;
+while((temp->root)!=NULL)
+{
+temp=temp->root;
+}
+temp ->root =New;
+New->root =NULL;
+}
+}
+
+void pop()
+{
+if(start==NULL)
+{
+printf("Stack is not Created \n");
+}
+else
+{
+next=start;
+while((next->root)!=NULL)
+{
+prev =next;
+next=next->root;
+}
+printf("Deleted the element at =%d",next->data);
+free(next);
+prev ->root =NULL;
+}
+}

@@ -1,0 +1,16 @@
+NOTES
+i)static int a[5];: Declares a static integer array a with a size of 5. 
+  -----------------
+Static arrays are initialized to zero by default, so all elements of a are initially set to 0.
+-------------------------------------------------------------------------------------
+Q) What will be the output of the following ?
+             d)
+#include <stdio.h>
+int main()
+{
+static int a[5];
+int i;
+for(i=0;i<=4;i++)
+printf("%d\n",a[i]);
+return 0;
+}

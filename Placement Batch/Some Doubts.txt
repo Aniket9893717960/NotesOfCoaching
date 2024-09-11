@@ -1,0 +1,215 @@
+ #Why this code gives the error at N.
+
+ import java.util.Scanner;
+
+ public class Solution {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
+        if(N&1)
+        System.out.println("Weird");
+        else 
+        System.out.println("Not Weird");
+    }
+ }
+
+ Java End of line
+ -----------------
+Input Format
+
+Read some unknown  lines of input from stdin(System.in) until you reach EOF; each line of input contains a non-empty String.
+
+Output Format
+
+For each line, print the line number, followed by a single space, and then the line content received as input.
+
+Sample Input
+
+Hello world
+I am a file
+Read me until end-of-file.
+Sample Output
+
+1 Hello world
+2 I am a file
+3 Read me until end-of-file.
+          SOLUTION
+         ----------
+import java.io.*;
+import java.util.Scanner;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int n=1;
+        while(sc.hasNext())
+        {
+            System.out.println(n++ +" "+sc.nextLine());
+        }
+        sc.close();
+    }
+}
+
+              Java Static Initializer Block
+              ------------------------------
+Static initialization blocks are executed when the class is loaded, and you can initialize static variables in those blocks.
+It's time to test your knowledge of Static initialization blocks. You can read about it here.
+You are given a class Solution with a main method. Complete the given code so that
+it outputs the area of a parallelogram with breadth  and height . You should read the variables from the standard input.
+If  or  , the output should be "java.lang.Exception: Breadth and height must be positive" without quotes.
+
+Input Format
+
+There are two lines of input. The first line contains : the breadth of the parallelogram. 
+The next line contains : the height of the parallelogram.
+
+Constraints
+
+Output Format
+
+If both values are greater than zero, then the main method must output the area of the parallelogram. 
+Otherwise, print "java.lang.Exception: Breadth and height must be positive" without quotes.
+
+Sample input 1
+
+1
+3
+Sample output 1
+
+3
+Sample input 2
+
+-1
+2
+Sample output 2
+
+java.lang.Exception: Breadth and height must be positive
+             SOLUTION
+            ----------
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+static int B,H;
+static boolean flag=true;
+
+static {
+    Scanner sc = new Scanner(System.in);
+    B = sc.nextInt();
+    H = sc.nextInt();
+    try {
+        if(B<=0 || H<=0){
+            flag =false;
+        throw new Exception("Breadth and height must be positive");
+        }
+    }
+    catch(Exception e){
+        System.out.println(e);
+    }
+}
+public static void main(String[] args){
+		if(flag){
+			int area=B*H;
+			System.out.print(area);
+		}
+		
+	}//end of main
+
+}//end of class
+
+
+      QUESTION FOR THIS AT JAVA
+      -------------------------
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Ts {
+boolean even(int n){
+if((n&1)==0)
+return true;
+else 
+return false;
+}
+
+boolean prime(int n){
+int temp = n/2,i;
+if(temp<=1)
+return false;
+for(i=2;i<=temp;i++){
+ if(n%i == 0){
+  return false;
+ }
+}
+if(i==(temp+1))
+return true;
+}
+
+boolean palindrome(int n){
+int sum=0,r,temp=n;
+while(n>0){
+r =n%10;
+sum = sum*10 +r;
+n = n/10;
+}
+return (sum==temp);
+}
+
+    public static void main(String[] args) {
+Ts s = new Ts();
+Scanner sc = new Scanner(System.in);
+int n = sc.nextInt();
+boolean ev=false,p=false,pal=false;
+int count=0;
+do {
+int ch = sc.nextInt();
+int value;
+switch(ch)
+{
+case 1: value=sc.nextInt();
+ev = s.even(value);
+break;
+case 2: value=sc.nextInt();
+p = s.prime(value);
+break;
+case 3: value =sc.nextInt();
+pal =s.palindrome(value);
+break;
+default:
+System.out.println("invalid"); 
+}
+count++;
+}
+while(count<n);
+
+if(ev) System.out.println("EVEN");
+else System.out.println("ODD");
+if(p) System.out.println("PRIME");
+else System.out.println("COMPOSITE");
+if(pal) System.out.println("PALINDROME");
+else System.out.println("NOT PALINDROME");
+    }
+}
+
+
+
+/*class Ts
+{
+public static void main(String args[])
+{
+int a=128;
+a = (byte)(a+5);
+System.out.println(a);
+}
+}*/

@@ -1,0 +1,191 @@
+IMP LECTURE FOR INTERVIEWS
+---------------------------------X-----------------------------
+*integer upon integer always be an integer
+*Palindrome number is a number (such as 1441)that remains same when its digits are reversed.
+*Armstrong number is the sum of cubes of its digits.For example 0,1,153,370,371 and 407.
+----------------------------------X-----------------------------
+
+Q) write a program to Print reverse of the given number.
+
+*The output of this program will not be comparable or un usable in other program.
+class Test
+{
+public static void main(String args[])
+{                                                                                      n
+int n =  153,r;                                                      r= 153%10
+while(n!=0)                                                     153/10 -->3              --> 15/10 
+{
+r = n%10;
+System.out.print(r);
+n=n/10;
+}
+}
+}
+
+*The output of this program will be comparable or un usable in other program.
+class Test
+{
+public static void main(String args[])
+{
+int n=153,r,sum=0;
+while (n!=0)
+{                                                                                                                      3*10
+r=n%10;                                                                                                       +  5      
+sum = sum*10 +r;                                                                               ----------                           
+n=n/10;                                                                                                        35 *10
+}                                                                                                                              +1
+System.out.println(sum);                                                                     ----------
+                                                                                                                               351
+}
+}
+
+------------------------------------X----------------------------------------------------------
+IMP QUESTION
+Q) write a program to print submition of all individual digits of the given number.
+class Test
+{
+public static void main(String args[])
+{
+int n= 153,r,sum=0;
+while(n!=0)
+{
+r=n%10;                                                                   1+5+3
+sum = sum+r;                                                       -----------
+n=n/10;                                                                          9
+}
+System.out.println(sum);
+}
+}
+-----------------------------------X---------------------------------------------------------
+
+Q) write a program to check that  given number is palindrome number or not.
+we use palindrome number in the security of atm pin.
+
+class  Ts
+{
+public static void main(String args[])
+{
+int n=151,r,sum=0,temp;
+temp=n;
+while(n!=0)
+{
+r=n%10;
+sum = sum*10 +r;
+n=n/10;
+}
+System.out.println(sum);
+if(sum==temp)                                                                                                                                    OUTPUT
+{                                                                                                                                                                  151 is palindrome number
+System.out.println(sum+"= is a palindrome number");
+}
+else 
+{
+System.out.println(sum+"= is not a palindrome number");
+}
+}
+}
+
+Q) write a program to check that a given number is an ambstrong number or not.
+
+class Test
+{
+public static void main(String args[])
+{
+int n=153,r,sum=0,temp;
+temp=n;
+while(n!=0)
+{
+r = n%10;                                                                                                                           OUTPUT
+sum = sum + (r*r*r);                                                                                      153 is an armstrong number
+n=n/10;
+}
+if(sum==temp)
+{
+System.out.println(sum+"is a armstrong number");
+}
+else
+{
+System.out.println(sum+"is not a armstrong number");
+}
+}
+}
+
+/* Q) write a program which follow the following condition.(hint value of n=153 for two condition)
+     i) print  1
+                    5
+                    3
+
+     ii) print one
+                    five
+                    three
+   i ii) n = 1500 then print    one
+                                                    five
+                                                   zero
+                                                   zero
+    iv) n= 10500 then print    one
+                                                      zero
+                                                     five
+                                                     zero
+                                                     zero                             */
+PROGRAM
+
+class Ts
+{
+public static void main(String args[])
+{
+int n=10500,r,sum=0,count=0;
+while(n!=0)
+{
+count++;
+r=n%10;
+sum=sum*10 +r;
+n = n/10;
+}
+while(sum!=0)
+{
+count--;
+r=sum%10;
+switch(r)
+{
+case 0:
+              System.out.println("zero");
+              break;
+case 1 :
+              System.out.println("one");
+              break;
+case 2:
+              System.out.println("two");
+              break;
+case 3 :
+              System.out.println("three");
+              break;
+case 4:
+              System.out.println("four");
+              break;
+case 5:
+              System.out.println("five");
+              break;
+case 6:
+              System.out.println("six");
+              break;
+case 7:
+              System.out.println("seven");
+              break;
+case 8:
+              System.out.println("eight");
+              break;
+case 9:
+              System.out.println("nine");
+              break;
+default:
+              System.out.println("Invalid number");              
+}
+sum = sum/10;
+}
+while(count>sum)
+{
+              System.out.println("zero");
+	count--;
+}
+}
+}

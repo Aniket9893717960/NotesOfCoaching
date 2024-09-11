@@ -1,0 +1,1114 @@
+
+                                            ANother Question
+                                            ----------------------
+Q) Assignment 1A  
+You have a certain number of 100 rupee notes, 10 rupee notes and 1 rupee notes with you.
+There is an item you want to buy whose price is given to you.Write a program to find if the item is affordable, 
+that is the price of the item is less than or equal to the current money you have?
+
+                                                       Original Answer by NPTEL
+                                                      ---------------------------------
+#include <stdio.h>
+int main()
+{
+int num_100_notes,num_10_notes,num_1_notes,item_price;
+  
+  printf(" ");
+  scanf("%d",&num_100_notes);
+  
+  printf(" ");
+  scanf("%d",&num_10_notes);
+  
+  printf(" ");
+  scanf("%d",&num_1_notes);
+  
+  printf(" ");
+  scanf("%d",&item_price);
+  
+  int total_money = (num_100_notes*100)+(num_10_notes*10)+num_1_notes;
+  
+  if(total_money >=item_price){
+    printf("1");
+  } else {
+    printf("0");
+  }
+  
+  return 0;
+}
+
+
+
+                                            ANother Question
+                                            ----------------------
+Q) Assignment 1B  
+Given three distinct integers a b and c, write a C program to find the second largest number among them.?
+
+#include <stdio.h>
+void main()
+{
+int a[15],length=0,min,max,second,i;
+for(i=0;i<15;i++)
+{
+printf("Enter a value at %d position",i+1);
+scanf("%d",&a[i]);
+if(a[i]==-1){
+break;
+}
+length++;
+}
+second=min=max=a[0];
+for(i=1;i<length;i++){
+if(max<a[i]){
+max=a[i];
+}
+if(min>a[i]){
+min=a[i];
+}
+}
+for(i=1;i<length;i++){
+if((second<a[i]) &&(max!=a[i])){
+second=a[i];
+}
+}
+printf("Minimum value is %d\n",min);
+printf("Maximum value is %d\n",max);
+printf("Secound maximum value is %d\n",second);
+}
+                                                       Original Answer by NPTEL
+                                                      ---------------------------------
+#include <stdio.h>
+
+int main(){
+  int a,b,c;
+  printf(" ");
+  scanf("%d",&a);
+  
+  printf(" ");
+  scanf("%d",&b);
+  
+  printf(" ");
+  scanf("%d",&c);
+  
+  int second_largest;
+  
+  if((a>b && a<c) ||(a<b && a>c)){
+  second_largest =a;
+  }
+  else if((b>a && b<c) || (b<a && b>c)){
+    second_largest =b;
+  }
+  else {
+    second_largest =c;
+  }
+  printf(" %d",second_largest);
+  return 0;
+}
+  
+                                            ANother Question
+                                            ----------------------
+Q) Assignmant 1 C
+Given the coefficients of a pair of linear equations,
+a1x+b1y=c1a2x+b2y=c2
+Find the solutions to x and y.
+
+#include <stdio.h>
+struct equation
+{
+int dataX;
+int dataY;
+int dataZ;
+};
+struct equation data[5];
+int  solve(struct equation data[],int n);
+void main()
+{
+int ch,n,i,first;
+printf("Please Enter how many values you want to Enter");
+scanf("%d",&n);
+do
+{
+printf("Enter the first value :");
+scanf("%d",&data[ch].dataX);
+printf("Enter the second value :");
+scanf("%d",&data[ch].dataY);
+printf("Enter the Third value :");
+scanf("%d",&data[ch].dataZ);
+ch++;
+}
+while(ch!=n);
+printf("Your Entered values are:");
+for(i=0;i<n;i++)
+{
+printf("\n%d\t%d\t%d\n",data[i].dataX,data[i].dataY,data[i].dataZ);
+}
+first=solve(data,n);
+printf("First value =%d",first);
+}
+
+int solve(struct equation data[],int n)
+{
+int sum=0,i;
+for(i=0;i<n;i++)
+{
+sum = data[i].dataY*(data[i].dataX+data[i].dataY -data[i].dataZ);
+printf("\n%d\t%d\t%d\n",data[i].dataX,data[i].dataY,data[i].dataZ);
+printf("sum=%d\n",sum);
+}
+return sum;
+} 
+                                                       Original Answer by NPTEL
+                                                      ---------------------------------
+#include <stdio.h>
+
+int main() {
+  int a1,b1,c1,a2,b2,c2;
+  printf(" ");
+  scanf("%d %d %d",&a1,&b1,&c1);
+  
+  printf(" ");
+  scanf("%d %d %d",&a2,&b2,&c2);
+  
+  int x,y;
+  
+  int determinant = a1 * b2 - a2 * b1;
+  
+  if(determinant!= 0) {
+    x = (c1*b2 - c2*b1)/determinant;
+    y= (a1 *c2 - a2 * c1)/determinant;
+    
+    printf(" %d",x);
+    printf(" %d",y);
+  }
+  else {
+    printf("The system of equations has no unique solution.\n");
+  }
+  
+  return 0;
+}
+
+
+
+
+ANother Question
+----------------------
+#include <stdio.h>
+
+void main()
+{
+int i=(21|12)^4&23;
+printf("Printf i=%d",i);
+}
+
+                                            ANother Question
+                                            ----------------------
+Q) Assignmant 2 A
+You are given a sequence of bits (1's and 0's).
+The sequence is said to have even parity if and only if the number of 1's in the sequence if even.
+Write a C program to that outputs 1 if the sequence has even parity and 0 otherwise.
+#include <stdio.h>
+
+void main()
+{
+char ch[15];
+int i,length,count=0,f=0;
+for(i=0;i<15;i++)
+{
+ch[i] = getchar();
+if(ch[i]==10 || ch[i]==13){
+ch[i]='\0';
+break;
+}
+length++;
+}
+printf("Your given value is: %s\n",ch);
+printf("Your Entered String length Is:%d\n",length);
+for(i=0;i<length;i++)
+{
+if(ch[i]=='1')
+{
+count++;
+}
+}
+if(ch[length-1]==1){
+f=1;
+}
+printf("Total number of one's in %s is %d",ch,count);
+if(f==1){
+printf("Your given binary number %s is an odd number",ch);
+}
+else{
+printf("Your given binary number %s is an even number",ch);
+}
+}
+
+                                                       Original Answer by NPTEL
+                                                      ---------------------------------
+#include<stdio.h>
+
+int main(){
+  int bit;
+  int onesCount;
+  
+  printf(" ");
+  while(1)
+  {
+    scanf("%d",&bit);
+    
+    if(bit==-1){
+    break;
+    }
+    if(bit ==1){
+    onesCount++;
+    }
+  }
+  if(onesCount%2==0){
+  printf("1");
+  }
+  else {
+   printf("0");
+  }
+  
+  return 0;
+}
+Q) Assignment 2 B
+You are given sequence of non-negative integers, sorted in the non decreasing order.
+That is if the sequence is a1,a2,…,an,then  ai≤ai+1 for all i from 1 to n-1.
+You can assume that are at least two numbers in the sequence.
+Write a C program to output the number of distinct elements in the sorted sequence.
+
+#include <stdio.h>
+void main()
+{
+char ch[15];
+int i,count=0,length=0;
+for(i=0;i<15;i++){
+ch[i] = getchar();
+if(ch[i]==10 || ch[i]==13){
+ch[i]='\0';
+break;
+}
+length++;
+}
+printf("You have Entered %s",ch);
+for(i=0;i<length;i++){
+if(ch[i]>='0' && ch[i]<='9'){
+if(ch[i]==ch[i+1]){
+i=i+1;
+}
+else{
+count++;
+}
+}    
+}
+printf("Total non-Similar numbers in %s is %d",ch,count+1);    
+}
+
+Q) Assignment 2 C
+You are given a binary sequence.
+Write a C program to count the number of 0's between the first and last 1 in the sequence.
+
+#include <stdio.h>
+void main()
+{
+char ch[20];
+int i,j,count=0,length=0;
+for(i=0;i<15;i++){
+ch[i] = getchar();
+if(ch[i]==10 || ch[i]==13){
+ch[i]='\0';
+break;
+}
+length++;
+}
+printf("Length of a String %d",length);
+for(i=0;i<length;i++){
+ if(ch[i]=='1'){
+  for(j=length-1;j>=0;j--){
+  if(ch[j]=='1'){
+  break;
+ }
+}
+break;
+}
+}
+while(i<=j){
+if(ch[i]=='0'){
+count++;
+}
+i++;
+}
+printf("Number of Zeroes between 1st One and Last One Is %d",count);
+}
+
+                                                       Original Answer by NPTEL
+                                                      ---------------------------------
+#include <stdio.h>
+
+int main() {
+    int bit;
+    int zeroCount = -2; // Initialize zeroCount to 0
+    int firstOneFound = 0;
+    
+    printf(" ");
+    
+    while (1) {
+        scanf("%d", &bit);
+        
+        if (bit == -1) {
+            break;
+        }
+        
+        if (firstOneFound) {
+            if (bit == 0) {
+                zeroCount++;
+            }
+        } else if (bit == 1) {
+            firstOneFound = 1;
+        }
+    }
+    
+    printf("%d", zeroCount); // Print the count of zeros
+    
+    return 0;
+}
+
+
+Q) Assignment 3 A
+In this question, you have to output the "two moving average" of a sequence of non-negative numbers.
+The two moving average is the sequence of averages of the last 2 entries?  
+For the first number, no average is output.
+For example, if the sequence of numbers is a1,a2,a3,a4,a5
+The 2-moving average is  (a1+a2)/2,(a2+a3)/2,(a3+a4)/2,(a4+a5)/2
+#include <stdio.h>
+void main()
+{
+int a[15],i,length=0;
+float sum=0;
+for(i=0;i<15;i++){
+printf("Enter the value at %d position,Press '-1' for Exit",i+1);
+scanf("%d",&a[i]);
+if(a[i]==-1){
+break;
+}
+length++;
+}
+printf("Length of the given String is =%d\n",length);
+for(i=0;i<length-1;i++){
+sum = (float)(a[i]+a[i+1])/2;
+printf("%.1f ",sum);
+}
+}
+
+                                                       Original Answer by NPTEL
+                                                      ---------------------------------
+#include <stdio.h>
+
+int main(){
+  int num1,num2;
+  scanf("%d",&num1);
+  scanf("%d",&num2);
+  printf("%.1f ",(num1 + num2)/2.0);
+  while(num2!=-1){
+    num1 = num2;
+    scanf("%d",&num2);
+    if(num2==-1)
+      break;
+    printf("%.1f ",(num1 + num2)/2.0);
+  }
+  return 0;
+}
+
+
+Q) Assignment 3B 
+Complete the function int is_prime(int n) to check if a positive number n is prime or not.
+The function returns 1 if n is prime, and 0 otherwise.
+The function will be used in a program (code given) that prints the prime numbers in a given sequence.
+
+                                                       Original Answer by NPTEL
+                                                      ---------------------------------
+int is_prime(int n){
+  if(n<=1){
+    return 0;
+  }
+  for(int i=2;i*i<=n;i++)
+  {
+    if(n%i==0){
+      return 0;
+    }
+  }
+  return 1;
+}
+
+int main() {
+
+  int n,num;
+  scanf("%d", &n);
+
+  for(int i=0;i<n;i++){
+      scanf("%d",&num);
+      if(is_prime(num)){
+          printf("%d ",num);
+      }
+  }
+
+  return 0;
+}
+
+
+Q)Assignment 3C
+Find the kth Odd integer in sequence
+Write a C function to find the kth occurrence of an odd integer in a sequence of non-
+negative integers.
+
+#include <stdio.h>
+
+void main()
+{
+int a[20],i,length=0;
+for(i=0;i<15;i++){
+printf("Enter the value at %d position,Press '-1' to Exit",i+1);
+scanf("%d",&a[i]);
+if(a[i]==-1){
+break;
+} length++;
+}
+printf("Length 0f the String Is =%d\n",length);
+
+for(i=0;i<length;i++){
+if(a[i]&1){
+printf("%d ",a[i]);
+}
+}
+}
+
+                                                       Original Answer by NPTEL
+                                                      ---------------------------------
+#include <stdio.h>
+
+int find_kth_odd(int k,int sequence[]){
+  int count=0;
+  for(int i=0;sequence[i]!=-1;i++){
+    if(sequence[i]%2!=0){
+      count++;
+      if(count ==k){
+      return sequence[i];
+    }
+  }
+}
+return -1;
+}
+
+int main(){
+  int k;
+  scanf("%d",&k);
+  
+  int sequence[100];
+  int num,index = 0;
+  while(1){
+    scanf("%d",&num);
+    if(num==-1){
+      break;
+    }
+    sequence[index++] = num;
+  }
+  
+ int result = find_kth_odd(k,sequence);
+  printf("%d",result);
+  return 0;
+}
+   
+Q)Assignment 4A
+Given an array of positive integers, 
+write a C Program to output the sum of the elements that are above the mean.
+Given an array [a1,a2…an], the mean of the array is defined as μ=∑ni=1ain.
+
+#include <stdio.h>
+void main(){
+int a[20],i,sum=0,count=0,mean;
+for(i=0;i<20;i++)
+{
+printf("Enter the value at %d position\n",i+1);
+scanf("%d",&a[i]);
+if(a[i]==-1){
+break;
+}
+sum = sum+a[i];
+count++;
+}
+printf("sum =%d\n",sum);
+mean =sum/count;
+sum =0;
+for(i=0;i<count;i++){
+if(a[i]>=mean){
+sum = sum+a[i];
+}
+}
+printf("sum =%d",sum);
+}
+
+                                                                 BY NPTEL
+                                                                --------------
+#include <stdio.h>
+int main()
+{
+  int n,sum=0,above_mean_sum=0;
+  printf(" ");
+  scanf("%d",&n);
+  int arr[n];
+  printf(" ");
+  for(int i=0;i<n;i++){
+    scanf("%d", &arr[i]);
+    sum = sum+arr[i];
+  }
+  float mean = (float)sum/n;
+  for(int i=0;i<n;i++){
+    if(arr[i]>=mean){
+      above_mean_sum = above_mean_sum+arr[i];
+    }
+  }
+  printf(" %d",above_mean_sum);
+  return 0;
+}
+
+
+Q)Assignment 4B
+Given two arrays of positive integers,
+write a C Program to output the smallest number in the first array that is also present in the second one.
+                                                                 BY NPTEL
+                                                                --------------
+#include <stdio.h>
+
+int main() {
+  int size1, size2;
+  printf(" ");
+  scanf("%d", &size1);
+  
+  int arr1[size1];
+  printf(" ");
+  for(int i=0;i<size1;i++){
+    scanf("%d",&arr1[i]);
+  }
+  printf(" ");
+  scanf("%d",&size2);
+  
+  int arr2[size2];
+  printf(" ");
+  for(int i=0;i<size2;i++){
+    scanf("%d",&arr2[i]);
+  }
+  int smallest =-1;
+  for(int i=0;i<size1;i++){
+    for(int j=0;j<size2;j++){
+      if(arr1[i] ==arr2[j]){
+        if(smallest == -1 || arr1[i]<smallest){
+          smallest =arr1[i];
+        }
+      }
+    }
+  }
+  printf(" %d",smallest);
+  return 0;
+}
+
+
+Q)Assignment 4C
+Given two strings(character arrays), write a C Program to check if one of them is an anagram of the other.
+An anagram is a word or phrase formed by 
+rearranging the letters of a different word or phrase, using all the original letters exactly once.
+Examples are LISTEN and SILENT , KNEE and KEEN.
+
+#include <stdio.h>
+int function(char*a,int length);
+void main()
+{
+char a[10],b[10],temp,f=0;
+int i,j;
+int lengthA=0,lengthB=0;
+printf("Enter the value of A\n");
+lengthA = function(a,lengthA);
+printf("Enter the value of B\n");
+lengthB = function(b,lengthB);
+printf("Given Array A =%s\n",a);
+printf("Given Array B =%s\n",b);
+ for(i=0;i<lengthA-1;i++){
+ temp = a[i];
+  for(j=0;j<lengthB-1;j++){
+       if(temp==b[j] && (lengthA==lengthB)){
+       f=1;
+       break;
+       }
+       else {
+        f=0;
+       }
+    }
+    if(j==(lengthB-1)){
+     f=0;
+     break;
+    }
+  }
+if(f==1){
+printf("Your given value is an anagram \n");
+}
+else {
+ printf("Your given value is not a anagram \n");
+}
+}
+
+int function(char *a,int length){
+int i;
+for(i=0;i<=10;i++){
+a[i] = getchar();
+if(a[i]==13 || a[i]==10){
+a[i]='\0';
+break;
+}
+length++;
+}
+printf("Length of given Array =%d\n",length);
+}
+
+                                                                 BY NPTEL
+                                                                --------------
+#include <stdio.h>
+#include <string.h>
+int main() {
+  char str1[20], str2[20];
+  int count[26]={0};
+  int size;
+  printf(" ");
+  scanf("%d",&size);
+  printf(" ");
+  scanf("%s",str1);
+  printf(" ");
+  scanf("%s",str2);
+  if(strlen(str1)!=strlen(str2)){
+    printf("0");
+    return 0;
+  }
+  for(int i=0;i<size;i++){
+    count[str1[i] - 'A']++;
+  }
+  for(int i=0;i<size;i++){
+    count[str2[i] -'A']--;
+  }
+  for(int i=0;i<26;i++){
+    if(count[i]!=0){
+      printf("0");
+      return 0;
+    }
+  }
+  printf("1");
+  return 0;
+ }
+         
+Q)Assignment 6A
+Given an n×n integer Matrix A and an positive number ℓ such that 2ℓ+1≤n, write a C program to print the ℓ window smoothing of A. 
+To get the  ℓ-window smoothing of A , we replace A[i][j] with
+ the sum of the values of the imaginary submatrix S of A with centre at A[i][j], and having size 2ℓ+1×2ℓ+1
+More precisely, the smoothed matrix B[i,j]=∑u=ilih∑v=jljhA[u][v]  
+where il=max(i−ℓ,0),ih=min(i+ℓ,n−1),jl=max(j−ℓ,0),jh=min(j+ℓ,n−1)
+
+                                                                 BY NPTEL
+                                                                --------------
+#include <stdio.h>
+
+int max(int a, int b){
+    if(a>b)
+        return a;
+    return b;
+}
+
+int min(int a, int b){
+    if(a<b)
+        return a;
+    return b;
+}
+
+int main() {
+    int A[100][100];
+    int B[100][100];
+    
+    int n,l,sum;
+    
+    scanf("%d",&n);
+    scanf("%d",&l);
+    
+    for(int i = 0; i< n;i++){
+        for(int j = 0; j< n;j++)
+            scanf("%d",&A[i][j]);
+    }
+    
+    for(int i = 0; i< n;i++){
+        for(int j = 0; j< n;j++){
+            
+            int ih,il,jh,jl;
+            sum =0;
+              for(il=max(i-1,0);il<=min(i+1,n-1);il++)
+                for(jl=max(j-1,0);jl<=min(j+1,n-1);jl++)
+                sum +=A[il][jl];
+            B[i][j] = sum;
+        }
+    }
+    
+    for(int i = 0; i< n;i++){
+        for(int j = 0; j< n;j++){
+            printf("%d ",B[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+Q)Assignment 6B DOUBT
+Given an n×n binary Matrix A , where each entry is 0 or 1.
+A has a unique path of 1's from  A[0][0] to A[n-1][n-1].
+The path always goes Right (R) or Down (D).
+Write a C Program.to print the directions of this path.
+Note: You can assume that there is exactly one correct path.
+All 1's in A are in this unique path, there are no dead ends.
+
+#include <stdio.h>
+void main()
+{
+int a[4][4],i,j,temp;
+for(i=0;i<4;i++)
+{
+for(j=0;j<4;j++)
+{
+printf("Enter a value at %d %d position",i+1,j+1);
+scanf("%d",&a[i][j]);
+}
+}
+
+for(i=0;i<4;i++){
+for(j=1;j<4;j++){ 
+if(a[i][j]==1){
+if(j>i) {
+printf("R");
+temp=j; }
+else {
+if(temp==j)
+printf("D");
+}
+}
+}
+}
+}
+                                                                 BY NPTEL
+                                                                --------------
+#include <stdio.h>
+
+void findPath(int matrix[100][100], int n, int x, int y, char* path, int pathIndex);
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    
+    int matrix[100][100];
+    // Assuming the path will not be longer than 2n-1 steps
+
+    // Read the matrix
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+    char path[2*n];
+  
+    findPath(matrix, n, 0, 0, path, 0);
+
+    return 0;
+}
+
+void findPath(int matrix[100][100], int n, int x, int y, char* path, int pathIndex) {
+    
+    // If the destination is reached, print the path and return
+    if (x == n - 1 && y == n - 1) {
+      for(int i=0;i<pathIndex;i++){
+        printf("%c", path[i]);
+      }
+      printf("\n");
+        return;
+    }
+
+  if(y<n-1 && matrix[x][y+1]==1){
+    path[pathIndex] ='R';
+    findPath(matrix,n,x,y+1,path,pathIndex+1);
+  }
+  
+  if (x< n - 1 && matrix[x+1][y]==1) {
+      path[pathIndex] ='D';
+    findPath(matrix,n,x+1,y,path,pathIndex+1);
+    }
+}
+
+Q)Assignment 6C
+Given an n×n binary Matrix A , where each entry is 0 or 1.
+A has a unique path of 1's from  A[0][0] to A[n-1][n-1].
+The path can go Right (R) Left (R)  Down (D) or Up (U).
+Write a C Program.to print the directions of this path.
+Note: You can assume that there is exactly one correct path.
+All 1's in A need not be in this unique path, there can be dead ends.
+
+                                                                 BY NPTEL
+                                                                --------------
+#include <stdio.h>
+
+void findPath(int matrix[100][100], int n, int x, int y, char* path, int pathIndex);
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    
+    int matrix[100][100];
+
+    // Read the matrix
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+    char path[2*n];
+    findPath(matrix, n, 0, 0, path, 0);
+
+    return 0;
+}
+void findPath(int matrix[100][100], int n, int x, int y, char* path, int pathIndex) {
+   
+    // If the destination is reached, print the path and return
+    if (x == n - 1 && y == n - 1) {
+      for(int i=0;i<pathIndex;i++){
+        printf("%c", path[i]);
+      }
+      printf("\n");
+        return;
+    }
+  
+  matrix[x][y]=0;
+    
+  int dx[] = {0, 0, 1, -1};
+  int dy[] = {1, -1, 0, 0};
+  char dir[]= {'R','L','D','U'};
+  
+  for(int i=0;i<4;i++){
+    int newX =x+dx[i];
+    int newY =y+dy[i];
+    
+    if(newX>=0 && newX<n && newY>=0 && newY <n && matrix[newX][newY]==1){
+      path[pathIndex] = dir[i];
+      findPath(matrix,n,newX,newY,path,pathIndex+1);
+    }
+  }
+  matrix[x][y]=1; 
+}
+
+Q)Assignment 7A
+CGPA calculation
+You are the new tech administrator of a college. The college offers four courses listed below.
+Course name       Course code          Credits
+Science                1001                       10
+Maths                   1002                       5
+Literature              1003                       5
+Philosophy            1004                      1
+Each student has to take exactly three courses and she gets a grade from (0 - 10)
+on the course, depending on her performance.
+The CGPA of a student is calculated as  cgpa=∑3i=1creditsi∗gradei∑3i=1creditsi
+That is for each course the student took, you multiply the grade obtained with the credits of the course.
+Sum this value over each course, and divide it by the total credits of all courses the student took.
+The previous administrator wrote an incomplete C program for a CGPA calculator, using structures.
+Complete the C code for the program, by writing the code for the function 
+float calculate_gpa(student s);
+This function takes as an input the struct student variable of a student s, which contains all the information
+about the courses the student s took and her grades in the courses.
+You have to return the total cgpa of the student as the output.
+
+                                                                 BY NPTEL
+                                                                --------------
+#include<stdio.h>
+
+#include<stdlib.h>
+
+struct course{
+    int code;
+    int credits;
+    int marks;
+};
+
+struct student{
+  char name[20];
+  struct course courses[3];
+};
+
+float calculate_cgpa(struct student s){
+   float total_credits = 0.0;
+   float total_cgpa =0.0;
+  
+  for(int i=0;i<3;i++){
+    total_cgpa += s.courses[i].credits * s.courses[i].marks;
+    total_credits += s.courses[i].credits;
+  }
+  return total_cgpa/total_credits;
+}
+
+int main() {
+  int n;
+  scanf("%d", & n);
+  for (int i = 0; i < n; i++) {
+    struct student s;
+    scanf("%s",s.name);
+    for(int j = 0 ; j < 3; j ++){
+      scanf("%d %d",&s.courses[j].code, &s.courses[j].marks);
+        switch(s.courses[j].code){
+            case 1001:
+            s.courses[j].credits =10;
+            break;
+            case 1002:
+            s.courses[j].credits =5;
+            break;
+            case 1003:
+            s.courses[j].credits =5;
+            break;
+            case 1004:
+            s.courses[j].credits =1;
+            break;
+            default:
+            s.courses[j].credits =0;
+            break;
+        }
+    }
+    float cgpa = calculate_cgpa(s);
+    printf("%s %.1f\n",s.name,cgpa);
+  }
+  return 0;
+}
+
+Q)Assignment 7B
+Linked List Operations
+In this question, a  linked list is partially implemented where each element in the linked list
+is a structure of the following format:
+
+struct node{
+	int id;
+	int priority;
+	struct node *next;
+}; 
+The field priority is a positive integer, which denotes the priority of an element inside the list.
+You have to complete the C code for performing the following operations in the linked list:
+Create and return a node e with given id and value val
+struct node * create_node(int id, int val);
+Add an node e to the beginning of the list. Return the new list.
+struct node * append(struct node * list, struct node * e);
+Search for a node e with id inside the list. Return a pointer to e  if found, else return NULL
+struct node * search(struct node * list, int id); 
+Change the value of an element with given id (if found), in the list to the new value val. 
+void change_priority(struct node * list, int id, int val) ;
+Note: The code for manipulating the input as well as output is given to you. 
+You only have to write code for the incomplete functions.
+
+                                                                 BY NPTEL
+                                                                --------------
+#include <stdio.h>
+
+#include <stdlib.h>
+
+struct node {
+  int id;
+  int priority;
+  struct node * next;
+};
+
+/*
+   create_node : Create a new struct node e, with given id and priority as val.
+   Return a pointer to e.
+*/
+struct node * create_node(int id, int val) {
+ struct node *new_node = (struct node *)malloc(sizeof(struct node));
+  if(new_node == NULL){
+   printf("Memory allocation failed\n");
+   exit(EXIT_FAILURE);
+}
+new_node->id =id;
+new_node ->priority =val;
+new_node->next =NULL;
+return new_node;
+}
+
+struct node * append(struct node * list, struct node * e) {
+  e->next =list;
+  return e;
+}
+
+/*
+   search : Search for a node e in list, with given id.
+   Return Return a pointer to e, if found. Return NULL otherwise.
+*/
+struct node * search(struct node * list, int id) {
+   struct node *current =list;
+  while(current!=NULL){
+    if(current->id == id){
+     return current;
+    }
+    current =current ->next;
+  }
+  return NULL;
+}
+
+/*
+   change_priority : Change priority of element with given id (if found) to val.
+*/
+
+void change_priority(struct node * list, int id, int val) {
+  struct node *current =list;
+  while(current!=NULL){
+    if(current->id == id){
+     current ->priority = val;
+      return;
+    }
+    current =current ->next;
+  }
+}
+
+/*
+   find_priority : Searches for an element with given id.
+   Returns its priority if found, -1 otherwise.
+*/
+int find_priority(struct node * list, int id) {
+  struct node * e = search(list, id);
+  if (e != NULL)
+    return e -> priority;
+  return -1;
+}
+
+int main() {
+  char op;
+  int id, val;
+  struct node *list = NULL;
+
+  int flag = 1;
+  do {
+    scanf("%c ", & op);
+    if(op=='E')
+      break;
+    switch (op) {
+    case 'A':
+      scanf("%d %d", & id, & val);
+      list = append(list, create_node(id, val));
+      break;
+    case 'S':
+      scanf("%d", & id);
+      struct node *result =search(list,id);
+      if(result!=NULL)
+      printf("%d %d\n", result->id, result->priority);
+      else
+        printf("%d -1\n",id);
+      break;
+    case 'C':
+      scanf("%d %d", & id, & val);
+      change_priority(list, id, val);
+      break;
+    default:
+      break;
+    }
+  } while (flag == 1);
+  return 0;
+}

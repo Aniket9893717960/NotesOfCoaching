@@ -1,0 +1,107 @@
+-------------------------------------------------------------------------------
+*Reference of parant class can hold the object of child class.
+-------------------------------------------------------------------------------
+class A
+{
+void show()
+{
+int p,q,r;
+System.out.println("Hello from A");
+}
+}
+
+class B extends A
+{
+void display()
+{
+int x,y,z;
+System.out.println("Hello from B");
+}
+}
+
+class Ts
+{
+public static void main(String args[])
+{
+A a1;
+B b1 = new B();
+a1 = b1;
+a1.show();
+b1.show();                            //a1.display is not accessable.
+b1.display();
+}
+}
+
+#Methord Overiding 
+  -------------------------
+class A
+{
+void show()
+{
+System.out.println("Hello from A");
+}
+}
+
+class B
+{
+void show()
+{
+System.out.println("Hello from B");
+}
+}
+
+class Ts
+{
+public static void show()
+{
+A a1 = new A();
+B b1 =new B1();
+a1.show();                         //Hello from A
+b1.show();                        //Hello from B
+}
+}
+
+                                          With the help of reference in different classes have same Methord
+                                         --------------------------------------------------------------------------------
+                                                                                          OR
+                                                                  example of Herarchical Inheritance 
+                                                               ----------------------------------------------
+class A
+{
+void show()
+{
+System.out.println("Hello from A");
+}
+}
+
+class B extends A
+{
+void show()
+{
+System.out.println("Hello from B");
+}
+}
+
+class C extends A
+{
+void show()
+{
+System.out.println("Hello from C");
+}
+}
+
+class Test
+{
+public static void main(String args[])
+{
+A a1 ;
+B b1 = new B(); 
+a1 =b1;
+a1.show();                      // Hello from B
+b1.show();                      //Hello from B
+C c1 = new C();
+a1 = c1;
+a1.show();                      //Hello from C
+c1.show();                      //Hello from C
+}
+}

@@ -1,0 +1,164 @@
+IMP NOTES
+*Not possible to be any defination in interface.
+*interface does not have an object.
+------------------------------------------------------------------
+#interface
+ -------------
+inteface is  a pour abstract form of a class it means that all the methords declared in an interface are by default 
+public and abstract.All the variable declared in an interface are by default public,static and final.
+-----------------------                                                                                                              ---------------------------
+interfaces are generally used to achive te concept of muliple inheritance.If a class is going to inherit an interface then 
+it will be compulsion for the child class thet it has to implemnt all the methords declared in the interface.
+We can perform following operation.
+i)class A extends class B          // class A will inherit class B
+----------------------------------------------------------------------------------------------------------------------
+ii) class A implements interface1,interface2      // class A will  try to implement the poperties of  interface1,interface2
+    Example:-
+interface first
+{
+public void show();
+}
+
+interface second
+{
+public void display();
+}
+
+class A implements first,second
+{
+public void show()
+{
+System.out.println("Hello from first");
+}
+public void display()
+{
+System.out.println("Hello from second");
+}
+}
+
+class Ts
+{
+public static void main(String args[])
+{
+A a1 = new A();                          OUTPUT
+a1.show();                          Hello from first
+a1.display();                          Hello from second
+}
+}
+-----------------------------------------------------------------------------------
+
+iii) class A extends class B implements interface1,interface2
+               //class A will inherit the properties of class B or try to implement the poperties of  interface1,interface2.
+    Example: 
+interface first
+{
+void show();
+}
+
+interface second
+{
+void display();
+}
+
+class A
+{
+void add()
+{
+System.out.println("Hello from A");
+}
+}
+
+class B extends A implements first,second
+{
+public void show()
+{
+System.out.println("Hello from first");
+}
+
+public void display()
+{
+System.out.println("Hello from second");
+}
+}
+
+class Ts
+{
+public static void main(String args[])
+{
+B b1 = new B();                          OUTPUT
+b1.show();                          Hello from first
+b1.display();                          Hello fom second
+b1.add();                          Hello from A
+}
+}
+----------------------------------------------------------------------------
+iV) interface1 extends interface3,interface2 
+        //interface 1 will inherit interface3 and interface2
+
+a) class methord we write public if we implement interface.
+        Example:
+interface first
+{
+void show();
+}
+
+class A implements first
+{
+public void show()
+{
+Systemout.println("Hello from A");
+}
+}
+
+class Test
+{
+public static void main(String args[])
+{
+A a = new A();
+a.show();
+}
+}
+
+b)interface1 extends interface3 and methord overriding.
+                                                                        -----------------------
+        Example:
+interface first
+{
+void show();
+void add();
+}
+
+interface second extends first
+{
+void display();
+}
+
+class A implements first,second
+{
+public void show()
+{
+System.out.println("Hello  from first");
+}
+
+public void display()
+{
+System.out.println("Hello from second");
+}
+
+public void add()
+{
+System.out.println("Hello from A");
+}
+}
+
+class Ts
+{
+public static void main(String args[])
+{
+A a1 = new A();
+a1.show();
+a1.display();
+a1.add();
+}
+}
+

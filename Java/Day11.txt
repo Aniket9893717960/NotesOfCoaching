@@ -1,0 +1,109 @@
+IMP NOTES  -/ System will use this Left Shift  Operator in Multiplication. For example :
+                                                                      -----------------------
+                                                          100     *25  -->  100 *(2^4 + 2^3 +2^0) 
+                                                                (16 +8+ 1)                        |
+                                                                                          100<<4  +  100 <<3  +  100<<0
+                                                                                                1600   +         800     +       100   /-
+----------------------------------------------------------------------------------------
+
+# Right Shift Operator(>>)
+
+Class Test
+{
+public static void main(String args[])
+{
+int a= 10>> 2;                                  // binary of 10 in 32 bits = 000000 0000 0000 0000 0000 0000 10      /10
+System.out.println(a);
+}                                    OUTPUT
+}                                            2
+
+Class Test
+{
+public static void main(String args[])
+{
+int a= 18 >>2;                               // binary of 18 in 32 bits = 000000 0000 0000 0000 0000 0000 0001 00      /10
+System.out.println(a);
+}                                         OUTPUT
+}                                                 4
+
+Class Test
+{
+public static void main(String args[])
+{
+int a= 27 >> 3;                             // binary of 27 in 32 bits = 0000000 0000 0000 0000 0000 0000 0001  1               /011
+System.out.println(a);
+}                                       OUTPUT
+}                                             3
+
+CLass Test
+{
+public static void main(String args[])
+{
+int a= 75>>3;                               // binary of 75 in 32 bits = 0000 0000 0000 0000 0000 0000 0100 1       /011
+System.out.println(a);
+}                                        OUTPUT
+}                                             9
+
+------------------------------- IMP  Notes ------------------------
+                                     -   X  /   2^n  -
+                                     |_   10>>2   _|
+Example    10 /2^2 -->  10/4  -->  2
+                       13/2^2 -->  13/4  -->   3
+                       18/2^2  -->  18/4  -->  4
+----------------------------------------------------------------------
+
+# Right Shift Operator For Negitive Numbers
+
+Class Test                                                                     // binary of -11 in 32 bits = 0000 0000 0000 0000 0000 0000 0000 1011
+{                                                                                         1 's Compliment = 1111 1111 1111 1111 1111 1111 1111 0100
+public static void main(String args[])                   2's Compliment = 00/   00 0000 0000 0000 0000 0000 0000 01      /01
+{                                                                                        1's Compliment  =  1111  1111  1111  1111  1111  1111  1111 1101
+int a= -11 >> 2;                                                            2's compliment =  0000  0000 0000 0000 0000 0000 0000 0011
+System.out.println(a);
+}                                         OUTPUT
+}                                            -3
+
+Class Test 
+{                                                                                   // imagine binary of 13 in 32 bits = 0000 1101
+pubic static void main(String args[])                    1's compliment =  1111 0010
+{                                                                                          2's compliment =   0000  0011
+int a= -13 >>2;                                                             2's compliment =   0000  0100
+System.out.println(a);
+}                                         OUTPUT
+}                                             -4
+
+CLass Test
+{
+public static void main(String args[])                        // imagine binary of 18 in 32 bits = 0001 0010 
+{                                                                                                    1's compliment = 1110 11         /01
+int a= -18 >>2;                                                                         2's compliment = 0000 0101
+System.out.println(a);
+}                                      OUTPUT
+}                                            -5
+
+CLass Test 
+{
+public static void main(String args[])                  //imagine binary of 12 in 32 bits = 0000 1100
+{                                                                                           1's compliment = 1111 00     /11
+int a=-12 >> 2;                                                               2's compliment = 0000 0011
+System.out.println(a);
+}
+} 
+
+---------------------------------------IMP NOTES -------------------------------------
+In RSO for negitive numbers :- 1) if the dividor will divided properly so, we does not add 1 in RSO positive number output.
+     -------------------                  2) if the divisor not properly divide so, add 1 in RSO positive number output.
+                                                        3) -ve sign should be necessary in the output of RSO for Negitive.  
+
+# Right Shift with Zero fill
+    ----------------------------
+
+Class Test
+{
+public static void main(String args[])
+{
+int a= -1 >>>27;                               // 0000 0000 0000 0000 0000 0000 0001 1111
+System.out.println(a);
+}                                         OUTPUT
+}                                               31
+--------------------------------------------------------------------------------------------

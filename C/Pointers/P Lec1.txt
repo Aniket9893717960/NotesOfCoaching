@@ -1,0 +1,105 @@
+Notes:
+*Pointers
+  -----------
+*This is a special type of variables.
+But this will not store a value .This will store the address of different variable.
+*why this will store the address of different variable? 
+At the time of use we can access the data of address variable.
+Example: Google Chrome location is
+ PC->C drive->Program files->Google->chrome->application->chrome.exe At Desktop we access a Shortcut Key.
+*Pointers in the one words explain is Power of attorney.
+* Pointer have his own address. 
+* If we perfom an increment operation[a++] on Integer pointer variable than value of pointer variable will be increment by 2 bytes.
+*Double pointer will carry the address of  his previous pointer variable.
+ -----------------------------------------------------------------------------------------
+-------------------------------------
+# Pointers
+    ----------
+Pointers are the special variables and this are generally use to hold the address of another variables.
+ Then this are also allow to access to change there values.
+IMP line:Memory allocation of Pointer's variables is comletely independent from there datatypes.
+                  They will always allocate the constant amount of memory on all the system(like 2 bytes on 16 bits architecture).
+This will reperesented as:-
+int *p;
+#Difference Between int *p; and int p;?
+                                           --------          ------
+int p; : This will store the direct value.
+------
+* This have a datatype which will inform about Memory allocation.
+---------------------------------------------------------------------------------------------------------------
+In C language: this will dependent about the architecture of operating System like 32bits,64bits.
+But we are talking about 16 bits System.
+-------------------------------------------------------------------------------------------------------------
+
+int *p; :This will store the address of another value.
+-------
+---------------------------------------------------------------------------------------------------------------
+In C language: this will dependent about the architecture of operating System like 32bits,64bits.
+But we are talking about 16 bits System.
+-------------------------------------------------------------------------------------------------------------
+* In this Allocate around 2 byte of Memory means Byte have an address.
+For Any datatype Pointer[int *p;] have necessary two byte of Memory.(Memory Allocation isNot dependent on datatype)
+
+Example:
+int *i have 2011,2012 :Pointer Variable will hold 2011 and This have an authourity to access 2012.
+char *ch have 2011: Pointer variable will allocate the Memory of 2Bytes but it only hold 2011 and ignore his Left-right.
+float *a : Pointer Variable will hold 2011 and This have an authourity to access 2012,2013,2014.
+double *d:Pointer Variable will hold 2011 and This will know his authourity to access other 7 address.
+
+# Explain pointers with the help of Program?
+
+#include <stdio.h>
+#include <conio.h>
+void main()
+{
+int a=10,*p;
+clrscr();
+p=&a;
+printf("%d %d %d %d",a,&a,p,*p);
+getch();                                                               OUTPUT
+}                                                                            10  Address of A  Address of A 10
+
+*If we doing an increment  on a.
+
+#include <stdio.h>
+#include <conio.h>
+void main()
+{
+int a=10,*p;
+clrscr();
+p=&a;
+a++;         //++a;           //++*p;                                   // value of 'a' will be incremented by One
+printf("%d %d %d %d",a,&a,p,*p);
+getch();                                                               OUTPUT
+}                                                                         11  Address of A  Address of A 11
+
+*If we doing an increment  on pointer P variable.
+
+#include <stdio.h>
+#include <conio.h>
+void main()
+{
+int a=10,*p;
+clrscr();
+p=&a;
+p++;           //++p;       //*p++                          // Address value of 'p' will be incremented by 2 byte.
+printf("%d %d %d %d",a,&a,p,*p);
+getch();                                                               OUTPUT
+}                                                                         11  (Address of A)  (Address of A+1)  (Garbage value)
+------------------------------------------------------------------------------
+System will consider this line *p++ to This line *(p++).
+-------------------------------------------------------------------
+
+* if we introduce a Double Pointer on New variable
+
+#include <stdio.h>
+#include <conio.h>
+void main()
+{
+int a=10,*p,**q;
+clrscr();
+p=&a;
+q=&p;
+printf("%d %d %d %d %d %d %d",a,&a,p,*p,q,*q,**q);
+getch();                                                               OUTPUT
+}                                                                 10  (Address of A)  (Address of A)  10  (Address of P)  (Address of A)  10

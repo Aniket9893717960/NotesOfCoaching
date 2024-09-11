@@ -1,0 +1,24 @@
+PA2)
+Complete the code segment to find the largest among three numbers x,y, and z. You should use if-then-else construct in Java.
+
+class Ts
+{
+public static void main(String args[])
+{
+int x =-4,y=-2,z=-3;
+int largest;
+if((x>=y) &&(x>=z) )
+{
+largest = x;
+}
+else if((y>=x)&&(y>=z))
+{
+largest = y;
+}
+else
+{
+largest = z;
+}
+System.out.println("Largest integer between x ="+x+" y ="+y+" z ="+z+" is ="+largest);
+}
+}

@@ -1,0 +1,93 @@
+IMP NOTES
+* main is considered as a thread by a system.
+* interruptedException will be call by System.There is not any control over this exception.
+----------------------------------------------------------------------------------------------------------
+class Test
+{
+pulic static void main(String args[])
+{
+Thread t = Thread.currentThread();
+System.out.println(t);                    ---------------------------------------------->Thread[ main ,     5,           main]
+                                                                                                                                                                 |                |                 |
+                                                                                                                                                           name       Priority    Group
+t.setName("My Thread");
+System.out.println(t);                    ---------------------------------------------->Thread[MyThread,5,main]
+System.out.println(t.getName());                   ----------------------------------------------> MyThread
+t.setPriority(Thread.MAX_PRIORITY);
+System.out.println(t);                   ---------------------------------------------->Thread[MyThread,10,main]
+System.out.println(t.getPriority());                    ----------------------------------------------> 10
+System.out.println(t.isAlive());                   ---------------------------------------------->true
+}
+}
+
+
+
+class Test
+{
+public static void main(String args[])
+{
+try
+{
+for(int i = 1;i<=5;i++)
+{
+System.out.println(i);
+t.sleep(1000);
+}
+}
+catch(InterruptedException e)
+{
+System.out.println(e);
+}
+System.out.println("Bye");
+}
+}
+
+
+
+class MyThread implements Runnable
+{
+Thread t;
+MyThread()
+{
+t = new Thread(this,"MyThread");
+System.out.println(t);
+t.start();
+}
+public void run()
+{
+try
+{
+for(int i=1;i<=5;i++)
+{
+System.out.println("MyThread "+i);
+t.sleep(100);
+}
+}
+catch(InterruptedException e)
+{
+System.out.println(e);
+}
+System.out.println("My Thread exit");
+}
+}
+
+class Test
+{
+public static void main(String args[])
+{
+MyThread ob1 = new MyThread();
+try
+{
+for(int i=1;i<=5;i++)
+{
+System.out.println("Main "+i);
+Thread.sleep(1000);
+}
+}
+catch(InterruptedException e)
+{
+System.out.println(e);
+}
+System.out.println("Main exit");
+}
+}

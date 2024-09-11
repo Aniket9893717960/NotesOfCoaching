@@ -1,0 +1,114 @@
+Q2)
+                                                                                 1)
+#include <stdio.h>
+void main()
+{
+int i,w=1,r=1,nr,nw;
+float a,b=0.005f,c=.00001f,d=0.01f;
+a=d;
+printf("The changes in the Population of Rabbit is R\n");
+printf("The changes in the Population of wolf is W\n");
+printf("The fractional increase in rabbit population without threat from wolves(0.01 means 1 percent increase) =%.2f\n",a);
+printf("The fractonal increase in wolf population without rabbit to eat =%.3f\n",b);
+printf("likelihood that a wolf will encounter and eat a rabbit =%.5f\n",c);
+printf("fractional increase in wolf population attributed to a devoured rabbit =%.2f\n",d);
+printf("Enter the number of rabbits in initally phase \n");
+scanf("%d",&nr);
+printf("Enter the number of wolves in initally phase \n");
+scanf("%d",&nw);
+for(i=0;i<=1000;i++)
+{
+r = (1+a)*nr - c*nr*nw;
+w = (1-b)*nw + c*d*nr*nw;
+if(i%25==0){
+printf("The population of wolves is %d and the population of rabbit is %d at %d days\n",w,r,i);
+}
+nr =r;
+nw =w;
+}
+}
+
+                                                                                     2)
+#include <stdio.h>
+void main()
+{
+int sells = 100,unit=500,cost=10000,advertise=1000;
+int newA;
+float newP,netP; 
+printf("Inital Sells of Super Dupers are = %d\n",sells);
+printf("They have the fixed operating cost is =%d\n",cost);
+printf("They have the Profit of %d per month\n",unit);
+printf("Spend on Advertisement is %d per month\n",advertise);
+netP = (sells*unit) - (cost+advertise);
+while(1)
+{
+advertise = advertise*2;
+sells = (sells*120/100);
+newP = (sells*unit) - (cost+advertise);
+
+if(newP < netP){
+break;
+}
+netP=newP;
+}
+printf("\nProfit begins to decline:\n");
+printf("SUper - Duper sales per month: %d\n",sells);
+printf("Advertising budget just before decline: %d\n",advertise);
+printf("Net profit just before decline: %.2f\n",netP);
+}
+                                                                    3)
+#include <stdio.h>
+void main()
+{
+float r;
+int x,y,points=0;
+printf("Enter the radius\n");
+scanf("%f",&r);
+for(x=0;x<=r;x++)
+{
+for(y=1;y<=r;y++)
+{
+if((x*x + y*y)<=16)
+{
+points++;
+}
+}
+}
+points = points*4+1;
+printf("No. of points in the circle =%d",points);
+}
+
+                                                                   6)
+#include <stdio.h>
+int func(int n,int root);
+void main()
+{
+int n,i,d1,d2,d3,d4,temp;
+float root=1;
+for(i=1100;i<=9988;i++)
+{
+d1 = i%10;
+temp =i/10;
+d2 = temp%10;
+temp =i/100;
+d3 = temp%10;
+temp= i/1000;
+d4 = temp%10;
+if((d1==d2) && (d3==d4) && (d1!=d3)){
+n= func(i,root);
+if(n*n==i)
+printf("Desired number = %d\n",i);
+}
+}
+}
+
+int func(int n,int root)
+{
+int temp=n;
+float f =0.0001;
+while( n-root>f){
+n = (n+root)/2;
+root =(float)temp/n;
+}
+return n;
+}

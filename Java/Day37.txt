@@ -1,0 +1,142 @@
+This will use with variable ,methord and class.
+-----------------------------------------------------------------------
+IMP POINT
+*final class have all the methord is not final because final will have to inharit and also call by child class but final class will not modify this
+*if a variable is declared as final this will treated as a constant.
+* we can initialize final variable with the help of different objects.
+*Object based language like javascript will not support inheritance and polimorphism.
+---------------------------------------------------------------------
+
+#final Keyword
+ -------------------
+final is a keyword that can be used with variable declaration,methord declaration,class declaration.
+if a variable is declared as final then it can be initalize only one in the program either on 
+the declaration statement or inside the construtor only.After initialzation changes in a value are not acceptable.
+-------------------------------------------------------
+*if a variable is declared static and final then it can either be initizlie on declaration statement or inside the static block only.
+Example:-
+class Test
+{
+static final int a;
+Test(int x)
+{
+a=x;
+}
+void show()
+{
+System.out.println(a);
+}
+public static void main(String args[])
+{
+Test t1 = new Test(10);
+Test t2 = new Test(100);
+t1.show();                                              OUTPUT
+t2.show();                                              Error because static variable will be accessable one time only
+}                                                                
+}
+*if a mathord is declared as final then  we can not override it 
+Example:-
+class A
+{
+final void show()
+{
+System.out.println("Hello from A");
+}
+}
+
+class B extends A
+{                                                                                                OUTPUT
+void show()                                                                           Error at this line because we does not override the final methord
+{
+System.out.println("Hello from B");
+}
+}
+
+class Ts
+{
+public static void main(String args[])
+{
+A a1 = new A();
+B b1 = new B();
+a1.ahow();
+b1.show();
+}
+}
+
+* if the class is declared as final then we can not inherite it.
+Example:-
+final class A
+{
+ void show()
+{
+System.out.println("Hello from A");
+}
+}
+                                                                                                    OUTPUT
+class B extends A                                               Error at this line because we does not inherit the final class
+{                                                                                                
+void show()                                                                           
+{
+System.out.println("Hello from B");
+}
+}
+
+class Ts
+{
+public static void main(String args[])
+{
+A a1 = new A();
+B b1 = new B();
+a1.ahow();
+b1.show();
+}
+}
+
+---------------------------------------------------------
+
+class Ts
+{
+final int a=10;
+void show()
+{
+a++;
+System.out.println();
+}
+public static void main(String args[])
+{                                                           OUTPUT
+Ts t1 = new Ts();                              Compile time Error at a++ because final constant will not be changable
+t1.show();
+t1.show();
+t1.show();
+}
+}
+
+--------------------------------------------------------------------------
+*Local Variable will use stack memory.
+                                               ------------------
+*instance Variable will use heap memory this have structure like a tree.
+                                                    -------------------
+*final Variable will use set Associative memory this will be initialize by default null.
+                                                    -------------------------
+Example :-
+class Test
+{
+final int a;
+Test(int x)
+{
+a=x;
+}
+void show()
+{
+System.out.println(a);
+}
+public static void main(String args[])
+{
+Test t1 = new Test(10);
+Test t2 = new Test(100);
+t1.show();                                              OUTPUT
+t2.show();                                              10
+}                                                                100
+}
+-----------------------------------------------------------------------
+

@@ -1,0 +1,82 @@
+Q1) 
+                  FOR INDIVIDUAl Digits
+                 -----------------------
+#include <stdio.h>
+int func(int,int);
+void main()
+{
+int x,y,z;
+printf("Enter First Value");
+scanf("%d",&x);
+x = func(x,2);
+
+printf("Enter First Value");
+scanf("%d",&y);
+y = func(y,2);
+
+printf("Enter First Value");
+scanf("%d",&z);
+z = func(z,2);
+printf("%d %d %d",x,y,z);
+
+if((x+y)==z)
+printf("given values are pythgorus triplet");
+else 
+printf("Not");
+}
+int func(int n,int pow)
+{
+if(pow==0)
+return 1;
+else
+return(n*(func(n,pow-1)));
+}
+
+                              FOR 3 to 9
+#include <stdio.h>
+
+void main() {
+    unsigned int i, z, j;
+    for (i = 1; i < 10; i += 2) {
+        printf("Triplets for i = %u:\n", i);
+        for (j = 1;; j++) {
+            z = j + 1;
+            if ((i * i + j * j) == z * z) {
+                printf("%u %u %u\n", i, j, z);
+            }
+            if ((i * i + j * j) > 2000) { // Assuming maximum value of z is 100
+                break;
+            }
+        }
+    }
+}
+
+2)
+#include <stdio.h>
+int fun(int n);
+void main()
+{
+int i,j,k;
+for(i=10;i<=100;i++)
+{
+for(j=100;j>=10;j--){
+k = fun(j*j);
+if(i*i==k && (i!=j)){
+printf("value will be %d = %d\n",i,j);
+break; 
+}
+}
+}
+}
+
+int fun(int n)
+{
+int sum=0,r,count=0;
+while(n!=0){
+r=n%10;
+sum =sum*10+r;
+n=n/10; 
+}
+return sum;
+}
+ 

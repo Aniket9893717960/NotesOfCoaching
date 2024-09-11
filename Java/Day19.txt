@@ -1,0 +1,120 @@
+IMP NOTES
+*i will print the number of rows.that's why if we print 'i' then we notice to see a constant value in a line.
+*j will print the number of columns.that's why if we print 'j' then we notice a changes of number at the line.
+--------------------------------------------------------------
+# Experiment with for loop
+
+class Test
+{
+public static void main(String args[])
+{
+int i,j;
+for(i=1,j=10;i<j;i++,j--)                                  OUTPUT
+{                                                                            1   10
+System.out.println(i+" "+j);                        2   9
+}                                                                            3    8
+}                                                                           4     7
+}                                                                          5      6
+
+#Nested for
+
+class Test
+{
+public static void main(String args[])
+{
+int i,j;
+for(i=1;i<=3;i++)
+{
+for(j=1;j<=3;j++)                                                                  OUTPUT
+{                                                                                                   11  12  13
+System.out.print(i+" "+j);                                                    21  22  23
+}                                                                                                   31  32  33
+System.out.println();
+}
+}
+}
+
+Iteration
+
+when inner loop executed completely for a single value of outer loop then it will be an iteration.
+
+class Ts
+{
+public static void main(String args[])
+{
+for(int i=1;i<=3;i++)                        OUTPUT
+{                                                              ***
+for(int j=1;j<=3;j++)                         ***
+{                                                              ***
+System.out.print("*");
+}
+System.out.println();
+}
+}
+}
+
+changes in j(column)
+
+class Ts
+{
+public static void main(String args[])
+{
+for(int i=1;i<=3;i++)                      OUTPUT
+{                                                            *****
+for(int j=1;j<=5;j++)                        *****
+{                                                            *****
+System.out.print("*");
+}
+System.out.println();
+}
+}
+}
+
+changes in i(row)
+
+class Test
+{
+public static void main(String args[])
+{
+for(int i=1;i<=5;i++)                       OUTPUT
+{                                                           *****
+for(int j=1;j<=5;j++)                      *****
+{                                                           *****
+System.out.print("*");                 *****
+}                                                           *****
+System.out.println();
+}
+}
+}
+
+# PARAMID OF STAR(*)
+class Ts
+{
+public static void main(String args[])
+{
+for(int i=1;i<=5;i++)
+{
+for(int j=1;j<=i;j++)                             OUTPUT
+{                                                                *
+System.out.print("*");                      **
+}                                                                 ***
+System.out.println();                         ****
+}                                                                  *****
+}
+}
+
+class Ts
+{
+public static void main(String args[])
+{
+for(int i=1;i<=5;i++)                  OUTPUT
+{                                                       *****
+for(int j=5;j>i;j--)                        ****
+{                                                       ***
+System.out.print("*");             **
+}                                                        *
+*
+System.out.println();
+}
+}
+}

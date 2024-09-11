@@ -1,0 +1,568 @@
+----------------------------------------
+1)   OUTPUT
+1
+12
+123
+1234
+12345
+
+PROGREM
+class  Ts
+{
+public static void main(String args[])
+{
+for(int i=1;i<=5;i++)                                 
+{                                                                  
+for(int j=1;j<=i;j++)                              
+{                                                                  
+System.out.print(j);                            
+}                                                                
+System.out.println();
+}
+}
+}
+----------------------------------------
+2)  OUTPUT
+1
+22
+333
+4444
+55555
+
+PROGRAM
+
+class Ts
+{
+public static void main(String args[])
+{
+for(int i=1;i<=5;i++)
+{
+for(int j=1;j<=i;j++)
+{
+System.out.print(i);
+}
+System.out.println();
+}
+}
+}
+----------------------------------------
+3)OUTPUT
+5
+54
+543
+5432
+54321
+
+PROGRAM
+class Ts
+{
+public static void main(String args[])
+{
+for(int i=5;i>=1;i--)
+{
+for(int j=5;j>=i;j--)
+{
+System.out.print(j);
+}
+System.out.println();
+}
+}
+}
+----------------------------------------
+4) OUTPUT
+5
+44
+333
+2222
+11111
+
+PROGRAM
+
+class Ts
+{
+public static void main(String args[])
+{
+for(int i=5;i>=1;i--)
+{
+for(int j=5;j>=i;j--)
+{
+System.out.print(i);
+}
+System.out.println();
+}
+}
+}
+----------------------------------------
+5) OUTPUT
+12345
+1232
+123
+12
+1
+
+PROGRAM
+class Ts
+{
+public static void main(String args[])
+{
+for(int i=5;i>=1;i--)
+{
+for(int j=1;j<=i;j++)
+{
+System.out.print(j);
+}
+System.out.println();
+}
+}
+}
+----------------------------------------
+6) OUTPUT
+11111
+2222
+333
+44
+5
+
+PROGRAM
+class Ts
+{
+public static void main(String args[])
+{
+for(int i=1;i<=5;i++)
+{
+for(int j=5;j>=i;j--)
+{
+System.out.print(i);
+}
+System.out.println();
+}
+}
+}
+----------------------------------------
+7)OUTPUT
+54321
+5432
+543
+54
+5
+
+PROGRAM
+class Ts
+{
+public static void main(String args[])
+{
+for(int i=1;i<=5;i++)
+{
+for(int j=5;j>=i;j--)
+{
+System.out.print(j);
+}
+System.out.println();
+}
+}
+}
+----------------------------------------
+8)OUTPUT
+55555
+4444
+333
+22
+1
+
+PROGRAM
+class Ts
+{
+public static void main(String args[])
+{
+for(int i=5;i>=1;i--)
+{
+for(int j=1;j<=i;j++)
+{
+System.out.print(i);
+}
+System.out.println();
+}
+}
+}
+----------------------------------------
+9)OUTPUT
+A
+AB
+ABC
+ABCD
+ABCDE
+
+PROGRAM
+
+class Ts
+{
+public static void main(String args[])
+{
+for(char i='A';i<='E';i++)
+{
+for(char j='A';j<=i;j++)
+{
+System.out.print(j);
+}
+System.out.println();
+}
+}
+}
+----------------------------------------
+10) OUTPUT
+A
+BB
+CCC
+DDDD
+EEEEE
+
+PROGRAM
+class Ts
+{
+public static void main(String args[])
+{
+for(char i='A';i<='E';i++)
+{
+for(char j='A';j<=i;j++)
+{
+System.out.print(i);
+}
+System.out.println();
+}
+}
+}
+----------------------------------------
+11)OUTPUT
+E
+ED
+EDC
+EDCB
+EDCBA
+
+PROGRAM
+class Ts
+{
+public static void main(String args[])
+{
+for(char i='E'; i>='A';i--)
+{
+for(char j='E';j>=i;j--)
+{
+System.out.print(j);
+}
+System.out.println();
+}
+}
+}
+----------------------------------------
+12)OUTPUT
+E
+DD
+CCC
+BBBB
+AAAAA
+
+PROGRAM
+class Ts
+{
+public static void main(String args[])
+{
+for(char i='E';i>='A';i--)
+{
+for(char j='E';j>=i;j--)
+{
+System.out.print(i);
+}
+System.out.println();
+}
+}
+}
+----------------------------------------
+13)OUTPUT
+ABCDE
+ABCD
+ABC
+AB
+A
+
+PROGRAM
+class Ts
+{
+public static void main(String args[])
+{
+for(char i='E';i>='A';i--)
+{
+for(char j='A';j<=i;j++)
+{
+System.out.print(j);
+}
+System.out.println();
+}
+}
+}
+----------------------------------------
+14) OUTPUT
+AAAAA
+BBBB
+CCC
+DD
+E
+
+PROGRAM
+class Ts
+{
+public static void main(String args[])
+{
+for(char i='A';i<='E';i++)
+{
+for(char j='E';j>=i;j--)
+{
+System.out.print(i);
+}
+System.out.println();
+}
+}
+}
+----------------------------------------
+15) OUTPUT
+EDCBA
+EDCB
+EDC
+ED
+E
+
+PROGRAM
+class Ts
+{
+public static void main(String args[])
+{
+for(char i='A';i<='E';i++)
+{
+for(char j='E';j>=i;j--)
+{
+System.out.print(j);
+}
+System.out.println();
+}
+}
+}
+----------------------------------------
+16) OUTPUT
+EEEEE
+DDDD
+CCC
+BB
+A
+
+PROGRAM
+class Ts
+{
+public static void main(String args[])
+{
+for(char i='E';i>='A';i--)
+{
+for(char j='A';j<=i;j++)
+{
+System.out.print(i);
+}
+System.out.println();
+}
+}
+}
+----------------------------------------
+17)OUTPUT
+1
+23
+456
+78910
+
+PROGRAM
+class Ts
+{
+public static void main(String args[])
+{
+int k=1;
+for(int i=1;i<=4;i++)
+{
+for(int j=1;j<=i;j++)
+{
+System.out.print(k);
+k++;
+}
+System.out.println();
+}
+}
+}
+----------------------------------------
+18)OUTPUT
+     *
+   **
+  ***
+ ****
+*****
+
+PROGRAM
+class Ts
+{
+public static void main(String args[])
+{
+int i,j,k;
+for(i=1;i<=5;i++)
+{
+for(k=5;k>i;k--)
+{
+System.out.print(" ");
+}
+for(j=1;j<=i;j++)
+{
+System.out.print("*");
+}
+System.out.println();
+}
+}
+}
+----------------------------------------
+19) OUTPUT
+    x
+   xxx
+  xxxxx
+ xxxxxxx
+xxxxxxxxx
+
+PROGRAM
+class Ts
+{
+public static void main(String args[])
+{
+int i,j,k;
+for(i=1;i<=5;i++)
+{
+for(k=5;k>i;k--)
+{
+System.out.print(" ");
+}
+for(j=1;j<=(2*i-1);j++)
+{
+System.out.print("x");
+}
+System.out.println();
+}
+}
+}
+----------------------------------------
+20) OUTPUT
+    *
+   ***
+  *****
+ *******
+*********
+ *******
+  *****
+   ***
+    *
+
+PROGRAM
+
+class Ts
+{
+public static void main(String args[])
+{
+int i,j,k;
+for(i=1;i<=5;i++)
+{
+for(k=5;k>i;k--)
+{
+System.out.print(" ");
+}
+for(j=1;j<=(2*i-1);j++)
+{
+System.out.print("*");
+}
+System.out.println();
+}
+for(i=1;i<=5;i++)
+{
+for(k=1;k<=i;k++)
+{
+System.out.print(" ");
+}
+for(j=7;j>=(2*i-1);j--)
+{
+System.out.print("*");
+}
+System.out.println();
+}
+}
+}
+
+                                                                OR
+class Ts
+{
+public static void main(String args[])
+{
+for(int i=1;i<=5;i++)
+{
+for(int k=4;k>=i;k--)
+{
+System.out.print(" ");
+}
+for(int j=1;j<=(2*i-1);j++)
+{
+System.out.print("*");
+}
+System.out.println();
+}
+
+for(int i=4;i>=1;i--)
+{
+for(int k=4;k>=i;k--)
+{
+System.out.print(" ");
+}
+for(int j=1;j<=(2*i-1);j++)
+{
+System.out.print("*");
+}
+System.out.println();
+}
+}
+}
+
+---------------------------------------------
+21)OUTPUT
+*****
+****
+***
+**
+*
+*
+**
+***
+****
+*****
+
+PROGRAM
+class Ts
+{
+public static void main(String args[])
+{
+int i,j;
+for(i=1;i<=5;i++)
+{
+for(j=5;j>=i;j--)
+{
+System.out.print("*");
+}
+System.out.println();
+}
+for(i=1;i<=5;i++)
+{
+for(j=1;j<=i;j++)
+{
+System.out.print("*");
+}
+System.out.println();
+}
+}
+}
+--------------------------------------------------------------

@@ -1,0 +1,48 @@
+1) A car coveerd a certain Distance at 90 kmph and returned back at 60 kmph.
+FInd its average speed for the entire journey.
+
+2) X and Y are 270 k apart.At 9:00 am,buses A and B left X and Y for Y and X respectively.if the speeds of A and B
+are 50 kmph and 40 kmph respectively, find their metting time.
+
+3) Car A left  X and Y at 9:00 am car B left at 10:00 am .XY =180 km.Speeds of A and B are 30 kmph and 20 
+kmph respectively. Find their meeting time.
+
+4) Car P started driving north from X at 7:00 am.Car Q started driving north from X at 10:00 am.
+ The ratio of the speeds of P and Q is 3:4. Find their meetig time?
+
+5) Rakesh travelled for 2.5 hours at 40 kmph and then for 5 hours at 60 kmph. Find his average 
+speed for the journey.
+
+6) Bala travelled for 3 hourse at 40 kmph and for 5 hours at 60 kmph. find his average speed 
+(in kmph) for the journey?
+
+7) Alok travelled from Hyderabed to Tirupati at 80 kmph and returnd at 160 kmph.Find his average 
+speed for the journey (in kmph).
+
+8) A car covers a Distance of 200 km such that 40% of the distance with the speed of 40 kmph , 50% of the
+remaining part with the speed of 60 kmph and the rest with the speed of 120 kmph. find the average speed of
+the journey.
+
+9) A thief is spooted by a policeman at a distance of 400 m.if the speedof the thief be 10 km/h and that 
+of the policeman be 12 km/h ,at what distance will the policemen catch the thief?
+
+10) Two persons start walking in opposite direction at 5 km/h and 4 km/h respectively. After how many hourse
+will they be 45 km apart?
+
+11) the distance between two stations A and B is 220 km. A train leaves A towards B at an average speed 
+of 80 km/h. After half a hour, another train leaves B towards A at an Average speed of 100km/h. Time 
+taken for the trains to meet is:
+
+12) Two trains start at the same time from Vijayawada and Madra and proceed towards each other at
+16 km/h and 21 km/h repectively. When they meet , it is found that one train has travelled 60 km more
+than the other. The distance between the two stations is:
+
+13) Buses take 12 hr to cover the distance of 120 km between A and B. A bs starts from points A at 8:00 am
+and another bus starts from point B at 10:00 Am on the same day. when do the two buses meet ?
+
+14) Ravi started cycling along the boundaries of a sequence field from corner point A.After half an hour, he 
+reached the corner point C, diagonally opposite to A. if his speed was 8 km/h.
+what is the area of the field in square km?
+
+15) P and Q are two towns . Ravi covers the distance from P to Q on cycle at 16 km/h. However, he covers
+the distance from Q to P on foot at 9km/h. His average speed during the whole journey is:  

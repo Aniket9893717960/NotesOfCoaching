@@ -1,0 +1,87 @@
+--------------------------------------------------------------------------------
+                                                   H.W
+                                                   -----
+Q) An array of size 10 to get an input from User and to delete an Element in a array?
+
+#include <stdio.h>
+void deleteElement(char *ch,char n,int length);
+void main()
+{
+char ch[10],n;
+int i,length;
+printf("Enter the String \n");
+for(i=0;i<10;i++)
+{
+ch[i] = getchar();
+if(ch[i]==10 || ch[i]==13)
+{
+ch[i]='\0';
+break;
+}
+length++;
+}
+printf("Enter the element \n");
+scanf("%c",&n);
+deleteElement(ch,n,length);
+}
+
+void deleteElement(char *ch,char n,int length)
+{
+int i,length=0;
+char remove=' ';
+printf("Enter the element \n");
+for(i=0;i<length;i++)
+{
+if(ch[i]==n)
+{ 
+ch[i]=remove;
+}
+}
+ch[i]='\0';
+printf("After Update the String =%s\n",ch);
+}
+
+Q)Write a Program in which given String =  "3A2B4CD1W" OutPUT
+will be "AAABBCDCDCDCDW"
+
+#include <stdio.h>
+void extendString(const char *ch);
+void main()
+{
+int length=0;
+char ch[20]="3A2B4CD1W";
+while(ch[length]!='\0')
+{
+length++;
+}
+extendString(ch);
+printf("Your Given input In the String =%s\n",ch);
+}
+
+void extendString(const char *ch){
+int i,length=0,con,j,k;
+char output[50];
+while(ch[length]!='\0'){
+length++;
+}
+printf("The length of the String is %d",length);
+for(i=0;i<=length;i++){
+con=ch[i] - '0';
+if(ch[i]>='0' && ch[i]<='9'){
+for(k=0;k<con;k++){
+output[j++] = ch[i+1];
+if(!(ch[i+2]>='0' && ch[i+2]<='9')){
+output[j++] = ch[i+2];
+}
+}
+i=i+1;
+}
+else{
+output[j++]=ch[i];
+}
+}
+output[j]='\0';
+printf("Your Expected output in the String=%s\n",output);
+}
+
+-----------------------------------------------------------------------------------

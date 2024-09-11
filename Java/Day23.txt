@@ -1,0 +1,79 @@
+IMP NOTES
+*we have to declare or also initalize it before the main class.
+--------------------------------------------
+PROBLEMS
+
+class Test
+{
+---  int a=10;
+|    public static void main(String args[])
+|    {
+|    System.out.println(a);                                               OUTPUT
+|    }                                          error if a non static variable a cannot be referenced from the static context 
+|    }
+|------------->first with the help of static variable solve this problem.
+|------
+          |
+          |
+#class,Object and Instance variables.
+--------------------------------------------
+
+class Ts
+{ 
+
+int a=10;
+public static void main(String args[])
+{
+Ts t1 = new Ts();
+Ts t2= new Ts();
+System.out.print(t1.a);          10
+System.out.print(t2.a);            10
+t1.a++;                                                            OUTPUT
+t2.a--;                                                                11
+System.out.print(t1.a);                                  9
+System.out.print(t2.a);
+}
+}
+
+#Hashcode
+---------------
+hashcode is a uniquealy defined value that is assigned to every object so that it can be identify uniquely in the system.
+
+class Ts
+{
+public static void main()
+{
+Ts t1= new Ts();
+Ts t2 = new Ts();
+-----  System.out.print(t1);
+|         System.out.println(t2);
+|         }
+|         }
+|
+|-----> System.out.println(t1.toString());      //*this will print the only hashcode at hexadecimal formate.
+|                                                                         *This is used by default by the system at this condition.
+|
+|-----> System.out.println(t1.hashCode());   // *this will print the only hashcode at integer formate.
+
+# Reference
+---------------
+it is a variable of class type and it is capable to hold the hashcode of another object of same class.
+if a reference holds an object and if it is allow to make changes in it's value then the concept is called mutability of object.
+                                                                                                                                                                                                         ------------ 
+class Test
+{
+int a=10;
+public static void main(String args[])
+{
+Test t1 = new Test();
+Test t2 = t1;
+System.out.print(t1.a);
+System.out.print(t2.a);
+t1.a++;
+t2.a--;                                               OUTPUT
+System.out.print(t1.a);                  10
+System.out.print(t2.a);                  10
+}
+}
+
+

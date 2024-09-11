@@ -1,0 +1,26 @@
+Q) write a program of factorial recursion without using static variable?
+      DOUBT why it's output is 24
+     -----------------------------
+#include <stdio.h>
+int factorial(int n);
+void main()
+{
+int output,n;
+scanf("%d",&n);
+if(n<0){
+printf("");
+}
+output = factorial(n);
+printf("\n%d",output);
+}
+
+int factorial(int n){
+int f;
+if(n==1)
+return 1;
+else {
+printf("%d",n);
+f = fibonacci(--n)*n;
+}
+return f;
+}

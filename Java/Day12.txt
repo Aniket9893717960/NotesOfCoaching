@@ -1,0 +1,149 @@
+# boolean
+ 
+A boolean value can either be true or it can be false.
+
+Class TestBoolean
+{
+public static void main(String args[])
+{
+int a=10,b=20;
+boolean x;
+x= a<b;
+System.out.println(x);
+}                                            OUTPUT
+}                                                  true
+IMP  QUESTION
+
+
+Class Test
+{
+public static void main(String args[])
+{
+int a=10,b=10,c=10;                                        a  ==  b  ==  c
+boolean x;                                                            |_____|
+x= a==b==c;                                                           true == 10
+System.out.println(x);                                          |______|
+}                                                                                       incompatible type
+}
+
+# Need of logical operator
+                                                before logical operators bi
+twise operator is heavily used in the computers but some times it be diffuclt to 
+                                                handle the operations so we use the logical operators to teackel the operations 
+
+# Logical Operator
+
+i)logical AND /Short circuited AND Operator
+  ---------------------------------------------------
+Class Test
+{
+public static void main(String args[])
+{
+int a=10 ,b=10 ,c=10;
+boolean x;
+x = a==b && b==c ;
+System.out.println(a+" "+b+" "+c+" "+d);                             OUTPUT
+                                                                                                         10 10 10 true
+}
+}
+
+------------------------------IMP QUESTIONS-----------------------------------
+
+Class Test 
+{
+pubic static void main(String args[])
+{
+int a=10,b=10,c=10;                                             a=10 then 11
+boolean x;                                                                       b=10 then 9 then 10
+x= a++ == b--  && b++  == --c;                                      c=10 then 9
+      10           10            9               9
+System.out.println(a+" "+b+" "+c+" "+d);                     x= true
+}
+}
+
+Class Test
+{
+public static void main(String args[])
+
+int a=10,b=10,c=10;                                                a=10 then 11
+boolean x;                                                                        b=10  then 11 then 12
+x = a++ == b++ &&  b++  == ++c;                                c=10 then 11
+       10           10            11               11
+System.out.println(a+" "+b+" "+c+" "+x);                   x= true
+}
+}
+
+Class Test
+{
+public static void main(String args[])
+{
+int a=10,b=10,c=10;                                                  a= 10 then 9
+boolean x;                                                                         b=10 then 11 then 10
+x= a-- == b++  &&  b-- ==  ++c;                                    c=10  then 11
+      10         10             11            11
+System.out.println(a+" "+b+" "+c+" "+x);                     x= true
+}
+}
+
+Class Test
+{
+public static void main(String args[])
+{
+int a= 10,b=10,c=10;                                                 a= 10 then 9
+boolean x;                                                                        b= 10 then 9 then 10
+x = a-- == b-- && b++  == ++c;                                    c=11
+      10         10          9              11
+System.out.println(a+" "+b+" "+c+" "+x);                  x=false
+}
+}
+
+Class Test
+{
+public static void main (String args[])
+{
+int a=10,b=10,c=10;                                                 a=10 then 11
+boolean  x;                                                                       b=10 then 11
+x = ++a == b++  &&  b++ == ++c;                             c= 10 
+         11         10      ShortCircuit(False)
+System.out.println(a+" "+b+" "+c+" "+x);                  x=false
+}
+}
+
+* logical OR OPerator
+----------------------------
+Class Test
+{
+public static void main(String args[])
+{
+int a=10,b=10,c=10;                                                a=10 then 11
+boolean x;                                                                     b= 10 then 11 then 12
+x = ++a == b++ ||  b++ ==  ++c;                                 c= 10 then 11
+          11         10        11            11
+System.out .println(a+" "+b+" "+c+" "+x);                    x= true
+}
+}
+
+Class Test
+{
+public static void main(String args[])
+{
+int a=10, b=10, c=10;                                           a=10 then 11
+boolean x;                                                                  b= 10 then 9 then 10
+x = ++a == b-- ||  b++ ==  ++c;                               c = 10 then 11
+        11         10       9               11
+System.out.println(a+" "+b+" "+c+" "+x);            x =false
+}
+}
+
+Class Test
+{
+public static void main(String args[])
+{
+int a= 10, b=10,c =10;                                       a= 10 then 11
+boolean x;                                                                 b= 10 then 9 
+x= a++ == b--  ||  b++ == --c;                                  c= 10 
+      10           10       shortcircuited(True)
+System.out.println(a+" "+b+" "+c+" "+x);            x= true 
+}
+} 
+---------------------------------------------------------------------------------------

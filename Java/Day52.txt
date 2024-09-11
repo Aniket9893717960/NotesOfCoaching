@@ -1,0 +1,32 @@
+                                          Sql(Structure Query Language)
+                                           |
+                                           |
+   -------------------------------------------------------------------------------------
+   |                      |                            |                               |                             |
+  DDL             DML                    DCL                       TCL                      DRL(Data Retrival Language)  - Select
+
+(Data Definition Language)(Data Manipulation Language)(Data Control language)(Transition Control Language)
+Keywords                   Keyword                     Keywords               Keywords
+Create                         Insert                             Grant                      Backup
+Alter                             Update                        Revoke                   Recovery
+Drop                            Delete                               ----------------------
+                                                                                                   |
+                                                                                            Commit
+                                                                                           Rollback
+                                                                           
+Tools
+MySQL
+SQLSERver
+DB-2
+ORACLE
+
+DATAType
+JAVA                 Bits                           SQL              
+byte                      1                     tinyint                         |    
+short                     2                     small int                    |
+int                          4                      int                               | numeric(30)
+long                      8                           Big int                   |
+float                      4                      float                    |Decimal(30)  
+double                  8                      double                |
+boolean               1                      bool/boolean
+char                      1                      char/varchar/varchar     |char(20)

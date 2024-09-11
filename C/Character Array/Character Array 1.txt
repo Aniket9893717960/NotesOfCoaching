@@ -1,0 +1,73 @@
+NOTES
+*\0 (Slash Zero): This  will be use to show NULL Character.
+Why it is important? because All the character Array we develop last position will be resurved for "\0"
+                                         This will Act like a full stop or Terminator.
+* getchar();  :This will specially used in Character Array to Not use Enter Button after writting every Character.
+* Enter Button is also Treated as a Character in the System.His ASCII code is 13.
+   \n ASCII code is 10
+-------------------------------------------------------------------
+# Character Array(String):
+    -----------------------------
+
+*Problem with character Array
+  ------------------------------------
+*Write a Program to Enter a Name from user and Print this on console Screen?
+
+#include <stdio.h>
+#include <string.h>
+
+void main()
+{
+char a[10];
+int i;
+
+printf("Enter a Value \n");
+for(i=0;i<10;i++)
+{
+a[i] = getchar();
+if(a[i]==10 || a[i]==13)
+{
+a[i]='\0';
+break;
+}
+}
+printf("You have Entered :");
+i=0;
+while(a[i]!='\0')
+{
+printf("%c",a[i]);
+i++;
+}                                                     OUTPUT
+}                                                     Aniket
+
+If we don't have to do this whole effort then Denis Riche will introduce Some Changes
+                                                                            AlTERNATE WAY  TO SCAN A WORD
+                                                                            --------------------------------------------
+                                                                            (This methord will treate Space as a Terminator)
+#include <stdio.h>
+
+void main()
+{
+char a[10];
+
+printf("Enter a Value \n");
+scanf("%s",a);
+printf("You have Entered :");
+printf("%s",a);
+}
+
+If you want to write a whole Sentence than
+                                                                       Alternate way to scan a Name
+                                                                       -------------------------------------
+#include<stdio.h>
+#include<string.h>
+void main()
+{
+char a[20];
+
+printf("Enter a Name: ");
+gets(a);
+
+printf("You have Entered \n");
+puts(a);
+}

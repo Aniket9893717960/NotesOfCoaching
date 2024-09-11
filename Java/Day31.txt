@@ -1,0 +1,124 @@
+#indexOf
+ ------------
+
+*int indexOf(char ch)
+*int indexOf(char ch,int index)
+
+class Ts
+{
+public static void main(String args[])
+{
+String str = new String("india");
+System.out.println(str.indexOf(i));
+System.out.println(str.indexOf(i,1));   // if we give a character  which is not exist in a string than this will return -1
+                                                                         // if we give a large index which not exist than this give index out of bound exception
+System.out.println(str.indexOf(i,2));
+System.out.println(str.indexOf(i,3));
+System.out.println(str.indexOf(i,4));
+}
+}
+
+*int indexOf(String)
+*int indexOf(String,int)
+
+class Ts
+{
+public static void main(String args[])
+{
+String str = "indore is in india";
+System.out.println(str.indexOf('in'));
+System.out.println(str.indexOf('in',1));
+System.out.println(str.indexOf('in',2));
+System.out.println(str.indexOf('in',3));
+System.out.println(str.indexOf('in',4));
+System.out.println(str.indexOf('in',5));
+System.out.println(str.indexOf('in',6));
+System.out.println(str.indexOf('in',7));
+System.out.println(str.indexOf('in',8));
+System.out.println(str.indexOf('in',9));
+System.out.println(str.indexOf('in',10));
+}
+                                                ALTERNATE METHORD
+                                               ------------------------------
+class Ts
+{
+public static void main(String args[])
+{
+String str = new String("indore is in india");
+int n=0;
+while(n!=-1)
+{
+n=str.indexOf("in",n)
+if(n>=0)
+{
+System.out.println(n);                         0
+n++;                                                            10
+}                                                                    13
+}
+}
+}
+
+#String array
+ ----------------
+
+*write a program to print all the element of the given string array on seperate line.
+
+str[] is an array it follows all the properties of an array.
+
+class Test
+{
+public static void main(String args[])
+{
+String str[] = {'indore','bhopal','dewas','ujjain','dhar','india','indonasia','bhind'};
+for(int i=0;i<=str.length;i++)
+{
+System.out.println(str[i]);
+}
+}
+}
+                                   Alternate Methord
+                                  ------------------------
+class Test
+{
+public static void main(String args[])
+{
+String str[] = {'indore','bhopal','dewas','ujjain','dhar','india','indonasia','bhind'};
+for(String s:str)
+{
+System.out.println(s);
+}
+}
+}
+
+*write a program to print an all the elements which will start from 'ind' of the given string array on seperate line.
+
+class Ts
+{
+public static void main(String args[])
+{
+Strig str[] ={'indore','bhopal','dewas','ujjain','dhar','india','indonasia','bhind'};
+for(int i=0;i<=str.length;i++)
+{
+if(str[i].indexOf("ind")==0)
+{
+System.out.println(str[i]);
+}
+}
+}
+}
+                                             ALTERNATE METHORD
+                                            ------------------------------
+class Ts
+{
+public static void main(String args[])
+{
+Strig str[] ={'indore','bhopal','dewas','ujjain','dhar','india','indonasia','bhind'};
+for(String : str)
+{
+if(str.indexOf("ind"==0))
+{
+System.out.println(s);
+}
+}
+}
+}

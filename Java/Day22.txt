@@ -1,0 +1,126 @@
+IMP LECTURE
+
+# Sorting of an array
+   -----------------------
+class Ts
+{
+public static void main(String args[])
+{
+int a[] = {50,40,20,10,30},i,j,temp;
+for(i=0;i<(a.length-1);i++)
+{
+for(j=(i+1);j<a.length;j++)
+{
+if(a[i]>a[j])
+{
+temp=a[i];
+a[i]=a[j];
+a[j]=temp;
+}
+}
+}
+System.out.print("After sorting ");
+for(int x:a)
+{
+System.out.println(x);
+}
+}
+}
+
+# Binary Search(pre- condition)
+  -------------------------------------
+                                                                 all the elements of an array should be in sorted order.
+                                                               -------------------------------------------------------------------
+class Test
+{
+public stattic void main(String args[])
+{
+                    0    1     2    3    4   5     6    7    8    9     
+int a[] = {10,20,30,40,50,60,70,80,90,100};
+int n=50,low=0,high=a.length-1,mid;
+boolean f=false;
+while(low<=high)
+{
+mid =(low+high)/2;
+if(a[mid]==n)
+{
+f=true;
+break;
+}
+else if(n>a[mid])
+{
+low = mid+1;
+}
+else
+{ 
+high = mid-1
+}
+}
+if(f)
+{
+System.out.println("Element is found");
+}
+else
+{
+System.out.println("not found");
+}
+}
+}
+
+                                    If all the elements of an array should not be in sorted order.
+                                   --------------------------------------------------------------------
+
+class Ts
+{
+public static void main(String args[])
+{
+int a[]={10,30,50,70,90,20,40,60,80,100},temp;
+int n=50,low=1,high=a.length-1,mid;
+boolean f= false;
+for(int i=1;i<=a.length-1;i++)
+{
+for(int j=(i+1);j<a.length;j++)
+{
+if(a[i]>a[j])
+{
+temp=a[i];
+a[i]=a[j];
+a[j]=temp;
+}
+}
+}
+System.out.println("After sorting");
+for(int i:a)
+{
+System.out.print(i+"\t");
+}
+
+
+
+while(low<=high)
+{
+mid=(high+low)/2;
+if(a[mid]==n)
+{
+f=true;
+break;
+}
+else if(n>a[mid])
+{
+low = mid+1;
+}
+else
+{
+high= mid-1;
+}
+}
+if(f)
+{
+System.out.println("your number is found ");
+}
+else
+{
+System.out.println("Not found");
+}
+}
+}

@@ -1,0 +1,68 @@
+IMP Notes -/   BigInteger will store limitless length number 
+                             BigDecimal will also store limitless decimal value /-
+
+#byte
+
+Class  TestByte
+{
+ public static void main(String args[])
+{
+byte a=10;                            //this is only 8 bits/1 byte
+a=a+5;           
+// 5 is default consider as 4 byte integer variable  or whole program will consume 9 byte so, this program will failed to run.         
+System.out.println(a);
+}
+}
+
+SOLUTION OF THIS PROBLEM 
+#TypeCasting
+
+1) Class  TestByte
+{
+   public static void main(String args[])
+{
+byte a= 10;
+a = (byte)(a+5); 
+
+ // by this command we order machine that Output will convert first in the form of byte then,insert in variable a.
+System.ot.println(a);
+}
+}
+
+2)  Class  TestByte{
+public static void main(String args[])
+{
+byte a=125 ,b=5,c;
+c = (byte)(a+b);
+//  a bi0nary of 125 =10000010  compiler will take  1 as sign bit[-128  (+2)]
+System.out.println(c);
+}
+} 
+OUTPUT
+-126
+
+#short
+#float
+ 
+Class Testfloat
+{
+  public static void main(String args[])
+{
+float a=10.65 f;
+//C language will by default take this as double variable.
+System.out.println(a);
+}
+} 
+
+Class  Test
+{
+  public static void main(String args[])
+{
+char ch1 ='A';
+char ch2 = 65;
+char ch3 = '140041';
+System.out.println(ch1);  //A
+System.out.println(ch2);  //A
+System.out.println(ch3);  //A
+}
+}

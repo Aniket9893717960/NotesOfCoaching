@@ -1,0 +1,232 @@
+NOTES:
+*0x72: This is a hexadecimal number because it starts with 0x.
+  -------
+* In C, a number starting with a zero is treated as an octal (base-8) number. So, 072 in octal is equivalent to 58.
+
+*%o - Octal: Converts 72 to octal. In octal, 72 is represented as 110, so it prints 110.
+  -----
+*%x - Hexadecimal: Converts 72 to hexadecimal. In hexadecimal, 72 is represented as 48, so it prints 48.
+  -----
+----------------------------------------------------------------------------------
+D)What will be the output of the following programs?
+1)
+#include <stdio.h>
+int main()
+{
+printf("%d %d %d %d\n",72,072,0x72,0x72);
+return 0;
+}
+
+2)
+#include <stdio.h>
+int main()
+{
+printf("%d %o %x\n",72,72,72);
+return 0;
+}
+
+3)
+#include <stdio.h>
+
+int main()
+{
+   char ch;
+   int a;
+   float b;                                                                                                                        OUTPUT
+   printf("Bytes occupied by ch=%d\n",sizeof(ch));                                        Bytes occupied by ch=1
+   printf("Bytes occupied by a=%d\n",sizeof(a));                                        Bytes occupied by a=2
+   printf("Bytes occupied by b=%d\n",sizeof(b));                                        Bytes occupied by ch=4
+   return 0;
+}
+
+4)
+#include <stdio.h>
+
+int main()
+{                                                                                                                       OUTPUT
+   printf("char occupies %d Bytes\n",sizeof(char));                        char occupies 1 Bytes
+   printf("int occupies %d Bytes\n",sizeof(int));                        int occupies 2 Bytes
+   printf("float occupies %d Bytes\n",sizeof(float));                     float occupies 4 Bytes   
+   return 0;
+}
+
+5)
+#include <stdio.h>
+
+int main()
+{                                                                                                                     OUTPUT
+   printf("bytes occupied '7'=%d\n",sizeof('7'));                            bytes occupied '7'=2
+   printf("bytes occupied 7=%d\n",sizeof(7));                            bytes occupied 7=2
+   printf("bytes occupied 7.0=%d\n",sizeof(7.0));                      bytes occupied '7'=8
+   return 0;
+}
+
+6)
+-----------------------------------------------------------------------------------------
+NOTE:
+*char type can typically hold values from -128 to 127(or 0 to 255 if treated as unsigned), 
+and assigning a value outside this range results in overflow.
+The overflowed value is 291 % 256, which is 35. So, %d for ch will print 35.
+*The ASCII value 35 corresponds to the character #. Therefore, %c for ch will print #.
+-----------------------------------------------------------------------------------------
+#include <stdio.h>
+
+int main()
+{
+   char ch=291;                                                                                    OUTPUT          Turbo C
+   printf("%d %d %c\n",2147483647,ch,ch);                            O    35   #
+   return 0;
+}
+
+7)
+-----------------------------------------------------------------------------------------
+NOTE:
+*By default the value of Integer format Specifier is '0' In Online Compiler.
+*By default the value of character format Specifier is 'X' In Online Compiler OR Turbo C.
+-----------------------------------------------------------------------------------------
+#include <stdio.h>
+
+int main() {
+    printf("%d %c\n");
+    printf("%d %c\n");
+    return 0;
+}
+
+8)
+#include <stdio.h>
+int main()
+{
+    int a=123456789999;                                                                                    OUTOUT
+    float b=3.4e100;
+    printf("a=%d b=%f\n",a,b);                                                                              
+    printf("%d %d\n",sizeof(a),sizeof(b));
+    return 0;
+}
+
+9)
+#include <stdio.h>
+int main()
+{
+    int a,b;                                                                                    OUTPUT
+    a = -3-(-3);                                                                                    0
+    b= -3-(-(-3));                                                                                 -6
+    printf("a=%d b=%d\n",a,b);
+    return 0;
+}
+
+10)
+#include <stdio.h>
+int main()
+{
+   int x;                                                                              OUTPUT
+   x = 3*4%5;                                                                       2
+   printf("x=%d\n",x);
+   return 0;
+}
+
+11)
+#include <stdio.h>
+int main()
+{
+   int x;
+   x = 3+4-7*8/5%10;                                              OUTPUT
+   printf("x=%d\n",x);                                                 6
+   return 0;
+}
+
+13)
+#include <stdio.h>
+int main()
+{
+   int x;
+   x = 4%5 +6%5;                                              
+   printf("x=%d\n",x);
+   return 0;
+}
+
+20)
+-----------------------------------------------------------------------------------------
+NOTE:
+*INteger Upon Integer Always be an integer.
+------------------------------------------------------------------------------------------
+#include <stdio.h>
+int main()
+{
+   float a=1.5;
+   int b=3;
+   a=b/2+b*8/b-b+a/3;                                              OUTPUT
+   printf("a=%f\n",a);                                              6.5
+   return 0;
+}
+
+21)
+#include <stdio.h>
+int main()
+{
+   int q=2,d=3,st;
+   st= q*d/4-12/12+12/3*16/d;                                              OUTPUT
+   printf("st=%d\n",st);                                              21
+   return 0;
+}
+
+22)
+#include <stdio.h>
+int main()
+{
+   int a,b;
+   a=5.999999;                                              OUTPUT
+   b=5.000001;                                              a=5 b=5
+   printf("a=%d b=%d\n",a,b);
+   return 0;
+}
+
+25)
+#include <stdio.h>
+int main()
+{
+   printf("%d %f\n",4,4);                                              OUTPUT
+   printf("%d %f\n",4.0,4.0);                                             4  0.00000
+   return 0;                                              0.00000     0.00000
+}
+
+27)
+#include <stdio.h>
+int main()
+{                               //    int              double                                      OUTPUT
+   printf("%d\n",sizeof(4)/sizeof(2.0));                                              0
+                         //         double          int
+   printf("%d\n",sizeof(2.0)/sizeof(4));                                             4
+   return 0;
+}
+
+29)
+#include <stdio.h>
+int main()
+{
+    int p,q;
+    scanf("Enter the values of p and q %d %d",&p,&q);
+    printf("p=%d q=%d",p,q);
+    return 0;
+}
+
+30)
+#include <stdio.h>
+int main()
+{
+    int a,b;                                                                          OUTPUT
+    printf("Enter values of a and b\n");                                     10    20
+    scanf(" %d %d",&a,&b);
+    printf("a=%d b=%d\n",a,b);
+    return 0;
+}
+
+31)
+#include <stdio.h>
+int main()
+{
+    int p,q;                                                                          OUTPUT
+    printf("Enter values of p and q\n");                                     10 20
+    scanf("%d\n\n%d",&p,&q);
+    printf("a=%d b=%d\n",p,q);
+    return 0;
+}

@@ -1,0 +1,73 @@
+*Notes
+*Algorithm have two types 1) which have a Loop 2) without a loop.
+*Basic rules for building an Algorithm.
+i)algorithm will not be dependent on any language.
+ii) Syntax will not be used in this (Like ";"or any word which will represent a category of syntax).
+iii) we will not told the datatype of any variable this will decided by users.
+iv)we will not maintion that "clrscr" is allowed or not.
+v) we will not recorganize "scanf" for scanning an input.we use word "input"  for getting an input.
+vi) we try to maintion any datatype(like int).we use word "integer"
+--------------------------------------------------------------------
+#Convert a Program into Algorithm.
+
+i) Program for Addition of two numbers.
+Program
+-----------
+void main()
+{
+int a,b,c
+printf("Enter 2 values");
+scanf("%d%d",&a&b);
+c =a+b;
+print("sum=%d",c);
+}
+
+Algorithm for  addition of  two numbers.
+-------------------------------------------------
+this algorithm is userd to perform addition of two numbers, in this algorithm we are having three vectors named A,B,C.
+Here AAnd B are input factors And C will be an output vectors.
+step1:[start]
+step2: [Take input form user]
+        input a and b
+step 3: [Perform addition and store the output in output vector]
+        c =a+b
+step 4:[Print the output vector]
+        output c
+step 5:[Exit]
+
+ii)Program for factorial of a given number
+   ------------------------------------------------
+void main()
+{
+int n,f=1;
+printf("Enter a value \n");
+scanf("%d",&n);
+while(n>1)
+{
+f =f*n;
+n--;
+}
+printf("%d",f);
+}
+
+Algorithm for factorial of the given number
+---------------------------------------------------
+This algorithm is used to perform or calculate the factorial of the givan number .Here we are having two vectors name n,f.
+n will be an input vector and f will be an output vactor And the output vector will we initialize by 1. 
+step 1: [start]
+step 2:[Take input from user]
+      input n
+                ------------------------------------------------> //step: [Check the input is position or not.if the value is less than zero.]
+                                                                                                                                output: [invalid input and go to step 7]
+step 3: [Repeat the step 3 and 4 until the value of n become 1]
+
+step 4:[perform multiplication and store the data in output vector]
+      f=f*n
+step 5:[Decrement the value of input vector by 1]
+      n = n-1
+step 6:[Print the value of output vector]
+      output(f)
+step 7: [Exit]
+
+iii)Algorithm for Stack Program
+   ------------------------------------

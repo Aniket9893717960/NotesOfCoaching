@@ -1,0 +1,125 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct node 
+{
+int data;
+struct node *add;
+};
+struct node *start=NULL,*temp,*New;
+
+void create();
+void Enqueue();
+void Dequeue();
+void display();
+void main()
+{
+int ch=0;
+do
+{
+printf("------------Queue Using Linklist-------------\n");
+printf("Press 1: for Create \n");
+printf("Press 2:for Enqueue \n");
+printf("Press 3: for Dequeue \n");
+printf("Press 4: for Display \n");
+printf("Press 5:for Exit \n");
+printf("Choose Any one of this \n");
+scanf("%d",&ch);
+switch(ch)
+{
+case 1:create();
+break;
+case 2:Enqueue();
+break;
+case 3:Dequeue();
+break;
+case 4: display();
+break;
+case 5: break;
+default:
+printf("Invalid number \n");
+}
+}
+while(ch!=5);
+}
+
+void create(){
+int n;
+char ch;
+printf("Enter the number \n");
+scanf("%d",&n);
+start = (struct node *)malloc(sizeof(struct node));
+start ->data =n;
+start ->add =NULL;
+temp = start;
+printf("Press 'Y' For Entering more Values \n");
+scanf(" %c",&ch);
+while(ch=='Y' || ch=='y')
+{
+printf("Enter Next Value \n");
+scanf("%d",&n);
+New = (struct node *)malloc(sizeof(struct node));
+New ->data =n;
+New ->add =NULL;
+temp ->add =New;
+temp =New;
+printf("Press 'Y' for Entering more values \n");
+scanf(" %c",&ch);
+}
+}
+
+void display()
+{
+int count=0;
+if(start==NULL)
+{
+printf("Queue is underflow \n");
+}
+else
+{
+temp = start;
+while(temp!=NULL)
+{
+printf("%d\t",temp->data);
+temp =temp->add;
+}
+}
+}
+
+void Enqueue()
+{
+int count=0,n;
+if(start==NULL)
+{
+printf("Queue is underflow");
+}
+else
+{
+printf("Enter the Value \n");
+scanf("%d",&n);
+New = (struct node *)malloc(sizeof(struct node));
+New ->data =n;
+New ->add =NULL;
+temp=start;
+while((temp->add)!=NULL)
+{
+temp = temp->add;
+}
+temp->add=New;
+}
+}
+
+void Dequeue()
+{
+int count=0,n;
+if(start==NULL)
+{
+printf("Queue is underflow");
+}
+else
+{
+temp=start;
+start=start->add;
+printf("Deleted element at =%d",temp->data);
+free(temp);
+}
+}

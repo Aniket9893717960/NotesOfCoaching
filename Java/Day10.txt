@@ -1,0 +1,165 @@
+IMP NOTES -/ 15 is act like an ideal number in the Logical Operator   /-
+# Bitwise OPerator
+
+*AND GATE(&)
+Class Test
+{
+public static void main(String args[])
+{
+int a=10 & 7 ;                                          // binary of 10 = 1010
+                                                                   // binary of 7 =     0111        Solve this with the help of AND gate
+System.out.println(a);                  OUTPUT
+}                                                                    2
+}
+
+Class Test
+{
+public static void main(String args[])
+{
+int a=12 & 9;                                    // binary of 12 = 1100
+System.out.println(a);                // binary of 9 = 1001
+}                                                    OUTPUT
+}                                                         1000=8
+
+Class Test
+{
+public static void main(String args[])
+{
+int a=10 & 5;                                   // binary of 10 = 1010
+System.out.println(a);                // binary of 5 =    0101
+}                                            OUTPUT
+}                                                0
+
+Class Test
+{
+ public static void main(String args[])
+{
+int a= 15 & 5;                                       // binary of 15 = 1111
+System.out.println(a);                     // binary of 5 =    0101
+}                                     OUTPUT
+}                                          5
+
+Class Test
+{
+public static void main (String args[])
+{
+int a=15 & 16;                                        //binary of 15 = 1111
+System.out.println(a);                       //binary of 16 = 10000
+}                                      OUTPUT
+}                                            0
+
+*OR GATE
+
+Class Test
+{
+public static void main(String args[])
+{
+int a=12 | 9                                //binary of 12 = 1100
+System.out.println(a);         //binary of  9 = 1001
+}                                   OUTPUT
+}                                     1101=13
+
+Class Test
+{
+public static void main(String args[])
+{
+int a = 10 | 6;                                // binary of 10 = 1010
+System.out.println(a);             // binary of 6 =    0110
+}                                     OUTPUT
+}                                       1110=14
+
+Class Test
+{
+public static void main(String args[])
+{
+int a=15 | 6;                             // binary of 15  =  1111
+System.out.println(a);        // binary of 6 = 0110
+}                                   OUTPUT
+}                                       1111=15
+
+*X-OR GATE
+
+Class Test
+{
+public static void main(String args[])
+{
+int a= 12^9;                             // binary of 12 = 1100
+System.out.println(a);              // binary of 9 = 1001
+}                                     OUTPUT
+}                                      0101=5
+
+*MIXED
+
+Class Test
+{
+public static void main(String args[])
+{                                                      // binary of 23 =  10111
+int a= (23 & 9) | 15;                // binary of  9 = 1001
+System.out.println(a);          // binary of  15 =  1111
+]                                       OUTPUT
+}                                        1111=15
+
+#Left Shift Operator
+
+Class Test
+{
+public static void main(String args[])
+{
+int a = 8<<2;                     // binary for 32 bits  of 8 = 00/    00  0000  0000  0000  0000  0000  0000  10000
+System.out.println(a);    // we replace first two zeros and enter it into last two 
+}                                 OUTPUT
+}                                  32
+
+Class Test
+{
+public static void main(String args[])
+{
+int a=11<<2;                                 //binary of 11 is 1011
+System.out.println(a);              // imagine that   00/   00  0000  0000   0000   0000   0000   0000  101100
+}                           OUTPUT
+}                                44
+
+Class Test
+{
+public static void main(String args[])
+{
+int a=13<<3;                                  //binary of 13 is 1101
+System.out.println(a);                //imagine that 000/      0 0000  0000  0000  0000  0000  0000 1101000
+}                                      OUTPUT
+}                                        104
+
+Class Test
+{
+public static void main(String args[])
+{
+int a=15<<3;                                      // binary of 15 is 1111
+System.out.println(a);                  // imagine that   000/    0  0000  0000  0000  0000  0000  0000  1111000
+}                                      OUTPUT
+}                                       120
+
+CLass Test
+{
+public static void main(String args[])
+{
+int a=19<<3;                                      // binary of 19 is 10011
+System.out.println(a);                    // imagine that  000/   0  0000  0000  0000   0000  000  10011000
+}                                       OUTPUT
+}                                           152
+
+CLass Test
+ {
+public static void main(String args[])
+{
+int a=21<<3;                               //binary of 21 is   10101
+System.out.println(a);                // imagine that  000/   0  0000  0000   0000  0000 0000  0001  0101000 
+}                                      OUTPUT
+}                                     168
+
+----------------------------IMP NOTES-----------------------------
+Short cut of Left Shift Operator  is  --- x *  2^n ----
+                                                                    |                            |
+                                                                   ->   8   <<  2    <-
+                                                                           8    *   2^2  -->  8  X  4  -->  32
+
+Example:      13<<3  -->  13  X 2^3  -->  13 X 8  -->  104
+-------------------------------------------------------------------------

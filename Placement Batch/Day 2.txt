@@ -1,0 +1,81 @@
+NOTE
+*'Printf' is an integer function.this will return an integer value.
+*The double backslash (\\) is used to escape the backslash character itself, so it will be printed as part of the output.
+   ------------------------------
+---------------------------------------------------------------------------
+#include <stdio.h>
+
+void main()
+{
+printf("%d",printf("Hello "));                                                                                  Because
+}                                                           OUTPUT                                                      printf("Hello"): This prints the string "Hello"     
+                                                           Hello 5                                                           returns the number of characters in the string, which is 5.
+
+#include <stdio.h>
+
+void main()
+{
+if(printf("Hello"))
+{                                                          OUTPUT                                                          Because
+}                                                          Hello                                               The if (printf("Hello")) statement checks 
+}                                                                                                                  the return value of printf is non-zero (true).
+
+
+#include <stdio.h>
+
+void main()
+{
+printf("\\n is a new line character");                                                   OUTPUT                                                          Because
+}             ---                                                                                               \n is a new character
+                |-The name of this is exclanation
+
+#include <stdio.h>
+
+void main()
+{
+int a=0101;
+printf("%d",a);                           OUTPUT                                                          Because
+}                                                         65                                   int a = 0101;: The leading zero in 0101 indicates that the value is in octal (base 8).
+                                                                                                   The octal value 0101 is equivalent to the decimal value 65.
+                                                                                                   Therefore, a is assigned the value 65.
+void main()
+{
+int i=1
+while(i++<=10)
+{
+printf("%d\t",i);
+}
+}
+
+
+void main()
+{
+int i=1;
+while(i++<=10);
+{
+printf("%d\t",i);                              OUTPUT                                                Because
+i++;                                                          12                                               initally i ki value jab 1 hogi tab i++ '2' hoga
+}                                                                                                                                 12 last hai vahi print hogi 
+}
+
+
+void main()
+{
+int i=1;
+while(i++<=10++)
+{
+printf("%d\t",i++);                        OUTPUT                                                                                                                        Because
+i++;                      error: lvalue required as increment operand                                                                       The use of 10++ is not valid. 
+}                                                                                                     The post-increment operator ++ can only be applied to variables, not constants.
+}
+
+
+void main()
+{
+int i=1,j=10;
+while(i++ <=j++)
+{
+printf("%d\t",i++);
+i++;
+}                                           OUTPUT
+}                             2       5       8       11      14

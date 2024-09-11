@@ -1,0 +1,163 @@
+IMP notes -/  insertion of one value of variable to another value of  a variable we say this an assignment /- 
+
+#Unary operator
+
+Class  Test3Variables
+{
+public static void main(String args[])
+{
+int a=10,b,c;                                                                         output
+b=a++;                                                                                   a=10 then 11
+c=++b;                                                                                     b=10 then 11
+                                                                                                  c=11
+System.out.println(a+" "+b+" "+c);
+}
+}
+ 
+*INCREMENT
+
+Class Test4Variables
+{
+public satic void main(String args[])
+{
+int a=10,b,c,d;
+b=a++;                                                                                                              output
+c=++b;                                                                                              a=10 then 11 then 12
+d=c++;                                                                                              b=10 then 11
+a=++d;                                                                                             c=11 then 12
+System.out.println(a+" "+b+" "+c+" "+d);                               d=11  then 12
+}
+}
+
+Class Test4Variables
+{
+public static void main(String args[]){
+int a=10,b,c,d;                                                                                        output
+b=++a;                                                                                           a=10 then 12 
+c=b++;                                                                                             b=11 then 12
+d=++c;                                                                                               c=11 then 12
+a=d++;                                                                                                 d=12 then 13
+System.out.println(a+" "+b+" "+c+" "+d);
+}
+}
+
+*Decrement
+
+Class Test4Variable
+{
+public static void main(String arrgs[])
+{
+int a=10,b,c,d;
+b=--a;                                                                                       output
+c=b--;                                                                                            a=10 then 9 then 8
+d=--c;                                                                                               b=9 then 8
+a=d--;                                                                                                 c=9 then 8
+System.out.println(a+" "+b+" "+c+" "+d);                                d=7
+}
+}
+
+mixed Questions
+
+Class Test4mixed
+{
+public statc void main(String args[])
+{
+int a=10,b,c,d;                                                           output
+b=--a;                                                                              a=10 then 9 then 10
+c=b++;                                                                                b=9 then 10
+d=--c;                                                                                     c=9 then 10
+a=d++;                                                                                    d=9 
+System.out.println(a+" "+b+" "+c+" "+d);
+}
+}
+
+FOR INTERVIEWS
+
+INCREMENT
+Class Test
+{
+public static void main (String args[])
+{
+int a=10,b;                                                        output
+b= a++ + ++a+ a++;                                        a= 10 then 11 then 12  then 13
+      10         12      12                                              b= 34
+System.out.println(a+" "+b);
+}
+}
+
+Class Test
+{
+public static void main(String args[])
+{
+int a=10,b;
+b= a++ + ++a + ++a + a++;                       output
+       10         12     13           13                          a=10 then 11 then 12 then 13  then 14
+System.out.println(a+" "+b);                       b =
+}
+}
+
+Class Test
+{
+int a=10,b                                                           output
+b=  ++a + a++ + ++a + a++ + ++a;              a= 10 then 11 then 12 then 13 then 14 then 15
+          11      11          13      13         15                      b=63
+System.out.println(a+" "+b);
+}
+}
+
+# Binary  Operator
+
+role of a binary operator will be an integer upon integer always be an integer
+
+i) Arthimetical Operator
+
+Q)  write a program to perform swaping between two given numbers.
+
+a) with using third variable
+
+Class Test3Variable
+{
+public satic void main(String args[])
+{
+in a=10,b=20,c;
+System.out.println("Before swaping a ="+a+"and  b"+b);
+OUTPUT                                  CODE          CODE               OUTPUT
+a=10 then 20                            c=a;   |       c=b;                a = 10 then 20
+b=20 then 10                           a=b;    |        b=a;              b= 20 then 10
+c=10                                            b=c;     |       a=c;              c=20
+
+System.out.println("After swaping a="+a+"and b"+b); 
+}
+}
+
+b) without using third variable
+
+Class Test2Variable
+{
+public static void main(String args[])
+{
+int a=10,b=20;
+System.out.println("Before swapping a"+a+"and b"+b);
+OUTPUT                                  CODE       CODE                              OUTPUT
+a=10 then 30 then 20         a=a+b;  | b=a+b;                            b=20 then 30 then 10
+b=20  then 10                         b=a-b ;  | a= a-b ;                           a=10 then 20
+                                                    a=a-b;   | b=a-b;
+System.out.println("After swapping a"+a+"and b"+b);
+}
+}
+
+IMP QUESTION
+Q) write a program of swappng with the help of X-OR gate(^).
+
+Class Test
+{
+public static void main(String args)
+{
+int a=10, b=5;
+System.out.println(String args[])
+{                                                                              For 1st              For 2nd              For 3 rd
+a= a^b;               //binary of 10 =1010             1010                 1111                     1111
+b= a^b;               //binary of 5 =0101           ^  0101            ^   0101                ^ 1010
+a=a^b;                                                                1111(15)=a         1010(10)=b         0101(5)=a
+}                                  OUTPUT
+}                                     a=5 b=10

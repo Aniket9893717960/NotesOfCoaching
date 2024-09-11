@@ -1,0 +1,78 @@
+Q) write a Program to printing and Scanning the String with the help of Character Array?
+                                                                                                                                               -------------------
+#include <stdio.h>
+#include <conio.h>
+#include <string.h>
+
+void main()
+{
+char a[10],*p;
+
+p=&a[0];                                 //p=a
+printf("Enter a String \n");
+gets(a);                                 //gets(p);
+
+while(*p!='\0'){                                 //puts(a);                                //puts(p);
+printf("%c",*p);
+p++;
+}
+getch();                                 Output
+}                                                Hello
+
+Q) Print a Palindrome String with the help of Character Array?
+
+#include <stdio.h>
+#include <conio.h>
+#include <string.h>
+
+void main()
+{
+char a[10],*p,*q;
+int i,f=0;
+
+p=&a[0];
+printf("Enter a String \n");
+gets(a);
+
+i=strlen(a)-1;
+
+q=&a[i];
+while(p<q)
+{
+if(*p!=*q)
+{
+f=1;
+break;
+}
+p++;
+q--;
+}
+if(f==0)
+{
+printf("The String is Palindrome \n");
+}
+else
+{
+printf("String is Non Palindrome \n");                                                OUTPUT       // input is MALAYALAM
+}                                                                                                                     The String is Palindrome
+}
+
+Q) Program
+
+#include <stdio.h>
+#include <conio.h>
+#include <string.h>
+
+void main()
+{
+char a[10],*p;
+
+p=&a[0];
+printf("Enter a String \n");
+gets(a);
+
+for(i=0;i<strlen(a);i++){
+printf("%c",*p);
+++*p;
+}                                                OUTPUT                // input is HELLO
+}                                                HIJKL   because this will not increment the address 2011 this will increment the value.

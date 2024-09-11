@@ -1,0 +1,64 @@
+IMP NOTES
+*operators : this will work on there physical address.
+   methord : this will work on logical address.This will be same for all like a formula based output. 
+--------------------------------------------
+
+# compare the data of the String 
+
+class Test
+{
+public static void main(String args[])
+{
+String str1 = new String("Hello");
+String str2 = new String("Hello");
+if(str1.hashCode() == str2.hashCode())
+{
+System.out.println("Same");
+}
+else
+{
+System.out.println("Different");
+}
+}
+}
+
+                                                                             *Alternate Methord
+                                                                             -------------------------
+#equals Methord 
+  --------------------  :This have a boolean datatype.
+class Test
+{
+public static void main(String args[])
+{
+String str1 = new String("Hello");
+String str2 = new String("Hello");
+if(str1.equals(str2))
+{
+System.out.println("same");
+}
+else
+{
+System.out.println("Different");
+}
+}
+}
+
+#equalsIgnoreCase Methord
+  ---------------------------------
+class Test
+{
+public static void main(String args[])
+{
+String str1 = new String("Hello");
+String str2 = new String("hello");
+if(str1.equalsIgnoreCase(str2))
+{
+System.out.println("same");
+}
+else
+{
+System.out.println("Different");
+}
+}
+}
+

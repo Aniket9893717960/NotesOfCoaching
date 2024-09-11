@@ -1,0 +1,19 @@
+#Dijkastra Algorithm
+   -------------------------
+{A} {B,C,D,E,F,G,H,I}
+min (4,infinite,infinite,infinite,infinite,infinite,infinite,8,infinite)
+{A,B} {C,D,E,F,G,H,I}
+min(12,infinite,infinite,infinite,infinite,8,infinite)
+{A,B,H}{C,D,E,F,G,I}
+min(2,infinite,infinite,infinite,9,14)
+{A,B,H,G}{C,D,E,F,I}
+min(12,infinite,infinite,11,14)
+{A,B,H,G,F}{C,D,E,I}
+min(12,25,21,14)
+{A,B,H,G,F,C}{D,E,I}
+min(19,21,13)
+{A,B,G,H,F,C,I}{D,E}
+min(19,21)
+{A,B,G,H,F,C,I,D}{E}
+min(21)
+{A,B,H,G,F,C,I,D,E}{}

@@ -1,0 +1,47 @@
+
+10) Select * FROM emp where empsalary > 10000 AND empcity ='Indore';
+Select * FROM emp where empsalary > 10000 OR empcity ='Indore';
+Select * FROM emp where empsalary >= 10000 OR empsalary <=15000;
+
+11)Select * FROM emp where empsalary between 10000 AND 15000;
+
+12) SELECT * FROM emp WHERE empname like 'R%';
+SELECT * FROM emp WHERE empname like '%M';
+SELECT * FROM emp WHERE empname like '%a%';
+SELECT * FROM emp WHERE empname like '_a%';
+SELECT * FROM emp WHERE empname like '%a_';
+
+//IN ORACLE APPlicable               1)SELECT * FROM emp WHERE empname like '[a-d]%';
+
+13) SELECT (2+2);
+SELECT (2+2) as Total;
+
+14) DESC emp;    // This command describe all about that capacity of storing the data
+
+15) SELECT empid,empname,empsalary,empsalary+500,empcity from emp;
+SELECT empid,empname,empsalary,empsalary+500 as 'Salary with Bonus',empcity from emp;
+SELECT empid,empname,empsalary,(empsalary*0.1) as 'Salary with Bonus',empcity from emp;
+
+16) SELECT(10/3);
+
+17) SELECT SUM(empcity) FROM emp;
+
+18)SELECT MIN(empsalary) FROM emp;
+OR
+SELECT * FROM emp WHERE empsalary = (SELECT MIN(empsalary) FROM emp);
+
+19) SELECT distict(empcity) FROM emp;
+
+20) UPDATE emp SET mpalary=5000 WHERE empid =103;
+
+21)SELECT AVG(empsalary) FROM emp;
+
+22) SELECT COUNT(empsalary) FROM emp;
+OR
+SELECT COUNT(*) FROM emp;
+
+23) SELECT SUM(empsalary)/COUNT(empsalary) FROM emp;
+
+24) UPDATE emp set empsalary=5000 WHERE empid = 103;
+
+25)SELECT * FROM emp WHERE empsalary = (SELECT MIN(empsalary) FROM emp WHERE empsalary >(SELECT MIN(empsalary) FROM emp));

@@ -1,0 +1,57 @@
+
+#Exception Handling
+ --------------------------
+An exception is a runtime error and capability of a system to handle errors at runtime is called exception handling machanism.
+
+class Test
+{
+public static void main(String args[])
+{
+int a = 10,b=10,c;
+System.out.println("Hello");
+c = a/b;        -----------------------------------------> JRH
+System.out.println(c);                                                                OUTPUT
+System.out.println("Bye");                            java.lang.ArithmeticException:/by zero
+}
+} 
+---------------------------------------------------------------------------------------------
+*Object is a parent most class of all the classes in java.
+
+                                                                Object
+                                                                --------
+                                                                     |
+                         ------------------------------------------------------
+                        |                                                                                          |
+              Exception                          <-                                               Error
+              ------------                             |                                            ---------
+                    |                           RuntimeException     
+                    |                                          |
+                    |                              uncheked
+              checked                    ------------
+             ------------
+------------------------------------------------------------------------------------------------
+                                                               Throwable
+                                                               -------------
+                                                                       |
+                              ------------------------------------------------------
+                             |                                                                                          |
+                 Exception                                                                               Error
+               --------------                                                                            -------
+ Arithmetic Exception         -------------------
+ArrayIndexOutOfBoundException               |
+StringIndexOutOfBoundException              | unchecked
+NumberFormatException                                | -------------
+NullPointerException          ------------------
+
+ClassNotFoundException   ------------------
+FileNotFoundException                                    |
+IOException                                                          | checked
+SQLException                                                      |  ---------
+InterruptedException          ------------------              
+
+There are 5 keywords for exception handling.
+i) try
+ii) catch
+iii) throw
+iv) throws
+v) finally                

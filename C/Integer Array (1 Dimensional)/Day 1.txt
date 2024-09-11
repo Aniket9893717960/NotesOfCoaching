@@ -1,0 +1,28 @@
+NOTES:
+*In Array,the indexing of an array will always start from zero and goes on to size-1.
+*In Array, the memory allocation is done at Contigious order.
+*If our given size of array is different to our initelize operation type then as a Developer we are responsible 
+for size of array and operation among this could not impact to the machine.
+-------------------------------------------------------------------------------------------
+#why we need an array?
+   ----------------------------
+If we talk about multiple data and the categories of data is same just like datatype.
+we try to work on multiple data simultaniously, than we use to prefer an Array.
+
+#include <stdio.h>
+
+void main()
+{
+int a[10],i;
+printf("Enter 10 values in Array : \n");
+for(int i=0;i<10;i++)
+{
+printf("Enter values at %d position",(i+1));
+scanf("%d",&a[i]);
+}
+printf("You have Entered:\n");
+for(int i=0;i<10;i++)
+{
+printf("%d\t",a[i]);
+}
+}

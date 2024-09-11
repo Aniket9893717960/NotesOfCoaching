@@ -1,0 +1,102 @@
+IMP Notes -/ if else  is the replacement of ternary operator
+                        Printing and assignments does not use in the condition operator(?,:) of ternary operator in java
+                        only if is possible but else not  /-
+class Test
+{
+public static void main(String args[])
+{
+int a=10;
+a+=5;
+System.out.println(a);
+}                                                 OUTPUT
+}                                                     30
+
+class Test
+{
+public static void main(String args[])
+{
+int a=10;
+a *=5;
+System.out.println(a);                OUTPUT
+}                                                               50
+}
+
+#  Ternary Operator (?,:)  
+                 &
+     Conditional Operator
+
+   this operator will reaturn output at the form of true or false.
+
+class Test
+{
+public static void main(String args[])
+{
+  int a=10,b=20;
+a=a>b? a : b ;
+true-----|     |
+false------- |
+System.out.println(a);                  OUTPUT
+}                                                                  20
+}
+
+Q) Greater between three using ternery operator.
+
+class Test
+{
+public static void main(String args[])
+{
+int a=10,b=20,c=30;
+a=a>b ? a:b;
+a = a>c? a:c;
+System.out.println(a);                           OUTPUT
+}                                                                           30
+}
+
+Q) Greatest between four using ternary opeator.
+
+class Test
+{
+public static void main(String args[])
+{
+int a=10,b=20,c=30,d=40;
+a= a>b? a:b;
+a= a>c? a:c;
+a = a>d? a:d;
+System.out.printn(a);    OUTPUT
+}                                                   40
+}
+
+Q) Nested Ternary Operations
+
+class Test
+{
+public static void main(String args[])
+{
+int a= 10, b=20,c=30 ;
+a = a>b?(a>c?a:c) : (b>c? b:c);                       OUTPUT
+System.out.println(c);                                            30        
+}                                                                                 //take any values in the variables an answer will be same without changing conditions
+}
+
+# Conditional Statement
+
+This have three types of conditional Statement.  if,else - if, else
+
+Class Tast
+{
+public static void main(String args[])
+{
+   int a= 0;
+if(a>0)
+{
+  System.out.println("Positive");
+}
+else if (a=0)
+{
+System.out.println("Nutral");
+else
+{ 
+System.out.println("Negitive");
+}
+}
+}

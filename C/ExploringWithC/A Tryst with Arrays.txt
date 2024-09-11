@@ -1,0 +1,467 @@
+1)
+#include <stdio.h>
+
+int main()
+{
+    int a[5],i;
+    static int b[5];
+    for(i=0;i<5;i++)
+    printf("%d %d %d\n",i,a[i],b[i]);
+    return 0;
+}
+
+2)
+#include <stdio.h>
+
+int main()
+{
+    static int sub[5]={10,20,30,40,50};
+    int i;
+    for(i=0;i<=4;i++)
+    {
+        if(i<=4)
+        {
+            sub[i]=i*i;
+            printf("%d\n",sub[i]);
+        }
+    }
+    return 0;
+}
+
+3)
+#include <stdio.h>
+int b[5];
+int main()
+{
+    static int a[5];
+    int i;
+    for(i=0;i<=4;i++)
+    printf("%d %d\n",b[i],a[i]);
+    return
+}
+
+4)
+#include <stdio.h>
+int b[5];
+int main()
+{
+    static float arr[]={1.2,12,2.4,24,3.5,35};
+    int i;
+    for(i=0;i<=5;i++)
+    printf("%f\n",arr[i]);
+    return 0;
+}
+
+6)
+#include <stdio.h>
+int main()
+{
+    int i,j=10,arrsize;
+    int arr[arrsize];
+    if(j==10)
+    arrsize =20;
+    else
+    arrsize =40;
+    for(i=0;i<arrsize;i++){
+    arr[i]=100;
+}
+    return 0;
+}
+
+7)
+#include <stdio.h>
+
+int main()
+{
+    int arr1[10],arr2[10],i;
+    for(i=0;i<=9;i++){
+        arr[i]='A'+i;
+        arr2[i]='a'+i;
+        printf("%d\n",arr2[i]-arr1[i]);
+    }
+    return 0;
+}
+
+8)
+#include <stdio.h>
+
+int main()
+{
+    static int b[]={10,20,30,40,50};
+    int i;
+    for(i=0;i<=4;i++)
+    printf("%d\n",i[b]);
+    return 0;
+}
+
+9)
+#include <stdio.h>
+
+int main()
+{
+    int array[10]={1,2,3,4,5,6};
+    int i;
+    for(i=0;i<=9;i++)
+    printf("%d\n",array[i]);
+    return 0;
+}
+
+DOUBT
+#include <stdio.h>
+
+static int main()
+{
+    int arr1[10],arr2[10],i;
+    for(i=0;i<=9;i++){
+        arr1[i]='A'+i;
+        arr2[i]='a'+i;
+        printf("%c %c\n",arr2[i],arr1[i]);
+    }
+    return 0;
+}
+
+10)
+#include <stdio.h>
+
+int main()
+{
+    static int a[]={2,3,4,5,6};
+    int i;
+    for(i=5;i>0;)
+    printf("%d\n",a[--i]);
+    return 0;
+}
+
+11)
+#include <stdio.h>
+
+int main()
+{
+    static int a[5]={5,10,15,20,25};
+    int i,j,m,n;
+    i=++a[1];
+    j=a[1]++;
+    printf("i=%d j=%d a[1]=%d\n",i,j,a[1]);
+    i=1;
+    m=a[i++];
+    printf("i=%d m=%d\n",i,m);
+    i=2;
+    n=a[++i];
+    printf("i=%d n=%d\n",i,n);
+    return 0;
+}
+
+12)
+#include <stdio.h>
+
+int main()
+{
+    int arr(25),i;
+    for(i=0;i<=100;i++)
+    {
+        arr(i)=100;
+        printf("%d\n",arr(i));
+    }
+    return 0;
+}
+
+13)
+#include <stdio.h>
+
+int main()
+{
+    static int a[]={10,20,30,40,50};
+    int j;
+    for(j=0;j<5;j++){
+        printf("%d\n",*a);
+        a++;
+    }
+    return 0;
+}
+
+14)
+#include <stdio.h>
+
+int main()
+{
+    static float a[]={13.24,1.5,1.5,5.4,3.5};
+    float *j,*k;
+    j=a;
+    k=a+4;
+    j=j*2;
+    k=k/2;
+    printf("%f %f\n",*j,*k);
+    return 0;
+}
+
+15)
+
+#include <stdio.h>
+
+int main()
+{
+    int n[25];
+    n[0]=100;
+    n[24]=200;
+    printf("%d %d\n",*n,*(n+24)+*(n+0));
+    return 0;
+}
+
+16)
+#include <stdio.h>
+int main()
+{
+    static int b[]={10,20,30,40,50};
+    int i,*k;
+    k=&b[4]-4;
+    for(i=0;i<=4;i++){
+        printf("%d\n",*k);
+        k++;
+    }
+    return 0;
+}
+
+17)
+#include <stdio.h>
+
+int main()
+{
+    static int a[]={2,4,6,8,10};
+    int i;
+    for(i=0;i<=4;i++){
+        *(a+i)=a[i]+i[a];
+        printf("%d\n",*(i+a));
+    }
+    return 0;
+}
+
+18)
+#include <stdio.h>
+int main()
+{
+    static int a[5]={2,4,6,8,10};
+    int i,b=5;
+    for(i=0;i<5;i++)
+    {
+        f(a[i],&b);
+        printf("%d %d\n",a[i],b);
+    }
+    return 0;
+}
+void f(int x,int *y){
+    x = *(y) +=2;
+}
+
+19)
+#include <stdio.h>
+void  change(int *);
+int main(){
+    static int a[5]={2,3,4,5,6};
+    int i;
+    change(a);
+    for(i=4;i>=0;i--)
+    printf("%d\n",a[i]);
+    return 0;
+}
+void change(int *b)
+{
+    int i;
+    for(i=0;i<=4;i++){
+        b*=b*+1;
+        b++;
+    }
+}
+
+20)
+#include <stdio.h>
+int main()
+{
+    int arr[]={0,1,2,3,4};
+    int i,*ptr;
+    for(ptr=&arr[0];ptr<=&arr[4];ptr++)
+    printf("%d\n",*ptr);
+    return 0;
+}
+
+21)
+#include <stdio.h>
+int main()
+{
+    int arr[]={0,1,2,3,4};
+    int i,*ptr;
+    for(ptr=&arr[0],i=0;i<=4;i++)
+    printf("%d\n",ptr[i]);
+    return 0;
+}
+
+22)
+#include <stdio.h>
+int main()
+{
+    int arr[] ={0,1,2,3,4};
+    int i,*p;
+    for(p=arr,i=0;p+i<=arr+4;p++,i++)
+    printf("%d\n",*(p+i));
+    return 0;
+}
+
+23)
+#include <stdio.h>
+int main()
+{
+    int arr[]={0,1,2,3,4};
+    int i,*ptr;
+    for(ptr=arr+4;ptr>=arr;ptr--)
+    printf("%d\n",*ptr);
+    return 0;
+}
+
+24)
+#include <stdio.h>
+int main()
+{
+    static int a[]={0,1,2,3,4};
+    static int *p[]={a,a+1,a+2,a+3,a+4};
+    int **ptr =p;
+    printf("%d %d\n",a,*a);
+    printf("%d %d %d\n",p,*p,**p);
+    printf("%d %d %d\n",ptr,*ptr,**ptr);
+    return 0;
+}
+
+25)
+#include <stdio.h>
+int main()
+{
+    int arr[]={0,1,2,3,4};
+    int i,*ptr;
+    for(ptr=arr+4;i=0;i<=4;i++)
+    printf("%d\n",ptr[-i]);
+    return 0;
+}
+
+26)
+static int a[]={0,1,2,3,4};
+    static int *p[]={a,a+1,a+2,a+3,a+4};
+    int **ptr =p;
+    printf("%d %d\n",a,*a);
+    printf("%d %d %d\n",p,*p,**p);
+    printf("%d %d %d\n",ptr,*ptr,**ptr);
+    return 0;
+
+27)
+#include <stdio.h>
+int main()
+{
+    static int a[]={0,1,2,3,4};
+    static int *p[]={a,a+1,a+2,a+3,a+4};
+    int **ptr =p;
+    ptr++;
+    printf("%d %d %d\n",ptr-p,*ptr-a,**ptr);
+    *ptr++;
+    printf("%d %d %d\n",ptr-p,*ptr-a,**ptr);
+    *++ptr;
+    printf("%d %d %d\n",ptr-p,*ptr-a,**ptr);
+    ++*ptr;
+    printf("%d %d %d\n",ptr-p,*ptr-a,**ptr);
+    return 0;
+}
+
+28)
+#include <stdio.h>
+
+int main()
+{
+    static int a[]={0,1,2,3,4};
+    static int *p[]={a,a+1,a+2,a+3,a+4};
+    int **ptr;
+    ptr=p;
+    **ptr++;
+    printf("%d %d %d\n",ptr-p,*ptr-a,**ptr);
+    *++*ptr;
+    printf("%d %d %d\n",ptr-p,*ptr-a,**ptr);
+    ++**ptr;
+    printf("%d %d %d\n",ptr-p,*ptr-a,**ptr);
+    return 0;
+}
+
+29)
+#include <stdio.h>
+
+int main()
+{
+    static int n[3][3]= {
+      2,4,3,
+      6,8,5,
+      3,5,1
+    };
+    printf("%d %d %d\n",n,n[2],n[2][2]);
+    return 0;
+}
+
+30)
+#include <stdio.h>
+
+int main()
+{
+    static int n[3][3]= {
+      2,4,3,
+      6,8,5,
+      3,5,1
+    };
+    int i,j;
+    for(i=2;i>=0;i--)
+    {
+        for(j=2;j>=0;j--){
+            printf("%d %d\n",n[i][j],*(*(n+i)+j));
+        }
+    }
+    return 0;
+}
+
+31)
+#include <stdio.h>
+
+int main()
+{
+    static int n[3][3]= {
+      2,4,3,
+      6,8,5,
+      3,5,1
+    };
+    int i,j;
+    for(i=2;i>=0;i--)
+    {
+        for(j=2;j>=0;j--){
+            printf("%d %d\n",n[i][j],*(*(n+i)+j));
+        }
+    }
+    return 0;
+}
+
+32)
+#include <stdio.h>
+
+int main()
+{
+    static int a[3][3]= {
+      1,2,3,
+      4,5,6,
+      7,8,9
+    };
+    int *ptr[3]={a[0],a[1],a[2]};
+    int **ptr1 = ptr;
+    int i;
+    for(i=0;i<=2;i++)
+    printf("%d",*ptr[i]);
+    printf("\n\n");
+    for(i=0;i<=2;i++)
+    printf("%d",*a[i]);
+    printf("\n\n");
+    for(i=0;i<=2;i++)
+    {
+        printf("%d\n",**ptr1);
+        ptr1++;
+    }
+    return 0;
+}

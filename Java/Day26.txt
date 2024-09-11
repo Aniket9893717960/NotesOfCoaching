@@ -1,0 +1,78 @@
+IMP NOTES
+*java is a server side scripting language.
+*in c++ there is no need to call the constructor explicitly this will call implicitely whenever object of  a class will created.
+*class name is a return type of constructor.
+-----------------------------------------------------
+
+#Constructor
+ ----------------
+constructor are special member methord of a class.This are special because.
+*the name of constructor will always be same as the class name.
+*it does not have any written type(not even void) and we are not allow anything from a constructor.
+*there are three types of constructors.
+a) default constructor(No argument construtor)
+b)parameterized constructor
+c)copy constructor
+
+*if we do not have any constructor in our class then compiler will generate a default costructor it self.
+*To create an object it is necessary to call the constructor.
+*we can not inherite constructors.
+---------------------------------X----------------------------------------
+*The 'new' operator is required to call the constructor.
+---------------------------------X----------------------------------------
+
+class Test
+{
+Test()
+{
+System.out.print("Hello");
+}
+
+public static void main(String args[])
+{                                                                                  OUTPUT
+Test t1 = new Test();                                              Hello
+Test t2 = new Test();                                             Hello
+Test t3 = new Test();                                             Hello
+}
+}
+ 
+* What is the role of No argument constructor
+------------------------------------------------------
+                                      OR
+                       Constructor Overloading
+                    --------------------------------
+                                       OR
+                    Parameterized Constructor
+                   ----------------------------------
+class Test
+{
+public static void main(String args[])
+{
+int a,b,c;
+Test(int x,int y,int z)
+{
+a=x;
+b=y;
+c=z;
+}
+
+Test()
+{
+}
+
+void show()
+{
+System.out.print(a+" "+b+" "+c);
+}
+
+public static void main(String args[])
+{
+int a,b,c;
+Test t1 =new Test(10,20,30);
+Test t2 = new Test(100,200,300);
+t1.show();
+t2.show();
+Test t3 = new Test();
+t3.show();
+}
+}

@@ -1,0 +1,107 @@
+NOTES:
+----------------------------------------------------------
+#Palindrome String
+   ----------------------
+#include <stdio.h>
+#include <stdlib.h>
+
+void main()
+{
+char a[20];
+int i,j,f=0;
+
+printf("Enter a String: ");
+gets(a);
+
+i=0;
+j=strlen(a)-1;
+
+while(i<j)
+{
+if(a[i]!=a[j])
+{
+f=1;
+break;
+}
+i++;
+j--;
+}
+if(f==0)
+{
+printf("String is Palindrome \n");
+}
+else
+{
+printf("String is Non -Palindrome \n");
+}
+}
+
+*write  a Program to Print a String from user in all Upper Case?
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void main()
+{
+char a[20];
+int i;
+
+printf("Enter a String: ");
+gets(a);
+
+for(int i=0;i<strlen(a);i++)
+{
+if(a[i]>=97 && a[i]<=122)
+{
+printf("%c",a[i]-32);
+}
+else
+{
+printf("%c",a[i]);
+}
+}
+}
+
+*Inbuild Function
+  --------------------
+#include <stdio.h>
+#include <stdlib.h>
+
+void main()
+{
+char a[20];
+int i;
+
+printf("Enter a String: ");
+gets(a);
+
+puts(a);
+puts(strupr(a));
+puts(strlwr(a));
+}
+
+*Conversion of String into Lower Case?
+   ----------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+
+void main()
+{
+char a[20];
+int i;
+
+printf("Enter a String: \n");
+gets(a);
+
+for(int i=0;i<strlen(a);i++)
+{
+if(a[i]>=65 && a[i]=<90)
+{
+printf("%c",a[i]+32);
+} 
+else
+{
+printf("%c",a[i]);
+}
+}
+}

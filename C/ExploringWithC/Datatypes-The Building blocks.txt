@@ -1,0 +1,360 @@
+1)
+#include <stdio.h>
+
+int main()
+{
+    int i;
+    for(i=1;100;i++)
+    printf("%d\n",i);
+    return 0;
+}
+
+2)
+#include <stdio.h>
+
+int main()
+{
+
+    char ch;
+    for(ch=65;ch<=255;ch++)
+    printf("%d %c\n",ch,ch);
+
+    return 0;
+}
+
+3)
+#include <stdio.h>
+
+int main()
+{
+
+    unsigned char ch;
+    for(ch=65;ch<=255;ch++)
+    printf("%d %c\n",ch,ch);
+
+    return 0;
+}
+
+4)
+#include <stdio.h>
+
+int main()
+{
+    unsigned int ch=0;
+    for(ch=65;ch<=255;)
+    printf("%d %c\n",ch,ch++);
+    return 0;
+}
+
+5)
+#include <stdio.h>
+
+int main()
+{
+    float a=0.7;
+    double b=0.7;
+    if(a==b)
+    printf("Condition satisfied\n");
+    else
+    printf("Condition not satisfied\n");
+    printf("a= %f b=%lf\n",a,b);
+    return 0;
+}
+
+6)
+#include <stdio.h>
+
+int main()
+{
+    float y=0.9;
+    long double z=0.9;
+    if (y==z)
+    printf("Diamonds are forever..\n");
+    else
+    printf("forever..forever..forever\n");
+    return 0;
+}
+
+7)
+#include <stdio.h>
+
+int main()
+{
+    int i;
+    float f;
+    double d;
+    long l;
+    i=l=f=d=100/3;
+    printf("%d %ld %f %lf\n",i,l,f,d);
+    f=i=d=l=100/3;
+    printf("%f %d %lf %ld\n",f,i,d,l);
+    f=i=d=l=100/3;
+    printf("%ld %d %lf %f\n",l,i,d,f);
+    f=i=d=l=100/3;
+    printf("%lf %ld %f %d\n",d,l,f,i);
+    return 0;
+}
+
+8)
+#include <stdio.h>
+void change();
+int main()
+{
+    auto int i=10;
+    register int j=20;
+    printf("main's i and j are %d %d\n",i,j);
+    change();
+    printf("main's i and j are %d %d\n",i,j);
+    return 0;
+}
+void change()
+{
+    auto int i=100;
+    register int j=200;
+    printf("change's i and j are %d %d\n",i,j);
+}
+
+9)
+#include <stdio.h>
+void val();
+int i=10,j=20,k=30;
+int main()
+{
+    int i=1,j=2,k=3;
+    printf("i=%d j=%d k=%d\n",i,j,k);
+    val();
+    return 0;
+}
+void val()
+{
+    printf("i=%d j=%d k=%d\n",i,j,k);
+}
+
+10)
+#include <stdio.h>
+int increment();
+int num;
+int main()
+{
+    int i,j;
+    for(i=1;i<=3;i++){
+        j = increment();
+        printf("j =%d\t",j);
+    }
+    printf("num =%d\n",num);
+    return 0;
+}
+int increment()
+{
+    num++;
+    return num;
+}
+
+11)
+#include <stdio.h>
+int recsum(int);
+int main()
+{
+    int z,y;
+    z = recsum(1);
+    y = recsum(1);
+    printf("z=%d\n y=%d\n",z,y);
+    return 0;
+}
+int recsum(int i){
+    static int sum=0;
+    if(i==3)
+    return (sum);
+    else
+    {
+        sum =sum+10;
+        i++;
+        recsum(i);
+    }
+}
+
+12)
+#include <stdio.h>
+void val();
+int i=0;
+int main(){
+    printf("main's i=%d\n",i);
+    i++;
+    val();
+    printf("main's i=%d\n",i);
+    val();
+    return 0;
+}
+void val(){
+    i=100;
+    printf("val's i =%d\n",i);
+    i++;
+}
+
+13)
+#include <stdio.h>
+int fun(int);
+int main()
+{
+    int y,s=2,t=5;
+    y = fun(s+t);
+    printf("s =%d t=%d y=%d\n",s,t,y);
+    return 0;
+}
+int t=8;
+int fun(int s)
+{
+    s++;
+    t++;
+    return (s+t);
+}
+
+14)
+#include <stdio.h>
+int main(){
+    double x,d=4.4;
+    int i=2,y;
+    x = (y=d/i)*2;
+    printf("x = %lf y=%d\n",x,y);
+    y=(x=d/i)*2;
+    printf("x=%lf y=%d\n",x,y);
+    return 0;
+}
+
+15)
+#include <stdio.h>
+int main(){
+    double x,d=5.0;
+    int y;
+    x = d*(x=2.5/d);
+    printf("x=%lf\n",x);
+    x =d*(y=(int)2.5 +1.5);
+    printf("x=%lf y=%d\n",x,y);
+    return 0;
+}
+
+16)
+#include <stdio.h>
+int main()
+{
+    static int c=5;
+    printf("c=%d\n",c--);
+    if(c)
+    main();
+    return 0;
+}
+
+17)
+#include <stdio.h>
+int main()
+{
+    static int c=5;
+    printf("c=%d\n",c--);
+    if(c)
+    main();
+    return 0;
+}
+
+18)
+#include <stdio.h>
+int function(int);
+int i;
+int main()
+{
+    int j;
+    for(;;)
+    {
+     if(j=functon(i))
+     printf("j=%d\n");
+    }
+
+    return 0;
+}
+int function(int x){
+    static int v=2;
+    v--;
+    return (v-x);
+}
+
+19)
+#include <stdio.h>
+int main(){
+    char ch=122,ch1='z';
+    printf("ch=%c\n",ch);
+    printf("ch1=%d\n",ch1);
+    return 0;
+}
+
+21)
+#include <stdio.h>
+int main()
+{
+    unsigned int a=25;
+    unsigned b=25;
+    long unsigned c=345L;
+    long signed d=345L;
+    printf("a=%u b=%u\n",a,b);
+    printf("c=%lu d=%ld\n",c,d);
+    return 0;
+}
+
+22)
+#include <stdio.h>
+void func1();
+int main()
+{
+   printf("in main i=%d\n",i);
+   func1();
+    return 0;
+}
+int i=5;
+void func1(){
+    printf("in func1 i=%d\n",i);
+}
+
+23)
+#include <stdio.h>
+int main()
+{
+   register float r=3.14;
+   register double y=3.4;
+   printf("r=%f y=%lf\n",r,y);
+   return 0;
+}
+
+24)
+#include <stdio.h>
+int main()
+{
+  auto int i=100;
+  printf("i=%d\n",i);
+  {
+      int i=1;
+      printf("i=%d\n",i);
+      {
+          i+=1;
+          printf("i=%d\n",i);
+      }
+      printf("i=%d\n",i);
+  }
+  printf("i=%d\n",i);
+   return 0;
+}
+
+25)
+#include <stdio.h>
+i=0;
+int main()
+{
+printf("in main i=%d\n",i);
+i++;
+val();
+printf("in main i=%d\n",i);
+return 0;
+}
+val()
+{
+    int i=100;
+    printf("in val i=%d\n",i);
+    i++;
+}

@@ -1,0 +1,86 @@
+                                                               H.W
+----------------------------------------------------------------------------------------------
+Q) Write a Program to calculate number os one's in a Given String "101101"?
+                                                   OUR Experiment
+                                                   -------------------- 
+
+#include <stdio.h>
+
+void main()
+{
+char ch[15];
+int i,length,count=0;
+for(i=0;i<15;i++)
+{
+ch[i] = getchar();
+if(ch[i]==10 || ch[i]==13){
+ch[i]='\0';
+break;
+}
+length++;
+}
+printf("Your given value is: %s\n",ch);
+printf("Your Entered String length Is:%d\n",length);
+for(i=0;i<length;i++)
+{
+if(ch[i]=='1')
+{
+count++;
+}
+}
+printf("Total number of one's in %s is %d",ch,count);
+}
+                                                          ALTERNATE METHORD
+                                                          -----------------------------
+#include <stdio.h>
+
+void main()
+{
+int ch[20],length=0,count=0,i;
+printf("Enter the value \n");
+for(i=0;i<15;i++){
+printf("Enter a value at %d Position",i+1);
+scanf("%d",&ch[i]);
+if(ch[i]==-1){
+    break;
+}
+length++;
+}
+printf("length is %d :",length);
+for(i=0;i<length;i++){
+    if(ch[i]&1){
+        count++;
+    }
+}
+printf("The Total count of 1 is %d",count);
+}
+                                   ALTERNATE OR LOWEST COMPLEXITY
+                                   ------------------------------
+#include <stdio.h>
+void main()
+{
+int i,count=0;
+int a[10];
+for(i=0;i<10;i++)
+{
+printf("Enter the value at %d position",i+1);
+scanf("%d",&a[i]);
+if(a[i]>1)
+break;
+else
+if(a[i]==1)
+count++;
+}
+printf("No of count of 1 in a binary digit is %d",count);
+}
+
+Doubt it is not possible for all
+Q) write a Program In which print multiple of 2 without multiplication?
+#include <stdio.h>
+void main()
+{
+int i;
+for(i=1;i<10;i++){
+printf("%d",i<<1);
+}
+}

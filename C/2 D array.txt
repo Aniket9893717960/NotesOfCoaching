@@ -1,0 +1,144 @@
+Q) write a program to get 9 elements in 3*3 matrix & print multipication of both the matrix.
+
+#include <stdio.h>
+
+void main()
+{
+int i,j,k,a[3][3],b[3][3],c[3][3];
+printf("Enter 9 value\n");
+for(i=0;i<3;i++)
+{
+for(j=0;j<3;j++)
+{
+printf("Enter the elements at %d %d position",(i+1),(j+1));
+scanf("%d",&a[i][j]);
+}
+}
+printf("Enter 9 values");
+for(i=0;i<3;i++)
+{
+for(j=0;j<3;j++)
+{
+printf("Enter the element at %d %d position",(i+1),(j+1));
+scanf("%d",&b[i][j]);
+}
+}
+printf("Multiplication of an elements is:");
+for(i=0;i<3;i++)
+{
+for(j=0;j<3;j++)
+{
+c[i][j]=0;
+for(k=0;k<3;k++)
+{
+c[i][j] = c[i][j] +(a[i][k]*b[k][j]);
+}
+}
+}
+for(i=0;i<3;i++)
+{
+for(j=0;j<3;j++)
+{
+printf("%d\t",c[i][j]);
+}
+printf("\n");
+}
+}
+
+---------------------------------------------------------------------------------------------------------
+                                                      H W
+Q) write a program to get 9 elements in 3*3 matrix in 2 D array?
+a) print submition of all the elements.
+b) find maximum value of element.
+c) find minimum value of element.
+d) find all the diagonal element.
+e) printf transpose of the matrix.
+                                                                 Solution
+                                                                 ----------
+#include <stdio.h>
+void printing(int a[][3],int rows,int columns);
+
+void main(){
+int i,j,a[3][3],t[3][3],sum=0,min,max;
+printf("Enter the value in the matrix:\n");
+for(i=0;i<3;i++)
+{
+for(j=0;j<3;j++)
+{
+printf("Enter the value at %d %d position ",i+1,j+1);
+scanf("%d",&a[i][j]);
+sum = sum+a[i][j];
+t[j][i]=a[i][j];
+}
+}
+max =(min=a[0][0]);
+for(i=0;i<3;i++)
+{
+for(j=0;j<3;j++)
+{
+if(min>a[i][j])
+{
+min=a[i][j];
+}
+else
+{
+if(max<a[i][j])
+{
+max=a[i][j];
+}
+}
+}
+}
+
+printf("You have Entered :");
+printing(a,3,3);
+printf(" Numbers");
+printf("\nSum of ");
+printing(a,3,3);
+printf(" Numbers %d",sum);
+printf("\nMinimum number at ");
+printing(a,3,3);
+printf(" Numbers %d",min);
+printf("\nMaximum number at ");
+printing(a,3,3);
+printf(" Number %d",max);
+printf("\nTranspose of matrix at");
+printing(a,3,3);
+printf(" is ");
+for(i=0;i<3;i++)
+{
+for(j=0;j<3;j++)
+{
+printf("%d\t",t[i][j]);
+}
+printf("\n");
+}
+printf("\n The diagonal of :");
+printing(a,3,3);
+printf(" is ");
+for(i=0;i<3;i++)
+{
+for(j=0;j<3;j++)
+{
+if(i==j)
+{
+printf("%d\t",a[i][j]);
+}
+}
+}
+}
+
+
+void printing(int a[][3],int rows,int columns)
+{
+int i,j;
+for(i=0;i<rows;i++)
+{
+for(j=0;j<columns;j++)
+{
+printf("%d\t",a[i][j]);
+}
+printf("\n");
+}
+}
+-----------------------------------------------------------------------------------------------

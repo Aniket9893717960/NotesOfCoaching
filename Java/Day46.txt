@@ -1,0 +1,122 @@
+IMP NOTES
+*if we try to print a string then by default class call a toString methord.
+because by default class extends Object which carry 11 methord 'toString' is the one of thows methord.
+*toString methord will use to return a variable from main to the top of the class.
+-------------------------------------------------------------------------------------------------------------------------------------
+*Finally block
+  ----------------
+finally keyword is mostly used in return statements.
+
+class Test
+{
+public static void main(String args[])
+{
+int a=10,b=10,c,d[] ={1,2,3};
+try
+{
+c = a/b;
+System.out.println(c);
+System.out.println(d[3]);
+}
+catch(ArithmeticException e)
+{
+System.out.println(e);
+}
+finally                                                                    OUTPUT
+                                                                                     Bye
+{                                                                          java.lang.ArithmeticException:/byZero
+System.out.println("Bye");
+}
+}
+}
+
+*throw keywords
+  ---------------------
+
+class Test
+{
+public static void main(String args[])
+{
+int a=10,b=1,c;
+try
+{
+if(b ==1)
+{
+throw new ArithmeticException("/byone");
+}
+else
+{
+c = a/b;
+System.out.println(c);
+}
+}
+catch(ArithmeticException e)
+{                                                                           java.lang.ArithmeticException:/byone
+System.out.println(e);                                Bye
+}
+System.out.println("Bye");
+}
+}     
+
+#toString() Methord
+  ------------------------
+
+class Test
+{
+String message;
+Test(String str)
+{
+message = str;
+}
+public String toString()
+{
+return message;
+}
+public static void main(String args[])
+{
+Test t1 = new Test("Hello");
+Test t2 = new Test("Indore");
+System.out.println(t1);                        Hello
+System.out.println(t2);                     Indore
+}
+}
+
+# Build over own exception
+--------------------------------
+
+class AniketException extends Exception              -----> chacked
+{                                                            -------------
+String message;                                      |---------------->RuntimeException   -> unchecked
+AniketException(String str)
+{
+message = str;
+}
+public  String toString() {
+return "AniketExceeption :"+message;
+}
+}
+
+class Ts
+{
+public static void main(String args[])
+{
+int a=10,b=1,c;
+try
+{
+if(b==1)
+{
+throw new AniketException("/byone");
+}
+else
+{
+c = a/b;
+System.out.println(c);
+}
+}
+catch(AniketException e)
+{
+System.out.println(e);
+}
+System.out.println("Bye");
+}                                                   AniketExceeption :/byone
+}                                                   Bye

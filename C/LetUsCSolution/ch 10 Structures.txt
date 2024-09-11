@@ -1,0 +1,554 @@
+Q) What will be the output of the following Programs?
+
+                                                                 b)
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+struct part
+{
+char partname[50];
+int partnumber;
+};
+struct part p,*ptrp;
+
+ptrp = &p;
+char ch[20];
+int length=0,i;
+printf("Enter the String for Output\n");
+/*Get The Value of String*/
+for(i=0;i<20;i++)
+{
+ch[i] = getchar();
+if(ch[i]==10 || ch[i]==13){
+ch[i]='\0';
+break;
+}
+}
+/*What is the length of given String*/
+while(ch[length]!='\0'){
+length++;
+}
+/*inbuild function 'strcpy' of Strings */
+for(i=0;i<length;i++)
+{
+p.partname[i]=ch[i];
+}
+i=0;
+/*Printing over given value of String*/
+while(ch[i]!='\0')
+{
+printf("%c",ch[i]);
+i++;
+}
+i=0;
+/*Printing Copy of over given value of String*/
+while(p.partname[i]!='\0')
+{
+printf("%c",p.partname[i]);
+i++;
+}
+p.partnumber =102133;
+printf("%s %d\n",p.partname,p.partnumber);
+printf("%s %d\n",(*ptrp).partname,(*ptrp).partnumber);
+----------------------------------------------------------------------
+NOTE
+                                                    printf("%s %d\n",(*ptrp).partname,(*ptrp).partnumber);
+This line does the same thing as the previous line but uses 
+the pointer ptrp to access the members of the structure p. 
+(*ptrp).partname is equivalent to p.partname, and 
+(*ptrp).partnumber is equivalent to p.partnumber. 
+The (*ptrp) syntax dereferences the pointer and allows you to access the members of the structure.
+----------------------------------------------------------------------
+printf("%s %d\n",ptrp->partname,ptrp->partnumber);
+----------------------------------------------------------------------
+NOTE
+                                                   printf("%s %d\n",ptrp->partname,ptrp->partnumber);
+This line is another way to access the structure members using the arrow operator (->).
+ The arrow operator is a shorthand notation for dereferencing a pointer to a structure and accessing its members. 
+So, ptrp->partname is equivalent to (*ptrp).partname,
+ and ptrp->partnumber is equivalent to (*ptrp).partnumber
+----------------------------------------------------------------------
+return 0;
+}
+
+
+
+Q)   Attempt the Following
+
+                                                a)
+#include <stdio.h>
+struct student
+{
+int roll[10];
+char name[20];
+char department[10];
+char  course[10];
+int yoj[10];
+};
+struct student s1[450];
+
+void main()
+{
+int ch=0,n,i;
+printf("At Present you want to enter how many data \n");
+scanf("%d",&n);
+do
+{
+printf("Enter the roll No \n");
+scanf("%s",&s1[ch].roll);
+printf("Enter the Name \n");
+scanf("%s",&s1[ch].name);
+printf("Enter the department \n");
+scanf("%s",&s1[ch].department);
+printf("Enter the Course \n");
+scanf("%s",&s1[ch].course);
+printf("Enter the Year of Joining \n");
+scanf("%s",&s1[ch].yoj);
+printf("Roll No\tName\tDepartment\tCourse\tYearOfjoining\n");
+printf("%s\t%s\t%s\t%s\t%s\t",s1[ch].roll,s1[ch].name,s1[ch].department,s1[ch].course,s1[ch].yoj);
+ch++;
+}
+while(ch!=n);
+printf("Roll No\tName\tDepartment\tCourse\tYearOfjoining\n");
+for(i=0;i<ch-1;i++){
+printf("%s\t%s\t%s\t%s\t%s\n",s1[i].roll,s1[i].name,s1[i].department,s1[i].course,s1[i].yoj);
+}
+}
+
+                                                                        g)
+#include <stdio.h>
+
+struct date
+{
+int day[2];
+int month[2];
+int year[4];
+}date[100];
+struct date d1[2];
+int main()
+{
+int ch=0,i,f=0;
+do
+{
+printf("Enter the date with day ,month,year \n");
+printf("Enter day first \n");
+scanf("%s",&d1[ch].day);
+printf("Enter month here \n");
+scanf("%s",&d1[ch].month);
+printf("Enter Year here \n");
+scanf("%s",&d1[ch].year);
+printf("your Entered Value are \n");
+printf("Day\tmonth\tyear\n");
+printf("%s\t%s\t%s\n",d1[ch].day,d1[ch].month,d1[ch].year);
+ch++;
+}
+while(ch!=2);
+printf("Day\tmonth\tyear\n");
+for(i=0;i<=(ch-1);i++)
+{
+printf("%s\t%s\t%s\n",d1[i].day,d1[i].month,d1[i].year);
+if((d1[i].day && d1[i].month && d1[i].year)==(d1[i+1].day && d1[i+1].month && d1[i+1].year))
+{
+f=1;
+break;
+}
+}
+if(f==1)
+{
+printf("dates are same \n");
+}
+else
+{
+printf("Dates are different \n");
+}
+}
+                                                                                                      
+
+
+
+                                                                          b)
+#include <stdio.h>
+void lowbalance(struct bank *b1,int ch);
+
+struct bank {
+int accno[10];
+char name[10];
+int balance[10];
+};
+struct bank b1[200];
+ 
+void main(){
+int ch=0,n,i;
+printf("AT Present time home many number of records you want to insert \n");
+scanf("%d",&n);
+do
+{
+printf("Enter the Balance Number \n");
+scanf("%s",&b1[ch].accno);
+printf("Enter Your Name \n");
+scanf("%s",&b1[ch].name);
+printf("Enter the balance \n");
+scanf("%s",&b1[ch].balance);
+printf("You have Entered :\n");
+printf("Balance No\tName\tBalance\n");
+printf("%s\t%s\t%s\n",b1[ch].accno,b1[ch].name,b1[ch].balance);
+ch++;
+}
+while(ch!=n);
+printf("Balance No\tName\tBalance\n");
+for(i=0;i<ch-1;i++)
+{
+printf("%s\t%s\t%s\n",b1[i].accno,b1[i].name,b1[i].balance);
+}
+printf("Total number of customers= %d",ch);
+lowbalance(b1,ch);
+}
+
+void lowbalance(struct bank *b1,int ch)
+{
+int i;
+for(i=0;i<ch;i++)
+{
+if(b1[i].balance<100){
+printf("Account Number:%d,Name:%s\n",b1[i].accno,b1[i].name);
+}
+}
+}
+
+
+                                                               d)
+#include <stdio.h>
+struct cricket
+{
+char name[20];
+int age;
+int testM;
+int runs;
+double average;
+};
+struct cricket c1[20];
+
+void average(struct cricket *c1,int ch);
+
+void main()
+{
+int ch=0,n,i;
+printf("At Present You Want To insert How Many naumber of Values in an Array \n");
+scanf("%d",&n);
+do
+{
+printf("\nEnter the name \n");
+scanf("%s",&c1[ch].name);
+printf("Enter the age \n");
+scanf("%d",&c1[ch].age);
+printf("Enter the Test Matches Played by the Player \n");
+scanf("%d",&c1[ch].testM);
+printf("Enter the Total runs Scored by a Player \n");
+scanf("%d",&c1[ch].runs);
+c1[ch].average = (double)(c1[ch].runs/c1[ch].testM);
+printf("name\tage\tNo.of Test matches\tRuns\tAverage\n");
+printf("%s\t%d\t%d\t%d\t%lf\t",c1[ch].name,c1[ch].age,c1[ch].testM,c1[ch].runs,c1[ch].average);
+ch++;
+}
+while(ch!=n);
+printf("\nname\tage\tNo.of Test matches\tRuns\tAverage\n");
+for(i=0;i<ch;i++){
+printf("\n%s\t%d\t%d\t%d\t%lf\t",c1[i].name,c1[i].age,c1[i].testM,c1[i].runs,c1[i].average);
+}
+average(c1,ch);
+}
+
+void average(struct cricket *c1,int ch)
+{
+int i,j;
+double temp;
+char tem[20];
+printf("\nname\tage\tNo.of Test matches\tRuns\tAverage\n");
+for(i=1;i<ch;i++)
+{
+for(j=0;j<(ch-i);j++)
+{
+if(c1[j].average>=c1[j+1].average)
+{
+temp = c1[j].average;
+c1[j].average = c1[j+1].average;
+c1[j+1].average =temp;
+}
+}
+printf("\n%s\t%lf\t",c1[i].name,c1[i].average);
+}
+printf("\nAfter Sorting \n");
+for(i=0;i<ch;i++){
+}
+}
+
+
+                                                               e)
+#include <stdio.h>
+struct employee
+{
+int eid;
+char name[20];
+int doj;
+};
+struct employee e1[20];
+void employ(struct employee *e1,int ch);
+void main()
+{
+int ch,n,i;
+printf("At Present You want to how many data \n");
+scanf("%d",&n);
+do
+{
+printf("Enter the Employee Id\n");
+scanf("%d",&e1[ch].eid);
+printf("Enter the Name \n");
+scanf("%s",&e1[ch].name);
+printf("Enter the Date of joining \n");
+scanf("%d",&e1[ch].doj);
+printf("Employee Id\tName\tDate of joining\n");
+printf("%d\t%s\t%d\n",e1[ch].eid,e1[ch].name,e1[ch].doj);
+ch++;
+}
+while(ch!=n);
+employ(e1,ch);
+printf("\nEmployee Id\tName\tDate of joining\n");
+for(i=0;i<ch-1;i++){
+printf("%d\t%s\t%d\n",e1[i].eid,e1[i].name,e1[i].doj);
+}
+}
+
+void employ(struct employee *e1,int ch)
+{
+int i,j;
+int cdate[10];
+printf("Enter the current date \n");
+for(i=0;i<ch;i++)
+{
+cdate[i] = getchar();
+if(ch==10 || ch==13)
+{
+cdate[i]='\0';
+}
+}
+for(i=0;i<ch;i++)
+{
+if(cdate[i]==cdate[ch-1])
+{
+cdate[i]=cdate[ch-1]+3;
+}
+}
+printf("\nEmployee Id\tName\tDate of joining\n");
+for(i=0;i<ch;i++)
+{
+if(e1[i].doj>cdate[i])
+{
+printf("%d\t%s\t%d\n",e1[i].eid,e1[i].name,e1[i].doj);
+}
+}
+}
+
+
+                                                                                    f)
+#include <stdio.h>
+#include <string.h>
+#include<conio.h>
+struct library
+{
+char title[20];
+char name[20];
+int price;
+char info[80];
+};
+struct library l1[20];
+
+void information(struct library *l1,int ch);
+void main()
+{
+int ch=0,n,i;
+printf("At the present You want to enter how many data \n");
+scanf("%d",&n);
+do
+{
+printf("Enter the title of the book \n");
+for(i=0;i<20;i++)
+{
+l1[ch].title[i] = getche();
+if(l1[ch].title[i]==10 || l1[ch].title[i]==13){
+l1[ch].title[i] ='\0';
+break;
+}
+}
+printf("Enter the name \n");
+scanf("%s",&l1[ch].name);
+printf("Enter the price of the book \n");
+scanf("%d",&l1[ch].price);
+printf("Title of Book\tName\tPrice of book\n");
+printf("%s\t%s\t%d\n",l1[ch].title,l1[ch].name,l1[ch].price);
+ch++;
+}
+while(ch!=n);
+information(l1,ch);
+}
+
+void information(struct library *l1,int ch)
+{
+int i,j,count=0;
+printf("Enter the value at Information \n");
+for(i=0;i<ch;i++){
+printf("Enter the inforamation of %d",i+1);
+for(j=0;j<80;j++){
+l1[i].info[j] = getche();
+if(l1[i].info[j]==10 || l1[i].info[j]==13)
+{
+l1[i].info[j]='\0';
+break;
+}
+}
+}
+
+printf("Title of Book\tName\tPrice of book\tInformation\n");
+for(i=0;i<ch;i++){
+printf("%s\t%s\t%d\t%s\n",l1[i].title,l1[i].name,l1[i].price,l1[i].info);
+}
+printf("\nThe count of books in the library are =%d",ch);
+}
+
+
+                                                      
+
+                                                               i)
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node
+{
+int data;
+struct node *root;
+};
+struct node *start=NULL,*temp,*New;
+
+void create();
+void push();
+void pop();
+void display();
+
+void main()
+{
+int ch=0;
+do
+{
+printf("-------------Stack Using Linklist-------\n");
+printf("Press 1: for Create \n");
+printf("Press 2:For Push:\n");
+printf("Press 3: for Pop \n");
+printf("Press 4: for Display \n");
+printf("Press 5: for Exit \n");
+printf("Choose Any of this \n");
+scanf("%d",&ch);
+switch(ch)
+{
+case 1: create();
+break;
+case 2: push();
+break;
+case 3: pop();
+break;
+case 4:display();
+break;
+case 5:break;
+default:
+printf("Invalid Choice \n");
+}
+}
+while(ch!=5);
+}
+
+void create()
+{
+int n;
+char ch;
+printf("Enter the value \n");
+scanf("%d",&n);
+start=(struct node *)malloc(sizeof(struct node));
+start->data =n;
+start ->root =NULL;
+temp=start;
+printf("Press 'Y' for ENtering more values \n");
+scanf(" %c",&ch);
+while(ch=='Y' || ch=='y')
+{
+printf("Enter the next value \n");
+scanf("%d",&n);
+New =(struct node *)malloc(sizeof(struct node));
+New ->data =n;
+New ->root =NULL;
+temp ->root =New;
+temp = New;
+printf("For Entering more Values Press 'Y' ");
+scanf(" %c",&ch);
+}
+}
+
+void display()
+{
+int count=0;
+if(start==NULL)
+{
+printf("Stack is underFlow \n");
+}
+else
+{
+temp=start;
+while((temp->root)!=NULL)
+{
+temp = temp->root;
+}
+while(temp!=start)
+{
+printf("%d\t",temp->data);
+}
+}
+}
+
+void push()
+{
+int count,n;
+while(temp!=NULL)
+{
+count++;
+temp =temp->root;
+}
+if(count>20)
+{
+printf("Stack is underflow \n");
+}
+else
+{
+printf("Enter the Value \n");
+scanf("%d",&n);
+New = (struct node *)malloc(sizeof(struct node));
+New ->data=n;
+New ->root =start;
+start =New;
+}
+}
+
+void pop()
+{
+if(start==NULL)
+{
+printf("Stack is not Created \n");
+}
+else
+{
+temp=start;
+start = start->root;
+printf("Deleted element =%d",temp->data);
+free(temp);
+}
+}
+
+
+                                                                    j)

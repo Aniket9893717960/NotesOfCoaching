@@ -1,0 +1,152 @@
+IMP NOTES
+Q) what is serelization process?
+it is a process to save the current state of an object.
+---------------------------------------------------------------------
+# Same variable name with more then one interfaaces
+   ----------------------------------------------------------------
+*Problem
+ --------------
+interface 1
+{
+int a=10;
+}
+
+interface second
+{                                                                         OUTPUT
+int a =20;                                                            Error
+}
+
+class A implaements first,second
+{
+void show()
+{
+System.out.println(a);
+System.out.println(a);
+}
+}
+
+class Test
+{
+public static void main(String args[])
+{
+A a1 = new A();
+a1.show();
+}
+}
+
+*Solution
+ --------------
+interface first
+{
+int a=10;
+}
+
+interface second
+{
+int a = 20;
+}
+
+class A implements first,second
+{
+void show()                                                            OUTPUT
+{System.out.println(first.a);                            10
+System.out.println(second.a);                       20
+}
+}
+
+class Test
+{
+public static void main(String args[])
+{
+A a = new A();
+a.show();
+}
+} 
+
+# If a class can extends another class and also implements multiple interfaces at the same time.
+  -------------------------------------------------------------------------------------------------------------------
+interface first
+{
+void show();
+}
+
+interface second
+{
+void display();
+}
+class A
+{
+void add()
+{
+System.out.println("Hello from add");
+}
+}
+
+class B extends A implements first.second
+{
+public void show()
+{
+System.out.println("Hello from first");
+}
+public void display()
+{
+System.out.println("Hello from second"); 
+}
+}
+
+class Test
+{
+public static void main(String args[])
+{
+B b1 = new B();
+b1.show();
+b1.display();
+b1.add();
+}
+}
+
+# interface can extends another interface
+  ---------------------------------------------------
+interface first
+{
+void show();
+}
+
+interface second extends first
+{
+void display();
+}
+
+class A implements second 
+{
+public void show()
+{
+System.out.println("Hello from first");
+}
+public void display()
+{
+System.out.println("Hello from second");
+}
+}
+
+class Ts
+{
+public static void main(String args[])
+{
+A a1 = new A();
+a1.show();
+a1.display();
+}
+}
+
+--------------------------------------------------------------------------------------------------------
+#Marker Interface
+  ----------------------
+it is an interface without any methord declaration.
+The three interface which will come at the category of marker interface are as follow.
+
+1)Serelizable 
+   --------------
+it is a marker interface which is use in serelization process.
+2)Cloneable 
+3)Remote

@@ -1,0 +1,87 @@
+class Ts
+{
+public static void main(String args[])
+{
+String str1 = new String("Hello");
+String str2 = new String("Hello");
+int x = str1.compareToIgnoreCase(str2);
+System.out.println(x);
+}                                                        OUTPUT
+}                                                        0
+
+class Ts
+{
+public static void main(String args[])
+{
+String str1  = new String("Hello");
+String str2 = new String("hello");
+int x = str1.compareToIgnoreCase(str2);
+System.out.println(x);
+}                                                       OUTPUT
+}                                                        0
+
+class Ts
+{
+public static void main(String args[])
+{
+String str1 = new String("hello");
+String str2 = new String("Hello");
+int x =  str1.compareToIgnoreCase(str2);
+System.out.println(x);
+}
+}
+
+class Ts
+{
+public static void main(String args[])
+{
+String str1 = new String("HELLO");
+String str2 = new String("Hello");
+int x = str1.compareToIgnoreCase(str2);
+System.out.println(x);
+}                                                       OUTPUT
+}                                                       0
+
+class Ts
+{
+public static void main(String args[])
+{
+String str1 = new String("Hello");
+String str2 = new String("Indore");
+int x = str1. compareToIgnoreCase(str2);
+System.out.println(x);
+}                                                       OUTPUT
+}                                                       -1
+
+class Ts
+{
+public static void main(String args[])
+{
+String str1 = new String("Hello");
+String str2 = new String("Hellp");
+int x = str1.compareToIgnoreCase(str2);
+System.out.println(x);
+}                                                       OUTPUT
+}                                                       -1
+
+class Ts
+{
+public static void main(String args[])
+{
+String str1 = new String("HelloIndore");
+String str2 = new String("Hello");
+int x = str1.compareToIgnoreCase(str2);
+System.out.println(x);
+}                                                       OUTPUT
+}                                                       6
+
+class Ts
+{
+public static void main(String args[])
+{
+String str1 = new String("Hello");
+String str2 = new String("HelloIndore");
+int x = str1.compareToIgnoreCase(str2);
+System.out.println(x);
+}                                                       OUTPUT
+}                                                       6

@@ -1,0 +1,50 @@
+#Life Cycle of a Thread
+   --------------------------       ----------
+                                                     |  Create |
+                                                      ----------
+                                                     |  Born    |
+                                                      ----------
+                                                            |
+            ------------------------------
+            |
+     ------------                                                                                  -----------
+    | Runnable|                                                                                 |  sleep    |
+     ------------             <---------------------------------------  -----------
+    | Ready to  |                                                                                 | wait      |
+    |    Excuete |                                                                                  ----------
+     -------------                                                                                     |            |
+              |                                                                                                 |            |
+              --------------------------->  -----------                              |            |
+                                                                |Running|   ----------------|            |
+                                                                -----------                                    -----------
+                                                                |executing| -----------------> | Destroy |
+                                                                 -----------                                    ----------
+                                                                                                                      | killed      |
+                                                                                                                       -----------
+There are to ways to create a thread.
+I) by implementing Runnable interface
+ii) by extending Thread class 
+The runnable interface contains only a single methord 
+                              public void run
+                             ------------------
+
+*Methords of Thread class
+  -------------------------------
+i) public static Thread currentThread();            //this will inform that corrently which thread is running
+ii) public void setName(String name)               //This will use to set a name of a thread
+iii) public String getName()                                   //this will inform a name of a thread
+iv) public void setPriority(int p)                           //this will use to change the priority of a thread
+                                                        |----- 1 to 10 in which 1 is the minimum priority & 10 is the maximum priority or 5 is normal
+                           public static int MIN.PRIORITY =1
+                           public static int MAX.PRIORITY  =10
+                           public static int NORM.PRIORITY = 5
+
+v) public int getPriority()                                       //this will inform the priority of a thread
+vi)public boolean isAlive();                                  //main is also a thread but isAlive of main does not been false
+vii) public static void sleep(long miliseconds) throws InterruptedException
+                                                                                                    //this is a static methord 
+viii) public void join() throws  InterruptedException              //this is a dynamic methord
+ix) public void run()               //the runnable interface contains only a single methord which is this one
+                                                    //in this we have to defined that what should a thread done in a program   
+x) public void start()           // we implement a run methord with the help of this
+                                                  // this will act like a path between run methord to runnable interface. 

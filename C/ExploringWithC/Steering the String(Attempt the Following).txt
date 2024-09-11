@@ -1,0 +1,429 @@
+c)Attempt the Following?
+                                                            1)
+#include <stdio.h>
+int customer(long customers);
+int industr(long industry);
+int govermen(long goverment);
+int universit(long university);
+int calculate(int ch[],int order);
+int GovInd(long amount);
+void main(){
+long customers,industry,goverment ,university;
+int order,n=0,i,ch[20];
+do
+{
+printf("--------------SemiConductor Factory------------\n");
+printf("We have available 8 bit,16 bit or 32 bit Microprocessor \n");
+printf("Press 1: for Customers \n");
+printf("Press 2: for Industry(Pvt Ltd) \n");
+printf("Press 3: for Govermant \n");
+printf("Press 4: for University \n");
+printf("Press 5: for Exit \n");
+printf("Choose ANy Options\n");
+scanf("%d",&n);
+switch(n){
+case 1: printf("The number os Microprocessors you want:\n");
+              scanf("%d",&order);
+              printf("The List of Item You want:");
+              for(i=0;i<order;i++){
+              printf("Enter the %dth item(Only number in the form of bits)",i+1);
+              scanf("%d",&ch[i]);
+              } 
+              printf("\nThe type of Product  You Ordered\n");
+              for(i=0;i<order;i++){
+              printf("\n%d bits Microprocessor \n",ch[i]);
+              }
+              customers = calculate(ch,order);
+              printf("\nThe Total Amount Before Discount =%1d\n",customers);
+              customers = customer(customers);
+              printf("The Total Amount After Discount =%1d\n",customers);
+              break;
+
+case 2: printf("The number os Microprocessors your Industry want:\n");
+              scanf("%d",&order);
+              printf("The List of Item You want:");
+              for(i=0;i<order;i++){
+              printf("Enter the %dth item(Only number in the form of bits)",i+1);
+              scanf("%d",&ch[i]);
+              } 
+              printf("\nThe type of Product  You Ordered\n");
+              for(i=0;i<order;i++){
+              printf("\n%d bits Microprocessor \n",ch[i]);
+              }
+              industry = calculate(ch,order);
+              printf("\nThe Total Amount Before Discount =%1d\n",industry);
+              industry = industr(industry);
+              printf("The Total Amount After Discount =%1d\n",industry);  
+              break;
+
+case 3: printf("The number os Microprocessors Goverment want:\n");
+              scanf("%d",&order);
+              printf("The List of Item You want:");
+              for(i=0;i<order;i++){
+              printf("Enter the %dth item(Only number in the form of bits)",i+1);
+              scanf("%d",&ch[i]);
+              }
+              printf("\nThe type of Product  You Ordered\n");
+              for(i=0;i<order;i++){
+              printf("\n%d bits Microprocessor \n",ch[i]);
+              } 
+              goverment = calculate(ch,order);
+              printf("\nThe Total Amount Before Discount =%1d\n",goverment);
+              goverment = govermen(goverment);
+              printf("The Total Amount After Discount =%1d\n",goverment);
+              break;
+
+case 4: printf("The number os Microprocessors University want:\n");
+              scanf("%d",&order);
+              printf("The List of Item You want:");
+              for(i=0;i<10;i++){
+              printf("Enter the %dth item(Only number in the form of bits)",i+1);
+              scanf("%d",&ch[i]);
+              }
+              printf("\nThe type of Product  You Ordered\n");
+              for(i=0;i<order;i++){
+              printf("\n%d bits Microprocessor \n",ch[i]);
+              } 
+              university = calculate(ch,order);
+              printf("\nThe Total Amount Before Discount =%1d\n",university);
+              university = universit(university);
+              printf("The Total Amount After Discount =%1d\n",university);
+              break;
+
+case 5:break;
+default:
+printf("Invalid option \n");
+}
+}
+while(n!=5);
+}
+
+int calculate(int ch[],int order){
+int i=0;
+long sum=0;
+while(i<=order){
+if(ch[i]==8)
+sum = sum + 10000;
+else if(ch[i]==16)
+sum = sum + 15000;
+else {
+if(ch[i]==32)
+sum = sum + 20000;
+}
+i++;
+}
+printf("The total amount of your Order =%1d",sum);
+return(sum);
+}
+
+int customer(long customers){
+if(customers>100000)
+customers = GovInd(customers);
+else{
+if(customers>10000 && customers<100000)
+customers = GovInd(customers);
+}
+return (customers);
+}
+
+int industr(long industry){
+float discount;
+long discountPrint;
+if(industry<10000){
+discount = (float)5/100;
+discountPrint =(long)industry*discount;
+industry = industry -discountPrint;
+}
+else if(industry<50000){
+discount = (float)5/100;
+discountPrint =(long)industry*discount;
+industry = industry -discountPrint;
+}
+else {
+if(50000<industry){
+discount = (float)7.5/100;
+discountPrint =(long)industry*discount;
+industry = industry -discountPrint;
+}
+}
+return (industry);
+}
+
+int govermen(long goverment){
+float discount;
+long discountPrint;
+if(goverment<10000){
+discount = (float)5/100;
+discountPrint =(long)goverment*discount;
+goverment = goverment -discountPrint;
+}
+else if(goverment<50000){
+discount = (float)5/100;
+discountPrint =(long)goverment*discount;
+goverment = goverment -discountPrint;
+}
+else { 
+if(50000<goverment){
+discount = (float)8.5/100;
+discountPrint =(long)goverment*discount;
+goverment = goverment -discountPrint;
+}
+}
+return (goverment);
+}
+
+int universit(long university){
+float discount;
+long discountPrint;
+discount = (float)7.5/100;
+discountPrint =(long)university*discount;
+university = university - discountPrint;
+return(university);
+}
+
+int GovInd(long amount){
+float discount;
+long discountPrint;
+if(100000>amount){
+discount = (float)10/100;
+discountPrint =(long)amount*discount;
+amount = amount -discountPrint;
+}
+else {
+if(100000>amount){
+discount = (float)10/100;
+discountPrint =(long)amount*discount;
+amount = amount -discountPrint;
+}
+}
+return(amount);
+}
+
+                                                     Accourding to Book Answer of  a)
+                                                     ----------------------------------------
+#include <stdio.h>
+
+void main(){
+int micpro;
+char customers;
+float discount,amt,order;
+printf("Enter the MicroProcessors\n Available Microprocessors are 8 bit,16 bit and 32 bit\n");
+scanf("%d",&micpro);
+printf(" \nTotal purchase");
+scanf("%f",&order);
+printf("Enter the Customer \n if it is Industrial customer Enter 'i'\n if it is Goverment agencies 'g' \n if it is university Enter 'u'");
+scanf(" %c",&customers);
+
+if(micpro==32){
+                                   if(customers=='u')
+                                   discount = 7.5;
+                                   
+else{
+                      if(customers=='i'){
+                                   if(order<50000){
+                                   discount=5;
+                                   }
+                                   else if(order>50000 && order<100000){
+                                   discount=7.5;
+                                   }
+                                   else {
+                                                                      if(order>100000){
+                                                                      discount=10;
+                                                                      }
+                                   }
+                       }
+                  else {
+                      if(customers=='g'){
+                                   if(order<50000){
+                                   discount=6.5;
+                                   }
+                                   else if(order>50000){
+                                   discount=8.5;
+                                   }
+                                   else {
+                                                                      if(order>100000){
+                                                                      discount=10;
+                                                                      }
+                                   }
+                      }
+                 }
+            }
+}
+
+else if(micpro==16){
+                                   if(customers=='I'){
+                                                                      if(order>10000){
+                                                                      discount=5;
+                                                                      }
+                                   }
+                                   else if(customers=='u'){
+                                                                      if(order>10000){
+                                                                      discount=5;
+                                                                      }
+                                   }
+                                   else {
+                                   if(customers=='g'){
+                                                                      if(order>10000){
+                                                                      discount=6;
+                                                                      }
+                                   }
+                                }
+}
+else{
+                                   if(customers =='u' || customers=='i' || customers=='g'){
+                                   discount=10;
+                                   }
+}
+amt = order*(100-discount)/100;
+printf("Customer=%c Order=%.2f\n",customers,order);
+printf("Mp=%d bit Amount=%f\n",micpro,amt);
+}
+
+
+                                                            b)
+#include <stdio.h>
+void calculate(int manu[],int current[]);
+
+void main()
+{
+int i=0;
+int age,manu[3],current[3];
+char ch[10];
+
+printf("----------Insurance Company----------\n");
+printf("Car Manufacturing In which country \n");
+for(i=0;i<10;i++){
+ch[i] = getchar();
+if(ch[i]==10 || ch[i]==13){
+ch[i]='\0';
+break;
+}}
+printf("Enter the Driver's Age :\n");
+scanf("%d",&age);
+printf("Manufacturing Date of car \n");
+for(i=0;i<3;i++){
+printf("Enter the value at the Format of  First DD  Second MM Last YYYY");
+scanf("%d",&manu[i]);
+}
+printf("Enter the Current Date \n");
+for(i=0;i<3;i++){
+printf("Enter the value at the Format of  First DD  Second MM Last YYYY");
+scanf("%d",&current[i]);
+}
+calculate(manu,current);
+}
+
+void calculate(int manu[],int current[]){
+int sum[3],i;
+for(i=0;i<3;i++){
+sum[i] =manu[i]-current[i];
+}
+printf("Difference between manufacturing and Given date =\n");
+printf("Day\tmonth\tyear\n");
+for(i=0;i<3;i++){
+    printf("%d\t",sum[i]);
+}
+}
+
+                                                  According to Book Answer
+                                                  -------------------------------
+#include <stdio.h>
+
+void main(){
+int age;
+float  declared,charge;
+char manu,acc;
+printf("Car Manufacture In which country \n if India than Enter 'i' or 'I' \n if other Country than Enter 'o' or 'O'\n"); 
+scanf(" %c",&manu);
+printf("COndition of the Car is Good or Bad\n if Person has not had an Accident in last three Year then the condition of car is considered good  \n If Good than Enter 'g' or 'G' \n if Bad than Enter 'b' or 'B'\n");
+scanf(" %c",&acc);
+printf("Enter the Age of the Driver \n");
+scanf("%d",&age);
+if(age>=25)
+{
+printf("Enter the Declared Value of the car \n");
+scanf("%f",&declared);
+
+if((manu=='i' || manu=='I') && (acc=='g' || acc =='G')){
+charge = (float)((6*declared)/100);
+printf("TOtal amount After Premium charge is = %.2f\n",charge);
+printf("Then, Comprehensive policy is issued\n");
+}
+else if((manu=='i' || manu=='I') && (acc=='b' || acc=='B')){
+charge = (float)((7*declared)/100);
+printf("Amount After Premium charge is =%.2f\n",charge);
+charge=charge + 100;
+printf("After Including  The claim of 100 rs then,Total amount of Premium charge is = %.2f\n",charge);
+printf("Then, COmprehensive policy is issued \n");
+}
+else if((manu=='o' || manu=='O') && (acc=='g' || acc=='G')){
+printf("First Pay 100 rs of Any claim then\n Comprehensive Policy of 6% will issued \n");
+charge = (float)((6*declared)/100);
+printf("ToTal amount of charge After Paying 100 rs of claim is =%.2f\n",charge);
+}
+else {
+printf("Because of Your car have Not good  Accedent Record\n our Premium cost is raised to 7%\n");
+charge = (float)((7*declared)/100);
+printf("Total amount of charge After All this =%.2f\n",charge);
+printf("After Paying our Amount \n Third party Policy will issued \n");
+}
+}
+
+else
+{
+printf("Enter the Declared Value of the car \n");
+scanf("%f",&declared);
+
+if((manu=='i' || manu=='I') && (acc=='g' || acc=='G')){
+printf("First pay 100 rs of claim then \n The Premium charge of 6% will payed by policy holder \non the basis of the declared car value\n");
+charge = (float)((6*declared)/100);
+printf("Total amount of charge After paying 100 rs of claim is =%.2f\n",charge);
+printf("Then the comprehensive Policy will Issued \n");
+}
+else if((manu=='0' || manu=='O') && (acc=='g' || acc=='G')){
+printf("first Pay 100 rs of any claim then We proceed on the Next Step \n");
+charge = (float)((8*declared)/100);
+printf("Total amount of charge After including Premium charge or Paying 100 rs of claim is =%.2f\n",charge);
+printf("Then, COmprehensive policy will issued \n");
+}
+else
+{
+printf("Due to Consiered Risk ,no policy car be taken out \n");
+}
+}
+}
+
+                                                       c)
+#include <stdio.h>
+
+void main()
+{
+int n=123,count=0;
+if(n>1){
+n =n/10;
+count++;
+}
+if(n>1){
+n=n/10;
+count++;
+}
+if(n>1){
+n=n/10;
+count++;
+}
+if(n>1){
+n=n/10;
+count++;
+}
+if(n>1){
+n = n/10;
+count++;
+}
+else {
+n =n/10;
+count++;
+}
+printf("The number of count = %d\n",count);
+}
+
+

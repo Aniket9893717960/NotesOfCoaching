@@ -1,0 +1,59 @@
+IMP    -/     //Class is a collection of variables and methords
+//Basic difference between function and methord are 
+i) function is represent out of the class else methord will represent inner the class  
+// entity= everything is an entity/-
+
+#  What are the advance feature of  JAVA which is not in C ,C++ ?
+                                            OR
+# Features of JAVA 
+       
+Java is an Object Oriented Language.
+the feature of java are as follows:
+1) platform Indepandance
+
+Because of the bytecode functionality java is a platform independent
+I)Platform nutral
+Ii)Architectural Nutral
+
+Memory allocaion of variable in java Indepentent of system architecture it means that all the variables 
+will allways allocte a constant amount of memory on all the architecture(16 byte,32 byte ,24 byte) 
+
+2) Simple and secure
+
+java is a simple language for an experiance programer
+*) Why java is a secure language?
+java is secure because ,
+a) java does not support pointer variable.
+B) it has byte code securaty.
+c) it has high encryption standard.
+
+3)Rhobast
+
+
+                                            ------------------X----------------------
+# Properties of Object Orientation in java
+
+1) Class
+class is a user defined datatype ,it is a collection of variables and methord.
+
+2)Object
+object is a real time(run time) entity.
+it is an instance of a class that has a authority to access any content of a class.
+
+3)Abstration/encapsulation
+showing only essential features without showing any backgroung detail.
+wrapping of data into a single unit is data encapsulation.
+
+4) Inheritance
+it is a feature by which a class can acquire(access) a content of another class.
+
+5)Polymorphism
+"Poly" means many
+
+6)Dynamic Binding   //dynamic memory allocation and runtime memory allocation
+7) Message Passing  //call by value and reaturn by value
+
+#  first Program
+class First
+{
+}

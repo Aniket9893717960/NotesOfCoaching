@@ -1,0 +1,135 @@
+IMP notes -/ probability in maths have technical use is learning life cycle of a user by machine(like mobile,laptop) and 
+                    calculate a posabillity for user thatt how to behave.
+                    *in M3 we learn a methord name Range-kutta methord is used in machine learning to derive 
+                    the possability of three answer in enhance his predictions. 
+                    *BigInteger: it is a class which store infinite number of length variable.
+             ----------------------------------------------------X-------------------------------------------------------------
+# while loop
+
+Q) write a program to print following series.
+
+i) 1 2 3 4 5 6 7 8 9 10
+
+class Test
+{
+public static void main(String args[])
+{
+int i=1
+while(i<=10)
+{
+System.out.print(i+"\t");
+i++;
+}
+}
+}
+
+i) 2 4 6 8 10 12 14 16 18 20
+
+class Test
+{
+public static void main(String args[])
+{
+int i=1;
+while(i<=10)
+{
+System.out.println((i*2)+"\t");
+i++;
+}
+}
+}
+
+iii) 1 4 9 16 25 36 49 64 81 100
+
+class Test
+{
+public static void main(String args[])
+{
+int i=1;
+while (i<= 10)
+{
+System.out.println((i*i)+"\t");
+i++;
+}
+}
+}
+
+----------------------------------X------------------------
+ IMP  without multiply Print this 
+class Ts
+{
+public static void main(String args[])
+{
+int i=1,count=1,temp=0;
+System.out.print(i+"\t");
+while(i<=10)
+{
+count = count +i ; 
+temp = count++;
+System.out.print((count+temp-i)+"\t");
+i++; 
+}
+}
+}
+---------------------------------X-----------------------------
+iv) 1/1 2/4 3/9 4/16 5/25 6/36 7/49 8/64 9/81 10/100
+
+class Ts
+{
+public static void main(String args[])
+{
+int i=1;
+while(i<=10)
+{
+System.out.print((i+"/"+(i*i))+"\t");
+i++;
+}
+}
+}
+
+v) 1/1+2/4+3/9+4/16+5/25+6/36+7/49+8/64+9/81+10/100
+
+class Ts
+{
+public static void main(String args[])
+{
+int i=1;
+while(i<10)
+{
+System.out.print(i+"/"+(i*i)+"+");
+i++;
+}
+System.out.println(i+"/"+(i*i));
+}
+}
+
+Q) write a program to print submition of first 10 natural numbers.
+
+ class Test
+{
+public static void main(String args[])
+{
+int i=1,sum=0;
+while(i<=10)
+{
+sum = sum +i;
+i++;
+}
+System.out.println(sum);                          OUTPUT
+}                                                                                55
+}
+
+Q) write a program to calculate and print factorial of the given number.
+
+class Test
+{
+public static void main(String args[])
+{
+int  n=5,f=1;
+while(n>1)
+{
+f=f*n;   --|  ---->  f=f*n--;
+n--;        --|
+}                                                                        OUTPUT
+System.out.println(f);                                 120
+}
+}

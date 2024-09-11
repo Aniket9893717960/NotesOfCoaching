@@ -1,0 +1,194 @@
+Q)Answer the following?
+
+                                                        b)
+#include <stdio.h>
+int sort(char *ch,int  n);
+int main(){
+char ch[50];
+int i,n;
+printf("To Enter the value at array \n");
+scanf("%d",&n);
+printf("Enter the character \n");
+for(i=0;i<n;i++)
+{
+scanf(" %c",&ch[i]);
+if((ch[i]<'a' && ch[i]>'z')||(ch[i]<'A' && ch[i]>'Z'))
+{
+printf("Error Please enter the character \n");
+return 1;
+}
+}
+sort(ch,n);
+printf("Sorted Array :\n");
+for(i=0;i<n;i++)
+{
+printf("%c ",ch[i]);
+}
+return 0;
+}
+
+int sort(char *ch,int n){
+int i,j;
+char temp;
+for(i=0;i<n-1;i++)
+{
+for(j=i;j<n;j++)
+{
+if(ch[i]>ch[j])
+{
+temp = ch[i];
+ch[i] = ch[j];
+ch[j] = temp;
+}
+}
+}
+return 0;
+}
+                                                         
+                                                        c)
+------------------------------------------------------------------------
+for more Information go to NotesofCoaching->c->Character Array->Day 2
+------------------------------------------------------------------------
+#include <stdio.h>
+void main()
+{
+char ch[50];
+int i=0,length;
+printf("Enter the Strings\n");
+gets(ch);
+while(ch[i]!='\0')
+{
+i++;
+}
+length=i;
+printf("The length of the String %d\n",length);
+for(i=length-1;i>=0;i--)
+{
+printf("%c",ch[i]);
+}
+}
+
+
+                                                        g)
+#include <stdio.h>
+int deleteVowels(char *ch);
+int main()
+{
+char ch[50];
+
+printf("Enter the Sentence \n");
+gets(ch);
+deleteVowels(ch);
+printf("After removing vawels: %s\n",ch);
+return 0;
+}
+
+int deleteVowels(char *ch)
+{ 
+int i,j=0;
+for(j=0;ch[j]!='\0';j++)
+{
+if(ch[j]!='A' && ch[j]!='E' && ch[j]!='I' && ch[j]!='O' && ch[j]!='U' 
+&& ch[j]!='a' && ch[j]!='e' && ch[j]!='i' && ch[j]!='o' && ch[j]!='u')
+{
+ch[i++]=ch[j];
+}
+}
+ch[i]='\0';
+}
+
+                                                       h)
+#include <stdio.h>
+
+void deleteWord(char *ch,char *remove);
+
+int main()
+{
+char ch[50],remove[10];
+int i;
+printf("Enter the String \n");
+for(i=0;i<50;i++)
+{
+ch[i] = getchar();
+if(ch[i]==10 || ch[i]==13)
+{
+ch[i] ='\0';
+break;
+}
+}
+deleteWord(ch,"the");
+return 0;
+}
+
+void deleteWord(char *ch,char *remove)
+{
+int length=0,rl=0,i,j;
+char replace=' ';
+while(ch[length] != '\0'){
+length++;
+}
+for(i=0;i<length;i++)
+{
+printf("%c",ch[i]);
+}
+while(remove[rl] != '\0'){
+rl++;
+}
+printf("\nLength of Given String %d\n",length);
+printf("length of given word to remove %d\n",rl);
+for(i=0;i<length;i++)
+{
+if((ch[i]=='t' || ch[i]=='T')&&(ch[i+1]=='h')&&(ch[i+2]=='e'))
+{
+ch[i] = replace;
+ch[i+1]=replace;
+ch[i+2]= replace;
+}
+}
+printf("Result after removing the word: %s\n",ch);
+}
+
+                                                          j)
+#include <stdio.h>
+int deleteElement(char *ch);
+void main()
+{
+char ch[50],n,count;
+int i;
+printf("Enter the String \n");
+for(i=0;i<49;i++)
+{
+ch[i] = getchar();
+if(ch[i]==10|| ch[i]==13)
+{
+ch[i]='\0';
+break;
+}
+}
+deleteElement(ch);
+}
+
+int deleteElement(char *ch)
+{
+int length=0,i,count;
+while(ch[length]!='\0')
+{
+length++;
+}
+for(i=0;i<length;i++)
+{
+printf("%c",ch[i]);
+}
+
+printf("\nThe length of an String %d\n",length);
+for(i=0;i<length;i++)
+{
+if(((ch[i]=='a'|| ch[i]=='A')||(ch[i]=='e'|| ch[i]=='E')||(ch[i]=='i'|| ch[i]=='I')||(ch[i]=='o'|| ch[i]=='O')||(ch[i]=='U'|| ch[i]=='U'))
+&&((ch[i+1]=='a')||(ch[i+1]=='e')||(ch[i+1]=='i')||(ch[i+1]=='o')||(ch[i+1]=='u')))
+{
+count++;
+}
+}
+printf("Total number of two vowels in a succession of line = %d",count);
+return (count);
+}

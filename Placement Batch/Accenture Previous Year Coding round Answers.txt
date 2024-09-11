@@ -1,0 +1,679 @@
+--------------------------------------------------------------------------------
+# PrepinSta Coding link given in the Group
+
+import java.util.Scanner;
+
+class Ts
+{
+public static void main(String args[])
+{
+int r,n,unit;
+int totalnofHouse,sum=0;
+Scanner sc = new Scanner(System.in);
+System.out.println("Enter value of n");
+n = sc.nextInt();
+System.out.println("Enter value of unit");
+unit = sc.nextInt();
+System.out.println("Enter value of r");
+r = sc.nextInt();
+int a[] = new int[n];
+System.out.println("Enter value in an Array");
+for(int i=0;i<n;i++)
+a[i] = sc.nextInt();
+
+totalnofHouse=r*unit;
+
+for(int i=0;i<n;i++){
+sum = sum + a[i];
+if(sum>=totalnofHouse)
+{
+System.out.println("minimum no. of house Required for filling the Stomach of rats is "+(i+1));
+break;
+   }
+  }
+ }
+}
+
+--------------------------------------------------------------------------------
+Q2)
+
+class Ts
+{
+
+int OperationsBinaryString(String str){
+int i=0;
+int in=0,in1=0,sum=0; 
+int length = str.length();
+length = length-1;
+
+while(i<length){
+char ch = str.charAt(i);
+
+if(i%2==0){
+ in = ch -'0';
+ char ch1 = str.charAt(i+2);
+ System.out.println("ch1 ="+ch1);
+ in1 = ch1 -'0';  
+}
+
+else {
+ System.out.println("ch Else ="+ch);
+ switch(ch){
+  case 'A': 
+   sum = in & in1; break;
+  case 'B':
+   sum = in | in1; break;
+  case 'C':
+   sum = in ^ in1; break;
+  }
+
+ System.out.println("sum Else ="+sum);
+ }
+i++;
+}
+return (sum);
+}
+
+public static void main(String args[]){
+Ts t1 = new Ts();
+String str = args[0].toString();
+int output = t1.OperationsBinaryString(str);
+System.out.print(output);
+ }
+}
+--------------------------------------------------------------------------------
+3)
+
+class Ts
+{
+
+int CheckPassword(String str, int length){
+int i=1;
+char ch = str.charAt(0);
+boolean num=false,cap=false,sp=true;
+if(length>=4 && !(ch>='0' || ch<='9')){
+
+ while(i<length){
+
+ ch = str.charAt(i);
+if((ch>='0' || ch<='9'))
+ num=true;
+else if((ch>='A' || ch<='Z'))
+ cap=true;
+else { 
+if((ch>=' ' || ch<='/'))
+ sp=false;
+}
+i++;
+ }
+}
+else {
+return 0;
+}
+
+if(num==true & cap==true & sp==true)
+return 1;
+return 0;
+}
+
+public static void main(String args[]){
+Ts t1 = new Ts();
+String str = args[0].toString();
+int output = t1.CheckPassword(str,str.length());
+System.out.println("Output ="+output);
+ }
+}
+
+--------------------------------------------------------------------------------
+This is Working Question no. 4)
+
+import java.util.Scanner;
+ 
+class Ts
+{
+Scanner sc = new Scanner(System.in);
+int findCount(int arr[], int length, int num, int diff)
+{
+int count=0;
+for(int i=0;i<arr.length;i++){
+arr[i] = sc.nextInt();
+if(!(arr[i]-num ==0) && ((arr[i]-num)<=diff))
+count++;
+}
+return(count);
+}
+
+public static void main(String args[])
+{
+Ts t1 = new Ts();
+int arr[] = new int[6];
+int output,n,d;
+n = Integer.parseInt(args[0]);
+d = Integer.parseInt(args[1]);
+output = t1.findCount(arr,arr.length,n,d);
+System.out.println(output);
+ }
+}
+
+--------------------------------------------------------------------------------
+Q5)
+import java.util.Scanner;
+ 
+class Ts
+{
+int differenceofSum(int n,int m)
+{
+int i,sum1=0,sum=0;
+for(i=1;i<=m;i++){
+ if(i%n==0){
+ sum =sum+i;
+ continue;
+ } 
+sum1 = sum1+i;
+}
+System.out.println(sum);
+System.out.println(sum1);
+sum1 =sum1-sum;
+return (sum1);
+}
+
+public static void main(String args[])
+{
+Ts t1 = new Ts();
+int n = Integer.parseInt(args[0]);
+int  m = Integer.parseInt(args[1]);
+int output =t1.differenceofSum(n,m);
+System.out.print(output);
+}
+}
+--------------------------------------------------------------------------------
+Q6)
+
+class Ts
+{
+int arr[] = new int[10];
+public static int min;
+public static int max;
+
+int LargeSmallSum(int arr[]){
+int i,length;
+length = arr.length;
+
+int o1=min;
+int o2 = max;
+min = arr[0];
+max = arr[0];
+for(i=1;i<length;i++)
+{
+if(o1!=min && min>arr[i])
+min=arr[i];
+if(o2!=max && max<arr[i])
+max =arr[i];
+}
+return (max-min);
+}
+
+public static void main(String args[])
+{
+Ts t1 = new Ts();
+int arr[] = new int[10];
+min=arr[0];
+max=arr[0];
+for(int i=1;i<10;i++)
+{
+ arr[i] = Integer.parseInt(args[i]);
+ if(min>arr[i])
+ min=arr[i];
+ if(max<arr[i])
+ max =arr[i];
+}
+int output = t1.LargeSmallSum(arr);
+System.out.print(output);
+}
+}
+--------------------------------------------------------------------------------
+Q7)
+
+import java.util.Scanner; 
+
+class Ts
+{
+
+int ProductSmallestPair(int sum,int size,int a[],int mini){
+int i=1,j=0,minj=a[0];
+
+while(j<size){
+ if(mini!=a[j] && minj>a[j])
+  minj=a[j];
+ j++;
+}
+if(mini+minj<sum)
+return(mini*minj);
+else
+return 0;
+}
+
+
+public static void main(String args[]){
+Ts t1 = new Ts();
+Scanner sc = new Scanner(System.in);
+int sum = sc.nextInt();
+int size = sc.nextInt();
+int a[] = new int[size];
+a[0] = sc.nextInt();
+int mini =a[0];
+
+for(int i=1;i<size;i++){
+a[i] = sc.nextInt();
+if(mini>a[i])
+ mini=a[i];
+}
+
+int output = t1.ProductSmallestPair(sum,size,a,mini);
+System.out.println("output ="+output);
+}
+}
+--------------------------------------------------------------------------------
+8) 
+
+class Ts
+{
+char ch;
+int r;
+StringBuilder sb = new StringBuilder();
+int arr[] = new int[11];
+int i=0;
+String DectoNBase(int n, int num,int a[]){
+if(num!=0){
+arr[i] = num%n;
+i++;
+DectoNBase(n,(num/n),a);
+i--;
+if(arr[i]>9)
+sb.append((char)a[arr[i]]);
+else
+sb.append(a[arr[i]]);
+}
+return (sb.toString());
+}
+
+public static void main(String args[]){
+Ts t1 = new Ts();
+int n = Integer.parseInt(args[0]);
+int num = Integer.parseInt(args[1]);
+int a[] = new int[35];
+int chr=65;
+for(int i=0;(i<35);i++){
+if(i<10)
+a[i]=i;
+else
+a[i]=chr++;
+}
+System.out.println("Your Entered values are:");
+for(int i=0;(i<35);i++)
+System.out.printf("%d\t",a[i]);
+
+String output =  t1.DectoNBase(n,num,a);
+System.out.print("output is :"+output);
+ }
+}
+--------------------------------------------------------------------------------
+9) Problem in this is Hyphen will go to the left Side not a right Side
+
+class Ts
+{
+String MoveHyphen(String str,int n,int i){
+int count=0;
+StringBuilder sb = new StringBuilder();
+while(i<n){
+char ch = str.charAt(i);
+if(ch=='-')
+ sb.append(ch);
+i++;
+}
+i=0;
+while(i<n){
+char ch = str.charAt(i);
+if(ch!='-')
+sb.append(ch);
+i++;
+}
+return (sb.toString());
+}
+
+public static void main(String args[]){
+Ts t1 = new Ts();
+String str = args[0].toString();
+System.out.println("str ="+str);
+String output = t1.MoveHyphen(str,str.length(),0);
+System.out.println(output);
+ }
+}
+--------------------------------------------------------------------------------
+10) Problem is it's complexity is So high
+
+class Ts
+{
+
+int NumberOfCarries(int num1 , int num2){
+int i=0,j=0,count=0,r=0;
+while(num1!=0 && num2!=0){
+ int last1 = num1%10;
+ int last2 = num2%10;
+i= last1+last2+j;
+if(i>=10){
+  while(i!=0){
+  r = i%10;
+  i=i/10;
+  }
+  j = j +r;
+}
+num1 =num1/10;
+num2 = num2/10;
+}
+return (j);
+}
+
+public static void main(String args[]){
+
+Ts t1 = new Ts();
+int n1 = Integer.parseInt(args[0]);
+int n2 = Integer.parseInt(args[1]);
+int output =t1.NumberOfCarries(n1,n2);
+System.out.printf("%d",output);
+ }
+}
+
+--------------------------------------------------------------------------------
+11)
+
+import java.util.Scanner;
+
+class Ts
+{
+
+void ReplaceCharacter(String str, int n, char ch1, char ch2){
+StringBuilder  sb = new StringBuilder();
+int i=0;
+while(i<n){
+char ch = str.charAt(i);
+if(ch==(ch1))
+ sb.append(ch2);
+else {
+ if(ch==(ch2))
+  sb.append(ch1);
+ else
+  sb.append(ch);
+ }
+ i++;
+}
+System.out.println(sb.toString());
+}
+
+public static void main(String args[]){
+Ts t1 = new Ts();
+Scanner sc = new Scanner(System.in);
+String str = sc.next(); 
+char ch= sc.next().charAt(0);
+char ch1 = sc.next().charAt(0); 
+t1.ReplaceCharacter(str,str.length(),ch,ch1);
+}
+}
+--------------------------------------------------------------------------------
+12)
+
+class Ts
+ {
+int OperationChoices(int c, int a , int b ){
+switch(c)
+{
+case 1: c=a+b;
+break;
+case 2: c=a-b;
+break;
+case 3: c=a*b;
+break;
+case 4: c=a/b;
+break;
+default:
+System.out.print("Invalid Number\n");
+}
+return c;
+}
+
+public static void main(String args[])
+{
+Ts t1 = new Ts();
+
+int output = t1.OperationChoices(Integer.parseInt(args[0]),Integer.parseInt(args[1]),Integer.parseInt(args[2]));
+System.out.println("Output is :"+output);
+}
+}
+--------------------------------------------------------------------------------
+Q13) Problem in this
+
+class Ts
+{
+int MaxExponents(int a,int b){
+int i=0;
+int sub = b-a+1;
+int ar[] = new int[sub];
+int count=0;
+int temp=0;
+while(!(a>b)){
+ if(a%2==0){
+   temp =a;
+  while(temp!=1){
+    if((temp&1)==1)
+      break;
+   temp = temp/2;
+   ar[i] = ++count;
+   }
+  }
+ else { 
+  ar[i]=0;
+  count=0; 
+ }
+i++;
+a++;
+}
+sub=0;
+for(i=0;i<6;i++){
+sub = sub+ar[i];
+System.out.printf("%d\t",ar[i]);
+}
+
+return sub;
+}
+
+public static void main(String args[]){
+Ts t1 = new Ts();
+int output = t1.MaxExponents(Integer.parseInt(args[0]),Integer.parseInt(args[1]));
+System.out.printf("\n Output is =%d",output);
+}
+}
+--------------------------------------------------------------------------------
+Q 14)
+
+class Ts
+{
+
+int Calculate(int m, int n){
+ int i=0,sum=0;
+while(!(m>n)){
+ if(m%3==0 && m%5==0)
+ sum = sum + m;
+ m++;
+ }
+ return sum;
+}
+
+public static void main(String args[]){
+ Ts t1 = new Ts();
+int output = t1.Calculate(Integer.parseInt(args[0]),Integer.parseInt(args[1]));
+System.out.print("Output is:"+output);
+ }
+}
+--------------------------------------------------------------------------------
+Q 15)
+
+class Ts
+{
+ public static void main(String args[]){
+Ts t1 = new Ts();
+Scanner sc = new Scanner(System.in);
+int n = Integer.parseInt(args[0]);
+int a[] = new int[n];
+for(int i=0;i<n;i++){
+ System.out.print("Enter the Element at "+i+" Index");
+ a[i] = sc.nextInt(i); 
+  }
+
+ }
+}
+--------------------------------------------------------------------------------
+Q16)
+
+class Ts
+{
+public static void main(String args[]){
+int sum=0,sum1=0;
+int n = Integer.parseInt(args[0]);
+for(int i=0;i<10;i++){
+sum = sum+n;
+System.out.printf("%d\t",sum);
+sum1 = sum1+sum;
+}
+System.out.printf("\n%d",sum1);
+ }
+}
+
+--------------------------------------------------------------------------------
+Q17)
+
+class Ts
+{
+void palindrome(int n,int m){
+int r,sum=0;
+int temp=0;
+while(!(n>m)){
+ temp=n;
+ sum=0;
+ while(temp>0){
+  r = temp%10;
+  sum = sum*10 + r;
+  temp = temp/10; 
+  }
+ if(sum==n)
+ System.out.printf("%d\t",sum);
+n++;
+ }
+
+}
+
+public static void main(String args[]){
+Ts t1 = new Ts();
+int n = Integer.parseInt(args[0]);
+int m = Integer.parseInt(args[1]);
+t1.palindrome(n,m);
+}
+}
+--------------------------------------------------------------------------------
+18) whole answer is about Doubt
+
+import java.util.*;
+
+class Ts
+{
+public static void main(String args[]){
+double x1 = Double.parseDouble(args[0]);
+double x2 = Double.parseDouble(args[1]);
+double x3 = Double.parseDouble(args[2]);
+double y1 = Double.parseDouble(args[3]);
+double y2 = Double.parseDouble(args[4]);
+double y3 = Double.parseDouble(args[5]);
+double sumx = (double)(Math.sqrt(Math.pow(x2-x1,2) + Math.pow(y2-y1,2)));
+double sumy = (double)(Math.sqrt(Math.pow(x3+x2,2) + Math.pow(y3-y2,2)));
+double sumz = (double)(Math.sqrt(Math.pow(x3-x1,2) + Math.pow(y3-y1,2)));
+double sum = sumx+sumy+sumz;
+System.out.print(sum);
+}
+}
+
+--------------------------------------------------------------------------------
+19)
+
+import java.util.Scanner;
+
+class  Ts
+{
+Scanner sc = new Scanner(System.in);
+void MaxInArray(int a[], int length){
+int i=0;
+a[i]= sc.nextInt(); 
+int max=a[i],index=0;
+i++;
+while(i<length){
+a[i]= sc.nextInt(); 
+ if(max<a[i]){
+ max=a[i];
+ index=i+1;
+ }
+i++;
+ }
+System.out.println(max+" is the maximum element of the array at index "+index);
+}
+
+public static void main(String args[]){
+ Ts t = new Ts();
+int length = Integer.parseInt(args[0]);
+length++;
+int arr[] = new int[length];
+t.MaxInArray(arr,length);
+ }
+}
+--------------------------------------------------------------------------------
+20) 
+
+class Ts
+{
+void FindAutoCount(String str){
+
+int length = str.length();
+int a[] = new int[length];
+int i=0;
+
+while(i<length){
+a[i] = 0;
+i++;
+ }
+
+i=0;
+
+while(i<length){
+char ch = str.charAt(i);
+int t2 = ch -'0';
+a[t2] = a[t2]+1;
+i++;
+}
+
+i=0;
+int count=0;
+
+while(i<length){
+if(a[i]>0){
+  count++;
+ }
+System.out.println("a[i] ="+a[i]);
+i++;
+}
+
+System.out.print("COunt :"+count);
+}
+
+public static void main(String args[]){
+Ts t1 = new Ts();
+String n = args[0].toString();
+t1.FindAutoCount(n);
+}
+}

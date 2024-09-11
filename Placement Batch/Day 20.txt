@@ -1,0 +1,104 @@
+--------------------------------------------------------------------
+                                                               H.W
+                                                             -------
+#include <stdio.h>
+#include <stdlib.h>
+
+int sum(int *a);
+int min(int *a);
+int max(int *a);
+void diagonal(int *a);
+void transpose(int *a);
+
+void main()
+{
+int ch=0,a[3][3],temp;
+do
+{
+printf("Press 1:sum of all the elements\n");
+printf("Press 2:min value of the elements\n");
+printf("Press 3:max value of the elements\n");
+printf("Press 4:diagonal elements\n");
+printf("Press 5:transpose of the matrix\n");
+printf("choose the value\n");
+scanf("%d",&ch);
+switch(ch)
+{
+case 1:temp=sum(a);
+printf("sum =%d",temp);
+break;
+case 2:temp=min(a);
+printf("min =%d",temp);
+break;
+case 3: temp =max(a);
+printf("max =%d",temp);
+break;
+case 4: diagonal(a);
+break;
+case 5: transpose(a);
+break;
+default:
+printf("Invalid choice\n");
+}
+}
+while(ch!=5);
+}
+
+int sum(int *a){
+int sum=0;
+for(int i=0;i<=3;i++){
+for(int j=0;j<=3;j++){
+printf("Enter value in array at %d %d",(i+1),(j+1));
+scanf("%d",a[i][j]);
+sum = sum+a[i][j];
+}}
+return sum;
+}
+
+int min(int *a){
+int min=-1;
+for(int i=0;i<=3;i++){
+for(int j=0;j<=3;j++){
+printf("Enter value in array at %d %d",(i+1),(j+1));
+scanf("%d",a[i][j]);
+if(min>a[i][j] || min==-1)
+min =a[i][j];
+}}
+return min;
+}
+
+int min(int *a){
+int max=-1;
+for(int i=0;i<=3;i++){
+for(int j=0;j<=3;j++){
+printf("Enter value in array at %d %d",(i+1),(j+1));
+scanf("%d",a[i][j]);
+if(max<a[i][j] || max==-1)
+max =a[i][j];
+}}
+return min;
+}
+
+void diagonal(int *a){
+int i;
+for(i=0;i<3;i++){
+printf("Enter a value at %d %d",i+1,i+1);
+scanf("%d",a[i][i]);
+}
+for(i=0;i<3;i++){
+printf("%d ",a[i][i]);
+}
+}
+
+void transpose(int *a){
+for(int i=0;i<3;i++){
+for(int j=0;j<3;j++){
+printf("Enter a value at %d %d",i+1,j+1);
+scanf("%d",a[i],a[j]);
+}
+}
+for(int i=0,j=2;i<3;i++,j--){
+printf("%d",a[j][i]);
+}
+}
+--------------------------------------------------------------------

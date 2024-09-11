@@ -1,0 +1,50 @@
+Methods of class Threads
+1) public static Thread currentThread()
+2) void setName(String name)
+3) String getName()
+4)void setPriority(int P)
+5) int getPriority()
+6) boolean isAlive()
+7) public static void sleep(long miliseconds) throws InterruptedException
+8) public void join() throws
+9) public void start()
+10) public void run()
+
+There are some vaiables are:-
+//This have a properties of public static final
+1)MIN_PRIORITY=1
+2)MAX_PRIORITY=5
+3)NORM_PRIORITY=10
+
+Class TEst
+{public static void main(String args[]){
+ Thread t = Thread.currentThread();
+System.out.println(t); //Thread[main,5,main]//1)main is name of Thred
+//2)5 is Priority 
+//3) main is define Group
+t.setName('MyThread');
+System.out.println(t); //Thread[MyThrad,5,main]
+System.out.println(t.getName());//MyThread
+t.setPriority(Thread.MAX_PRIORITY);
+System.out.println(t);//Thread[MyThrad,is,main]
+System.out.println(t.setPriority());//10
+System.out.println(t.isAlive());//tme
+}
+}
+
+
+Class TEst
+{public static void main(String args[]){
+ Thread t = Thread.currentThread();
+try {
+for(int i=1;i<=5;i++)
+{ System.out.println(i);
+t.sleep(1000);
+}
+}
+catch(InterruptedException e)
+{System.out.println(e);
+}
+System.out.println("Bye");
+}
+}

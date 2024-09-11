@@ -1,0 +1,272 @@
+-------------------------------------------------------
+              H.W
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node
+{
+int data;
+struct node *add;
+};
+struct node *start=NULL,*temp,*prev,*next,*New;
+
+void create();
+void insert();
+void delete();
+void display();
+void sorting();//why this will work at only one iteration
+void searching();//We also find duplicate is possible without nested for loop
+void sum();
+void reverse();//this will print all time "Reverse value is =Linklist is NOt created"
+void duplicate();
+
+void main(){
+int ch;
+do
+{
+printf("-------Linklist-----------\n");
+printf("Press 1: for Create a Linklist\n");
+printf("Press 2: for Insert a Linklist\n");
+printf("Press 3: for Delete a Linklist\n");
+printf("Press 4: for Display a Linklist\n");
+printf("Press 5: for Sorting a Linklist\n");
+printf("Press 6: for Searching a Linklist\n");
+printf("Press 7: for duplicate a Linklist\n");
+printf("Press 8: for Sum of all the elements a Linklist\n");
+printf("Press 9: for reverse of all elements\n");
+printf("Press 10: for Exit\n");
+printf("Enter your choice\n");
+scanf("%d",&ch);
+switch(ch){
+case 1 :create();break;
+case 2 :insert();break;
+case 3 :delete();break;
+case 4 :display();break; 
+case 5 :sorting();break;
+case 6 :searching();break;
+case 7 :duplicate();break;
+case 8 :sum();break;
+case 9 :printf("Reverse value is =");reverse(start);break;
+case 10 :break;
+default :printf("Invalid Choice\n");
+}
+}
+while(ch!=9);
+}
+
+
+void create(){
+int n;
+char ch;
+printf("Enter a value\n");
+scanf("%d",&n);
+start = (struct node *)malloc(sizeof(struct node));
+start->data =n;
+start->add =NULL;
+temp =start;
+printf("for Entering more values Press 'Y'\n");
+scanf(" %c",&ch);
+while((ch=='Y')||(ch=='y')){
+printf("Enter a value\n");
+scanf("%d",&n);
+New = (struct node *)malloc(sizeof(struct node));
+New->data =n;
+New->add =NULL;
+temp->add =New;
+temp =New;
+printf("for Entering more values Press 'Y'\n");
+scanf(" %c",&ch);
+}
+}
+
+void display(){
+if(start==NULL){
+printf("Linklist is NOt created \n");
+}
+else {
+temp = start;
+while(temp!=NULL){
+printf("%d\t",temp->data);
+temp = temp->add;
+}
+}
+}
+
+void insert()
+{
+int position,n,count,i=1;
+if(start==NULL){
+printf("Linklist is not created\n");
+}
+else
+{
+printf("Enter the value\n");
+scanf("%d",&n);
+New = (struct node *)malloc(sizeof(struct node));
+New ->data =n;
+New ->add=NULL;
+temp=New;
+printf("For Entering position\n");
+scanf("%d",&position);
+if(position==1){
+New->add=start;
+start=New;
+}
+else {
+temp =start;
+while(temp!=NULL){
+count++;
+temp =temp ->add;
+}
+
+if((position>count+1) || (position<0)){
+printf("Invalid position it should be= %d",count+1);
+}
+
+else if(position==count+1){
+next =start;
+while((next->add)!=NULL){
+next =next->add;
+}
+next->add =New;
+}
+
+else {
+next =start;
+while(i<position){
+prev =next;
+next =next ->add;
+i++;
+}
+prev->add=New;
+New->add=next;
+}
+}
+}
+}
+
+void delete(){
+int count=0,i=1,position;
+if(start==NULL){
+printf("Linklist is not Created\n");
+}
+else {
+printf("Enter a position \n");
+scanf("%d",&position);
+if(position==1){
+temp =start;
+start = start->add;
+printf("Deleted element is =%d",temp->data);
+free(temp);
+}
+else {
+temp =start;
+while(temp!=NULL){
+count++;
+temp =temp->add;
+}
+
+if((position>count) || (position<0)){
+printf("Invalid position it should be =%d",count);
+}
+else if(position==count){
+next =start;
+while((next->add)!=NULL){
+prev =next;
+next =next->add;
+}
+printf("Deleted element is %d",next->data);
+free(next);
+prev->add=NULL;
+}
+
+else {
+next =start;
+while(i<position){
+prev=next;
+next =next->add;
+i++;
+}
+printf("Deleted element is %d",next->data);
+next->add=prev->add;
+free(next);
+}
+}
+}
+}
+
+void sorting(){
+if(start==NULL){
+printf("Linklist is not created\n");
+}
+else {
+struct node *temp1;
+temp =start;
+temp1 =temp->add;
+while(temp!=NULL){
+ while(temp1!=NULL){
+  if((temp->data)>(temp1->data)){
+  temp->data =(temp->data)^(temp1->data);
+  temp1->data =(temp->data)^(temp1->data);
+  temp->data =(temp->data)^(temp1->data);
+    }
+  temp1=temp1->add;
+ }
+temp=temp->add;
+}
+}
+}
+
+void searching(){
+int n;
+if(start==NULL){
+printf("Linklist is not created");
+}
+else 
+{
+printf("Enter a value for Searching\n");
+scanf("%d",&n);
+temp =start;
+while(temp!=NULL){
+if((temp->data)==n){
+printf("Element is found at address =%d\n",temp->add);
+break;
+}
+temp =temp ->add;
+}
+if(temp==NULL)
+printf("Searched element is not found in Linked list");
+}
+}
+
+void sum(){
+int sum=0;
+if(start==NULL){
+printf("Linklist is NOt created \n");
+}
+else {
+temp = start;
+while(temp!=NULL){
+sum =sum+(temp->data);
+temp = temp->add;
+}
+printf("Submittion of all the elements =%d",sum);
+}
+}
+
+void reverse(struct node *rev){
+if(rev==NULL){
+printf("Linklist is NOt created \n");
+}
+else {
+if(rev!=NULL){
+reverse(rev->add);
+printf("%d\t",rev->data);
+}
+}
+}
+
+void duplicate(){
+
+}
+------------------------------------------------------------------

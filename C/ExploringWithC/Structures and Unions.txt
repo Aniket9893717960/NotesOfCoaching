@@ -1,0 +1,49 @@
+4)
+#include <stdio.h>
+
+struct struct
+{
+ char ch;
+ int i;
+ float a;
+};
+void f(struct v);
+void g(struct s*);
+
+int main()
+{
+   static struct s var={'C',100,12.55};
+   f(var);
+   g(&var);
+   return 0;
+}
+
+void f(struct s v)
+{
+    printf("%c %d %f\n",v->ch,v->i,v->a);
+}
+void g(struct s *v)
+{
+    printf("%c %d %f\n",v,ch,v.i,v.a);
+}
+
+5)
+
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+static char str1[]="Ransacked";
+char str2[20];
+struct word
+{
+char str[20];
+};
+static struct word s1 ={"Ransacked"};
+struct word s2;
+strcpy(str2,str1);
+s2 =s1;
+printf("%s %s\n",s1.str,s2.str);
+printf("%s %s\n",str1,str2);
+return 0;
+}

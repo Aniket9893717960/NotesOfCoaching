@@ -1,0 +1,46 @@
+ IMP  Note     -/    # how the decimal data stored in binary ?   /-
+-/   float is generaly use to build at that time is to calculating  Percentage   
+This will be work on the ratio of 1:3    
+
+Range is not Posibble to calculate in java because for calculating this Position of flag bite should be fixed.
+/-
+                                                      
+               ---------------------Before java  --------------------------------
+
+ Float    ->  4 bytes  -> 32 bits
+ float  a = 10.65
+              ----------X-------------------
+Java will give the new Idea in this is 
+the position of flag bit is not fixed.
+      ---------------X ----------------
+ 
+double   ->   8  bytes   ->   64  bits
+
+Character 
+                    char   2 bytes  ->  16 bits
+unsigned 
+                     char   ch = 'A'
+                                            |----> 65(American  Standard code of Information Interchange(ASCII))
+                -------------------X-----------
+Java will build a new codes are UNICODE(Universal code) this is a updated version of ASCII
+          A  -> '140041'
+             ------------------X-----------
+
+boolean   -> 1 bit  ->     true
+                                            false
+
+ # Program is use to printing of a variable
+
+Class  Test
+{
+ public static void main (String args[])
+{
+int a=10, b=20;
+System.out.println("Value of a="+a+ "and value of b="+b);  // this will be alse told as concadination
+System.out.println(a+b); //30
+System.out.println(a+b+"Hello");  //30Hello
+System.out.println(a+"Hello"+b);  //10Hello20
+System.out.println("hello"+a+b);  // Hello1020
+Sytem.out.println("Hello"+(a+b));  //Hello30
+}
+}

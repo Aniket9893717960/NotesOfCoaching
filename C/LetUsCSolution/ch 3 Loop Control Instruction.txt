@@ -1,0 +1,141 @@
+Q) Attempt the following.
+
+a)
+#include <stdio.h>
+
+void main()
+{
+float overtime[10];
+float overtime_rate=12;
+float normal_work=40;
+int i;
+
+for(i=0;i<10;i++)
+{
+printf("Working house of %d employee",i+1);
+scanf("%f",&overtime[i]);
+}
+
+for(i=0;i<10;i++){
+if(overtime[i]>normal_work)
+overtime[i] = (overtime[i]-normal_work)* overtime_rate;
+else
+overtime[i]=0.0;
+}
+
+for(i=0;i<10;i++)
+{
+printf("The overtime Pay of %d employee =%f\n",i+1,overtime[i]);
+}
+}
+
+b)
+#include <stdio.h>
+void main()
+{
+int n=5,f=1,temp;
+temp=n;
+while(n>0)
+{
+f =f*n--;
+}
+printf("factorial of %d is=%d",temp,f);
+}
+
+c)
+#include <stdio.h>
+
+double power(double base,double expont);
+
+void main()
+{
+double base,expont,result;
+
+printf("Enter the base value \n");
+scanf("%lf",&base);
+printf("Enter the expont value \n");
+scanf("%lf",&expont);
+result = power(base,expont);
+printf("%2lf raised to the power %2lf =%2lf",base,expont,result);
+}
+
+double power(double base,double expont)
+{
+int i;
+double result=1.0;
+for(i=0;i<expont;i++)
+{
+result = result*base;
+}
+return (result);
+}
+
+d)
+#include <stdio.h>
+
+void main()
+{
+char ch=0;
+int i=0;
+while(i<=255)
+{
+i++;
+printf("ascii value =%d the character is=%c\n",(int)ch,ch);
+ch++;
+}
+}
+
+e)
+#include <stdio.h>
+
+void main()
+{
+int n,sum,count=1,temp,r;
+while(n<=500)
+{
+n=count;
+sum=0;
+temp=n;
+while(n!=0)
+{
+r=n%10;
+sum =sum + r*r*r;
+n = n/10;
+}
+if(temp==sum)
+{
+printf("%d Is an Armstrong nummber\n ",temp);
+}
+count++;
+}
+}
+
+g)
+#include <stdio.h>
+
+void main()
+{
+int positive=0,negative=0,zeros=0,num;
+char choice;
+do
+{
+printf("Enter the value \n");
+scanf("%d",&num);
+if(num>0){
+positive++;
+}
+else if(num<0){
+negative++;
+}
+else{zeros++;
+}
+printf("For Entering more values Press 'Y' \n");
+scanf(" %c",&choice);
+}
+while(choice=='Y' || choice=='y');
+
+printf("Positiove number are %d\n",positive);
+printf("Negitive number are %d\n",negative);
+printf("Number of Zeros are %d\n",zeros);
+}
+

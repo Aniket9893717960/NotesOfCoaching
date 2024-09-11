@@ -1,0 +1,28 @@
+Queries:
+1)Show Databases;   //This wil use to show all the Databases we created in mysql
+2)CREATE DATABASES db27;    //This is use to create a databases
+3) Use db27;   //This is use to use daabase
+4) CREATE  TABLE emp(empid  int,empname varchar(20),empsalary int,empcity varchar(20));
+ CREATE  TABLE emp(
+                                            empid  int, 
+                                            empname varchar(20),
+                                            empsalary int,
+                                            empcity varchar(20));
+5)SHOW  TABLES;
+6)INSERT INTO emp values( 100,'Ram','10000','Indore');
+INSERT INTO emp values( 101,'Shyam','12000','Indore'),(102,'Raj','1500','Bhopal');
+INSERT INTO emp(empid,empname,empcity) values(103,'John','Rau');
+
+7)SELECT (empid,empname,empsalary,emcity) FROM emp;
+Select * FROM emp;
+
+8) Select * FROM emp WHERE empsalary>10000;
+Select * FROM emp WHERE empsalary<10000;
+Select * FROM emp WHERE empsalary=10000;
+Select * FROM emp WHERE empsalary>=10000;
+Select * FROM emp WHERE empsalary!=10000;
+Select * FROM emp WHERE empsalary<>10000;  // '<>' represent either lessthan or greater than
+Select * FROM emp WHERE empsalary=NULL;
+
+9)Select * FROM emp WHERE empsalary is NULL;  
+Select * FROM emp WHERE empsalary is not NULL;

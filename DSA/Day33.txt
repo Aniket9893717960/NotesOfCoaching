@@ -1,0 +1,22 @@
+#Tower of Hanoi
+   -------------------
+void hanoi(int n,char init,char final,char temp);
+void main()
+{
+int n;
+printf("Enter number of disc \n");
+scanf("%d",&n);
+hanoi(n,'A','C','B');
+}
+void hanoi(int n,char init,char final,char temp)
+{
+if(n==1)
+{
+printf("More disc 1 from %c to %c\n",init,final);
+return;
+}
+hanoi(n-1,init,temp,final);
+printf("More disc %d from %c to %c\n",n,init,final);
+hanoi(n-1,temp,final,init);
+}
+ 

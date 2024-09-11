@@ -1,0 +1,62 @@
+1)
+import java.util.Scanner;
+
+class Ts
+{
+int substring(int a[],int length){
+int sum =0,max=0;
+
+for(int i=0;i<length;i++){
+ max=a[i];
+ for(int j=i+1;j<length;j++){
+  if(max<=a[j])
+   System.out.println("set value of x is ="+a[i]+" and y="+a[j]);
+   sum =sum+a[i]+a[j];
+ }
+}
+
+sum = sum+max;
+
+return sum;
+}
+
+public static void main(String args[]){
+Ts t1 = new Ts();
+Scanner sc = new Scanner(System.in);
+int n = sc.nextInt();
+int a[] = new int[n];
+for(int i=0;i<n;i++)
+a[i] = sc.nextInt();
+
+int output = t1.substring(a,n);
+System.out.println(output);
+ }
+}
+
+2)
+import java.util.Scanner;
+
+class Ts
+{
+void array(int a[],int length,int sum){
+
+for(int i=0,j=i+1;i<length-1;j++,i++)
+ if((a[i]+a[j])==sum)
+  System.out.print("index of i="+(i+1)+" and j="+(j+1));
+}
+
+public static void main(String args[]){
+Ts t1 = new Ts();
+Scanner sc = new Scanner(System.in);
+
+int n = Integer.parseInt(args[0]);
+int a[] = new int[n];
+
+for(int i=0;i<n;i++)
+a[i] = sc.nextInt();
+
+int sum = Integer.parseInt(args[1]);
+
+t1.array(a,n,sum);
+}
+}

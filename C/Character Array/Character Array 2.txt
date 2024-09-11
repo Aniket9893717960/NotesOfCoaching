@@ -1,0 +1,137 @@
+NOTES
+strrev(a);  : The Drawback of this methord is that it will change the original Array to reverse the Array.
+----------------------------------------------------------------------
+#write a Program to Enter a String from the user and Print the Length of the String?
+
+#include <stdio.h>
+#include <string.h>
+
+void main()
+{
+char a[10];
+int i=0;
+
+printf("Enter a Name: \n");
+gets(a);
+
+while(a[i]!='\0')
+{
+i++;
+}
+printf("Length of the element is =%d",i);
+}
+
+                                   Alternate Methord for Building this Program
+                                   -----------------------------------------------------
+#include <stdio.h>
+#include <string.h>
+void main()
+{
+char a[10];
+
+printf("Enter a Name: \n");
+gets(a);
+
+printf("Length of the element is =%d",strlen(a));
+}
+
+#write a program to enter a String from user and print the string in reverse order?
+
+#include <stdio.h>
+#include <string.h>
+
+void main()
+{
+char a[10];
+int i;
+
+printf("Enter a Name :\n");
+gets(a);
+
+printf("Reverse of String:");
+for(i=(strlen(a)-1);i>=0;i--)
+{
+printf("%c",a[i]);
+}
+}
+
+                                         Alternate Program for Reverse the string 
+                                         -------------------------------------------------
+#include <stdio.h>
+#include <string.h>
+
+void main()
+{
+char a[10];
+int i;
+
+printf("Enter a Name :\n");
+gets(a);
+
+strrev(a);
+puts(a);
+}
+
+
+#write a Program to Copy the String into Different Character Array?
+
+#include <stdio.h>
+#include <string.h>
+
+void main()
+{
+char a[10];
+int i;
+
+printf("Enter a Name :\n");
+gets(a);
+
+for(i=0;i<strlen(a);i++)
+{
+b[i]=a[i];
+}
+puts(a);
+puts(b);
+}
+                                          Alternate Program for copy the string 
+                                         -------------------------------------------------
+#include <stdio.h>
+#include <string.h>
+
+void main()
+{
+char a[10];
+int i;
+
+printf("Enter a Name :\n");
+gets(a);
+
+strcpy(b,a);
+puts(a);
+puts(b);
+}
+
+H.W) Reverse of the Array will copy on the different component?
+
+#include <stdio.h>
+#include <string.h>
+
+void main()
+{
+char a[10],b[10];
+int i,j=0;
+
+printf("Enter a NAME :");
+gets(a);
+
+for(i=strlen(a)-1;i>=0;i--)
+{
+b[j] =a[i];
+j++;
+}
+b[j]='\0';
+
+puts(a);
+puts(b);
+}
+

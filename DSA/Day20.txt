@@ -1,0 +1,125 @@
+# Circular LinkList
+    --------------------
+
+void insert()
+{
+int position,count=0,i=1,n;
+printf("Enter a New Value \n");
+scanf("%d",&n);
+New =(struct node *)malloc(sizeof(struct node));
+New ->data =n;
+New ->add =start;
+printf("Entering a Position for New value \n");
+scanf("%d",&position);
+if(position==1)
+{
+temp=start;
+while((temp->add)!=start)
+{
+temp = temp->add;
+}
+temp ->add =New;
+start =New;
+}
+
+else
+{
+temp =start;
+do
+{
+count++;
+temp = temp->add;
+}
+while(temp!=start);
+
+if(position>count+1)
+{
+printf("Invalid position it should be =%d",count+1);
+}
+else if(position==count+1)
+{
+temp=start;
+while((temp->add)!=start)
+{
+temp =temp ->add;
+}
+temp ->add =New;
+New ->add =start;
+}
+else
+{
+next=start;
+while(i<position)
+{
+prev =next;
+next =next ->add;
+i++;
+}
+prev ->add =New;
+New ->add =next;
+}
+}
+}
+
+
+void delete()
+{
+int position,i=1,count=0;
+printf("Enter a position to delete an element in link list \n");
+scanf("%d",&position);
+if(position==1)
+{
+temp =start;
+printf("Deleted element is :%d",temp->data);
+while(temp ->add != start)
+{
+temp =temp ->add;
+}
+temp ->add = start ->add;
+temp =start;
+start = start ->add;
+free(temp);
+}
+else
+{
+temp =start;
+do
+{
+count++;
+temp =temp ->add;
+}
+while(temp!=start);
+
+if(position >count)
+{
+printf("Invalid position should be =%d",count);
+}
+elseif(position ==count)
+{
+next =start;
+while((next ->add)!=start)
+{
+prev =next;
+next = next ->add;
+}
+prev ->add =start;
+printf("Deleted element is :",next ->data);
+free(next);
+}
+else
+{
+next = start;
+while(i<position)
+{
+prev = next;
+next = next ->add;
+i++;
+}
+temp = next;
+next = next ->add;
+printf("Deleted element is =%d",temp ->data);
+free(temp);
+prev ->add =next;
+}
+}
+}

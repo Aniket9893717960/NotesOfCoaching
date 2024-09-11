@@ -1,0 +1,184 @@
+1)
+#include <stdio.h>
+void main()
+{
+int n=150300,r,sum=0,count=0,temp;
+temp =n;
+printf("ORiginal value %d",temp);
+while(n>0)
+{
+count++;
+r =n%10;
+sum =sum*10+r;
+n = n/10;
+}
+printf("Sum =%d\n",sum);
+while(sum>0)
+{
+count--;
+r = sum%10;
+switch(r)
+{
+case 0:
+printf("ZERO \n");break;
+case 1:
+printf("ONE\n"); break;
+case 2:
+printf("Two\n");break;
+case 3:
+printf("Three \n");break;
+case 4:
+printf("Four \n");break;
+case 5:
+printf("Five \n");break;
+case 6:
+printf("Six \n");break;
+case 7:
+printf("SEVEN \n");break;
+case 8:
+printf("EIGHT \n");break;
+case 9:
+printf("NINE \n");break;
+}
+sum = sum/10;
+}
+while(count-->0)
+{
+printf("ZERO \n");
+}
+}
+
+2)
+                                                          THis is not accurate for All [Only for Binary] With Reecursion
+                                                         -------------------------------------------------------------------------
+#include <stdio.h>
+int rev(int n,int count);
+void func(int count1,int sum);
+void hex(int count1,int sum);
+void main()
+{
+int n,base,sum=0,r,count=0,count1=0;
+printf("Enter the integer value from the keyboard:\n");
+scanf("%d",&n);
+printf("Base of the numbering system\n");
+scanf("%d",&base);
+while(n>0){
+count1++;
+count++;
+r = n%2;
+sum = sum*10+r;
+n =n/2;
+}
+printf("%d\n",count);
+sum=rev(sum,count);
+printf("%d\n",sum);
+
+if(base ==8){
+func(count1,sum);
+}
+if(base ==16){
+printf("count =%d",count1);
+hex(count1,sum);
+}
+}
+
+void func(int count1,int sum){
+int sum1=0,count=0,temp,r,n,temp1=1,count2=0;
+r=(count1/3)+1;
+n=0;
+while(r!=0){
+count1=0;
+n=0;
+temp = sum%1000;
+printf("%d\n",temp);
+count2++;
+  while(temp!=0)
+  {
+  count=temp%10;
+     if(count1==0 && count==1){
+        n=n+1;
+        printf("n=%d\n",n);
+      }
+      else if(count1==1 && count==1){
+        n=n+2;
+        printf("n=%d\n",n);
+       }
+       else {
+         if(count1==2 && count==1)
+          n=n+4;
+        printf("n=%d\n",n);
+       }
+     count1++;
+     printf("%d\n",count1);
+    temp = temp/10;
+  }
+printf("sum = %d",sum1 =sum1*10+n);
+sum = sum/1000;
+r--;
+ }
+printf("\nfinal Sum=%d",sum1);
+sum=rev(sum1,count2);
+printf("\nSum=%d",sum);
+}
+
+void hex(int count1,int sum){
+int sum1=0,count=0,temp,r,n,temp1=1,count2=0;
+printf("count =%d\n",count1);
+r=(count1/4)+1;
+n=0;
+while(r>0){
+printf("%d",r);
+count1=0;
+n=0;
+temp = sum%10000;
+printf("\n%d\n",temp);
+count2++;
+  while(temp!=0)
+  {
+  count=temp%10;
+     if(count1==0 && count==1){
+        n=n+1;
+        printf("n=%d\n",n);
+      }
+      else if(count1==1 && count==1){
+        n=n+2;
+        printf("n=%d\n",n);
+       }
+       else {
+         if(count1==2 && count==1)
+          n=n+4;
+         printf("n=%d\n",n);
+          if(count1==3 && count==1)
+          n=n+8;           
+        printf("n=%d\n",n);
+       }
+     count1++;
+     printf("%d\n",count1);
+    temp = temp/10;
+  }
+printf("sum = %d",sum1 =sum1*10+n);
+sum = sum/10000;
+r--;
+ }
+printf("\nfinal Sum=%d",sum1);
+sum=rev(sum1,count2);
+printf("\nSum=%d",sum);
+}
+
+int rev(int sum1,int count1){
+printf("count1 =%d\n",count1);
+int r,n=0,count=0,temp;
+while(sum1>0){
+count++;
+r=sum1%10;
+n= n*10+r;
+sum1=sum1/10;
+}
+printf("count =%d",count);
+temp = count1-count;
+while(temp>0){
+n=n*10;
+temp--;
+}
+return(n);
+}

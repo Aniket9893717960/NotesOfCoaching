@@ -1,0 +1,83 @@
+#Linked List
+ ---------------
+
+#include <stdio.h>
+#include <stdlib.h>
+struct node
+{
+int data;
+struct node *add;
+};
+struct node *start = NULL,*temp,*New,*prev,*next;
+void create();
+void insert();
+void delete();
+void display();
+
+void main()
+{
+int z;
+do
+{
+printf("--------------Linklist-------------\n");
+printf("Press 1: for Create \n");
+printf("Press 2: for insert \n");
+printf("Press 3: for delete \n");
+printf("Press 4: for display \n");
+printf("Press 5: for exit\n");
+scanf("%d",&z);
+switch(z)
+{
+case 1: create();
+break;
+case 2: insert();
+break;
+case 3: delete();
+break;
+case 4: display();
+break;
+case 5: break;
+default:
+printf("Invalid ypur choice \n");
+}
+}
+while(z!=5); 
+}
+
+void create()
+{
+int n;
+char ch;
+printf("Enter a value :");
+scanf("%d",&n);
+start = (struct node *)malloc(sizeof(struct node));
+start -> data =n;
+start -> add = NULL;
+temp = start;
+printf("to add more elements,press 'Y' ");
+scanf("  %c",&ch);
+while(ch=='Y' || ch=='y')
+{
+printf("Enter next value :");
+scanf("%d",&n);
+New = (struct node *)malloc(sizeof(struct node));
+New -> data = n;
+New ->add = NULL;
+temp -> add = New;
+temp = New;
+printf("To add more elements,press 'Y' ");
+scanf(" %c",&ch);
+}
+}
+
+void insert()
+{
+}
+
+void delete()
+{
+}
+
+void display()
+{
+}

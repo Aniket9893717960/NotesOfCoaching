@@ -1,0 +1,111 @@
+
+--------------------------------------------------
+                            H.W
+Q) write a Program to convert lower case to upper Case with the help of pointer to character?
+#include <stdio.h>
+void main()
+{
+char a[]="Hello",*p;
+int i=0;
+p=a;
+while(*p!='\0')
+{
+if(*p>=97 && *p<=122)
+printf("%c",(char)(*p-32));
+else 
+printf("%c",*p);
+*p++;
+}
+}
+
+Q) write a program to get a String from user that contain no. of Vowels and consonents?
+#include <stdio.h>
+void main()
+{
+char ch[]="Th@is is a class",*p;
+int i=0,vowels=0,consonents=0,other=0,sp=0;
+p=ch;
+while(*p!='\0'){
+if((*p>64 && *p<92) || (*p>96 && *p<123)){
+if((*p=='A' || *p=='E' || *p=='I' || *p=='O' || *p=='U') || (*p=='a' || *p=='e' || *p=='i' || *p=='o' || *p=='u'))
+vowels++;
+else
+consonents++;
+}
+else if(*p==32)
+sp++;
+else {
+other++;
+}
+*p++;
+}
+printf("No. of Vowels =%d\n",vowels);
+printf("No. of Consonent =%d\n",consonents);
+printf("No. of spaces =%d\n",sp);
+printf("No. of Not alphabet =%d\n",other);
+}
+
+Q) write a program to merge two character String's "Aniket" and "Rathore" in a third array?
+
+#include <stdio.h>
+void main()
+{
+char ch[]="Aniket",ch1[]="Rathore",*p,*q;
+int i=0,count=0,count1=0,j;
+p=ch;
+while((*p++)!='\0'){
+count++;
+}
+printf("Count =%d\n",count);
+q=ch1;
+while((*q++)!='\0'){
+count1++;
+}
+printf("Count1 =%d\n",count1);
+count1=count+count1;
+char ch2[count1],*r;
+r =ch2;
+p=ch;
+q=ch1;
+for(i=0;i<count;i++){
+*r++=*p++;
+}
+for(j=count1;j>count;j--){
+*r++ =*q++;
+}
+r=ch2;
+printf("%s",r);
+}
+
+Q)
+#include <stdio.h>
+void main()
+{
+char ch[10],*p,*q,temp;
+int i,length=0;
+p=ch;
+printf("Enter a value");
+for(i=0;i<10;i++)
+{
+*p++ =getchar();
+if(*p==13 || *p==10){
+*p='\0';
+break;
+}
+length++;
+}
+p=ch[length-1];
+q=ch;
+for(i=0;i<length;i++){
+if(p==q)
+break;
+temp=*p;
+*p=*q;
+*q=temp;
+*p--;
+*q++;
+}
+puts(ch);
+}
+
+--------------------------------------------------

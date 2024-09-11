@@ -1,0 +1,86 @@
+# Circular Linklist
+    -------------------
+#include <stdio.h>
+#include <stdlib.h>
+struct node 
+{
+int data;
+struct node *add;
+};
+struct node *start =NULL,*temp,*New,*prev,*next;
+void create();
+void insert();
+void delete();
+void display();
+
+void main()
+{
+int ch;
+do
+{
+printf("------------LinkList------------\n");
+printf("Press 1: for Create \n");
+printf("Press 2: for Insert \n");
+printf("Press 3: for Delete \n");
+printf("Press 4: for Display \n");
+printf("Press 5: for exit");
+scanf("%d",&ch);
+switch(ch)
+{
+case 1: create();
+break;
+case 2: insert();
+break;
+case 3: delete();
+break;
+case 4: display();
+break;
+case 5: break;
+}
+}
+while(ch!=5);
+}
+
+void create()
+{
+int n;
+char ch;
+printf("Enter a value \n");
+scanf("%d",&n);
+start = (struct node *)malloc(sizeof(struct node));
+start ->data =n;
+start -> add =start; 
+temp = start;
+printf("Entering a New value Press 'Y' ");
+scanf(" %c",&ch);
+while(ch=='Y' || ch=='y')
+{
+printf("Enter next value \n");
+scanf("%d",&n);
+New = (struct node *)malloc(sizeof(struct node));
+New ->data = n;
+New -> add =start;
+temp -> add =New;
+temp =New;
+printf("Entering a New value Press 'Y' ");
+scanf(" %c",&ch);
+}
+}
+
+void display()
+{
+if(start ==NULL)
+{
+printf("Create a LinkList First \n");
+}
+else
+{
+temp = start;
+do
+{
+printf("%d\t",temp ->data);
+temp =temp ->add;
+}
+while(temp!=start);
+}
+}

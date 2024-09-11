@@ -1,0 +1,74 @@
+Notes
+strcmpi(a,b);  :This will stands for String Comparison Ignore the case Sensitivity
+(This will consider Capital and Small Letters as same).
+This will work in Turbo C.
+-------------------------------------------------------------------------------------------
+*Write a Program to enter two String from user And Compare two Strings?
+
+#include <stdio.h>
+#include <string.h>
+
+void main()
+{
+char a[10],b[10];
+int i,f=0;
+
+printf("Enter first String \n");
+gets(a);
+
+printf("Enter Second String \n");
+gets(b);
+
+if(strlen(a)!=strlen(b))
+{
+f=1;
+}
+else
+{
+for(int i=0;i<strlen(a);i++)
+{
+if(a[i]!=b[i])
+{
+f=1;
+break; 
+}
+}
+}
+if(f=0)
+{
+printf("Both the String are Same \n");
+}
+else
+{
+printf("Both the String are Different \n");
+}
+}
+
+
+# Inbuilt Function for comparison of two strings?
+   ---------------------------------------------------------
+#include <stdio.h>
+#include <string.h>
+
+void main()
+{
+char a[10],b[10];
+int i,f=0;
+
+printf("Enter first String \n");
+gets(a);
+
+printf("Enter Second String \n");
+gets(b);
+
+f=strcmp(a,b);                               //For Doing comparison
+
+if(f=0)
+{
+printf("Both the String are Same \n");
+}
+else
+{
+printf("Both the String are Different \n");
+}
+}

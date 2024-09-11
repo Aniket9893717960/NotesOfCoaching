@@ -1,0 +1,13 @@
+IMP -/   Static data member run without the object
+             "." it is a accessablility operator
+              Java will build for GUI Programing
+  /-
+
+class  First
+{
+public static void main(String args[])
+{
+     System.out.println(" Hello");     // this will work just like a "printf" in C
+     System.out.println("Indore");
+}
+}

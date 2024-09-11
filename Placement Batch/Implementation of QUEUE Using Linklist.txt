@@ -1,0 +1,102 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node
+{
+int data;
+struct node *root;
+};
+struct node *start=NULL,*temp,*New;
+int count=0;
+void enqueue();
+void dequeue();
+void display();
+struct node *Allocate(int);
+
+void main()
+{
+int ch=0;
+do
+{
+printf("-------------Queue Using Linklist-------\n");
+printf("Press 1:For Enqueue:\n");
+printf("Press 2: for Dequeue: \n");
+printf("Press 3: for Display \n");
+printf("Press 4: for Exit \n");
+printf("Choose Any of this \n");
+scanf("%d",&ch);
+switch(ch)
+{
+case 1: enqueue();
+break;
+case 2: dequeue();
+break;
+case 3:display();
+break;
+case 4:break;
+default:
+printf("Invalid Choice \n");
+}
+}
+while(ch!=4);
+}
+
+
+void display()
+{
+if(start==NULL)
+{
+printf("Stack is Underflow");
+}
+else
+{
+temp =start;
+while(temp!=NULL){
+printf("%d\t",temp->data);
+temp =temp->root;
+}
+}
+}
+
+struct node *Allocate(int n){
+ New = (struct node *)malloc(sizeof(struct node));
+ New ->data =n;
+ New ->root=NULL;
+ return (New);
+}
+void enqueue()
+{
+int n;
+printf("Enter the Value \n");
+scanf("%d",&n);
+
+if(count>10){
+printf("Queue is full \n");
+}
+else if(count==0){
+                count++;
+                start= Allocate(n);
+                temp = start;
+}
+else
+{
+New =Allocate(n);
+temp ->root=New;
+temp =New;
+count++;
+ }
+}
+
+void dequeue()
+{
+if(start==NULL)
+{
+printf("Queue is empty\n");
+}
+else {
+temp = start;
+start = start->root;
+printf("Deleted element is =%d",temp->data);
+free(temp);
+}
+}

@@ -1,0 +1,415 @@
+                      Q)
+ Java Int to String
+ -------------------
+For Converting an Integer To String We have the Following Methord
+1)
+toString methord
+------------------
+This is the methord in the wrapper class that will convert any Datatype to String.
+                String s = Integer.toString(n); 
+Here integer is a wrapper class.
+2)
+Java String valueOf()
+---------------------
+                String s = String.valueOf(n);
+The signature or syntax of string valueOf() method is given below:
+public static String valueOf(boolean b)  
+public static String valueOf(char c)  
+public static String valueOf(char[] c)  
+public static String valueOf(int i)  
+public static String valueOf(long l)  
+public static String valueOf(float f)  
+public static String valueOf(double d)  
+public static String valueOf(Object o)  
+
+                        Q)
+   Java Date and Time
+   -------------------
+Class Calendar
+java.lang.Object
+java.util.Calendar
+All Implemented Interfaces:
+Serializable, Cloneable, Comparable<Calendar>
+Direct Known Subclasses:
+GregorianCalendar
+
+public abstract class Calendar
+extends Object
+implements Serializable, Cloneable, Comparable<Calendar>
+The Calendar class is an abstract class that provides methods for converting between a specific 
+instant in time and a set of calendar fields such as YEAR, MONTH, DAY_OF_MONTH, HOUR, and so on, and for 
+manipulating the calendar fields, such as getting the date of the next week. An instant in time can be 
+represented by a millisecond value that is an offset from the Epoch, January 1, 1970 00:00:00.000 GMT (Gregorian).
+The class also provides additional fields and methods for implementing a concrete calendar 
+system outside the package. Those fields and methods are defined as protected.
+
+Like other locale-sensitive classes, Calendar provides a class method, getInstance, for getting a generally 
+useful object of this type. Calendar's getInstance method returns a Calendar object whose calendar fields have 
+been initialized with the current date and time:
+
+     Calendar rightNow = Calendar.getInstance();
+ 
+A Calendar object can produce all the calendar field values needed to implement the date-time formatting 
+for a particular language and calendar style (for example, Japanese-Gregorian, Japanese-Traditional).
+ Calendar defines the range of values returned by certain calendar fields, as well as their meaning. 
+For example, the first month of the calendar system has value MONTH == JANUARY for all calendars. Other values are 
+defined by the concrete subclass, such as ERA. See individual field documentation and subclass documentation for details.
+
+   CODE
+public static String findDay(int month, int day, int year) {
+      String[] day_of_week ={"SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THUESDAY","FRIDAY","SATURDAY"};
+      Calendar cal = Calendar.getInstance();
+      cal.set(year,month-1,day);
+      int p =cal.get(Calendar.DAY_OF_WEEK);
+      return day_of_week[p-1];
+    }
+
+}
+
+             ALTERNATE METHORD
+             ------------------
+LocalDate is an immutable date-time object that represents a date, often viewed as year-month-day. 
+Other date fields, such as day-of-year, day-of-week and week-of-year, can also be accessed. 
+For example, the value "2nd October 2007" can be stored in a LocalDate.
+
+This class does not store or represent a time or time-zone. Instead, it is a description of the date, as used for birthdays. 
+It cannot represent an instant on the time-line without additional information such as an offset or time-zone.
+
+import java.time.LocalDate;
+
+public static String findDay(int month, int day, int year) {
+      return LocalDate.of(year,month,day).getDayOfWeek().name();
+    }
+
+      Java Currency Formate
+      ----------------------
+NumberFormat indiaFormat = NumberFormat.getCurrencyInstance(new Locale("en","in"));
+String formattedAmount = indiaFormat.format(amount);
+
+Explaination
+--------------
+NumberFormat.getCurrencyInstance():
+
+NumberFormat is a class in Java used for formatting numbers. getCurrencyInstance() is a static method of NumberFormat 
+that returns a NumberFormat object configured to format currency values.
+new Locale("en", "in"):
+
+The Locale class represents a specific geographical, political, or cultural region. Here, "en" represents the language code 
+for English, and "in" represents the country code for India.
+By using new Locale("en", "in"), we are creating a Locale object that specifies the English language in the context of India.
+
+NumberFormat indiaFormat = ...:
+
+This line declares and initializes a NumberFormat variable named indiaFormat with the currency 
+formatting settings specific to the Indian locale (en_IN).
+Formatting with indiaFormat:
+
+Once you have indiaFormat initialized, you can use it to format numeric values as currency in the Indian format.
+
+        JAVA STRING INTRODECTION
+       ---------------------------
+String Methord's like :-
+  1)   String UpperCaseFirstChar = A.substring(0, 1).toUpperCase() + A.substring(1);
+
+A.substring(0, 1):
+A.substring(0, 1) extracts the substring of A starting from index 0 (inclusive) up to index 1 (exclusive), 
+which means it extracts the first character of string A.
+For example, if A is "hello", then A.substring(0, 1) will return "h".
+.toUpperCase():
+toUpperCase() is a method in Java's String class that converts all characters in a string to uppercase.
+So, A.substring(0, 1).toUpperCase() converts the extracted first character (substring) of A to uppercase.
+Continuing with our example, A.substring(0, 1).toUpperCase() on "h" will return "H".
+A.substring(1):
+A.substring(1) extracts the substring of A starting from index 1 (second character) to the end of the string.
+For example, if A is "hello", then A.substring(1) will return "ello" (substring from index 1 to end).
+
+Other Methord like
+i) String Builder
+ii) toappend
+iii) toString
+
+       Java Substring Comparison
+       --------------------------
+Substring is a part of a String or can be said subset of the String. There are two variants of the substring() method. 
+This article depicts all of them, as follows : 
+
+public String substring(int startIndex)
+----------------------------------------
+The substring() method has two variants and returns a new string that is a substring of this string. 
+The substring begins with the character at the specified index and extends to the end of this string. 
+Endindex of the substring starts from 1 and not from 0.
+
+public String substring(int startIndex, int endIndex)
+------------------------------------------------------
+This method has two variants and returns a new string that is a substring of this string. 
+The substring begins with the character at the specified index and extends to the 
+end of this string or up to endIndex – 1 if the second argument is given. 
+
+          Java Big Decimal
+          -----------------
+creates an instance of a Comparator<String> interface with a custom implementation of the compare method. 
+Let's break down what this command does and why we use it in the given code context:
+
+Purpose of Comparator<String> customComparator = ...
+Creating a Custom Comparator:
+In Java, a Comparator<T> is an interface used to define a comparison function that can be used to order elements of a collection.
+ Here, Comparator<String> specifies that this comparator will be used to compare String objects.
+Anonymous Class Implementation:
+The code defines an anonymous class that implements the Comparator<String> interface. 
+This is done using the syntax new Comparator<String>() { ... }.
+Overriding the compare Method:
+Inside the anonymous class, the compare method is overridden to provide a custom comparison logic for strings 
+(String s1 and String s2).
+Using BigDecimal for Numeric Comparison:
+Within the compare method, the strings s1 and s2 are converted to BigDecimal objects
+ (a and b) using new BigDecimal(s1) and new BigDecimal(s2).
+The compareTo method of BigDecimal is then used to compare b (converted s2) with a (converted s1).
+Returning b.compareTo(a) sorts the strings in descending order based on their numeric values represented
+ by the BigDecimal objects.
+Why Use This in the Code:
+Sorting Numeric Strings:
+The purpose of using BigDecimal for comparison is to treat the strings as numeric values rather
+ than lexicographically comparing them as plain strings. This ensures that the strings are sorted based on
+ their numeric values (considering potential decimal places and large numbers) rather than their ASCII order.
+Precision and Accuracy:
+Using BigDecimal provides precision and accuracy for decimal number comparison, which is crucial when dealing
+ with numeric string sorting to avoid issues related to floating-point arithmetic.
+Custom Sorting Order:
+The comparator sorts the strings in descending order (b.compareTo(a)) based on their numeric values.
+ This means larger numeric values will appear before smaller ones in the sorted result.
+Applying the Comparator:
+The customComparator is then used with Arrays.sort(s, customComparator) to sort the array of strings (s)
+ based on the custom comparison logic defined by customComparator.
+Example Use Case:
+Consider an input array of strings s containing numeric values like {"10.5", "3.14", "100", "25.8"}.
+ When this array is sorted using the customComparator, the sorted order based on numeric values will be 
+{"100", "25.8", "10.5", "3.14"}.
+
+In summary, the use of Comparator<String> with BigDecimal for numeric comparison allows you to sort an array
+ of strings representing numbers in a specific order (here, descending order based on their numeric values) 
+using a custom comparison logic defined by the compare method override.
+
+          java Index Checker
+          ------------------
+1) java.util.scanner
+   -----------------
+Pattern Matching: The java.util.regex package provides classes such as Pattern and Matcher, 
+which allow you to define regular expressions and match them against input strings. 
+This is crucial for tasks such as searching, replacing, or validating strings based on complex patterns.
+
+Text Processing: Regular expressions are powerful tools for text processing. 
+They enable you to perform tasks such as searching for specific patterns, 
+extracting information, or validating the format of user input.
+2) Pattern.compile(pattern)
+   ------------------------
+Pattern Compilation:
+The Pattern.compile() method takes a string parameter pattern, which represents the regular expression pattern to be compiled.
+Pattern Object:
+The Pattern.compile() method compiles the specified regular expression pattern into a Pattern object.
+ This object represents the compiled form of the regular expression and can be used to perform pattern matching operations.
+Compilation Process:
+During compilation, the regular expression pattern undergoes syntactic and semantic analysis to ensure that it is well-formed and valid.
+If the pattern contains any syntax errors or invalid constructs, a PatternSyntaxException may be thrown at this stage.
+Pattern Object Usage:
+Once compiled, the resulting Pattern object can be used to create Matcher objects, 
+which are used for matching the compiled pattern against input strings.
+Matcher objects created from the compiled Pattern can perform various operations such as finding matches, 
+extracting groups, and replacing text based on the pattern.
+Optimization:
+Compiling the regular expression pattern into a Pattern object allows for optimizations to be applied, such as precomputing 
+finite automata or other data structures to improve the efficiency of pattern matching operations.
+In summary, Pattern.compile(pattern) is a command used to compile a regular expression pattern into a Pattern object,
+ which can then be used for pattern matching operations in Java.
+
+3) PatternSyntaxException 
+   ----------------------
+PatternSyntaxException is an exception class in Java that is thrown when a syntax error is detected 
+in a regular expression pattern. This exception is a subclass of 
+IllegalArgumentException, which means it indicates an error in the arguments passed to a method.
+
+       BigNumber
+       ---------
+1) BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
+System.in: This is an instance of InputStream that represents the standard input stream,
+ typically connected to the keyboard for console input.
+InputStreamReader: This class is used to bridge byte input streams to character input streams. 
+In this case, it converts the byte-oriented System.in into a character-oriented stream.
+BufferedReader: This class provides buffering for Reader instances (including InputStreamReader), 
+allowing more efficient reading of characters, arrays, and lines. It reads text from a character-input stream, 
+buffering characters to provide for the efficient reading of characters, arrays, and lines.
+
+2) bi.isProbablePrime(1)
+
+isProbablePrime(int certainty) method is used to determine whether a BigInteger object is probably prime.
+bi.isProbablePrime(1) is using a certainty level of 1, meaning that it performs a single round of the Miller-Rabin test.
+This is the minimum level of certainty and provides a quick check for primality, 
+but it may not be very accurate for large numbers. 
+It's often used for preliminary checks or in situations where speed is more important than accuracy.
+
+        Valid UserName Regular Expression
+        ---------------------------------
+1) code
+class UsernameValidator {
+    public static final String regularExpression = "^[a-zA-Z][a-zA-Z0-9_]{7,29}";
+}
+   Explaintion
+   -----------
+This class defines a regular expression pattern that determines the validity of a username. Let's break down the regular expression:
+^: Indicates the start of the string.
+[a-zA-Z]: Matches any letter (uppercase or lowercase) at the beginning of the string.
+[a-zA-Z0-9_]: Matches any alphanumeric character or underscore.
+{7,29}: Specifies that there must be at least 7 and at most 29 characters after the first letter.
+
+        Java Inheritance -1
+        --------------------
+Q) why object will be build of a child class 'bird' not for Animal?
+ A) it's important to note that because Bird is a subclass of Animal,
+it inherits all the properties and methods of the Animal class. This means that even though bird is declared as a Bird object,
+it can still access the walk() method defined in the Animal class due to inheritance.
+        JAVA Map
+        --------
+1)         HashMap<String, Integer> hm = new HashMap<>();
+This declares a HashMap named hm which stores mappings of names (String) to phone numbers (Integer).
+
+2)         if (hm.containsKey(s)) {
+    System.out.println(s + "=" + hm.get(s));
+} else {
+    System.out.println("Not found");
+}
+hm.containsKey(s): This checks whether the HashMap hm contains the key s, i.e.,
+ whether the name input by the user exists in the HashMap.
+If hm contains the key s, the corresponding phone number associated with
+ that name is retrieved using hm.get(s), and it's printed out.
+If hm doesn't contain the key s, it prints "Not found".
+So, hm.containsKey(s) is an essential operation in this program as it allows
+verifying whether a specific name exists in the HashMap or not, facilitating the lookup of associated phone numbers.
+
+        Java HashSet
+        ------------
+1)        int t = s.nextInt();
+        String [] pair_left = new String[t];
+        String [] pair_right = new String[t];
+        The program reads an integer t from the input, indicating the number of pairs to be read.
+        Two arrays pair_left and pair_right are initialized to store the left and right strings of each pair.
+2)      HashSet<String> hs = new HashSet<>();
+A HashSet named hs is initialized to store unique pairs of strings.  
+3)      for (int i = 0; i < t; i++) {
+    hs.add(pair_left[i]+" "+pair_right[i]);
+    System.out.println(hs.size());
+      }
+In this loop, each pair of strings is concatenated with a space in between and added to the HashSet.
+After each addition, the size of the HashSet (number of unique pairs) is printed.
+4)      how this code wll clarify that which String should be add or not?
+
+A HashSet in Java does not allow duplicate elements. 
+When you try to add an element to a HashSet, it first checks whether the element already exists in the set. 
+If it does, the element is not added again. If it doesn't, the element is added to the set.
+
+   Java SOrt
+   ----------
+Collections.sort(studentList, Comparator.comparing(Student::getCgpa)
+        .reversed()
+        .thenComparing(Student::getFname)
+        .thenComparing(Student::getId));
+Collections.sort(studentList, ...): This line calls the sort method of the Collections class to sort the studentList. 
+It takes two arguments: the list to be sorted (studentList) and a comparator that defines the sorting order.
+
+Comparator.comparing(Student::getCgpa): This part creates a comparator that compares Student objects based on their CGPA (Cumulative Grade Point Average).
+ It uses the comparing method of the Comparator interface, which takes a function that extracts the key to be compared.
+ In this case, it uses a method reference Student::getCgpa, which refers to the getCgpa method in the Student class.
+
+.reversed(): This method call reverses the natural order of the comparator.
+ So, instead of sorting in ascending order based on CGPA, it sorts in descending order.
+
+.thenComparing(Student::getFname): This part adds a secondary comparison to the comparator.
+ If two Student objects have the same CGPA, it then compares them based on their first names (fname).
+ It uses the thenComparing method, which takes another comparator. 
+Again, it uses a method reference Student::getFname to extract the first name.
+
+.thenComparing(Student::getId): This adds another level of comparison.
+ If two Student objects have the same CGPA and first name, it then compares them based on their IDs.
+ It uses the thenComparing method with a method reference Student::getId.
+
+By combining these comparisons using thenComparing, 
+you create a composite comparator that sorts the studentList first by CGPA in descending order, 
+then by first name, and finally by ID.
+
+So, the final sorted list will have students sorted primarily by CGPA (highest to lowest), 
+and within CGPA groups, students with the same CGPA will be sorted alphabetically by first name, 
+and within the same first name, students will be sorted numerically by ID.
+
+4)  JAVA Abstract class
+     -----------------
+
+Running the Code
+User Input: The program prompts the user to enter the title of a book.
+Set Title: The setTitle method is called on the new_novel object (an instance of MyBook), setting the title of the book.
+Get Title: The getTitle method is called to retrieve the title, which is then printed to the console.
+Summary
+Abstract Class (Book): Contains an abstract method setTitle and a concrete method getTitle.
+Concrete Class (MyBook): Implements the abstract method setTitle.
+Main Class (Main): Reads input, sets the book title, and prints it.
+This structure ensures that any class extending Book must provide its own implementation of setTitle,
+ maintaining flexibility and enforcing a contract for subclasses.
+
+5)  JAVA Interface 
+   -----------------
+
+Purpose: The AdvancedArithmetic interface defines a contract that any implementing class must follow. 
+Specifically, it requires the implementation of the divisor_sum method.
+Method: divisor_sum(int n): An abstract method that, when implemented, will calculate and return the sum of the divisors of n.
+
+
+Purpose: MyCalculator is a concrete class that implements the AdvancedArithmetic interface. It provides the specific implementation for the divisor_sum method.
+Method Implementation:
+@Override: This annotation indicates that divisor_sum is implementing the method declared in the AdvancedArithmetic interface.
+temp = n / 2: This variable holds half the value of n. This is used to reduce the number of iterations in the for loop since no divisor other than n itself will be greater than n/2.
+int sum = 0: Initializes a variable to store the sum of the divisors.
+for (int i = 1; i <= temp; i++): A loop that iterates from 1 to n/2. This loop checks each number to see if it is a divisor of n.
+if (n % i == 0): Checks if i is a divisor of n.
+sum = sum + i: If i is a divisor, it is added to sum.
+return (sum + n): After the loop, sum is returned with n added to it, because n itself is also a divisor.
+
+
+6)  JAVA Mwthord Overring 
+   -----------------
+
+Explanation of Output:
+For the Sports instance (c1):
+
+getName returns "Generic Sports".
+getNumberOfTeamMembers prints "Each team has n players in Generic Sports".
+For the Soccer instance (c2):
+
+getName returns "Soccer Class".
+getNumberOfTeamMembers prints "Each team has 11 players in Soccer Class".
+By using method overriding, the Soccer class provides its own specific implementations of the methods from the Sports class, demonstrating polymorphism.
+
+
+
+6)  JAVA List
+   -----------------
+
+The integer q is read, representing the number of queries.
+A for loop runs q times, processing each query.
+Each query consists of a command (Insert or Delete).
+If the command is Insert, two integers x and y are read. x is the index at which to insert y.
+The index x is validated to ensure it is within the bounds of the list.
+If valid, y is inserted at index x in the list li.
+If the command is not Insert (assumed to be Delete), one integer x is read. x is the index of the element to be removed from the list.
+The element at index x is removed from the list li.
+
+6)  JAVA Stack
+   -----------------
+
+while (sc.hasNext()) { ... } is a loop that continues to read input as long as there is more input available.
+static boolean Valid(String s) defines a static method Valid that takes a String as input and returns a boolean.
+Stack<Character> st = new Stack<Character>(); creates a stack to keep track of opening characters.
+int length = s.length(); stores the length of the input string.
+for (int i = 0; i < length; i++) { ... } iterates over each character in the input string.
+char ch = s.charAt(i); retrieves the character at the current index.
+if (ch == '{' || ch == '(' || ch == '[') { st.push(ch); } pushes the character onto the stack if it is an opening character.
+else if (st.isEmpty()) { return false; } checks if the stack is empty when a closing character is encountered, which would mean there is no corresponding opening character.
+else { char top = st.pop(); if ((top == '{' && ch != '}') || (top == '(' && ch != ')') || (top == '[' && ch != ']')) return false; } pops the top character from the stack and checks if it correctly matches the current closing character.
+return st.isEmpty(); returns true if the stack is empty at the end (all opening characters have been correctly matched and closed), otherwise returns false.

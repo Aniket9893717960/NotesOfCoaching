@@ -1,0 +1,89 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node 
+{
+int data;
+struct node *root;
+};
+struct node *start=NULL,*temp,*New;
+int count=0;
+void pop();
+void push();
+void Display();
+
+void main()
+{
+int ch;
+do
+ {
+ printf("--------Stack of Linklist------\n");
+ printf("Press 1: for Push \n");
+ printf("Press 2: for Pull \n");
+ printf("Press 3: for Display \n");
+ printf("Press 4: for Exit \n");
+ printf("Enter the value \n");
+ scanf("%d",&ch);
+ switch(ch){
+ case 1:push();
+ break;
+ case 2:pop();
+ break;
+ case 3:Display();
+ break;
+ case 4:break;
+ default:
+ printf("Invalid position");
+ }
+}
+ while(ch!=4);
+}
+
+void push(){
+int n,i=1;
+printf("Enter the Value \n");
+scanf("%d",&n);
+
+ if(count>=20){
+  printf("Stack is overflow \n");
+ }
+else if(count==0){
+ start = (struct node *)malloc(sizeof(struct node));
+ start ->data  =n;
+ start->root=NULL;
+ count++;
+}
+else {
+New = (struct node *)malloc(sizeof(struct node));
+New ->data=n;
+New ->root =start;
+start=New;
+count++;
+}
+}
+
+void pop(){
+if(start==NULL)
+printf("stack is underflow\n");
+else
+{
+temp = start;
+start = start->root;
+printf("Deleted element is =%d",temp->data);
+free(temp);
+}
+}
+
+void Display()
+{
+if(start==NULL)
+printf("stack is underflow\n");
+else
+{
+temp = start;
+while(temp!=NULL){
+printf("%d\t",temp->data);
+temp = temp->root;
+}
+}
+}

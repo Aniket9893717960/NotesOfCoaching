@@ -1,0 +1,93 @@
+IMP Notes
+* scanner class is used to scan some data from the user but it is not able to allocate some memory.
+    So,memory will be demanded by  'System.in'.
+-----------------------------------------------------------------------------
+#command line arguments
+  --------------------------------
+class Test                                                                                               class Test
+{                                                                                                                {
+public static void main(String args[])                                          public static void main(String args[])
+{                                                                                                                {
+for(int i=0;i<args.length;i++)                                                            System.out.println(args[0]);
+{                                                                                                                    System.out.println(args[1]);
+System.out.println(args[i]);                                                           }
+}                                                                                                                }
+}
+}
+At command prompt
+--------------------------                       
+javac Test.java
+java Test Hello Indore
+|
+------->Test main(array)              // this will call by system
+                                      |
+                                      ---------->String array[] ={"Hello",'Indore'};          // this will call by system
+#Typeconversing
+  -------------------
+              OR
+  parseing
+ -----------
+*Integer is a wrapper class.
+class Test
+{
+public static void main(String args[])
+{
+int a = Integer.parseInt(args[0]);
+int b = Integer.parseInt(args[1]);
+System.out.println(a+b);                              OUTPUT
+}                                                                         java Test 10 20
+}                                                                                   30
+
+----------------------------------------------------------------
+if we insert 10 and Hello in this program then we see an execption called number Format exception
+---------------------------------------------------------------
+
+#Scanner class
+ -------------------
+-----------------------------------------------------------------------------
+* System.in is a Standard input Stream buffer.
+                                ---------------------------------- this means that a buffer memory which will be used in the input stream.
+                                                                                          in which buffer is a temprary storage area.
+                                                                                          'in' is a predefined object
+--------------------------------------------------------------------------------------
+Q)write a program to get two input from the user and print sumbition of it?
+
+import java.util.Scanner;
+class TestScanner
+{
+public static void main(String args[])
+{
+Scanner sc = new Scanner(System.in);
+System.out.println("Enter first value =");
+int a = sc.nextInt();
+System.out.println("Enter second value =");
+int b = sc.nextInt();
+int c = a+b;
+System.out.println("sum of "+a+"and"+b+"="+c);
+}
+}
+
+#Dynamic array
+  -------------------
+import java.util.Scanner;
+
+class Ts
+{
+public static void main(String args[])
+{
+Scanner sc = new Scanner(System.in);
+System.out.println("Size of array :");
+int n = sc.nextInt();
+int a[] = new int[n];
+System.out.println("Enter "+n+" values");
+for(int i =0;i<n;i++)
+{
+a[i] = sc.nextInt();
+}
+System.out.println("You have enterd");
+for(int i:a)
+{
+System.out.println(i);
+}
+}
+}

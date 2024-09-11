@@ -1,0 +1,122 @@
+Imp Lecture
+*we can only declare an Abstract Keyword
+*It is a compalsion that it's necessary the Abstract methord is only declared in abstract class only.
+*abstract keyword will generally use in working Servers.
+-----------------------------------------------------------------------------------------------
+*if an abstract class will be the final class happends then it will show a compilation error.
+*An abstract methord can not be declared as final.
+*An abstract methord or class will not be static because it does not have defination
+ or this is also a reason of why abstract class not have object.
+                                                  -------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+
+# abstract Keyword
+ -------------------------
+This can be used with methord declaretion,class declaration.
+if a methord is declared as abstract then it can only be declare in the class but it can not be defined in same class.
+to hold an abstract methord abstract class is required it is a complation that an abstract methord should always be inside the 
+abstract class but it is not necessary that all the methords of an abstract class are abstract.
+
+if a non-abstract class is going to inherit an abstract class then it will be a compalsion for the child class that it has to implement
+(or override)  all the abstract methords of parent class.
+
+we are not allow to create any object of an abstract class but we can create a reference for the same.
+
+*with only abstract methord
+--------------------------------------
+abstract class A
+{
+abstract void show();
+}
+class B extends A
+{
+void show()
+{
+System.out.println("Hello from A");
+}
+}
+
+class Test
+{
+public static void main(String args[])
+{
+B b1 = new B();
+b1.show();
+}
+}
+
+* with abstract and non-abstract methord
+ ---------------------------------------------------
+abstract class A
+{
+abstract void show();
+void display
+{
+System.out.println("Hello from A");
+}
+}
+
+class B extends A
+{
+void show()
+{
+System.out.println("Hello from B");
+}
+}
+
+class Test
+{
+public static void main(String args[])
+{
+B b1 = new B();
+b1.show();
+b1.display();
+}
+}
+--------------------------------------------------------------------------------------------
+Q* if abstract class have a default constructor ?
+yes because whenever an object of a child class is create to will 
+forward a request to memory allocation for a parent class but we don't able to call it.
+
+Q* if abstract class will build a paramerized constructor ?
+yes because abstract class will contant all the features of normal class and have 
+two extra feature abstract methord or not possible to build an object.
+*call a parameterized constructor with the help of super keyword.
+
+Q* if abstract class will build a copy constructor ?
+yes but it is useless to build this So it does not in use However copy constructor is possible.
+
+Q* we build an abstract methord in class 'B' ?
+No for do this we build 'class B' an Abstract class.
+  ------------------------------------------------------------------------------------------------
+
+#Behaviour of Abstract class to Constructor
+  ---------------------------------------------------
+
+Default Constructor
+------------------------
+abstract class A
+{
+abstract void show();
+A()
+{
+System.out.println("Hello from A");
+}
+}
+
+class B extends A
+{
+void show()
+{
+System.out.println("Hello from B");
+}
+}
+
+class Ts
+{
+public static void main(String args[])
+{
+B b1 = new B();                                    OUTPUT
+b1.show();                                       Hello from A
+}                                                           Hello from B
+}

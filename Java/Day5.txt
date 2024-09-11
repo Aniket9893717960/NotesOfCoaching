@@ -1,0 +1,19 @@
+ IMP -/    #why Binary language is used for conversation with computer or machine ?  
+                  #what is variable ? /-
+
+ #  Datatype
+all those pre defined keyword by which we can spacify type of variable or data are called datatype.
+
+# Variable
+Declaration of variable means we are going to reserve some memory space in the system to hold a particuler value.
+
+#  categoies of Datatype
+
+1)  byte  ->  1 byte   -> 8 bits
+
+
+Short -> 2 bytes
+
+int -> 4 bytes
+
+long -> 8 bytes

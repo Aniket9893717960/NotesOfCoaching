@@ -1,0 +1,133 @@
+PA-1)
+Complete the code segment to call the method  print() of class Student first and then call print() method of class School in java
+
+class School { 
+    // This is a method in class School
+    public void print() { 
+		System.out.println("Hi! I class SCHOOL."); 
+    } 
+} 
+// This is the class named Student
+class Student { 
+	// This is a method in class Student
+    public void print() { 
+		System.out.println("Hi! I am class STUDENT"); 
+    } 
+}
+
+public class Question21{ 
+    public static void main(String args[]){
+// Creating object of class Student
+		Student student = new Student();
+		// Call 'print()' method of class Student 
+		student.print();
+		// Creating object of class School
+		School school = new School();
+		// Call 'print()' method of class School
+		school.print();
+} 
+}
+
+PA-2)Complete the code segment to call the method  print() of class given class Printer to print the following.
+
+--------------------------------
+Hi! I am class STUDENT
+Hi! I class SCHOOL.
+------------------------------- in java
+
+// This is the class named Printer
+class Printer { 
+    // This are the methods in class Printer
+    public void print() { 
+		System.out.println("Hi! I class SCHOOL."); 
+    } 
+    public void print(String s) { 
+		System.out.println(s); 
+    } 
+} 
+
+public class Question22{ 
+    public static void main(String[] args) {
+// Create an object of class Printer
+
+Printer p = new Printer();
+
+// Call 'print()' methods for desired output
+
+p.print("Hi! I am class STUDENT");
+p.print();
+}
+}
+
+PA-3)
+Complete the code segment to call print() method of class Question by creating a method named ‘studentMethod()’. in java
+
+public class Question23{ 
+    public static void main(String[] args) { 
+		// Object of the main class is created
+		Question23 q = new Question23();
+		// Print method on object of Question class is called
+		q.studentMethod();
+    }
+	
+	// 'print()' method is defined in class Question
+	void print(Question23 object){
+		System.out.print("Well Done!");
+	}
+public class Main {
+    public static void main(String[] args) {
+        Main mainObject = new Main();
+        mainObject.studentMethod();
+    }
+
+    public void studentMethod() {
+        // Create an object of the Question class
+        Question questionObject = new Question();
+
+        // Call the print() method of the Question class
+        questionObject.print();
+}
+
+
+
+PA-4)
+Complete the code segment to call default constructor first and then any other constructor in the class. in java
+
+// This is the main class Question
+public class Question214{
+	public static void main(String[] args){
+		Answer a = new Answer(10,"MCQ");
+	}
+}
+// This is the class Answer
+class Answer{
+	// This is the default constructor of the class Answer
+	Answer(){
+		System.out.println("You got nothing.");
+	}
+	// This is a parameterized constructor of the class Answer
+	Answer(int marks, String type){
+		//The 'this()' referene variable is able to call the default constructor of the class.
+		this();		
+		//Print marks and type of the question
+		System.out.println("You got "+marks+" for an "+ type);
+	}
+}
+
+
+PA-5)
+Complete the code segment to debug / complete the program which is intended to print 'NPTEL JAVA'.
+
+public class Question215{ 
+    public static void main(String[] args) {
+//Declare variable with name 'nptel', 'space' and 'java' and proper datatype
+String nptel, space, java;
+
+//Initialize the variables with proper input
+nptel = "NPTEL";
+space = " ";
+java = "JAVA";
+System.out.print(nptel+space+java);
+   }
+}
+

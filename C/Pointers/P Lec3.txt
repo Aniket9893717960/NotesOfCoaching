@@ -1,0 +1,70 @@
+NOTES:
+*sizeof is a pre Defined function.which we have don't want to build this is pre build.
+This have a very important funtion if we learn Data Structure.
+                                                                                             ------------------ 
+-------------------------------------------------------
+#sizeof function
+  -------  ---------- 
+This will be use to check that a variable or a datatype will consume how much memory.
+
+* Use sizeof to identify memory allocation of datatype?
+   -----------------------------------------------------------------
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+clrscr();
+
+printf("%d",sizeof(int));            //output : 2 on a 16 bit arc.
+printf("%d",sizeof(char));          //output : 1 on a 16 bit arc.
+printf("%d",sizeof(float));          //output : 4 on a 16 bit arc.
+printf("%d",sizeof(double));          //output : 8 on a 16 bit arc.
+
+getch();
+} 
+
+* Use sizeof to identify memory allocation of value?
+   ----------------------------------------------------------------
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+clrscr();
+
+printf("%d",sizeof(100));            //output : 2 (100 is an integer)
+printf("%d",sizeof('A'));          //output : 2 ('A' is a character but ASCII of A is 65)
+printf("%d",sizeof(10.65f));          //output : 4 on a 16 bit arc. (here f represent float value)
+printf("%d",sizeof(10.65));          //output : 8 (10.65 is by default double value)
+
+getch();
+} 
+
+*  Use sizeof to identify memory allocation of pointers.
+    ---------------------------------------------------------------
+#include <stdio.h>
+#include <conio.h>
+void main()
+{
+int *i;
+char *ch;
+float *f;
+double *d;
+
+clrscr();
+
+printf("%d", sizeof(i));     //output  : 2 (i is a Pointer)
+printf("%d", sizeof(*i));     //output  : 2 (*i is a integer value)                              //because * symbol represent data in here.
+
+printf("%d",sizeof(ch));    // output : 2 (ch is a pointer)
+printf("%d", sizeof(*ch));     //output  : 1 (*ch is a character value)
+
+printf("%d", sizeof(f));     // output : 2 (f is a pointer)
+printf("%d", sizeof(*f));     //output  : 4 (*f is a float value)
+
+printf("%d",sizeof(d));     // output : 2 (d is a pointer)
+printf("%d", sizeof(*d));     //output  : 8 (*d is a double value)
+
+getch();
+}
+
+

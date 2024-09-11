@@ -1,0 +1,86 @@
+#include <stdio.h>
+#define maxsize 10
+void merge(int arr[],int low,int mid,int upper);
+void mergeSort(int arr[],int low,int upper);
+void main()
+{
+int arr[maxsize],i;
+printf("Before Sorting \n");
+for(i=0;i<maxsize;i++)
+{
+printf("Enter the value at %d position \n",i+1);
+scanf("%d",&arr[i]);
+}
+
+mergeSort(arr,0,maxsize-1);
+
+printf("After Sorting \n");
+for(i=0;i<maxsize;i++)
+printf("%d\t",arr[i]);
+}
+
+void mergeSort(int arr[],int low,int upper)
+{
+int mid;
+if(low<upper){
+mid = (low+upper)/2;
+mergeSort(arr,low,mid);
+mergeSort(arr,mid+1,upper);
+
+merge(arr,low,mid,upper);
+}
+}
+
+void merge(int arr[],int low,int mid,int upper)
+{
+int p =mid-low+1;
+int n =upper-mid;
+int size =maxsize/2;
+
+int first[size];
+int last[size];
+int i=0;
+
+while(i<p){
+first[i] = arr[i];
+i++;
+}
+
+i=mid+1;
+int j=0;
+
+while(i<n){
+last[j] = arr[i];
+j++;
+}
+
+i=0;
+j=0;
+int k=low;
+
+while(i<size && j<size)
+{
+if(first[i]<last[i]){
+arr[k]=first[i];
+i++;
+}
+else {
+arr[k] = last[j];
+j++;
+}
+k++;
+}
+
+while(i<size){
+arr[k]=first[i];
+k++;
+i++;
+}
+
+while(j<size){
+arr[k] = last[j];
+k++;
+j++;
+}
+}
+

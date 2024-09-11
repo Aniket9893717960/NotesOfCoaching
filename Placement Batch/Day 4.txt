@@ -1,0 +1,39 @@
+---------------------------------------------------------------------
+                                                            H.W
+                                                            -----
+Q) Writ a program for the given String ="This is a class for Placement" we have to reverse 
+This String?
+
+------------------------------------------------------------------------
+for more Information go to NotesofCoaching->c->Character Array->Day 2
+------------------------------------------------------------------------
+#include <stdio.h>
+void reverse(char *ch,int length);
+void main()
+{
+char ch[50];
+int i,length;
+printf("Enter the String \n");
+for(i=0;i<49;i++)
+{
+ch[i] = getchar();
+if(ch[i]==10 || ch[i]==13)
+{
+ch[i]='\0';
+break;
+}
+length++;
+}
+reverse(ch,length);
+}
+
+void reverse(char *ch,int length)
+{
+int i;
+printf("The length of array =%d\n",length);
+printf("The Reverse of the givern String is \n");
+for(i=length-1;i>=0;i--){
+printf("%c",ch[i]);
+}
+}
+---------------------------------------------------------------------------------------

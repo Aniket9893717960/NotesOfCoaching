@@ -1,0 +1,72 @@
+Notes:
+i)auto int i=0;: Declares an automatic (local) variable i and initializes it to 0.
+  --------------
+ Automatic variables are typically stored on the stack and have a local scope,
+ meaning they are created and destroyed each time the function.
+ii)register int j=0;: Declares a register variable j and initializes it to 0.
+   ------------------
+ The register keyword suggests to the compiler that the variable can be stored in a register for faster access.
+ However, in modern compilers,
+ this keyword is often ignored as compilers are usually good at optimizing register usage. 
+iii)static int k=0;: Declares a static variable k and initializes it to 0. 
+    ----------------
+Static variables have a lifespan equal to the program and retain their values between function calls.
+In this case, k will retain its value across multiple calls to func().
+-----------------------------------------------------------------------------------------------------------
+g) 
+
+#include <stdio.h>
+void func();
+int main()
+{
+func();
+func();
+return 0;
+}
+void func()
+{
+auto int i=0;
+register int j=0;
+static int k=0;
+i++;
+j++;
+k++;
+printf("%d %d %d\n",i,j,k);
+}
+
+h)
+
+#include <stdio.h>
+int x=10;                      //Global Variable
+int main()
+{
+int x=20;                       // Local variable
+{
+int x=30;                           // Local variable within the inner block
+printf("%d\n",x);
+}
+printf("%d\n",x);
+return 0;
+}
+
+                                Q)Point Out the errors,if any ,in the following programs.
+c)
+----------------------------------------------------------------------------------
+i)unsigned a = 25;: Declares an unsigned integer variable a and initializes it with the value 25.
+   -------------------
+ii) long unsigned b = 25l;: Declares a long unsigned integer variable b and initializes it with the value 25. 
+    --------------------------
+The use of the l suffix indicates that the literal 25 should be treated as a long type.
+iii) printf("%lu %u\n", a, b);: Prints the values of a and b using printf. 
+     ----------------------------
+The format specifier %lu is used for long unsigned and %u for unsigned. 
+It prints the values of a and b in the specified format.
+----------------------------------------------------------------------------------
+#include <stdio.h>
+int main()
+{
+unsigned a=25;
+long unsigned b=25l;
+printf("%lu %u\n",a,b);
+return 0;
+}

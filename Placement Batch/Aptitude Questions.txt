@@ -1,0 +1,18 @@
+NUMBER SYSTEM & DIVERSABILITY
+Q)
+In dividing a number by 585, a student employed the method of short division. 
+He divided the number successively by 5, 9 and 13 (factors 585) and got the remainders 4, 8, 12 respectively. 
+If he had divided the number by 585, the remainder would have been
+24
+144
+292
+584
+
+Q)
+In a division sum, the divisor is 10 times the quotient and 5 times the remainder. If the remainder is 46, what is the dividend ?
+4236
+4306
+4336
+5336
+None of these
+sol)

@@ -1,0 +1,66 @@
+#Deletion funntion of a LinkList
+  --------------------------------------
+void delete()
+[
+int position,count=0,i=1;
+if(start ==NULL)
+{
+printf("Create a Link List first \n");
+}
+else
+{
+printf("Enter a position for deletion \n");
+scanf("%d",&position);
+if(position==1)
+{
+temp =start;
+start = start ->add;
+printf("Deleted element is =%d",temp->data); 
+free(temp);
+}
+else
+{
+temp =start;
+while(temp!=NULL)
+{
+count++;
+temp =temp ->add;
+}
+if(position>count)
+{
+printf("Invalid position it should be :%d",count);
+}
+elseif(position ==count)
+{
+next =start;
+while((next->add)!=NULL)
+{
+prev =next;
+next =next ->add;
+}
+printf("Deleted element is =%d",next->data);
+free(next);
+prev ->add =NULL;
+}
+else
+{
+next = start;
+while(i<position)
+{
+prev = next;
+next = next ->add;
+i++;
+}                                                                                                                                //  ALTERNATE COMMANDS
+printf("Deleted element =%d",next ->data);                                      |-----------------------  temp =next;
+prev ->add =next ->add                                      |-----------------------  next =next ->add;
+free(temp);                                      |-----------------------  printf("Deleted element =%d",temp ->data);
+                                      |-----------------------  free(temp);
+                                      |-----------------------  prev ->add =next;
+}
+}
+}
+}
+ 
+
+
+

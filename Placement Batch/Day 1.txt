@@ -1,0 +1,89 @@
+NOTE
+*int main is better than void main.
+*Switch case will not work into float this will work it into it ,char.
+*Break will be used in  four stages loop,switch case.
+* continue will work only in loop.
+---------------------------------------------------------------------------------------------
+#Random But Important Questions
+  ------------------------------------------
+#include <stdio.h>
+#include <string.h>
+
+void main()
+{
+int a;
+a = sizeof('10');
+printf("%d",a);                                                           OUTPUT
+}                                                           Error On Turbo C:multi-character character constant
+
+#include <stdio.h>
+#include <string.h>
+
+void main()
+{
+int a;
+a= sizeof('A');
+printf("%d",a);                                                           OUTPUT
+}                                                           4 in online compiler                                                            Because 'A' is considered as 65
+                                                            2 in turbo C
+
+#include <stdio.h>
+
+void main()
+{
+int a=10;
+if(a<10);
+{
+printf("Hello");
+}
+else
+{
+printf("Bye");                                                           OUTPUT
+}                                                           error: 'else' without a previous 'if'
+}
+
+
+#include <stdio.h>
+
+void main()
+{
+float a=0.7;
+if(a<0.7)
+{
+printf("Hello");
+}
+else
+{
+printf("Bye");                                                           OUTPUT
+}                                                           Hello                                                           Because of floating-point comparisons
+}                                                                                                                      Occur that double will converted into float So, due to data loss
+                                                                                                                                                                                 This will be swaller than 0.7
+
+#include <stdio.h>
+
+void main()
+{
+int a=3.0;
+switch(a)
+{
+case 1: printf("Hello");break;
+case 2: printf("Bye");break;
+case 3: printf("3");continue;
+ default: printf("Invalid number");
+}                                                                                                                      OUTPUT
+}                                                                                  error: continue statement not within a loop
+
+
+#include <stdio.h>
+void main()
+{
+int a=1.0;
+switch(a)
+{
+case 1: printf("1");
+case 2: printf("2");
+case 3: printf("3");continue;
+default: printf("Invalid number \n");
+}                                                                                                                     OUTPUT
+                                                                                  error: continue statement not within a loop
+

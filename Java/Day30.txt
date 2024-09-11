@@ -1,0 +1,210 @@
+IMP NOTES
+*char charAt(int index)
+-------------------------------------------------------------
+
+#charAt(character Array)
+ -------------------------------
+
+class Test
+{
+public static void main(String args[])
+{
+String str = new String("Hello");
+System.out.println(str.charAt(0));                               //H
+System.out.println(str.charAt(1));                                 //e
+}
+}
+for(int i=0;i<str.length();i++)
+{
+System.out.print(str.charAt(i));                              //Hello
+}
+}
+}
+
+---------------------------------------------------------------------
+*write a program to count number of spaces or number of other character in the given String.
+
+class Test
+{
+public static void main(String)
+{
+String str = "This is a class of java";
+int sp =0,ch=0,i;
+for(i=0;i<=str.length();i++)
+{ 
+if(str.length(i) ==" ")
+{
+sp++;
+}
+else
+{
+ch++;
+}
+}
+System.out.println("Number of spaces ="+sp);
+System.out.println("Number of spaces ="+ch);
+}
+} 
+                                                                       ALTERNATE METHORD
+                                                                     -------------------------------
+class Ts
+{
+public static void main(String args[])
+{
+String str = new String("This is @ java class");
+int sp=0,count=0,i,not=0;
+char ch;
+for(i=0;i<str.length();i++)
+{
+ch = str.charAt(i);
+if((ch>=65 && ch<=90) || (ch>=97 && ch<=122))
+{
+count++;
+}
+else if(ch==' ')
+{
+sp++;
+}
+else
+{
+not++;
+}
+}
+System.out.println("Number of spaces ="+sp);
+System.out.println("Number of characters ="+count);
+System.out.println("Number of not a charcters ="+not);
+}
+}
+----------------------------------------------------------------------
+
+*write a program to count number of vowels and consonents at the given String.
+
+class Ts
+{
+public static void main(String args[])
+{
+String str = new String("This is @ the java class");
+int sp=0,vowels=0,consonent=0,not=0,i;
+char ch;
+for(i=0;i<str.length();i++)
+{
+ch = str.charAt(i);
+if((ch=='A') || (ch=='E') || (ch =='I') || (ch=='O') || (ch =='U'))
+{
+vowels++;
+}
+else if((ch=='a') || (ch=='e') || (ch=='i') || (ch=='o') || (ch=='u'))
+{
+vowels++;
+}
+else if(ch==' ')
+{
+sp++;
+}
+else if((ch>=1 && ch<=64) || (ch>=91 && ch<=96) || (ch>=123 && ch<=255))
+{
+not++;
+}
+else
+{
+consonent++;
+}
+}
+System.out.println("Number of vowels ="+vowels);
+System.out.println("Number of consonents ="+consonent);
+System.out.println("Number of spaces ="+sp);
+System.out.println("Not a character ="+not);
+}
+}
+
+                           ALTERNATE METHORD
+                           -----------------
+class Ts
+{
+public static void main(String args[])
+{
+String str = new String("This is the class");
+int sp=0,vowels=0,consonent=0,wrong=0;
+char temp;
+for(int i=0;i<str.length();i++){
+temp = str.charAt(i);
+if((temp<65)&& (ch>=91 && ch<=96) && (temp>122) && !(temp==' '))
+wrong++;
+else if(((temp>=65) && (temp<=91)) || ((temp>=97) && (temp<=122))){
+switch(temp){
+case 'A' :vowels++;break;
+case 'E' :vowels++;break;
+case 'I' :vowels++;break;
+case 'O' :vowels++;break;
+case 'U' :vowels++;break;
+case 'a' :vowels++;break;
+case 'e' :vowels++;break;
+case 'i' :vowels++;break;
+case 'o' :vowels++;break;
+case 'u' :vowels++;break;
+default: consonent++;
+}
+}
+else
+sp++;
+}
+System.out.println("Number of space ="+sp);
+System.out.println("Number of vowels ="+vowels);
+System.out.println("Number of consonent ="+consonent);
+System.out.println("Number of Not alphabet ="+wrong);
+}
+}
+ 
+--------------------------------------------------------------------------
+*write a program to print all the characters of given String in all upper case.
+
+class Test
+{
+public static void main(String args[])
+{
+char ch;
+String str = new String("Hello");
+for(int i=0;i<=str.length();i++)
+{
+ch = str.charAt(i);
+if(ch ==97 && ch ==122)
+{
+ System.out.println((char)(ch-32));                              //HELLO
+}
+else
+{
+System.out.print(ch);
+}
+}
+}
+                                                               Alternate methord
+                                                              ------------------------
+#Inbuild methords
+------------------------
+*toUpperCase And toLowerCase
+  --------------------------------------
+class Test
+{
+public static void main(String args[])
+{
+String str = new String("Hello");
+System.out.println(str);                                                               //Hello
+System.out.println(str.toUpperCase());                                                               //HELLO
+System.out.println(str.toLowerCase());                                                               //hello
+}
+}
+
+*trim methord
+ ------ -----------
+this will trim out the extra Spaces.
+
+class Test
+{
+public static void main(String arga[])
+{
+String str = String("  Hello ");
+System.out.println(str);
+System.out.println(str.trim());
+}
+}
+------------------------------------------------------------------------------------

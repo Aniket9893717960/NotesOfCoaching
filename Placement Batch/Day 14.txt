@@ -1,0 +1,51 @@
+Q) write a Program to get a Number from user and check it is Prime or Not?
+                                                With Flag Bit
+                                                ----------------
+#include <stdio.h>
+void main()
+{
+int n=49,i,temp,f =0;
+if(n==0){
+printf("It is a Neutral Number\n");
+}
+else{
+temp = n/2;
+for(i=2;i<=temp;i++)
+{
+if(n%i==0){
+f=1;
+break;
+}
+}
+if(f==1){
+printf("It is Not a prime Number Divisible by %d",i);
+}
+else {
+printf("It is a Prime Number");
+}
+}
+}
+
+                                                Without Flag Bit
+                                                ----------------
+#include <stdio.h>
+void main()
+{
+int n=7,i,temp;
+if(n==0){
+printf("It is a Neutral Number\n");
+}
+else{
+temp = n/2;
+for(i=2;i<=temp;i++)
+{
+if(n%i==0){
+printf("It is Not a prime Number It Divisible by %d",i);
+break;
+}
+}
+if(i == temp+1){
+printf("It is a Prime Number");
+}
+}
+}

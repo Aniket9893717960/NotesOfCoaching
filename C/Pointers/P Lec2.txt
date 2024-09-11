@@ -1,0 +1,89 @@
+NOTES:
+*The name of the Arrey will contain the base address of the start of Array.
+*IMP: Pointers  are Not use for Scanning but with the help of pointers we perform Scanning.
+Benefit for using pointers in Scanning and Printing is we does not dependent on value of i.
+ 
+----------------------------------------------------------------------
+#Pointer to Integer Array
+  -----------------------------
+*Write a Program to scanning and Printing a value in an array with pointer.
+
+#include <stdio.h>
+#include <conio.h>
+
+void main()
+{
+int a[10],i,*p;
+clrscr();
+p = &a[0];                                                                         //p=a;
+printf("Enter 10 Elements: \n");
+for(i=0;i<10;i++)
+{
+printf("Enter a value of %d position",(i+1));
+scanf("%d",&*p);
+p++;
+}
+p = &a[0];
+printf("You have Entered \n");
+for(i=0;i<10;i++)
+{
+printf("%d\t",*p);
+p++;
+}
+getch();
+}
+
+*write a Program to the submition of 10 elements in an array with the help of pointers?
+
+#include <stdio.h>
+#include <conio.h>
+
+void main()
+{
+int a[10],i,*p,sum;
+clrscr();
+p = &a[0];          //p=a;
+printf("Enter 10 Elements: \n");
+for(i=0;i<10;i++)
+{
+printf("Enter a value of %d position",(i+1));
+scanf("%d",&*p);
+p++;
+}
+p = &a[0];                                                  
+printf("You have Entered \n");
+for(i=0;i<10;i++)
+{
+sum =sum +*p;
+p++;
+}
+printf("sum =%d",sum);
+getch();
+}
+
+*write a Program to print reverse of an 10 element in an array with the help of pointers?
+
+#include <stdio.h>
+#include <conio.h>
+
+void main()
+{
+int a[10],i,*p;
+clrscr();
+p = &a[0];          //p=a;
+printf("Enter 10 Elements: \n");
+for(i=0;i<10;i++)
+{
+printf("Enter a value of %d position",(i+1));
+scanf("%d",&*p);
+p++;
+}
+p = &a[9];                                                                              //printf("You have Entered \n");
+printf("You have Entered \n");                                       //for(i=0;i<10;i++) {
+for(i=0;i<10;i++)                                                                 //p--;
+{                                                                                                //printf("%d\t",*p);
+printf("%d\t",*p);                                                              //  }
+p--;                                                                                          // getch();
+}                                                                                                 // }
+getch();
+} 

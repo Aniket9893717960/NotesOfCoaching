@@ -1,0 +1,99 @@
+#Binary Search
+   ------------------
+
+#include <stdio.h>
+
+void main()
+{
+int a[]={1,2,3,4,5,6,7,8,9,10},n;
+int mid,low=0,high=9,f=0;
+printf("Enter the value \n");
+scanf("%d",&n);
+
+while(low<=high)
+{
+mid =(low+high)/2;
+if(a[mid]==n)
+{
+f=1;
+break;
+}
+else if(n>a[mid])
+{
+low = mid+1;
+}
+else
+{
+high = mid -1;
+}
+}
+if(f==1)
+{
+printf("Found \n");
+}
+else
+{
+printf("Not found \n");
+}
+}
+--------------------------------------------------------------------------------------------------------
+                                                                   H.W
+                                                                   ------
+Q) write the program to sort the program and Search this program?
+
+#include <stdio.h>
+
+void main()
+{
+int a[]={50,30,10,40,20},i,j,temp,n;
+int mid,low=0,high=9,f=0;
+
+printf("Before Sorting\n");
+for(i=0;i<5;i++)
+{
+printf("%d\t",a[i]);
+}
+
+for(i=0;i<4;i++)
+{
+for(j=i+1;j<5;j++)
+{
+if(a[i]>a[j])
+{
+temp = a[i];
+a[i] = a[j];
+a[j] = temp;
+}
+}
+}
+printf("After Sorting \n");
+for(i=0;i<5;i++)
+{
+printf("%d\t",a[i]);
+}
+
+printf("Enter the value :");
+scanf("%d",&n);
+while(low<=high)
+{
+mid=(low+high)/2;
+if(a[mid]==n)
+{
+f=1;
+break;
+}
+else if(n>a[mid])
+{
+low = mid+1;
+}
+else
+{
+high = mid-1;
+}
+}
+if(f==1)
+printf("\nElement is found");
+else
+printf("\nNot found");
+}
+---------------------------------------------------------------------------------------------------------

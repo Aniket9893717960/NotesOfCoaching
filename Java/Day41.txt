@@ -1,0 +1,43 @@
+#Packages
+ -------------
+packages are collection of classes ,interfaces and sub - packages.This are mostly use for distribution perpose.
+---------------------------------------------------------------------------------
+                                              public   | private   | protected   |  default
+same class                         true           true               true                true
+-------------
+same package
+Different classes              true            false             true                  true
+without inheritance
+------------------------
+same package
+different classes               true             false              true                  true
+with inheritance
+--------------------
+Different packages
+Different classes                true             false                false                 false
+without inheritance
+------------------------
+Different packages
+different classes                   true              false               true                    false
+with inheritance
+---------------------------------------------------------------------------------
+*Example of packages :
+----------------------------
+package mypkg;
+class first
+{
+void show()
+{
+System.out.println("Hello from first");
+}
+}
+-------------------------------------------------------------------------------------
+import mypkg.first;
+class Test
+{
+public static void main(String args[])
+{
+first f1 = new first();
+f1.show();
+}
+}

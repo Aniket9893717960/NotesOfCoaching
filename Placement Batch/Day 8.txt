@@ -1,0 +1,159 @@
+ #Boolean
+  ------------
+#include <stdio.h>
+void main() {
+int a=10,b=10,c=10;
+a = --a == --b && b-- == --c || --a == --c;
+printf("%d %d %d ",a,b,c);                                     1 8 9
+}
+
+
+#include <stdio.h>
+void main() {
+int a=10,b=10,c=10;
+a= a++ == b++ || b-- == c-- && a-- == b--;
+printf("%d %d %d ",a,b,c);                                      1 11 10
+}
+
+#include <stdio.h>
+void main() {
+int a=10,b=10,c=10;
+a= a++ == b-- || ++b == --c && a++ == b--;
+printf("%d %d %d ",a,b,c);                                      0 9 10
+}
+
+#include <stdio.h>
+void main() {
+int a=10,b=10,c=10;
+a= ++a == b-- || --b == --c && ++a == b-- || a++ == --b;                   
+printf("%d %d %d ",a,b,c);                                      0  7  9
+}
+
+#include <stdio.h>
+void main() {
+int a=10,b=10,c=10;
+a= --a == b++ || ++b == c-- && ++a == b-- || a++ == --b;
+printf("%d %d %d ",a,b,c);                                      0  11  9
+}
+
+------------------------------------------------------------------------
+                                                  H.W
+Q1) Write a Program to Print How many prime numbers between 1 to 1000.
+                                          With Function
+                                         ------------------
+#include <stdio.h>
+int prime(int n);
+
+void main()
+{
+int n;
+scanf("%d",&n);
+for(int i=1;i<=n;i++){
+if(prime(i)==1)
+printf("%d",i);
+}
+}
+
+int prime(int n){
+int i;
+if(n<=1)
+return 0;
+for(i=2;i<=(n/2);i++){
+if(n%i==0){
+return 0;
+}
+}
+return 1;
+}
+
+                                                     With OUT Function
+                                                     -----------------------
+#include <stdio.h>
+void main()
+{
+int i,k=0,temp=0,j=0;
+for(i=1;i<10;i++){
+printf("%d\t",i+k);
+k=k+i;
+k++;
+if(i>1){
+            for( ;j<10;j++){
+               if(j&1){
+                k=k+j;
+                k=k+temp;
+                temp++;
+                 break;
+}
+}
+}
+}
+}
+                                                   DECREASE Complexity OR
+                                                  More Accurate Program
+                                                ---------------------------------
+#include <stdio.h>
+void main()
+{
+int sum=0,i;
+for(i=0;i<1000;i++)
+{
+i=i+1;
+sum = sum +i;
+printf("%d\t",sum);
+}
+}
+                                                  ALTERNATE METHORD
+                                                  ------------------
+#include <stdio.h>
+void main(){
+int i,j;
+for(i=1,j=0;i<20;i++){
+if(i&1)
+printf("%d ",j=j+i);
+}
+}
+
+
+Q2) How many numbers of '2'  in the four digit value ?
+
+#include <stdio.h>
+int func(int a);
+void main()
+{
+int a=1222,count;
+printf("Your Entered value is %d",a);
+count = func(a);
+printf("Total number of '2' in count is %d",count);
+}
+
+int func(int a){
+static int sum=0,count;
+if(a){
+sum = a%10;
+if(sum==2){
+count++;
+}
+func(a/10);
+}
+return (count);
+}
+                      ALTERNATE VALUE
+                      ---------------
+#include <stdio.h>
+void main()
+{
+int n,r,count=0;
+int i;
+printf("Enter the value \n");
+scanf("%d",&n);
+while(n>0)
+{
+r = n%10;
+if(r==2){
+count++;
+}
+n=n/10;
+}
+printf("The number of two is %d",count);
+}
+------------------------------------------------------------------------

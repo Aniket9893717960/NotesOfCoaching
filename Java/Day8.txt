@@ -1,0 +1,132 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IMP notes -/
+a+b will be say this as operants or + is the operator /-
+
+# Operators
+There are three types of operators 
+                                |
+----------------------------------------------------------------------------
+|                                                              |                                                             |
+unary                                             Binary                                                Ternary
+++(Increment)                     1) Arithmetic Operators                     Conditional Operator
+--(Decrement)                       + ,- ,* , % , /                                                 ? :
+a++(Post increment)         2)  Relational Operator
+++a(Pre increment)            < ,<= ,> >=, != ,==
+a--(Post Decrement)          3) Assignment
+--a(Pre Decrement)             =
+                                                     4)  Bitwaise operator
+                                                        & , | , ^ ,<< ,>> , >>>>
+                                                    AND ,OR  ,X-OR  ,Left shift ,  Right shift ,Right shift with zero fill  
+                                                     5) Logical Operator
+                                                      && ,                                       || ,
+                                                    short circuited AND, short circuited OR
+                                                    6)  Compound Operator
+                                                      += ,-= ,*= , /=, %=
+
+# Unary operator
+
+1) pre increment
+Class Test
+{
+public static void main(String args[])
+{
+int a  =10;
+++a;                //This opreation wil allocate a single part  of memory and perform operation
+System.out.println(a);
+}
+}
+
+Class Test
+{
+public static void main(String args)
+{
+int a= 10,b;
+b = ++a;                                                                       Output
+System.out.println(a + " "+b);                                      a = 10 then 11
+}                                                                                             b = 11
+}
+
+2)post increment
+  Class Test
+{
+public static void main(String args[])
+{
+int a =10;
+a++;
+System.out.println(a);
+}
+}
+
+Class Test
+{
+public static void main( String args[])
+{
+ int a=10,b
+b=a++;                                                                                  Output
+System.out.println(a+ " " +b);                                          a = 10 then 11
+}                                                                                                   b =10
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

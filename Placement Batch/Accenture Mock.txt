@@ -1,0 +1,151 @@
+//Screenshot no 132 my answer 2 5 2
+/*
+#include <stdio.h>
+
+void main()
+{
+int p=1,q=3,r=10;
+r=p+p;
+if((r+q&p)<(q+p-r)){
+ p= r&r;
+ if(((p+q)<r) && (q>r))
+  q=q+q;
+ else
+  q=r+q;
+}
+else
+ {
+ if((q^r^p)^(r+p+q))
+  p=p+q;
+ }
+printf("%d %d %d",p,q,r);
+}
+*/
+
+//a=7,b=8 Screenshot no 133 My Answer -12
+
+#include <stdio.h>
+
+int fun(int a,int b)
+{
+if((a-6)>(b & a) && (4 & a)>(a-4)){
+a = a+1;
+b = 1+2+a;
+b = 3+a+b;
+return fun(a,a) + fun(b,b) +b;
+}
+a=2+b+b;
+return (b-a);
+}
+
+void main()
+{
+int a=7,b=8,output;
+output=fun(a,b);
+printf("%d",output);
+}
+
+//Screenshot no 135 My Answer 40 19 4
+#include <stdio.h>
+
+void main()
+{
+int a=3,b=5,c=4;
+b= (a+11)+b;
+if((b+5+a)>(8+b))
+b=(a+7)+c;
+else
+{
+if((c+a)<(7-c)){
+b= (b+1)+c;
+c = 12+a;
+}
+else
+a=(9+7)+a;
+}
+a=(10 +11)+a;
+printf("%d %d %d",a,b,c);
+}
+
+
+//Screenshot no 136 My Answer 53
+#include <stdio.h>
+
+int fun(int a,int b)
+{
+if((b & a)<(a-b) && (a>3)){
+b = b+3;
+b = a+3;
+b = (b+1)+a;
+return fun(a+1,b) + fun(a+b,b) +b;
+}
+b=1+b+b;
+return (b-a);
+}
+
+void main()
+{
+int a=6,b=3,output;
+output =fun(a,b);
+printf("%d",output);
+}
+
+// Screen Shot 137 My ANswer 10 5 15
+#include <stdio.h>
+
+void main()
+{
+int a=3,b=5,c=7;
+if((a^c)<b)
+a=a+c;
+c=(5+3)+c;
+printf("%d %d %d",a,b,c);
+}
+
+// Screen Shot 138 My ANswer 1 24
+#include <stdio.h>
+
+void main()
+{
+int p=1,q=4,r=6;
+for(r=5;r<9;r++){
+if((7<p) && (4&r)<q)
+break;
+q =(12+4)^r;
+}
+printf("%d %d",p,q);
+}
+
+// Screen Shot no 139 My Answer
+
+#include <stdio.h>
+
+void main()
+{
+int pp=6,qq=7,rr=6;
+pp =(rr+pp)+pp;
+if((3<qq) || (4+7)<(10+pp))
+ qq =(pp+qq)+rr;
+ if((pp+rr+qq)<(5+pp))
+  pp = (qq+rr)+qq;
+ else
+  qq = (pp&10)&rr;
+}
+else
+qq= qq^qq;
+printf(" %d %d %d",pp,qq,rr);
+}
+
+// Screen Shot no 140 My Answer 22
+
+#include <stdio.h>
+
+void main()
+{
+int a=7,b=3,c=4;
+b=(a+a)+a
+for(c=5;c<7;c++)
+a=11^b;
+a=(c&1)&b;
+printf(a+b);
+}

@@ -1,0 +1,90 @@
+#super
+ ---------
+class A
+{
+int a=10;
+}
+class B extends A
+{
+int a=20;
+void show()
+{
+int a =5;
+System.out.println(a);                              5
+System.out.println(this.a);                              20
+System.out.println(super.a);                              10
+}
+}
+class Ts
+{
+public static void main(String args[])
+{
+B b1 = new B();
+b1.show();
+}
+}
+
+------------------------------------------------------------------------------------------------
+*Behavier of constructors during inharitance
+  -----------------------------------------------------
+whenever the object of child class will be created it will forward the request of 
+mamory allocation to the default constructor for the parent class first.
+
+class A
+{
+A()
+{
+System.out.println("Hello from A");
+}
+}
+
+class B extends A
+[
+B()
+{
+super();                                                     //This is a calling of cunstructor that's why this have brackets
+                                                                  //this 'super' will call by system by default
+System.out.println("Hello from B");
+}
+}
+
+class Ts
+{
+public static void main(String arrgs[])
+{
+A a = new A();
+B b = new B();
+}                              OUTPUT
+}                              Hello from A
+                               Hello from A
+                               Hello from B
+
+                                                             For Parameterized
+                                                          --------------------------
+class A
+{
+A(int x,int y)
+{
+System.out.println("Hello from A ="+x+"  "+y);
+}
+}
+
+class B extends A
+{
+B(int a,int b,int c)
+{
+super(a,b);                                            //This changes will done by coder.
+System.out.println("Hello from B ="+a+" "+b+" "+c);
+}
+}
+
+class Ts
+{
+public static void main(String args[])
+{
+A a = new A(10,20);                                             OUTPUT
+B b = new B(100,200,300);                                            Hello from A =10 20
+}                                                                                        Hello from A =100 200
+}                                                                                        Hello from B =100 200 300
+
+------------------------------------------------------------------------------------------------

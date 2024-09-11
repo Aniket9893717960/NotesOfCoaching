@@ -1,0 +1,289 @@
+Q) What will be the output of the following programs.
+1)
+#include <stdio.h>
+int main()
+{
+    int x=10,y=5,q,p;
+    p=x>9;
+    q=x>3 && y!=3;                                                                          OUTPUT
+    printf("p=%d q=%d\n",p,q);                                                  p=1 q=1
+    return 0;
+}
+
+2)
+#include <stdio.h>
+int main()
+{
+    int a=30,b=40,x;                                                                          OUTPUT
+    x=(a!=10)&&(b=50);                                                                     x=1
+    printf("x=%d\n",x);
+    return 0;
+}
+
+3)
+#include <stdio.h>
+int main()
+{
+    int a=100,b=200,c;                                                                          OUTPUT
+    c=(a==100||b>200);                                                                          c=1
+    printf("c= %d\n",c);
+    return 0;
+}
+
+4)
+#include <stdio.h>
+int main()
+{
+    int x=11,y=6,z;                                                                          OUTPUT
+    z=x==5 || y!=4;                                                                          z=1
+    printf("z=%d\n",z);
+    return 0;
+}
+
+5)
+#include <stdio.h>
+int main()
+{
+    int a=300,b=10,c=20;                                                                         OUTPUT
+    if(!(a>=400))                                                                         b=300 c=200
+    b=300;
+    c=200;
+    printf("b=%d c=%d\n",b,c);
+    return 0;
+}
+
+6)
+----------------------------------------------------------
+NOTES:
+The ! (logical NOT) operator has higher precedence than >= (greater than or equal to) operator.
+ As a result, the expression !a >= 400 is equivalent to (!a) >= 400.
+ The logical NOT of a (500) is 0 (false), so the condition becomes 0 >= 400, which is false.
+----------------------------------------------------------
+#include <stdio.h>
+int main()
+{
+    int a=500,b=100,c;
+    if(!a>=400)
+    b=300;                                                                         OUTPUT
+    c=200;                                                                         b=100 c=200
+    printf("b=%d c=%d",b,c);
+    return 0;
+}
+
+8)
+----------------------------------------------------------
+NOTES:
+The logical NOT operator (!) is used here. It flips the truth value of its operand.
+ In C, any non-zero value is considered true, and zero is considered false. 
+So, !x will be 0 (false) since x is initially 10 (true), and !y will be 0 (false) since y is initially -20 (true).
+----------------------------------------------------------
+#include <stdio.h>
+int main()
+{
+   int x=10,y=-20;
+   x=!x;                                                                         OUTPUT
+   y=!y;                                                                         x=1  y=1
+   printf("x=%d y=%d\n",x,y);
+   return 0;
+}
+
+9)
+----------------------------------------------------------
+NOTES:
+In C, any non-zero value is considered true, and zero is considered false. 
+So, !x will be 1 (true) since x is initially 0 (false), and !y will be 0 (false) since y is initially 1 (true).
+----------------------------------------------------------
+#include <stdio.h>
+int main()
+{
+   int x=0,y=1;
+   x=!x;                                                                         OUTPUT
+   y=!y;                                                                         x=1 y=0
+   printf("x=%d y=%d\n",x,y);
+   return 0;
+}
+
+10)
+--------------------------------------------------
+Notes:
+Any Non Zero Elements in C Will considerd as True(1).
+----------------------------------------------------
+#include <stdio.h>
+int main()
+{
+   if(!3.14){
+       printf("I have robbed and killed...\n");
+   }                                                                                                                            OUTPUT
+   else{                                                                                       Until my evil purse was filled
+       printf("Until my evil purse was filled\n");
+   }
+   return 0;
+}
+
+11)
+#include <stdio.h>
+int main()
+{
+   int x=3,y=4,z=4;                                                                                                           OUTPUT
+   printf("ans=%d\n",z>=y && y>=x?1:0);                                                        ans=1
+   return 0;
+}
+
+13)
+#include <stdio.h>
+int main()
+{  float a=12.25,b=13.65;                                                                                                           OUTPUT
+   if(a=b)                                                                                                                                     a and b are equal
+   printf("a and b are equal\n");
+   else
+   printf("a and b are not equal\n");
+   return 0;
+}
+
+14)
+#include <stdio.h>
+int main()
+{
+   if('Z'<'z')
+   printf("Pilots are on strike...\n");
+   else
+   printf("for absolute outlandish demands\n");
+   return 0;
+}
+
+15)
+#include <stdio.h>
+int main()
+{
+   int x=10;
+   if x>=2
+      printf("%d\n",x);
+   return 0;
+}
+
+18)
+#include <stdio.h>
+int main()
+{
+   float a=0.7;
+   if(a<0.7)
+   printf("Stored %f\n",a);
+   else
+   printf("Average \n");
+   return 0;
+}
+
+19)
+#include <stdio.h>
+int main()
+{
+   int i = 400000*400000/400000;
+   if(i==400000)
+   printf("filibusters\n");
+   else
+   printf("Sea gherKins\n");
+   return 0;
+}
+
+21)
+--------------------------------------------------
+Notes:
+ This Line         a = c > 1 ? d > 1 || e > 1 ? 100 : 200 : 300;       is a nested Conditional expression.
+                          ------------------------------------------------
+The outer conditional checks if c is greater than 1. If true, it evaluates the inner conditional;
+ otherwise, it assigns the value 300 to a.
+The inner conditional checks if d > 1 || e > 1 is true. If true, it assigns 100 to a; otherwise, it assigns 200.
+----------------------------------------------------
+#include <stdio.h>
+int main()
+{
+   int c=0,d=5,e=10,a;
+   a=c>1?d>1||e>1?100:200:300;
+   printf("a = %d\n",a);
+   return 0;
+}
+
+22)
+#include <stdio.h>
+int main()
+{
+   int a=10,b=10;
+   printf("ans= %d\n",a>b?a*a:b/b);
+   return 0;
+}
+
+23)
+#include <stdio.h>
+int main()
+{
+   int x=10,y=20;
+   x=!x;
+   y=!x && !y;
+   printf("x=%d y=%d\n",x,y);
+   return 0;
+}
+
+24)
+
+#include <stdio.h>
+int main()
+{
+   int x=10,y=20;
+   if(!(!x)&&x)
+   printf("x=%d\n",x);
+   else
+   printf("y=%d\n",y);
+   return 0;
+}
+
+25)
+#include <stdio.h>
+int main()
+{
+   float a=0.5,b=0.9;
+   if(a&&b>0.9)
+       printf("Idleness is a virtue..\n");
+    else
+    printf("...so is stupidity!\n");
+   return 0;
+}
+
+26)
+#include <stdio.h>
+int main()
+{
+   int x=100;
+   if(!!x)
+   printf("x=%d\n",!x);
+   else
+   printf("x=%d\n",x);
+   return 0;
+}
+
+B) Impove the following programs by recorganizing the statements:
+
+1)
+#include <stdio.h>
+int main(){
+    int i=10;
+    if(i>10);
+    else
+    printf("Hello Cocaine!\n");
+    return 0;
+}
+
+2)
+#include <stdio.h>
+int main(){
+    int i=5,j=30,k=5;
+    if(i<30){
+        if(j<20){
+            if(k==40)
+                printf("HI Computerist!\n");
+            else;
+            }
+            else;
+        }
+    else;
+    return 0;
+}

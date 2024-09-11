@@ -1,0 +1,47 @@
+#Remaining Program of A  Tree
+   ------------------------------------
+                               ladd       data     radd
+                               -------------------------
+                               |  1011 |   50     |  1234 |
+                 -------  -------------------------  ---------
+                 |                           2011                                  |                
+                 ladd       data     radd                                 ladd       data     radd
+                 -------------------------                                -------------------------
+                |  1111 |   30     |  2222 |                                |  N       |   70     |  1234 |
+-------     -------------------------  ---------               -------------------------   ---------
+|                             1011                                   |                                     1234                          |
+ladd       data     radd                                 ladd       data     radd                                 ladd       data     radd
+-------------------------                                -------------------------                                -------------------------
+|   N      |   10     |  N      |                                 |  N      |   40     |  N      |                                 |   N      |   90     |  N      |
+-------------------------                                 -------------------------                                 ------------------------- 
+           1111                                                                        2222                                                           3333
+
+void inorder(struct node *p)
+{
+if(p!=NULL) 
+{
+inorder(p->ladd);
+printf("%d\t",p->data);
+inorder(p->radd);
+}
+}
+ 
+void preorder(struct node *p)
+{
+if(p!==NULL)
+{
+printf("%d\t",p->data);
+preorder(p->ladd);
+preorder(p->radd);
+}
+}
+
+void postorder(struct node *p)
+{
+if(p!==NULL)
+{
+postorder(p->ladd);
+postorder(p->radd);
+printf("%d\t",p->data);
+}
+}

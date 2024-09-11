@@ -1,0 +1,63 @@
+-------------------------------------------------------------------------------
+                                    H.W
+Q) Write a program to get a String From user & check  it is palindrome String or not?
+
+#include <stdio.h>
+
+void main()
+{
+char ch[10];
+int length=0,i,j;
+for(i=0;i<10;i++)
+{
+ch[i]=getchar();
+if(ch[i]==13 || ch[i]==10){
+ch[i]='\0';
+break;
+}
+length++;
+}
+
+for(i=0,j=length-1;i<length/2 && j>length/2;i++,j--){
+if((ch[i]^ch[j])!=0){
+printf("Different");
+break;
+}
+}
+if(i==j)
+printf("same\n");
+}
+
+Q) write a program to reverse the given String "siht si a sscale"?
+
+#include <stdio.h>
+
+void main()
+{
+char ch[30];
+int length=0,i,j,k;
+for(i=0;i<30;i++)                                                                                                                                                         
+{
+ch[i]=getchar();
+if(ch[i]==13 || ch[i]==10){
+ch[i]='\0';
+break;
+}
+length++;
+}
+
+for(i=0,j=0;i<=length;i++)
+{
+ if(ch[i]==32 || ch[i]=='\0'){
+  k=i-1;
+  while(k>=j){
+  printf("%c",ch[k--]);
+  }
+  printf(" ");
+  j=i+1;
+  if(ch[i]=='\0') break;
+ }
+}
+}
+
+-------------------------------------------------------------------------------

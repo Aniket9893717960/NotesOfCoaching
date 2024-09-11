@@ -1,0 +1,215 @@
+Q)Attempt The following?
+
+a)
+
+#include <stdio.h>
+#include <math.h>
+int calculateSum(int a[]);
+void main()
+{
+int a[5],b[5],sum=0,i;
+float average;
+double sqrtValue;
+printf("Enter the 5 numbers \n");
+for(i=0;i<5;i++)
+{
+printf("Enter the value at %d position",i+1);
+scanf("%d",&a[i]);
+}
+sum=calculateSum(a);
+printf("Sum of 5 integers :%d\n",sum);
+average= (float)(sum/5.0);
+printf("Average of 5 integers :%.2f\n",average);
+for(i=0;i<5;i++)
+{
+b[i] =(int)((a[i]-average) * (a[i]-average));
+}
+sum=calculateSum(b);
+average=(float)(sum/5.0);
+sqrtValue=sqrt((double)average);
+printf("The square root of %.2lf is %.2lf:",average,sqrtValue);
+}
+
+int calculateSum(int a[])
+{
+int sum=0,i;
+for(i=0;i<5;i++)
+{
+sum =sum +a[i];
+}
+return (sum);
+}
+
+b)
+
+#include <stdio.h>
+void marks(int hindi,int english,int maths,float *average,float *percentage);
+
+void main()
+{
+float average,percentage;
+int hindi,english,maths;
+printf("Enter the marks obtained by a student in Subjects:Hindi,English,Maths");
+scanf("%d%d%d",&hindi,&english,&maths);
+marks(hindi,english,maths,&average,&percentage);
+printf("The average marks of the student gained is:%f\n",average);
+printf("The Percentage gained by a student is:%f",percentage);
+}
+
+void marks(int hindi,int english,int maths,float *average,float *percentage)
+{
+int sum;
+sum = hindi+english+maths;
+*average =(float)(sum/3.0);
+*percentage =((float)sum/300)*100;
+} 
+
+d)
+
+#include <stdio.h>
+void factors(int num);
+
+void main(){
+int factorial;
+int num;
+printf("Enter the value for finding the factorial \n");
+scanf("%d",&num);
+factors(num);
+}
+void factors(int num)
+{
+int factors,i;
+printf("The prime  factors of %d are : 1",num);
+for(i=2;i<=(num/2);i++)
+{
+if(num%i==0)
+{
+printf(" %d",i);
+}
+}
+printf(" %d",num);
+}
+
+e)
+
+#include <stdio.h>
+int fibonacci(int num);
+
+void main()
+{
+int num;
+printf("Enter the value \n");
+scanf("%d",&num);
+fibonacci(num);
+}
+
+int fibonacci(int num)
+{
+int a=1,b=1,c,i;
+printf("The fibonacci Series are %d %d",a,b);
+for(i=0;i<num;i++)
+{
+c =a+b;
+printf(" %d",c);
+a=b;
+b=c;
+}
+}
+
+f)
+
+                                                                    Without Using Recursion
+#include <stdio.h>
+void binary(int num);
+void main() {
+    int num;
+    printf("Enter the number:\n");
+    scanf("%d", &num);
+    binary(num);
+}
+
+void binary(int num) {
+    int a[10], i = 0;
+    for (i = 0; num > 0; i++) {
+        a[i] = num % 2;
+        num = num / 2;
+    }
+    while (i >= 0) {
+        printf("%d", a[i]);
+        i--;
+    }
+    printf("\n");
+}
+                                                                   With Using Recursion
+------------------------------------------------------------------------
+for more Information go to NotesofCoaching->DSA->Day 8
+------------------------------------------------------------------------
+#include <stdio.h>
+void binary(int num);
+
+void main()
+{
+int num;
+printf("Enter the number \n");
+scanf("%d",&num);
+binary(num);
+}
+
+void binary(int num)
+{
+int a[10],i=0;
+if(num>0)
+{
+a[i]=num%2;
+binary(num/2);
+printf("%d\t",a[i]);
+i++;
+}
+}
+
+g)
+
+#include <stdio.h>
+int add(int num);
+
+int main()
+{
+int a[30],num,sum,i;
+printf("Enter the value \n");
+scanf("%d",&num);
+sum=add(num);
+printf("sum of %d: %d",num,sum);
+return 0;
+}
+
+int add(int num)
+{
+int sum=0;
+if(num>0){
+sum = num +add(num-1);
+}
+return sum;
+}
+
+i)
+
+#include <stdio.h>
+void shift(int x,int y,int z);
+
+void main()
+{
+int x,y,z;
+printf("Enter the value of x,y,z:\n");
+scanf("%d%d%d",&x,&y,&z);
+shift(x,y,z);
+}
+
+void shift(int x,int y,int z)
+{
+x=x+y;
+y=x-y;
+z=x-y;
+x=x+y;
+x=x-z;
+printf("\n%d %d %d",x,y,z);
+}

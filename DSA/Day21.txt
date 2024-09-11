@@ -1,0 +1,449 @@
+#Double E Linklist 
+   --------------------
+                                                                With Prev And New
+                                                               -------------------------
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node 
+{
+int data;
+struct node *ladd;
+struct node *radd;
+};
+struct node *start=NULL,*temp,*New,*prev,*next;
+
+void create();
+void insert();
+void delete();
+void display();
+
+void main()
+{
+int ch;
+do
+{
+printf("-----------Linklist------------\n");
+printf("Press 1: for Create \n");
+printf("Press 2: for insert \n");
+printf("Press 3: for delete \n");
+printf("Press 4: for display \n");
+printf("Press 5: for exit \n");
+printf("Enter your choice \n");
+scanf("%d",&ch);
+switch(ch)
+{
+case 1: create();
+break;
+case 2: insert();
+break;
+case 3: delete();
+break;
+case 4: display();
+break;
+case 5: break;
+default:
+printf("Invalid number \n");
+}
+}
+while(ch!=5);
+}
+
+void create()
+{
+int n;
+char ch;
+printf("Enter a number \n");
+scanf("%d",&n);
+start =(struct node *)malloc(sizeof(struct node));
+start ->data =n;
+start ->ladd =NULL;
+start ->radd =NULL;
+temp = start;
+printf("FOr Entering more values Press 'Y' ");
+scanf(" %c",&ch);
+while(ch=='Y' || ch=='y')
+{
+printf("Enter a number \n");
+scanf("%d",&n);
+New = (struct node *)malloc(sizeof(struct node));
+New ->data =n;
+New ->ladd =NULL;
+New ->radd =NULL;
+temp ->radd =New;
+temp = New;
+printf("for Entering more values Press 'Y' \n");
+scanf(" %c",&ch);
+}
+}
+
+void display()
+{
+if(start==NULL)
+{
+printf("Create a Linklist First \n");
+}
+else
+{
+temp = start;
+while(temp!=NULL)
+{
+printf("%d\t",temp ->data);
+temp =temp ->radd;
+}
+}
+}
+
+
+void insert()
+{
+int position,count=0,i=1,n;
+
+if(start ==NULL)
+{
+printf("Create a Linklist First \n");
+}
+
+else
+{
+printf("Enter a value: \n");
+scanf("%d",&n);
+New =(struct node *)malloc(sizeof(struct node));
+New ->data =n;
+New ->ladd =NULL;
+New ->radd =NULL;
+printf("for Entering a New Position \n");
+scanf("%d",&position);
+if(position==1)
+{
+New ->radd =start;
+start =New;
+}
+
+else
+{
+temp =start;
+while(temp!=NULL)
+{
+count++;
+temp = temp->radd;
+}
+
+if(position>count+1)
+{
+printf("invalid position it should be=%d",count+1);
+}
+else if(position==count+1)
+{
+temp = start;
+while((temp->radd)!=NULL)
+{
+temp = temp ->radd;
+}
+temp ->radd =New;
+New ->ladd =temp;
+}
+else
+{
+next = start;
+while(i<position)
+{
+prev =next;
+next =next ->radd;
+i++;
+}
+prev ->radd =New;
+New ->ladd =prev;
+New ->radd =next;
+next ->ladd =New;
+}
+}
+}
+}
+
+
+void delete()
+{
+int position,count=0,i=1;
+if(start==NULL)
+{
+printf("Create A linklist first \n");
+}
+else
+{
+printf("Enter a position \n");
+scanf("%d",&position);
+if(position==1)
+{
+temp = start;
+start =start ->radd;
+start ->ladd =NULL;
+printf("Deleted element is: %d",temp->data);
+free(temp);
+}
+
+else
+{
+temp = start;
+while(temp!= NULL)
+{
+count++;
+temp = temp ->radd;
+}
+
+if(position>count)
+{
+printf("Invalid number it should be=%d",count);
+}
+else if(position==count)
+{
+next = start;
+while((next->radd)!=NULL)
+{
+prev = next;
+next = next ->radd;
+}
+printf("Deleted element is %d",next->data);
+free(next);
+prev ->radd =NULL;
+}
+else
+{
+next = start;
+while(i<position)
+{
+prev = next;
+next =next ->radd;
+i++;
+}
+temp =next;
+next =next ->radd;
+printf("Deleted element is:%d",temp->data); 
+next->ladd =prev;
+free(temp);
+prev ->radd=next;
+}
+}
+}
+}
+
+
+
+
+
+                                                      With Out Prev and Next
+                                                      -----------------------------
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node {
+struct node *ladd;
+struct node *radd;
+int data;
+};
+struct node *start=NULL,*temp,*prev,*next,*New;
+
+void create();
+void insert();
+void delete();
+void display();
+
+void main()
+{
+int ch;
+do
+{
+printf("----------Dubble E Linked List ----------\n");
+printf("press 1: for create \n");
+printf("Press 2: for insert \n");
+printf("Press 3: for delete \n");
+printf("Press 4: for display \n");
+printf("Press 5: for exit \n");
+printf("Enter your choice \n");
+scanf("%d",&ch);
+switch(ch)
+{
+case 1: create();
+break;
+case 2: insert();
+break;
+case 3: delete();
+break;
+case 4: display();
+break;
+case 5: break;
+}
+}
+while(ch!=5);
+}
+
+void create()
+{
+int n;
+char ch;
+printf("Enter a value \n");
+scanf("%d",&n);
+start =(struct node *)malloc(sizeof(struct node));
+start ->data =n;
+start ->ladd =NULL;
+start ->radd =NULL;
+temp = start;
+printf("for Entering a New Value Press 'Y' ");
+scanf(" %c",&ch);
+while(ch=='Y' || ch=='y')
+{
+printf("Enter next value \n");
+scanf("%d",&n);
+New =(struct node *)malloc(sizeof(struct node));
+New ->data =n;
+New ->ladd =NULL;
+New ->radd =NULL;
+temp ->radd=New;
+temp = New;
+printf("for Entering a New Value Press 'Y' ");
+scanf(" %c",&ch);
+}
+}
+
+void display()
+{
+if(start!=NULL)
+{
+printf("Linked List is Not created");
+}
+else
+{
+temp =start;
+while(temp!=NULL);
+{
+printf("%d\t",temp->data);
+temp = temp ->radd;
+}
+}
+}
+
+void insert()
+{
+int n,position,count=0,i=1;
+if(start==NULL)
+{
+printf("\n List doesn't exist");
+}
+else
+{
+printf("Enter a value \n");
+scanf("%d",&n);
+New = (struct node *)malloc(sizeof(struct node));
+New ->data =n;
+New -> ladd =NULL;
+New ->radd =NULL;
+printf(" \n Enter position to insert:");
+scanf("%d",&position);
+if(position==1)
+{
+New ->radd =start;
+start ->ladd = New;
+start =New;
+}
+else
+{
+temp =start;
+while(temp!=NULL)
+{
+count++;
+temp =temp->radd;
+}
+if((position>count+1)|| position<1)
+{
+printf("Invalid position \n");
+}
+else if(position==count+1)
+{
+temp=start;
+while((temp->radd)!=NULL)
+{
+temp = temp ->radd;
+}
+temp ->radd =New;
+New ->ladd =temp;
+}
+else
+{
+next = start;                               // temp = start;
+while(i<position)
+{
+prev = next;                                             --------|
+next =next ->radd;                               --------| temp = temp -> radd;
+i++;
+}
+prev ->radd =New;                               //temp ->ladd ->radd = New;
+New ->ladd =prev;                               // New ->ladd = temp ->ladd;
+New ->radd =next;                              //New ->radd = temp;
+next ->ladd =New;                               // temp -> ladd =New;
+}
+}
+}
+}
+
+void delete()
+{
+int count=0,i=1,position;
+if(start==NULL)
+{
+printf("List doesn't exit");
+}
+else
+{
+printf("\n  Enter position in delete : ");
+scanf("%d",&position);
+if(position==1)
+{
+temp = start;                                                                                   // if Not Included This command
+start = start ->radd;
+printf("Deleted element is:%d",temp->data);                     //printf("Deleted element is:%d",start ->ladd->data);
+free(temp);                                                                                  //free(start->ladd);
+start ->ladd = NULL;                                                                                  //This line included
+}
+else
+{
+temp = start;
+while(temp!=NULL)
+{
+count++;
+temp = temp ->radd;
+}
+if((position>count+1) || position<1)
+{
+printf("Invalid position \n");
+}
+else if(position==count)
+{
+next = start;                                               // temp = start;
+while((next ->radd)!=NULL)
+{
+prev =next;                                               |temp = temp -radd;
+next = next ->radd;                               |
+} 
+                                               //printf(" Deleted element is :%d",temp->data); 
+                                                //free(temp);
+                                                   // temp ->ladd ->radd =NULL;
+}
+else
+{
+temp = start;
+while(i<position)
+{
+prev = next;                                               //temp = temp ->radd;
+next = next ->radd;                                               //i++;
+i++;
+}
+temp =next;                                               
+printf("\n Deleted element is:%d",temp->data);
+next = next ->radd;                                                    //temp ->ladd ->radd =temp ->radd;
+next ->ladd =prev;                                                    //temp ->radd ->ladd = temp ->ladd;
+free(temp);
+prev ->radd =next;
+}
+}
+}
+}

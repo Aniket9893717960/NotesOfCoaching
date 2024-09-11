@@ -1,0 +1,113 @@
+# write a Program to enter the 10 value from user and Print the reverse of the array?
+
+#include <stdio.h>
+void main()
+{
+int a[10],i;
+printf("Enter 10 values \n");
+for(i=0;i<10;i++)
+{
+printf("Enter value at %d position",i+1);
+scanf("%d",&a[i]);
+}
+printf("your Entered reverse of an array :");
+i--;
+while(i>=0)
+{
+printf("%d\t",a[i]);
+i--;
+}
+}
+
+#write the program to enter 10 values and print submition of all values?
+
+#include <stdio.h>
+
+void main()
+{
+int a[10],i,sum=0;
+printf("Enter 10 values :");
+for(i=0;i<10;i++)
+{
+printf("Enter the value at %d position",i+1);
+scanf("%d",&a[i]);
+}
+printf("Your Entered value submition are as follows \n");
+while(i>=0)
+{
+sum = sum+a[i];
+i--;
+}
+printf("Sum of ");
+for(i=0;i<10;i++)
+{
+printf("%d\t",a[i]);
+}
+printf("\n is %d",sum);
+}
+                                                  Alternate Methord for Solving this
+                                                  -----------------------------------------
+#include <stdio.h>
+
+void main()
+{
+int a[10],i,sum=0;
+printf("Enter 10 elements:\n");
+for(i=0;i<10;i++)
+{
+printf("Enter value at %d position",i+1);
+scanf("%d",&a[i]);
+sum = sum+a[i];
+}
+printf("sum of entered value is= %d",sum);
+}
+
+#write a Program to enter 10 values in an array and find out the minimum value?
+
+#include <stdio.h>
+
+void main()
+{
+int a[10],i,min;
+printf("Enter the value \n");
+for(i=0;i<10;i++)
+{
+printf("enter value at %d position",i+1);
+scanf("%d",&a[i]);
+}
+min=a[0];
+for(i=1;i<10;i++)
+{
+if(min>a[i])
+{
+min =a[i];
+}
+}
+printf("Minimum value in array is=%d",min);
+}
+
+#write a Program to enter 10 values in an array and find out the maximun value?
+
+#include <stdio.h>
+
+void main()
+{
+int a[10],i,max;
+
+printf("Enter 10 numbers:");
+for(i=0;i<10;i++)
+{
+printf("Entered value at %d position",i+1);
+scanf("%d",&a[i]);
+}
+max=a[0];
+for(i=0;i<10;i++)
+{
+if(max<a[i])
+{
+max=a[i];
+}
+}
+printf("Maximum value of an Array is%d",max);
+}
+

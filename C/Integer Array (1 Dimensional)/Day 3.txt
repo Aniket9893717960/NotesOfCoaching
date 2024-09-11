@@ -1,0 +1,22 @@
+Q) write a Program to search a value in the given array?
+
+#include <stdio.h>
+void main()
+{
+int a[]={50,40,30,20,10,60,70,80,90,100},i,n;
+printf("Enter a value \n");
+scanf("%d",&n);
+
+for(i=0;i<10;i++)
+{
+if(n==a[i])
+{
+printf("Your value is found at %d position",i+1);
+break;
+}
+}
+if(i==10)
+{
+printf("Not found");
+}
+}

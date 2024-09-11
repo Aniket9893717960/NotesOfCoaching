@@ -1,0 +1,98 @@
+IMP NOTES
+*in a class  which is not a main methord in those we have to avoid printing and scanning.
+-------------------------------------------
+#written by value
+ ---------------------
+
+class Test
+{
+int  add(int a,int b)
+{
+int c;
+c = a+b;
+return(c);            //jaha sa call hua ho vapas vahi jao
+}
+public static void main(String args[])
+{
+Test t1 = new Test();
+int sum =t1.add(10,20);                                               OUTPUT
+System.out.println(sum);                                               30
+System.out.print(t1.add(100,200));
+}
+}
+
+#Methord Overloading(compile time polymorphism)
+  -------------------------------------------------------------
+For methord overloading in a class it is a compalsation that there should access more than one methord 
+with same name and different signature it means that either there number of parameters or there datatype of 
+parameters should be different.
+
+written type of the methord will never participate in methord overloading process.
+
+class Test
+{
+void add()
+{
+System.out.print("Hello");
+}
+void add(int p,int e)
+{
+System.out.println(p+e);
+}
+void add(int a,int b,int c)
+{
+System.out.println(a+b+c);
+}
+void add(int a,int b,int c,int d)
+{
+System.out.println(a+b+c+d);
+}
+void add(int a,int b,double z)
+{
+System.out.println(x+y+z);
+}
+
+public static void main(Strring args[])
+{
+Test t1 = new Test();
+t1.add();
+t1.add(10,20);
+t1.add(100,200,300);
+t1.add(1,2,3,4);
+t1.add(15,25,35.5);
+}
+}
+
+----------------------------------------X----------------
+Q) write a program to create an example of compile time polymorphism.
+create a class name areaCalculator which contain two methords name area. 
+one will receive radius as a parameter(Formula of area of circle = pie*r^2) 
+and another will receive length and breath as a parameter(Formula of area of rectangle = l*b).
+
+class Ts
+{
+int area;
+double parameter;
+void Ts(double r)
+{
+parameter = 3.14 * (r*r);
+System.out.println(parameter);
+}
+
+void  Ts(int length,int breath)
+{
+area = length*breath;
+System.out.println(area);
+}
+
+public static void main(String args[])
+{
+Ts t1 = new Ts();
+Ts t2 = new Ts();
+t1.Ts(4);
+t2.Ts(5,6);
+}
+}
+
+
+-------------------------------------------X-----------------------------

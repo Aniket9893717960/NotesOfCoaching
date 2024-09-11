@@ -1,0 +1,67 @@
+NOTES
+when you have a non-static inner class (also known as an inner class or a nested class) within an outer class,
+you need an instance of the outer class to create an instance of the inner class. 
+This is because an instance of the inner class is associated with an instance of the outer class.
+-------------------------------------------------------------------
+1)
+class Ts
+{
+class  Ts1
+{
+void display()
+{
+System.out.println("Enter the First value \n");
+}
+}
+
+public static void main(String args[])
+{
+Ts t2 = new Ts();
+Ts1 t1 = t2.new Ts1();
+-------------------------------------------------------------------------
+Ts1 t1 = t2.new Ts1();: 
+Here, t2.new Ts1() is used to create an instance of the inner class Ts1. 
+This syntax is specific to non-static inner classes. It tells Java to create an instance of the inner class Ts1 
+that is associated with the instance of the outer class t2. The new keyword is used to create a new instance 
+of the inner class. t1 now refers to this newly created instance of the Ts1 class.
+-------------------------------------------------------------------------
+t1.display();
+}
+}
+
+
+2)
+-------------------------------------------------------------------------
+Q) "there's a typo in the output message. It prints "Hash code of Ts" instead of "Hash code of The"." 
+what is the reason behind it ?
+The typo likely occurred due to oversight or copying errors when writing or modifying the code. 
+Since both main methods are similar and the variable names are identical (t1 and hashcode), 
+it's easy to overlook the need to update the output message to reflect the correct class name.
+
+Q) how more than one class in the similar Environment will Perfectly run?
+when you have multiple classes in the same environment, each with its own main method,
+ you can run each class independently. Each class will have its own entry point defined by its main method.
+
+To run a Java program with multiple classes, you typically compile each class separately into .
+class files, and then you execute the class containing the main method you want to run.
+ Here's an example assuming you have two classes Ts and The:
+-------------------------------------------------------------------------
+class Ts
+{
+public static void main(String args[])
+{
+Class t1 = Ts.class;
+int hashcode = t1.hashCode();
+System.out.println("Hash c0de of Ts: "+hashcode);
+}
+}
+
+class The
+{
+public static void main(String args[])
+{
+Class t1 = The.class;
+int hashcode = t1.hashCode();
+System.out.println("Hash c0de of Ts: "+hashcode);
+}
+}

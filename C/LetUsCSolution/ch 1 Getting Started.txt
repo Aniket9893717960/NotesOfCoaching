@@ -1,0 +1,227 @@
+//Attempt the following 
+
+a)
+#include <stdio.h>
+
+int main()
+{
+float basic_salary,dearness,house_rent,gross_salary;
+
+printf("Enter Ramesh's basic salary\n");
+scanf("%f",&basic_salary);
+
+dearness = 0.4*basic_salary;
+
+house_rent =0.2*basic_salary;
+gross_salary = basic_salary + dearness + house_rent;
+printf("Ramesh gross salary is %f\t",gross_salary);
+return 0;
+}
+
+b)
+#include <stdio.h>
+
+void main()
+{
+double distance,meters,feet,inches,centimeter;
+
+printf("Enter the Distance in Kilometer \n");
+scanf("%1f",&distance);
+
+meters = (distance*1000);
+feet = (distance*3280.84);
+inches = (distance*39370.1);
+centimeter = (distance*100000);
+
+printf("%.2f %.2f %.2f %.2f\t",meters,feet,inches,centimeter);
+}
+
+c)
+#include <stdio.h>
+
+void main()
+{
+int hindi,english,maths,sanskrit,evs,total;
+float a;
+
+printf("Enter marks of Hindi,English,Maths,Sanskrit,Evs \n");
+scanf("%d %d %d %d %d",&hindi,&english,&maths,&sanskrit,&evs);
+total = hindi+english+maths+sanskrit+evs;
+a=(total/5.0);
+printf("Total marks of student:%d",total);
+printf("Percentage gained of student :%f",a);
+}
+
+
+d)
+#include <stdio.h>
+
+void main()
+{
+float celcius,farenhite;
+ printf("Enter the value in farenhite:");
+scanf("%d",&farenhite);
+celcius = (farenhite-32)*5/9;
+printf("The temperature is measured in celcius :%f",celcius);
+}
+
+e)
+#include <stdio.h>
+
+int main()
+{
+int length,width,aor,por;
+float radius,aoc,coc;
+
+printf("Enter the length and breath of the rectangle :");
+scanf("%d%d",&length,&width);
+
+printf("\nEnter the radius of a circle:");
+scanf("%f",&radius);
+
+aor=length*width;
+por = 2*(length+width);
+
+aoc = 3.14*radius*radius;
+coc = 2*3.14*radius;
+
+printf("the value of area of rectangle is :%d",aor);
+printf("The value of perimeter of rectangle Is:%d",por);
+printf("The value of area of Circle is:%f",aoc);
+printf("The value of circumference of a circle is:%f",coc);
+}
+
+f)There are various methords for swapping of two numbers.
+------------------------------------------------------------------------
+for more Information go to NotesofCoaching->java->Day 9
+------------------------------------------------------------------------
+                                                                    By Logic Gates
+#include <stdio.h>
+
+void main()
+{
+int C=10,D=20;
+printf("Before interchange the content C=%d D=%d\n",C,D);
+C=C^D;
+D = C^D;
+C=C^D;
+printf("After Swapping C=%d D=%d\n",C,D);
+}
+                                                                   with Third variable
+#include <stdio.h>
+
+void main()
+{
+int a=10,b=20;
+printf("Before Swapping the value of a=%d b=%d",a,b);
+a=a+b;
+b=a-b;
+a=a-b;
+printf("After Swapping the value of a=%d b=%d",a,b);
+}
+                                                                   without Third variable
+#include <stdio.h>
+
+void main()
+{
+int a=10,b=20;
+printf("Before Swapping the value of a=%d b=%d",a,b);
+a=a+b;
+b=a-b;
+a=a-b;
+printf("After Swapping the value of a=%d b=%d",a,b);
+}
+
+g)
+#include <stdio.h>
+
+void main()
+{
+int n=153,i,r,temp,sum=0;
+temp=n;
+printf("Your entered value is %d\n",n);
+while(n!=0)
+{
+r = n%10;
+sum = sum+r;
+n=n/10;
+}
+printf("The sum of %d digits is=%d",temp,sum);
+}
+
+h)
+#include <stdio.h>
+
+void main()
+{
+int n=153,r,sum=0,temp;
+temp=n;
+printf("The value you given %d\n",n);
+
+while(n!=0)
+{
+r =n%10;
+sum=sum*10+r;
+n=n/10;
+}
+printf("The reverse of your value is %d",sum);
+}
+
+i)
+#include <stdio.h>
+
+void main()
+{
+int n=1234,first_digit,last_digit;
+printf("Your Entered values is:%d\n",n);
+
+last_digit = n%10;
+first_digit = n/1000;
+
+printf("The sum of first and last digit of %d is%d",n,first_digit+last_digit);
+}
+
+k)
+#include <stdio.h>
+
+void main()
+{
+int totalsellingprice,totalprofit,costoneitem;
+
+printf("total selling Prize on 15 items are");
+scanf("%d",&totalsellingprice);
+
+printf("total profit on 15 items :");
+scanf("%d",&totalprofit);
+
+costoneitem = (totalsellingprice - totalprofit)/15;
+
+printf("Cost of one item at 15 items is:%d",costoneitem);
+}
+
+i)
+#include <stdio.h>
+
+void main()
+{
+int n=12391,r,sum=0,temp;
+temp=n;
+
+while(n!=0)
+{
+r =n%10;
+r = (r+1)%10;
+sum=sum*10 +r;
+n=n/10;
+}
+
+while(sum!=0)
+{
+r=sum%10;
+n = n*10+r;
+sum=sum/10;
+}
+
+printf("The original value you entered is:%d\n",temp);
+printf("The output value is:%d\n",n);
+}

@@ -1,0 +1,219 @@
+Q2)
+class Ts
+{
+public static void main(String args[])
+{
+byte x = 127;
+++x;
+x++;
+System.out.println(x);
+}                                                                                OUTPUT
+}                                                                                   -127
+
+Q5)
+class Ts
+{
+public static void main(String args[])
+{                                                                                                                Octal =015
+                                                                                                                Decimal =13
+int []  a = {12,20,015};
+for(int i=0;i<a.length;i++)
+{
+System.out.print(a[i]+" ");
+}                                                                               OUTPUT
+}                                                                               12  20  13
+}
+
+Q7)
+class Ts
+{
+public static void main(String args[])
+{
+short x = 20;
+x = x * 2;
+System.out.println(x);
+}                                                                            OUTPUT
+}                                                                              lossy conversion from int to short
+
+Q8)
+class Ts
+{
+public static void main(String args[])
+{
+boolean x = true;
+boolean y = false;
+boolean z = (x == y);
+System.out.println(z);
+}                                                                            OUTPUT
+}                                                                            false
+
+Q10)
+class Ts
+{
+public static void main(String args[])
+{
+int x = 5;
+x *= (2 + 8);
+System.out.println(x);
+}                                                                           OUTPUT
+}                                                                           50
+
+
+PA-1)
+Complete the code segment to find the perimeter and area of a circle given a value of radius.
+You should use Math.PI constant in your program.
+ If radius is zero or less than zero then print " please enter non zero positive number ".
+
+
+import java.util.Scanner;  
+public class Exercise1_1 {
+       public static void main(String[] args) {
+Scanner s = new Scanner(System.in); 
+       double radius= s.nextDouble();
+       double perimeter;
+       double area;
+if(radius<=0)
+{
+ System.out.println("please enter non zero positive number ");
+}
+else
+{
+ perimeter = 2 * Math.PI * radius;
+area = Math.PI * radius * radius;
+System.out.println(perimeter);
+ System.out.println(area);
+}
+}
+}
+
+PA-2)
+Complete the code segment to find the largest among three numbers x,y, and z. You should use if-then-else construct in Java.
+
+import java.util.Scanner;  
+public class Exercise1_2 {
+       public static void main(String[] args) {
+Scanner s = new Scanner(System.in); 
+        int x = s.nextInt(); 
+        int y = s.nextInt();
+int z = s.nextInt();
+int result = 0;
+if(x >= y && x >= z)
+        {
+            result=x;
+        }
+        else if(y >= z)
+        {
+            result=y;
+        }
+        else
+        {
+            result=z;
+        }
+     //Evaluation code 
+System.out.println(result);
+}
+}
+
+
+PA-3)
+Consider First n even numbers starting from zero(0).
+Complete the code segment to calculate sum of  all the numbers divisible by 3 from 0 to n. Print the sum.
+
+Example:
+
+Input: n = 5
+
+-------
+0 2 4 6 8
+Even number divisible by 3:0 6
+sum:6
+
+
+import java.util.Scanner;
+public class Exercise1_3 {
+       public static void main(String[] args) {
+	   Scanner sc = new Scanner(System.in);
+	   int n=sc.nextInt();
+	  int sum=0;
+int result=1;
+int i=0;
+while(result<=n)
+	 {
+	  if(i%2==0)
+	  {
+		 if(i%3==0)
+		 {
+			 sum=sum+i;
+			
+         }			
+		 result=result+1; 
+	  }
+	  i=i+1;
+	 }
+      System.out.println(sum);
+}
+}
+
+PA-4)Complete the code segment to check whether the number is an Armstrong number or not.
+
+
+import java.util.Scanner;
+public class Exercise1_4 {
+    public static void main(String[] args) {
+	   Scanner sc = new Scanner(System.in);
+	   int n=sc.nextInt();
+           int result=0;
+int temp=n;
+int c=0,t; 
+//Use while loop to check the number is Armstrong or not.
+    while(n>0)
+	{
+		t=n%10;
+		n=n/10;
+		c=c+(t*t*t);
+	}		
+	if(temp==c)
+		result=1;
+	else
+		result=0;
+    //Evaluation code 
+    System.out.println(result);
+}
+}
+     
+
+PA-5)
+Complete the code segment to help Ragav , find the highest mark and average mark secured by him in "s" number of subjects.
+
+
+import java.util.Scanner;
+public class Exercise1_5{
+    public static void main(String[] args) {
+	 Scanner input = new Scanner(System.in);
+         double mark_avg;
+         int result;
+         int i;
+         int s;
+      //define size of array
+       s = input.nextInt();
+     //The array is defined "arr" and inserted marks into it.
+      int[] arr = new int[s];   
+      for(i=0;i<arr.length;i++)
+	  {
+	arr[i]=input.nextInt();
+        }
+int max=arr[0];
+      double sum=arr[0];  
+   for(i=1;i<arr.length;i++)
+	  { 
+         sum=sum+arr[i]; 
+         if(arr[i]>max)
+            max =arr[i];
+	  }
+	
+    result=max;	
+    mark_avg=sum/(arr.length);    
+    System.out.println(result);
+    System.out.println(mark_avg);
+}
+}

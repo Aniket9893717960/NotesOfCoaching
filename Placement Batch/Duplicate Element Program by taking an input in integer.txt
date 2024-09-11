@@ -1,0 +1,75 @@
+class Ts
+{
+void duplicate(int n)
+{
+int a[] = new int[10];
+int r,temp;
+int i;
+for(i=0;i<10;i++){
+a[i]=0;
+}
+i=0;
+while(n!=0){
+r = n%10;
+a[r-1]=a[r-1]+1;
+n = n/10;
+i++;
+}
+for(i=0;i<10;i++){
+if(a[i]>1)
+System.out.print("Duplicate element is "+(i+1));
+}
+}
+
+public static void main(String args[])
+{
+Ts t1 = new Ts();
+t1.duplicate(Integer.parseInt(args[0]));
+}
+}
+
+
+---------------------------------------------------------------------------------------------
+
+import java.util.Scanner;
+
+class Ts
+{
+
+void add(int n,int a[]){
+int b[] = new int[100];
+for(int i=0;i<100;i++)
+b[i]=0;
+
+for(int i=0;i<n;i++){
+b[a[i]] = b[a[i]]+1;
+}
+
+int count=0;
+
+for(int i=0;i<100;i++){
+if((b[i]>1) && ((b[i]&0)==0)){
+System.out.print("b[i] ="+b[i]+"\t");
+System.out.println("Intex = "+i);
+ while(b[i]>1){
+  b[i]=b[i]/2;
+  System.out.println(count=count+1);
+  }
+ }
+}
+
+System.out.print(count);
+}
+
+public static void main (String args[]){
+int n = Integer.parseInt(args[0]);
+int a[] = new int[n];
+Scanner sc = new Scanner(System.in);
+Ts t1 = new Ts();
+
+for(int i=0;i<n;i++)
+a[i] = sc.nextInt();
+
+t1.add(n,a);
+ }
+}

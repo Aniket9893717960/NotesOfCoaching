@@ -1,0 +1,31 @@
+NoTES
+*Throw the C program we have to create,to edit or to read Something is the Process Of File Handling.
+                                                                                                                                                                             ----------------
+*We have to Perform some functions throw file handling like:  
+i) read the file of the System.
+ii)open and  To search The data in the file.
+iii) write or 'append' means to Extend or add data in the file .if the file exist with the same name.
+* For File Handling we use the datatype name 'File'.This is a predefined datatype.
+File is not a normal data type this is the special datatype.
+*wild Pointer : if we declare a Pointer.But it does not initalized with anything
+   ---------------  So Pointer have by default a garbage value.And If  Those garbage value is the address
+of any File or data.So,this will give the damage of those particular file or data which we does not intialized.
+*NULL :It is a Predefined value which is specificale used in while pointer.Because Empty is not Possible  
+   -------   in computer.
+*                                           FILE *fp=NULL;
+This Command is named as NULL pointer.
+*'fopen()' : It is the function which is used to Open the file.If we have to pass the file name .you should declared a 
+double inverted Commas.
+                                               fopen("filename.txt","mode");
+*mode will be a stage in which we have the options to (either read,write and Append)
+                                               fclose(fp);
+*This will used as the last command of our program to close the file we haved opened.
+This will be helpfull for Security and memory. 
+                                               fflush(fp);
+*This will use to refersh our system or the unsaved memory  is used to save if this will at the term of file.
+                                               fgetc(fp);
+*file get character: This will be use to read the file.
+                                               fputc(fp);
+*file put character: This will be used to write or append the file.
+------------------------------------------------------------------------------------------------------
+FILE *fp=NULL;

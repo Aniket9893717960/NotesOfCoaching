@@ -1,0 +1,55 @@
+Q) Speed of car is 64 km/hr if it cover the Particular Distance with 48km/h 
+it reaches 15 mins late ? find out the actual Distance Covered?Also calculate actual time taken?
+
+Q) Speed of car is 64 km/hr if it cover the Particular Distance with 48km/h it reaches 20 mins late ?
+ find out the actual Distance Covered?Also calculate actual time taken?
+
+Q)Speed of car is 72 km/hr if it cover the Particular Distance with 108km/h it reaches 30 mins late ?
+ find out the actual Distance Covered also actual time taken?
+
+Q) Speed of the car is 80 km/h it reached 15 min late . 
+if the speed of the car is 120km/h it reached 15 min early. Find out the actual distance of the car?
+
+1) Express 72km/hr in m/sec
+
+2) A car cover 90 km in 3 hr. if its speed is increased by 15km/h,
+ find the time taken by it to cover this distance.
+
+3)Ashok covered a certain distance at a certain speed. if his speed was 20% more, 
+he would take 10 minutes less to cover the same distance . Find the time he takes to cover the distance.
+
+4)A man rides a cycle at 2.5 m/s, what distance will he cover in 4 hours?
+
+5)If a man runs at 6 m/s,what distance(in km) will he coversed in 3 hr and 45min?
+
+6)
+The ratio of the speeds of x,y and z is 3:4:6.
+Find the ratio of the time that they take to travel a certain distance.
+
+7)
+A train travels  for a total of 16 hours . 
+The first half of the distance at 35 km /hr  and the second half at 45 km/hr?
+
+8) travelling at 5/6 th of his usual speed a man is 10 minutes late.what is the usual time he takes to cover the 
+same distance ? 
+
+9) A person saves 6 minutes by increasing his speed by 25%. 
+what is the time taken to cover the distance at his usual speed?
+
+10) speed of a car is 45 km/h, if it travels with 60 km/h it reached 10 minutes early . find the actual distance 
+covered by a car?
+
+11) speed of a car is 64 km/h. if it covered a distance with 40 km/h it reached 45 min late.
+  Find the actual distance covered by the car.
+
+12) Speed of a car is 60 km/h, if it covers a distance with 70 km/h it reached 15 minutes early. Find the
+ actual distance covered by the car.
+
+13) Speed of a car is 55 km/h. if it covers a distance with 40 km/h it reached 15 minutes late. Find the 
+actual distance covered by the car?
+
+14) if a car covers a particular distance with 75 km/h it reached 15 minutes late, when it covers the same 
+ distance with 105 km/h it reached 15 minutes early . Find the actual distance covers by the car?
+
+15) if a car covers a particular distance with 30 km/h it reached 20 min late, 
+when it covers the same distance with 40km/h it reached 10 min early.Find the actual distance by the car.

@@ -1,0 +1,152 @@
+IMP NOTES
+*If an exception accuress in a try block then JRH detect that which cetegories of  an exception occurs.
+It will build an object of those Exception class then throw out from the try block to catch block.
+*One try - catch block  only handle one exception at  a time.
+------------------------------------------------------------------------------------------
+# Exception Handling keywords
+  --------------------------------------
+
+*try
+ -----
+it is a block that contains a code that can have an exception.
+A try must have atleast one catch or finally block.
+A try can have multiple catch blocks.
+
+*catch
+   -------
+it is a block that will catch an exception object thrown from the try block.
+
+*throw
+  --------
+it is use for two reasons.
+i) to throw a user defined exception 
+ii) To modify the message of an assesting exception. 
+
+*throws
+  ---------
+it is used to handover the responsibility of exception handling from a methord to the caller methord.
+
+*finally
+ ---------
+it is always excutable block that mean it exceute it code either exception occurs or not( handled or not).
+
+PROGRAM
+---------------
+class Test
+{
+public static void main (String args[])
+{
+int a=10,b =0,c;
+try
+{
+c = a/b;   ----------------------------> JRH
+System.out.println(c);
+}
+catch(ArithmeticException e)
+{
+System.out.println(e);   -------------------->java.lang.ArithmeticException:/byZero
+}
+System.out.println("Bye");
+}
+}
+
+                                                                                       Another Program
+                                                                                       ---------------------
+                   WRONG CODE
+                  -------------------
+class Test
+{
+public static void main(String args[])
+{
+int a=10,b=0,c,d[]={1,2,3};
+try
+{
+c = a/b;
+System.out.println(c);
+System.out.println(d[3]);             
+}
+catch(ArithmeticException e)
+{
+System.out.println("a is not divisible by zero");
+}
+catch(ArrayIndexOutOfBoundsException e)
+{
+System.out.println("Given index is not found");
+}
+catch(Exception e)
+{
+System.out.println("Something wants wrong");
+}                                                                                            
+System.out.println("Bye");                                               OUTPUT
+}                                                                                           a is not divisible by zero
+                                                                                            Bye
+}                                                                               //because one try - catch block  only handle one exception at  a time
+
+
+#Multiple try-catch in a program
+  ---------------------------------------
+
+class Ts
+{
+public static void main(String args[])
+{
+int a = 10,b = 0,c,d[] = {1,2,3};
+try
+{
+c = a/b;
+System.out.println(c);
+}
+catch(ArithmeticException e)
+{
+System.out.println("a is not divisible by zero");
+}
+try
+{
+System.out.println(d[3]);
+}
+catch(ArrayIndexOutOfBoundsException e)
+{
+System.out.println("your given index is not available");
+}
+}
+}                                                                                            OUTPUT
+                                                                                            a is not divisible by zero
+                                                                                            your given index is not available
+
+
+# Nested try - catch in program
+   ------------------------------------
+
+class Ts
+{
+public static void main(String args[])
+{
+int a = 10,b=0,c,d[] ={1,2,3};
+try
+{
+try
+{
+c =a/b;
+System.out.println(c);
+}
+catch(ArithmeticException e)
+{
+System.out.println("a is not divisible with zero");
+}
+try
+{
+System.out.println(d[3]);
+}
+catch(ArrayIndexOutOfBoundsException e)
+{
+System.out.println("Your given index is not available");
+}
+}
+catch(Exception e)
+{
+System.out.println("Something wants wrong");
+}
+}
+}                                                                                           OUTPUT
+                                                                                           a is not divisible with zero
+                                                                                           Your given index is not available

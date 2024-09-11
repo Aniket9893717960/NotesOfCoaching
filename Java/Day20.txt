@@ -1,0 +1,98 @@
+IMP NOTES
+*Unlike for and while loop this will run minimum 1 time.
+*for and while loop firstly check the condition but do-while will run at a time and then check the condition.
+                                                                                                    ----------
+*we does not define the size of an arrey subscript in java.
+* if a referance have allocated a memory then, we call those refrence by a new word 'object'.
+(IMP point ->)In java every array ia treated as an object                                                   addressing concept 
+*java does not have an addressing concept.                                  addition of base address + number of byte of particular datatype
+------------------------------------
+
+# do while
+-----------
+This is mainly use in menu dreven programs.
+
+class Test
+{
+public static void main(String args[])
+[
+int i=1;                                                  while(i<10)
+do                                                           {
+{                                                                 System.out.println(i+"\t");
+System.out.println(i+"\t");               i++;
+i++;                                                         }
+}                                                                                                                          OUTPUT
+while(i<=10);                                                                                       1 2  3  4  5  6  7  8  9  10  
+}
+}
+
+# array
+--------
+An array is collaction of similar type of data elements, we can declare an array as :-
+*Indexing of an array is starts with zero(0) and goes up to (size -1).
+*memory allocation of array will always be in contigious order.
+ 
+i)Dynamic array
+                                -> int a[] = new int[10];
+ii)Static array
+                          -> int a[] = {10,20,30,40,50};
+
+* int []a,b,c,d; ->we can declare a referances name a,b,c,d.
+
+Q)write a program to print all the elements of given array on a given line.
+
+class Ts
+{
+public static void main(String args[])
+{
+int a[] = {10,20,30,40,50};
+for(int i=0;i<=5;i++)
+{
+System.out.print(a[i]);
+}                                                      EXCEPTION
+}                                 java.lang.ArrayIndexOutOfBoundException:5
+}
+
+class Ts
+{
+public static void main(String args[])
+{
+int a[]={10,20,30,40,50};
+for(int i=0;i<a.length;i++)
+{
+System.out.print(a[i]);
+}                                             OUTPUT
+}                                         1020304050
+}
+
+# for-each loop
+
+* it is compalsary to give his own int i.
+* it will build a copy of single element of an array.
+
+class Test
+{
+public static void main(String args[])
+{
+int a[] = {10,20,30,40,50};
+for(int i:a)
+{
+System.out.println(i);                  OUTPUT
+}                                                                 10
+}                                                                  20
+}                                                                 30
+                                                                 40
+                                                                 50
+
+#write a program to print all the element of a given array on sepreate line in reverse order
+class  Ts
+{
+public static void main(String args[])
+{
+int a[]={10,20,30,40,50};                                         OUTPUT
+for(int i=a.length-1;i>=0;i--)                               50  40  30  20  10
+{
+System.out.print(a[i]+"\t");
+}
+}
+} 

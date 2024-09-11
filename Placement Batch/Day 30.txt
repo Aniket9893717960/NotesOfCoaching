@@ -1,0 +1,92 @@
+-------------------------------------------------------------------------------------------
+                                H.W
+Q) write a program to get a no. from user and
+
+1) check the no. is palindrome or Not?
+
+#include <stdio.h>
+int rev(int n);
+int main()
+{
+int i,n=121;
+i =palindrome(n);
+if(i==n)
+printf("Given value is Palindrome\n");
+else
+printf("Not Palindrome\n");
+return 0;
+}
+int rev(int n)
+{
+int sum=0,r;
+while(n>0)
+{
+r =n%10;
+sum =sum*10+r;
+n = n/10;
+}
+return sum;
+}
+
+2)check the no. is armstrong or NOT?
+
+#include <stdio.h>
+int armstrong(int);
+
+int main(){
+int i,n=153;
+i = armstrong(n);
+printf("%d",i);
+if(i==n)
+printf("Your given String is a Armstrong number\n");
+else
+printf("Not\n");
+}
+
+int armstrong(int n)
+{
+int sum=0,r;
+while(n>0)
+{
+r =n%10;
+sum = sum +r*r*r;
+n = n/10;
+}
+return sum;
+}
+
+3)check no. is prime or not?
+
+#include <stdio.h>
+int prime(int);
+int main()
+{
+int n=9,f=0;
+if(n==0)
+printf("is a neutral number\n");
+else {
+f = prime(n);
+if(f==0)
+printf("Not Prime");
+else
+printf("Prime");
+}
+return 0;
+}
+
+int prime(int n)
+{
+int i,temp;
+temp=n/2;
+for(i=2;i<temp;i++)
+{
+if(n%i==0){
+return 0;
+break;
+}
+}
+return 1;
+} 
+-------------------------------------------------------------------------------------------
+onlinevotingsystem
+project1c

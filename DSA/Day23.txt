@@ -1,0 +1,104 @@
+Notes
+*If it is Preorder Then first element is a root node.
+*In preorder to Inorder start from left to right .First In Preorder we Peak the data.
+Then,In inorder we search the position of that data.
+*In postorder to Inorder start from  right to left.First In postorder we Peak the data.
+Then,In inorder we search the position of that data.
+*Build a Expression tree,for the Given Postfix So, just we follow the rule of Postfix to infix.
+--------------------------------------------------------------------
+#Binary Tree
+   -------------
+Q)Draw a Binary tree for the following inorder or pre order.
+Inorder: D,G,B,A,H,E,I,C,F
+Preorder : A,B,D,G,C,E,H,I,F
+                                      A
+                   ------------|--------------
+                   |                                          |
+                  B                                         C
+     --------|------                       ------|--------
+     |                                              |                      |
+    D                                            E                    F
+     |---                                    ---|---             
+          |                                    |        |             
+         G                                  H       I     
+    
+Inorder: D,G,B,A,H,E,I,C,F
+Postorder : G,D,B,H,I,E,F,C,A
+                                      A
+                   ------------|--------------
+                   |                                          |
+                  B                                         C
+     --------|------                       ------|--------
+     |                                              |                      |
+    D                                            E                    F
+     |---                                    ---|---             
+          |                                    |        |             
+         G                                  H       I       
+
+Inorder: Q,B,K,C,F,A,G,P,E,D,H,R
+Preorder : G,B,Q,A,C,K,F,P,D,E,R,H
+                                      G
+                   ------------|--------------
+                   |                                          |
+                  B                                         P
+     --------|------                       ------|--------
+     |                       |                        |                      |
+    Q                     A                      E                    D
+                         ---|                                           --|---
+                         |                                                |       |
+                        C                                              H      R
+                    ---|---
+                    |         |
+                   K       F
+
+# Expression Tree
+   -------------------
+Q) A+B*C-D/E
+A+BC* - DE/
+//     X         Y
+A+x-y
+  Ax+  -y
+// Z
+Z-y
+zy- put value of "Z"
+Ax+y- put value of "X" and "Y"
+ABC*+DE/-                                      -> This is the Postfix of given Expression
+
+ABC*+DE/   -                                         //Start right to left for Postfix to Expression Tree
+              ----
+ABC*+   /   -
+              ----
+            D     E                          //Consider this tree as "X"
+ABC*+x-
+   ----
+A     *      +x-
+     -----
+   B       C                          //Consider this tree as "Y"
+Ay+      x-
+   +        x-
+ ----
+A     y                       //Consider this tree as "Z"
+  Zx-
+    -
+  ----
+ z     x                     // Put the value of "Z" and "x"
+    
+                                       -
+                   ------------|--------------
+                   |                                          |
+                  +                                         /
+     --------|------                       ------|--------
+     |                      |                        |                      |
+    A                    Y                       D                    E                                        // Put the value of "Y" in this
+                                       -
+                   ------------|--------------
+                   |                                          |
+                  +                                         /
+     --------|------                       ------|--------
+     |                      |                        |                      |
+    A                    *                       D                    E
+                     ----|---
+                     |           |
+                    B         C
+Q) (A+B)*(C+D)*(E+F)
+Q) A+(B-C*D)^E*(F-G)

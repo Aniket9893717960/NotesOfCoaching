@@ -1,0 +1,30 @@
+class Ts
+{
+StringBuilder sb = new StringBuilder();
+
+String string(String str,char ch1,char ch2){
+int length = str.length();
+ for(int i = 0;i<length;i++){
+ char ch = str.charAt(i);
+ if((ch==ch1) || (ch==ch2)){
+  if(ch==ch1)
+  sb.append(ch2);
+   else 
+  sb.append(ch1);
+  }
+ else
+ sb.append(ch);
+ }
+return(sb.toString());
+}
+ 
+public static void main(String args[]){
+String str = args[0].toString();
+char ch1 = args[1].charAt(0);
+char ch2 = args[2].charAt(0);
+
+Ts t1 = new Ts();
+String output = t1.string(str,ch1,ch2); 
+System.out.println(output);
+ }
+}

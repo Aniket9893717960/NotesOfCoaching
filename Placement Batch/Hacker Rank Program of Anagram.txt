@@ -1,0 +1,64 @@
+import java.util.Scanner;
+
+public class Solution {
+
+    static boolean isAnagram(String a, String b){
+        // Complete the function
+        int count[] =new int[26];
+       int length = a.length();
+       int lengthA = b.length();
+       a =a.toLowerCase();
+       b= b.toLowerCase(); 
+       char first,second;
+       if(length!=lengthA){
+           return false;
+       } 
+       else
+         {
+           for(int i=0;i<length;i++){
+               first = a.charAt(i);
+               count[first-'a']++;
+               second = b.charAt(i);
+               count[second-'a']--;
+              }
+            for(int i=0;i<length;i++){
+                first = a.charAt(i);
+                second = b.charAt(i);
+                if(count[first-'a']!=count[second-'a'])
+                return false;
+         }
+         return true;
+    }
+  }
+
+    public static void main(String[] args) {
+    
+        Scanner scan = new Scanner(System.in);
+        String a = scan.next();
+        String b = scan.next();
+        scan.close();
+        boolean ret = isAnagram(a, b);
+        System.out.println( (ret) ? "Anagrams" : "Not Anagrams" );
+    }
+}
+
+Method isAnagram(String a, String b):
+
+This method takes two strings, a and b, as input parameters and returns a boolean indicating whether they are anagrams.
+Inside the method:
+It initializes an array count of size 26 to keep track of the count of each letter in the strings. The array is initialized to all zeros.
+It converts both input strings to lowercase using toLowerCase() method to ensure case-insensitive comparison.
+It compares the lengths of the two strings. If they are not equal, it immediately returns false because strings of different lengths cannot be anagrams.
+If the lengths are equal, it iterates over each character of the strings:
+It increments the count of the character in string a and decrements the count of the character in string b.
+After completing the loop, it iterates over the count array again to ensure that all counts are zero. If any count is non-zero, it returns false.
+If all counts are zero, it returns true, indicating that the strings are anagrams.
+main method:
+
+The main method is the entry point of the program.
+It creates a Scanner object to read input from the console.
+It reads two strings a and b from the user using scan.next() method, which reads a token (a word) from the input.
+It then closes the Scanner object to release system resources.
+It calls the isAnagram method with the input strings a and b and stores the result in the variable ret.
+Finally, it prints "Anagrams" if ret is true, indicating that the strings are anagrams, and "Not Anagrams" otherwise.
+This program effectively determines whether two input strings are anagrams or not by comparing the frequency of characters in both strings. If the frequencies of all characters are the same, the strings are anagrams; otherwise, they are not.

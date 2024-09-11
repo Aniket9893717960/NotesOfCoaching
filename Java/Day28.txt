@@ -1,0 +1,63 @@
+IMP NOTES 
+*normaly if we print  an object then object calls "ToString" methord then methord will print the Hashcode.
+But String object will print a string through out we assign.
+*Hello have the same HashCode(69609650) at any computer or software.
+*java will use a  buffer memory to resolve the problem of size of array.
+*String Buffer :- this will provide a buffer memory.
+   String Builder :-this will read the buffer and provide those data into string.
+*String have 73 methords but we use 10 methords which is important.
+--------------------------------------------------------------
+
+# String
+  ---------
+
+class Test
+{
+public static void main(String args[])
+{
+String str = new String("Hello");
+ System.out.println(str);                                                      ->   Hello
+System.out.println(str.hashCode()) ;                                                         ->   integer form
+System.out.println(str.length());                                       ->print length of string =5
+}
+}
+
+--------------------------------------------------------------
+*every thing has been written inside the Double inverted comas("") will always be treated as an object in java.
+
+class Test
+{
+public static void main(String args[])
+{
+System.out.println("Hello");
+System.out.println("Hello".hashCode());
+System.out.println("Hello".length());
+}
+}
+-------------------------------------------------------------------------
+#Concept of pool memory
+   -----------------------------
+class Test
+{
+public static void main(String args[])                                 //"str1" ,"str2" and "Hello" have there own memory pool 
+{
+String str1 = new String("Hello");
+String str2 = new String ("Hello");
+}
+ ----------------      -----------------
+|  69609650   |     |    69609650   |                          
+ ----------------      -----------------
+        str1                           str2           
+             
+#Concept of shared memory
+  ----------------------------------
+class Test
+{
+public static void main(String args[])
+{                                                                                           //"str3" and "str4"  have a shared memory pool
+String str3 = "Hello";
+String str4 = "Hello";
+}
+ str3 ->                    --------------    
+                                  | 69609650|   
+ str4 ->                    -------------- 

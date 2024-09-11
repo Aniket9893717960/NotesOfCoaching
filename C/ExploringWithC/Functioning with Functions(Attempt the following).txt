@@ -1,0 +1,87 @@
+1)
+#include <stdio.h>
+int func(int note,int sum,int c);
+void main()
+{
+int note=0,sum;
+printf("Enter the amount\n");
+scanf("%d",&sum);
+func(note,sum,100);
+func(note,sum,50);
+func(note,sum,10);
+func(note,sum,5);
+func(note,sum,2);
+func(note,sum,1);
+}
+
+int func(int note,int sum,int c)
+{
+if(sum>=c){
+note = (int)sum/c;
+sum=sum-note*c;
+printf("total no. of %d Notes  is :%d \n",c,note);
+}
+return (sum);
+}
+
+2)
+
+4 )
+
+#include <stdio.h>
+int isleap(int year);
+int isdifference(int d1,int m1,int y1,int d2,int m2,int y2);
+int isdays(int mounth,int year);
+void main()
+{
+int d1,m1,y1;
+int d2,m2,y2;
+printf("Enter dd mm yyyy\n");
+scanf("%d %d %d",&d1,&m1,&y1);
+printf("Enter dd mm yyyy\n");
+scanf("%d %d %d",&d2,&m2,&y2);
+int difference = isdifference(d1,m1,y1,d2,m2,y2);
+printf("Difference between %d %d %d and %d %d %d =%d",d1,m1,y1,d2,m2,y2,difference);
+}
+
+int isleap(int year){
+return ((year%400==0)||((year%4==0) && ((year%100)!=0)))?1:0;
+}
+
+int isdays(int month,int year){
+switch(month)
+{
+case 1 : return(31);break;
+case 2 : return(28+isleap(year));break;
+case 3 : return(31);break;
+case 4 : return(30);break;
+case 5 : return(31);break;
+case 6 : return(30);break;
+case 7 : return(31);break;
+case 8 : return(31);break;
+case 9 : return(30);break;
+case 10 : return(31);break;
+case 11 : return(30);break;
+case 12 : return(31);break;
+}
+}
+
+int isdifference(int d1,int m1,int y1,int d2,int m2,int y2){
+int day=0,i;
+for(i=m1+1;i<=12;i++){
+day =day+isdays(i,y1);
+}
+printf("day =%d\n",day);
+day = day + isdays(m1,y1)-d1;
+
+for(i=y1+1;i<y2;i++){
+day =day +365 +isleap(i);
+}
+
+for(i=1;i<m2;i++){
+day = day +isdays(i,y2);
+}
+printf("day =%d\n",day);
+day =day+d2;
+return day;
+}

@@ -1,0 +1,33 @@
+# Fibonacci Series
+    -------------------
+#include <stdio.h>
+void main()
+{
+int a=0,b=1,n=7,i=1,temp,c;
+temp =n-2;
+printf("The Series is %d %d",a,b);
+while(i<=temp)
+{
+c =a+b;
+printf(" %d",c);
+a=b;
+b=c;
+i++;
+}
+}
+
+                                            With out temp Variable
+                                           ----------------------------
+#include <stdio.h>
+void main()
+{
+int a=0,b=1,n=7,i=1,c;
+while(i<=n)
+{
+c =a+b;
+printf(" %d",a);
+a=b;
+b=c;
+i++;
+}
+}

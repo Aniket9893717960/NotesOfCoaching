@@ -1,0 +1,286 @@
+#ARRAY
+  ----------
+
+#include <stdio.h>
+#include <stdlib.h>
+void min();
+void max();
+void print(int *a);
+void rev(int *a);
+void sum(int *a);
+void duplicate(int *a);
+void changes(int *a);
+void addindex(int *a);
+void evenodd(int *a);
+
+void main()
+{
+int ch=0,i,a[5],length=0;
+do
+{
+printf("Press 1: for minimum value of element\n");
+printf("Press 2: for maximum value of element \n");
+printf("Press 3:for print all the elements on saperate line \n");
+printf("Press 4: for print all in reverse order\n");
+printf("Press 5: for Sum of all the elements in Single for loop\n");
+printf("Press 6:find Duplicate element \n");
+printf("Press 7:Get element from user Delete element from user\n");
+printf("Press 8:Add an element at particular index\n");
+printf("Press 9:Saperate all even an odd numbers\n");
+printf("Press 10: for Exit\n");
+printf("Enter the option\n");
+scanf("%d",&ch);
+switch(ch)
+{
+case 1:min();
+break;
+case 2: max();
+break;
+case 3: print(a);
+break;
+case 4: rev(a);
+break;
+case 5: sum(a);
+break;
+case 6: duplicate(a);
+break;
+case 7: changes(a);
+break;
+case 8: addindex(a);
+break;
+case  9: evenodd(a);
+break;
+case 10: break;
+default:
+printf("Invalid number \n");
+}
+}
+while(ch!=10);
+}
+
+void min()
+{
+int a[5],min,i;
+printf("Enter at 1 position\n");
+scanf("%d",&a[0]);
+min=a[0];
+for(i=1;i<5;i++){
+        printf("Enter at %d position",i+1);
+        scanf("%d",&a[i]);
+        if(min>a[i]){
+            min=a[i];
+        }
+    }
+printf("Min =%d\n",min);
+}
+
+void max()
+{
+int a[5],max,i;
+printf("Enter value at 1 position");
+scanf("%d",&a[0]);
+for(i=1;i<5;i++){
+printf("Enter the value at %d position\n",i+1);
+scanf("%d",&a[i]);
+if(max<a[i])
+max=a[i];
+}
+printf("Max =%d\n",max);
+}
+
+void print(int *a){
+int j;
+printf("Enter value in Array\n");
+for(int i=0;i<5;i++){
+printf("Enter value at %d position\n",i+1);
+scanf("%d",&a[i]);
+if(i==4){
+j=0;
+while(j!=5){
+printf("%d\n",a[j]);
+j++;
+}
+}
+if(j==5)
+break;
+}
+}
+
+void rev(int *a)
+{
+int j;
+printf("Enter value in Array\n");
+for(int i=0;i<5;i++){
+printf("Enter value at %d position\n",i+1);
+scanf("%d",&a[i]);
+if(i==4){
+j=i;
+while(j!=-1){
+printf("%d\n",a[j]);
+j--;
+}
+}
+if(j==0)
+break;
+}
+}
+
+void sum(int *a){
+int sum=0;
+printf("Enter value in Array\n");
+for(int i=0;i<5;i++){
+printf("Enter value at %d position\n",i+1);
+scanf("%d",&a[i]);
+sum = sum+a[i];
+}
+printf("%d",sum);
+}
+
+void duplicate(int *a){
+int count=0,result=0,i,temp;
+printf("Enter value in Array\n");
+for(i=0;i<5;i++){
+printf("Enter value at %d position\n",i+1);
+scanf("%d",&a[i]);
+count++;
+}
+for(int j=0;j<count;j++){
+result = a[i-1]^a[j];
+i--;
+if(j==0)
+temp =a[j];
+if(i==3  && temp==a[i]  && !(j>=i))
+printf("The Duplicate element is :%d\n",a[i]);
+if(j>0 && temp ==a[j] && !(j>i))
+printf("The Duplicate element is :%d\n",a[j]);
+if(result==0 && !(j>=i))
+printf("The Duplicate element is :%d\n",a[j]);
+}
+}
+
+void changes(int *a)
+{ int n,count=0,i,temp;
+printf("Enter index for Deleting in Array\n");
+scanf("%d",&n);
+printf("Enter value in Array\n");
+for(i=0;i<5;i++){
+count++;
+printf("Enter value at %d position\n",i+1);
+scanf("%d",&a[i]);
+}
+temp=n-1;
+count--;
+for(int j=temp;j<count;j++){
+a[j+1]=a[j+1]^a[j];
+a[j]=a[j]^a[j+1];
+a[j+1]=a[j+1]^a[j];
+}
+for(i=0;i<count;i++){
+printf("%d",a[i]);
+}
+}
+
+void addindex(int *a)
+{ int index,count=0,index1,n;
+printf("Enter index for Addition in Array\nEnter value in Array");
+scanf("%d%d",&index,&n);
+for(int i=0;i<4;i++){
+count++;
+printf("Enter value at %d position\n",i+1);
+scanf("%d",&a[i]);
+}
+index1=index-1;
+for(int j=count;j>=index1;j--){
+a[j]=a[j-1];
+printf("%d\n",a[j]);
+if(j==index1)
+a[j]=n;
+}
+for(int i=0;i<count+1;i++){
+printf("%d",a[i]);
+}
+}
+
+void evenodd(int *a){
+int count=0,n,front=0,rear,temp,arr[5];
+printf("Enter the array\n");
+for(int i=0;i<5;i++){
+count++;
+printf("Enter value at %d position\n",i+1);
+scanf("%d",&a[i]);
+}
+rear=count-1;
+for(int j=0;j<count;j++){
+if(a[j]&1){
+arr[front]=a[j];
+front++;
+}
+else {
+arr[rear]=a[j];
+rear--;
+}
+}
+for(int i=0;i<count;i++){
+printf("%d",arr[i]);
+}
+}
+
+
+----------------------------------------------------------------------------
+                            H.W
+                        -----------
+Q) write a program to take an input from user in array put 2 values that the sum of the value is max?
+
+#include <stdio.h>
+void main()
+{
+int a[5],max,secm,i;
+printf("Enter a value at 1\n");
+scanf("%d",&a[0]);
+max=a[0];
+secm=a[0];
+for(i=1;i<5;i++){
+printf("Enter a value at %d\n",i+1);
+scanf("%d",&a[i]);
+if(max<a[i])
+max=a[i];
+if((secm<a[i]) || (a[i]!=max))
+secm=a[i];
+}
+printf("max =%d",max);
+printf("Second max =%d",secm);
+}
+
+Q)
+1
+9 2
+10 8 3
+14 11 7 4
+15 13 12 6 5
+
+#include <stdio.h>
+void main()
+{
+int count=0;
+for(int i=1;i<=5;i++)
+{
+ for(int j=i;j>=0;j--)
+ {
+  if(j==2)
+  printf("%d ",11-i);
+  else if(j==3)
+  printf("%d ",7+i);
+  else if(j==4){
+  printf("%d ",10+i-count);
+  count+=2;
+  }
+  else {
+  if(j==5)
+  printf("%d ",15);
+  else 
+  printf("%d",i);
+   }
+  }
+  printf("\n");
+ }
+}

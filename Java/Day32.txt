@@ -1,0 +1,42 @@
+#Sorting through the String array
+
+class Test
+{
+public static void main(String args[])
+{
+String str[] ={"indore","bhopal","dewas","ujjain","dhar","india","indonasia","bhind"};
+String temp;
+for(int i=0;i<=str.length-1;i++)
+{
+for(int j=(i+1);j<=str.length;j++)
+{
+if(str[i].compareTo(str[j])>0)
+{
+temp = str[i];
+str[i] = str[j];
+str[j] = temp;
+}
+}
+}
+System.out.println("After Sorting");
+for(String s: str)
+{
+System.out.print(s+"\t");
+}
+}
+}
+
+#static keyword
+  -------------------
+
+static keyword can be used with variable declaration ,methord declaration and we also have static block as well.
+if variable is declared as static than it will be treated as an class vaiable rether than instance vaiable.
+it means that it's memory allocation will be dependent on loading of the class rether than creation of object
+it also means that there will exeist only a single copy of static vaiables of all the objects and
+all the objects will share the commenly allocated memory.objects are not allow to allocate seperate memory for static variables.
+----------------------------------------------------------------------
+static variables are accessable without any object directly throw it's class name
+static methord is also independent from the object and we can access it without any object directly throw it's class name
+                              it is a compelsion that a static methord that have either local variables or static variables in it's dafination.
+static block is semilar to the static methord but it has more priority than the main methord. 
+---------------------------------------------------------------------- 

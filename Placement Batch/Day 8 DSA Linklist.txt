@@ -1,0 +1,197 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct node
+{
+int data;
+struct node *add;
+};
+struct node *start = NULL,*temp,*New,*prev,*next,*last;
+void create();
+void insert();
+void delete();
+void display();
+int count=0;
+void main()
+{
+int z;
+do
+{
+printf("--------------Linklist-------------\n");
+printf("Press 1: for Create \n");
+printf("Press 2: for insert \n");
+printf("Press 3: for delete \n");
+printf("Press 4: for display \n");
+printf("Press 5: for exit\n");
+scanf("%d",&z);
+switch(z)
+{
+case 1:
+if(count!=0){
+printf("First Create a Linklist \n");
+}
+else {
+create();
+} break;
+case 2:
+if(count==0){
+printf("Linklist is not created\n");
+}
+else { 
+insert();
+}
+break;
+case 3: 
+if(count==0){
+printf("Linklist is not created \n");
+}
+else {
+delete();
+}
+break;
+case 4: 
+if(count==0){
+printf("Linklist is not created \n");
+}
+else {
+display();
+}
+break;
+case 5: break;
+default:printf("Invalid your choice");
+}
+}
+while(z!=5); 
+}
+
+void create()
+{
+int n;
+char ch;
+printf("Enter a value :");
+scanf("%d",&n);
+start = (struct node *)malloc(sizeof(struct node));
+start -> data =n;
+count++;
+start -> add = NULL;
+temp = start;
+printf("to add more elements,press 'Y' ");
+scanf("  %c",&ch);
+while(ch=='Y' || ch=='y')
+{
+printf("Enter next value :\n");
+scanf("%d",&n);
+count++;
+New = (struct node *)malloc(sizeof(struct node));
+New -> data = n;
+New ->add = NULL;
+temp -> add = New;
+temp = New;
+printf("To add more elements,press 'Y' ");
+scanf(" %c",&ch);
+last=temp->add;
+printf("Last element is %d",last->data);
+}
+}
+
+void display()
+{
+temp = start;
+while(temp!=NULL)
+{
+printf("%d\t",temp ->data);
+temp = temp -> add;
+}
+}
+
+void insert()
+{
+int n,position,i=1;
+printf("Enter a value");
+scanf("%d",&n);
+New = (struct node *)malloc(sizeof(struct node));
+New -> data =n;
+New -> add =NULL;
+printf("Enter a position af inserting a Node:");
+scanf("%d",&position);
+if(position==1)
+{
+count++;
+New ->add =start;
+start = New;
+}
+else
+{
+if(position>count+1)
+{
+printf("Invalid position it should be =%d",count+1);
+}
+else if(position == (count+1)){
+count++;
+last->add=New;
+}
+else
+{
+count++;
+next = start;
+while(i<position)
+{
+prev = next;
+next = next -> add;
+i++;
+}
+prev  ->add = New;
+New ->add = next;
+}
+}
+}
+
+void delete()
+{
+int position,i=1;
+printf("Enter a position for deletion \n");
+scanf("%d",&position);
+if(position==1)
+{
+count--;
+temp =start;
+start = start ->add;
+printf("Deleted element is =%d",temp->data); 
+free(temp);
+}
+else
+{
+if(position>count)
+{
+printf("Invalid position it should be :%d",count);
+}
+else if(position ==count){
+count--;
+printf("Deleted element is =%d",last->data);
+while(temp!=last){
+temp =temp->add;
+}
+free(last);
+temp->add =NULL;
+}
+else
+{
+count--;  
+next = start;
+while(i<position)
+{
+prev = next;
+next = next ->add;
+i++;
+}                                                                                                                              //  ALTERNATE COMMANDS
+printf("Deleted element =%d",next ->data);     //                                 |-----------------------  temp =next;
+prev ->add =next ->add;                           //           |-----------------------  next =next ->add;
+free(temp);                                     // |-----------------------  printf("Deleted element =%d",temp ->data);
+                                 //     |-----------------------  free(temp);
+                                 //     |-----------------------  prev ->add =next;
+}
+}
+}
+ 
+
+
+

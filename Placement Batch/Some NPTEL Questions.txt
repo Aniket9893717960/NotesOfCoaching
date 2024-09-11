@@ -1,0 +1,650 @@
+A4 Q2 ) The length of three sides are taken as input. Write a C program to find whether a triangle can be formed or not. 
+If not display “This Triangle is NOT possible.” If the triangle can be formed then check whether the triangle formed is equilateral,
+isosceles, scalene or a right-angled triangle.
+ (If it is a right-angled triangle then only print Right-angle triangle do not print it as Scalene Triangle).
+
+#include <stdio.h>
+void main()
+{
+int a,b,c;
+scanf("%d %d %d",&a,&b,&c);
+if(a<(b+c) && b<(a+c) && c<(b+a))
+{
+if(a==b && b==c && c==a)
+printf("Equivalent triangle\n");
+else if(a==b || b==c || a==c)
+printf("Isoleated triangle");
+else if(a*a==(b*b)+(c*c) || b*b==(a*a)+(b*b) || c*c==(b*b)+(a*a))
+printf("Right angle Triangle");
+else 
+printf("Scalene Triangle");
+}
+else
+printf("Trinagle is not possible");
+}
+
+A5 Q1 ) 
+Write a C program to check whether a given number (N) is a perfect number or not? [Perfect Number -
+A perfect number is a positive integer number which is equals to the sum of its proper positive divisors.
+For example 6 is a perfect number because its proper divisors are 1, 2, 3 and it’s sum is equals to 6.]
+
+#include <stdio.h>
+void main()
+{
+int N,i,sum=0;
+scanf("%d",&N);
+for(i=1;i<N;i++){
+if(N%i==0){
+sum = sum+i;
+}
+}
+printf("%d",sum);
+if(sum==N){
+printf("%d is a Prefect number",N);
+}
+else {
+printf("NOT");
+}
+}
+
+A5 Q3)
+Write a C program to check whether the given number(N) can be expressed as Power of Two (2) or not.
+For example 8 can be expressed as 2^3.
+
+#include <stdio.h>
+void main()
+{
+int n=1024,temp;
+temp =n;
+while(temp!=1)
+{
+if(temp%2!=0)
+{
+printf("%d cannot be expressed as power of 2",n);
+break;
+}
+temp = temp/2;
+}
+if(temp==1)
+printf("%d is a number that can be expressed as power of 2.",n);
+}
+
+A5 Q4)
+Write a C program to find sum of following series where the value of N is taken as input
+1+ 1/2 + 1/3 + 1/4 + 1/5 + .. 1/N
+
+#include <stdio.h>
+void main()
+{
+int N;
+float sum =0.0;
+scanf("%d",&N);
+for(int i=1;i<=N;i++)
+sum = sum + ((float)1/(float)i);
+printf("%.2f\n",sum);
+}
+
+
+A7 Q1)
+Write a C Program to Count Number of Uppercase and Lowercase Letters in a given string. The given string may be a word or a sentence.
+
+#include <stdio.h>
+void main()
+{
+int i,up=0,low=0,ex=0;
+char ch[10];
+for(i=0;i<10;i++){
+ch[i]=getchar();
+if(ch[i]==13 || ch[i]==10){
+ch[i]='\0';
+break;
+}
+else if((ch[i]>64) && (ch[i]<91))
+up++;
+else if((ch[i]>96) && (ch[i]<123))
+low++;
+else
+ex++;
+}
+printf("Number of extra character= %d",ex);
+printf("Number of upper case= %d",up);
+printf("Number of lower case= %d",low);
+}
+
+A7 Q2)  DOUBT IN Solving
+Write a C program to find the sum of all elements of each row of a matrix.
+ Example: For a matrix 	4 5 6
+					 6 7 3
+					 1 2 3
+ The output will be 15 16 6
+
+#include <stdio.h>
+void main()
+{
+int i,j,sum;
+int a[3][3];
+for(i=0;i<3;i++){
+sum=0;
+for(j=0;j<3;j++){
+printf("Enter the value at %d %d position",i+1,j+1);
+scanf("%d",&a[i][j]);
+sum = sum+a[i][j];
+if(j==2)
+printf("\n%d ",sum);
+}
+}
+}
+
+
+A7 Q3) Doubt in Solving
+Write a C program to find subtraction of two matrices i.e. matrix_A - matrix_B=matrix_C.
+If the given martix are
+ 2 3 5 and 1 5 2 Then the output will be 1 -2 3
+ 4 5 6 	 2 3 4 					2 2 2
+ 6 5 7 	 3 3 4 					3 2 3
+
+The elements of the output matrix are separated by one blank space
+
+#include <stdio.h>
+void main()
+{
+int i,j;
+int a[3][3],b[3][3],c[3][3];
+for(i=0;i<3;i++){
+for(j=0;j<3;j++){
+printf("Enter the value at A %d %d position",i+1,j+1);
+scanf("%d",&a[i][j]);
+printf("Enter the value at B %d %d position",i+1,j+1);
+scanf("%d",&b[i][j]);
+c[i][j] =a[i][j]-b[i][j];
+}
+}
+printf("Output of substraction\n");
+for(i=0;i<3;i++){
+for(j=0;j<3;j++){
+printf("%d",c[i][j]);
+}
+printf("\n");
+}
+}
+
+
+A7 Q4)
+Write a C program to print lower triangle of a square matrix.
+For example the output of a given matrix
+2 3 4   will be 	2 0 0
+5 6 7 		5 6 0
+4 5 6 		4 5 6
+
+#include <stdio.h>
+void main()
+{
+int i,j;
+int a[4][4];
+for(i=0;i<4;i++){
+for(j=0;j<4;j++){
+printf("Enter the value at A %d %d position",i+1,j+1);
+scanf("%d",&a[i][j]);
+if(j>0 && j>=i+1)
+a[i][j]=0;
+}
+}
+printf("Output of \n");
+for(i=0;i<4;i++){
+for(j=0;j<4;j++){
+printf("%d",a[i][j]);
+}
+printf("\n");
+}
+}
+
+A6 Q1)Write a C Program to find Largest Element of an Integer Array.
+ Here the number of elements in the array ‘n’ and the elements of the array is read from the test data.
+ Use the printf statement given below to print the largest element.
+printf("Largest element = %d", largest);
+
+#include <stdio.h>
+void main()
+{
+int ch[10],max,i;
+printf("Enter the value in array ");
+scanf("%d",&max);
+for(i=1;i<10;i++)
+{
+scanf("%d",&ch[i]);
+if(ch[i]==-1)
+break;
+else {
+ if(max<ch[i])
+  max=ch[i];
+}
+}
+printf("largest element is %d",max);
+}
+
+A6 Q2)Write a C Program to print the array elements in reverse order (Not reverse sorted order.
+Just the last element will become first element, second last element will become second element and so on)
+Here the size of the array, ‘n’ and the array elements is accepted from the test case data.
+The last part i.e. printing the array is also written.
+You have to complete the program so that it prints in the reverse order.
+
+#include <stdio.h>
+void main()
+{
+int ch[10];
+int i;
+printf("Enter a String:");
+for(i=0;i<10;i++)
+{
+scanf("%d",&ch[i]);
+if(ch[i]==-1)
+break;
+}
+while(--i>=0)
+printf("%d\n",ch[i]);
+}
+
+A6 Q3)Write a C program to read Two One Dimensional Arrays of same data type (integer type)
+and merge them into another One Dimensional Array of same type.
+
+#include <stdio.h>
+int fun(int *ch,int n);
+void main()
+{
+int n,length,length1,length2=6;
+scanf("%d",&n);
+int ch[n],ch1[n],a[(n*2)],temp,count,j;
+length=fun(ch,n);
+length1=fun(ch1,n);
+temp = length2/2;
+for(int i=0,j=0;i<length;i++,j++){
+a[i]=ch[i];
+a[temp++]=ch1[j];
+}
+for(int i=0;i<temp;i++){
+printf("%d\n",a[i]);
+}
+}
+
+int fun(int *ch,int n){
+int i;
+printf("Enter the value");
+for(i=0;i<n;i++){
+scanf("%d",&ch[i]);
+if(ch[i]==-1)
+break;
+}
+return (i);
+}
+
+---------------------------------DOUBT------------------------------------------
+A6 Q4)Write a C Program to delete duplicate elements from an array of integers.
+
+#include <stdio.h>
+void main()
+{
+int n,i,j;
+printf("Enter the value\n");
+scanf("%d",&n);
+int ch[n];
+for(i=0;i<n; ){
+scanf("%d",&ch[i++]);
+for(j=i+1;j<n;j++){
+if(ch[i]^ch[j]==0)
+ch[j]=ch[j+1];
+}
+}
+while(i>0){
+printf("%d\n",ch[i--]);
+}
+}
+
+A8 Q1)
+Write a C Program to find HCF of 4 given numbers using recursive function?
+
+#include <stdio.h>
+void main()
+{
+int a[4],i,j,min=0,isHCF;
+printf("Enter a First value\n");
+scanf("%d",&a[0]);
+min=a[0];
+for(i=1;i<4;i++){
+printf("Enter a value at %d position",i+1);
+scanf("%d",&a[i]);
+if(min>a[i])
+min =a[i];
+}
+isHCF=1;
+for(i=2;i<=min;i++){
+for(j=0;j<4;j++){
+if((a[j]%i)!=0){
+isHCF=0;
+break;
+}
+}
+if(isHCF)
+printf("%d ",i);
+isHCF=1;
+}
+}
+
+A8 Q2)
+Write a C Program to print Binary Equivalent of an Integer using Recursion?
+
+#include <stdio.h>
+int bin(int);
+void main()
+{
+int n=30,temp;
+temp = bin(n);
+printf("\n%d",temp);
+}
+
+int bin(int n){
+static int sum=0;
+int r;
+if(n>0){
+r = n%2;
+bin(n/2);
+printf("%d\n",sum = sum*10 +r);
+}
+return sum;
+}
+
+A8 Q3)
+Write a C Program to reverse a given word using function.
+e.g. INDIA should be printed as AIDNI
+
+#include <stdio.h>
+void rev(char *,int);
+void main()
+{
+char ch[10],*p;
+int length=0;
+p=ch;
+for(int i=0;i<10;i++){
+*p=getchar();
+if(*p==13 || *p==10){
+*p ='\0';
+break;
+}
+*p++;
+length++;
+} 
+p=ch;
+rev(p,length);
+}
+
+void rev(char *ch,int length){
+char *p;
+int i;
+p =ch+length-1;
+while(p>=ch){
+printf("%c",*p--);
+}
+}
+
+A8 Q4)
+Write a C Program to find power of a given number using recursion.
+ The number and the power to be calculated is taken from test case
+
+#include <stdio.h>  
+long power(int, int);
+int main()
+{
+int pow, num;
+long result;
+
+scanf("%d", &num); //The number taken as input from test case data 
+
+scanf("%d", &pow); //The power is taken from the test case 
+result = power(num, pow);
+printf("%d^%d is %ld", num, pow, result);
+return 0;
+}
+long power(int num, int pow)
+{
+if (pow)
+{
+return (num * power(num, pow - 1));
+}
+return 1;
+}
+
+A9 Q1)      DOUBT
+          ---------
+Write a program to print all the locations at which a particular element (taken as input) is found in a list and also print the total number of times it occurs in the list. The location starts from 1.
+
+For example, if there are 4 elements in the array
+5
+6
+5
+7
+If the element to search is 5 then the output will be
+5 is present at location 1
+5 is present at location 3
+5 is present 2 times in the array.
+
+#include <stdio.h>
+void main()
+{
+int a[]={5,6,5,7},*p,*q,i,j;
+for(p=a,i=0;i<4;i++,p++)
+{
+for(q=a,j=0;j<4;j++,q++)
+{
+if(i==j)
+j++;
+else {
+if((*p^*q)==0)
+printf("%d is at location %d\n",*p,j+1);
+}
+}
+}
+
+}
+
+A9 Q2)
+Write a C program to search a given element from a 1D array and display the position at 
+which it is found by using linear search function. The index location starts from 1.
+
+#include <stdio.h>
+void main()
+{
+int a[]={10,20,30,40,50},i,n;
+printf("Enter a value\n");
+scanf("%d",&n);
+for(i=0;i<4;i++){
+if(n^a[i]){}
+else {
+printf("%d is present at location %d",a[i],i+1);
+break;
+}
+}
+if(i==4)
+printf("Not Found");
+}
+                             ALTERNATE METHORD
+#include <stdio.h>
+void main()
+{
+int a[]={10,20,30,40,50},i,n;
+printf("Enter a value\n");
+scanf("%d",&n);
+for(i=0;i<5;i++){
+if((n^a[i])==0){
+printf("%d is present at location %d",a[i],i+1);
+break;
+}
+}
+if(i==5)
+printf("Not Found");
+}
+
+
+
+A9 Q3)
+Write a C program to search a given number from a sorted 1D array and display 
+the position at which it is found using binary search algorithm. The index location starts from 1.
+
+#include <stdio.h>
+void main()
+{
+int a[]={10,20,30,40,50},low=0,high=5,mid,n,f=0;
+printf("Enter a value \n");
+scanf("%d",&n);
+while(low<=high)
+{
+mid =(low+high)/2;
+if(a[mid]==n)
+{
+f =1;
+break;
+}
+else if(n>a[mid])
+low = mid+1;
+else
+high = mid-1;
+}
+if(f)
+printf("Found at %d",mid);
+else
+printf("Not Found");
+}
+
+A9 Q4)
+Write a C program to reverse an array by swapping the elements and without using any new array.
+
+#include <stdio.h>
+void main()
+{
+int a[]={10,20,30,40,50,60},i,j;
+for(i=0,j=5;i<6,j>=0;i++,j--)
+{
+if(j<=i)
+break;
+else {
+a[i]=a[i]^a[j];
+a[j]=a[i]^a[j];
+a[i]=a[i]^a[j];
+} 
+}
+for(i=0;i<6;i++)
+printf("%d\t",a[i]);
+}
+
+A10 Q3)
+Write a C program to sort a given 1D array using pointer in ascending order.
+
+#include <stdio.h>
+void main()
+{
+int a[]={25,5,43,67,76},i,j;
+for(i=0;i<4;i++)
+{
+for(j=i+1;j<5;j++)
+{
+if(a[i]>a[j])
+{
+a[i]=a[i]^a[j];
+a[j]=a[i]^a[j];
+a[i]=a[i]^a[j];
+} } }
+for(i=0;i<5;i++)
+printf("%d\t",a[i]);
+}
+
+A10 Q4)
+Write a C program to sort a 1D array using pointer by applying Bubble sort technique.
+
+#include <stdio.h>
+void main()
+{
+int a[]={50,40,30,20,10},i,j;
+for(i=1;i<5;i++){
+for(j=0;j<5-i;j++){
+if(a[j]>a[j+1]){
+a[j]=a[j]^a[j+1];
+a[j+1]=a[j]^a[j+1];
+a[j] =a[j]^a[j+1];
+} } }
+for(i=0;i<5;i++)
+printf("%d\t",a[i]);
+}
+
+A11 Q4) DOUBT
+       -------
+Write a C program to check whether the given input number 
+is Prime number or not using recursion. So, the input is an integer and 
+output should print whether the integer is prime or not. Note that you have to use recursion.
+
+#include <stdio.h>
+int prime(int);
+void main()
+{
+int n=7,prim;
+prime(n);
+}
+
+int prime(int n){
+int i,temp;
+temp=n/2;
+for(i=2;i<=temp;i++){
+printf("%d",n);
+if(n%i==0){
+printf("%d is Not prime",n);
+break;
+} }
+if(i==(temp/2+1))
+printf("%d is Prime No.",n);
+}
+                        ALTERNATE BUT SAME PROBLEM
+#include <stdio.h>
+int prime(int,int);
+void main()
+{
+int n=7,prim,temp=n/2;
+prime(n,temp);
+}
+
+int prime(int n,int temp){
+static int i=2;
+if(i<=temp){
+if(n%i==0){
+printf("%d is Not prime",n);
+} 
+i++;
+prime(n,temp);
+}
+if(i==(temp/2+1))
+printf("%d is Prime No.",n);
+}
+
+A12 Q1)
+Write a program in C to find the factorial of a given number using pointers.
+
+#include <stdio.h>
+int main()
+{
+int a[14]={0},i,j;
+int length,x,carry=0;
+a[0]=1;
+length=1;
+carry=0;
+for(i=1;i<=14;i++){
+for(j=0;j<length;j++){
+x=a[j]*i+carry;
+a[j]=x%10;
+carry=x/10;
+}
+if(carry>0){
+a[length]=carry%10;
+carry = carry/10;
+length++;
+}
+}
+for(j=length-1;j>=0;j--)
+printf("%d",a[j]);
+}
+

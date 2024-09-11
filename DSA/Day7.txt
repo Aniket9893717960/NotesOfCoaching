@@ -1,0 +1,219 @@
+NOTES
+---------
+* if we can declare a function but cannot defined it Occures an error "undefined reference to pyramid".
+
+#function
+------------
+                    functions are small modules  and this are use to perform a specific task.
+We can use this with the help of following.
+i)declaration
+ii)calling
+iii)defination
+                                                                     Problem
+                                                                     ----------
+#include <stdio.h>
+void main()
+{
+int i,j;
+printf("Aniket \n");
+for(i=1;i<=5;i++)
+{
+for(j=1;j<=i;j++)
+{
+printf("*");
+}
+printf("\n");
+}
+printf("Svvv \n");
+for(i=1;i<=5;i++)
+{
+for(j=1;j<=i;j++)
+{
+printf("*");
+}
+printf("\n");
+}
+printf("Indore \n");
+for(i=1;i<=5;i++)
+{
+for(j=1;j<=i;j++)
+{
+printf("*");
+}
+printf("\n");
+}
+}
+                                                                     Solution
+                                                                     ----------
+#include <stdio.h>
+void pyramid();                             //declaration
+void main()
+{
+printf("Aniket Rathore \n");
+pyramid();                              //calling
+printf("svvv");
+pyramid();                              //calling
+printf("Indore");
+pyramid();                              //calling
+}
+void pyramid()                             //Defination
+{
+int i,j;
+for(i=1;i<=5;i++)
+{
+for(j=1;j<=i;j++)
+{
+printf("*");
+}
+printf("\n");
+}
+}
+
+#global variable
+  -------------------
+
+                                                                     Problem
+                                                                    -----------
+#include <stdio.h>
+void add() ;
+void main()
+{
+add();
+}
+void add()
+{
+int a,c,b;
+printf("Enter first value: ");
+scanf("%d",&a);
+printf(" Enter Second value: ");
+scanf("%d",&b);
+c = a+b;
+printf("sum = %d",c);
+}
+
+                                                                     Solution with globel variables
+                                                                    -----------------------------------
+#include <stdio.h>
+void add() ;
+int a,b,c;
+void main()
+{
+printf("Enter first value: ");
+scanf("%d",&a);
+printf(" Enter Second value: ");
+scanf("%d",&b);
+add();
+printf("sum = %d",c);
+}
+void add()
+{
+c = a+b;
+}
+
+# call by value or Pass by value
+ -----------------    ------------------
+condition if add() function will support Printing not scanning. 
+
+                                                                     Solution without globel variables
+                                                                    ----------------------------------------
+#include <stdio.h>
+void add(int a,int b)                                    //declaration
+void main()
+{
+int a,b;
+printf("Enter First value: ");
+scanf("%d",&a);
+printf("Enter Second value: ");
+scanf("%d",&b);
+add(a,b);                                    //calling
+}
+
+void(int a,int b)                                   //Defination
+{
+int c;
+c = a+b;
+printf("sum = %d",c);
+}
+
+                                                                    Implement This on Solution of Function
+                                                                    ------------------------------------------------
+#include <stdio.h>
+void pyramid(int n);                             //declaration
+void main()
+{
+printf("Aniket Rathore \n");
+pyramid(5);                              //calling
+printf("svvv");
+pyramid(8);                              //calling
+printf("Indore");
+pyramid(3);                              //calling
+}
+void pyramid(int n)                             //Defination
+{
+int i,j;
+for(i=1;i<=n;i++)
+{
+for(j=1;j<=i;j++)
+{
+printf("*");
+}
+printf("\n");
+}
+}
+
+#Return by value
+   --------------------
+                                                                    Another Solution without globel variables
+                                                                    --------------------------------------------------
+#include <stdio.h>
+int  add(int a,int b)                                    //declaration
+void main()
+{
+int a,b,c;
+printf("Enter First value: ");
+scanf("%d",&a);
+printf("Enter Second value: ");
+scanf("%d",&b);
+c = add(a,b);                                    //calling
+printf("sum = %d",c);
+}
+
+int add (int a,int b)                                   //Defination
+{
+int c;
+c = a+b;
+return c;
+}
+-------------------------------------------- H.W ------------------------------------------------
+# Write a program to perforrm palindrome number with the help of function ?
+                                                                                                                                      -----------
+#include <stdio.h>
+int rev(int temp);
+void main()
+{
+int temp,sum;
+printf("Enter a number: ");
+scanf("%d",&temp);
+ sum = rev(temp);
+if(sum == temp)
+{
+printf("Entered value is a palindrome number");
+}
+else
+{
+printf("Not a palindrome");
+}
+}
+
+int rev(int temp)
+{
+int sum = 0,r;
+while(temp!=0)
+{
+r= temp%10;
+sum = sum*10 + r;
+temp = temp/10;
+}
+return sum;
+}
+----------------------------------------------------------------------------------------------

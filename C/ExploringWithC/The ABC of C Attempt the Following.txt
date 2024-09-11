@@ -1,0 +1,95 @@
+Q)  Attempt the Following
+
+2)
+#include <stdio.h>
+
+void main()
+{
+float f=32,c;
+c = (f-32)*5/9;
+printf("%f\t",c);
+}
+
+3)
+#include <stdio.h>
+
+void main()
+{
+int a=10,b=20;
+printf("Before Sorting The Program a=%d b=%d",a,b);
+a= a+b;
+b=a-b;
+a=a-b;
+printf("After Sorting a=%d b=%d",a,b);
+}
+                                                 WIth the Help of XOR gate
+                                                ----------------------------------
+#include <stdio.h>
+
+void main()
+{
+int a=10,b=20;
+printf("Before Sorting The Program a=%d b=%d",a,b);
+a= a^b;
+b=a^b;
+a=a^b;
+printf("After Sorting a=%d b=%d",a,b);
+}
+ 
+4)
+#include <stdio.h>
+int expectedoutput(char *a,char  *b);
+int  main()
+{
+char a[]="01/01/92";
+char b[]="31/05/92";
+int count;
+count=expectedoutput(a,b);
+printf("The chararcter A will be %s\n",a);
+printf("The character B will be %s\n",b);
+printf("the days passed between the a=%s and b=%s is %d",a,b,count);
+return 0;
+}
+
+int expectedoutput(char *a,char *b){
+int count=0,i,k,length=0,coni,conj,sum=0,output=0;
+while(a[count]!='\0'){
+count++;
+}
+while(b[length]!='\0'){
+length++;
+}
+for(i=0;i<length;i++){
+coni = a[i] -'0';
+conj=b[i] -'0';
+if((a[i]>='0' && a[i]<='9')&&(b[i]>='0' && b[i]<='9')){
+for(k=coni;k<=conj;k++){
+sum=sum+k;
+}
+output=output+sum;
+}
+else
+{
+if(a[i]=='/' && b[i]=='/'){
+    i=i+1;
+}
+}
+}
+return output;
+}
+
+4)
+                                                      Given Solution
+#include <stdio.h>
+int main()
+{
+    int days,weeks,leftoverdays;
+    
+    days=31+29+31+30+31;
+    weeks = days/7;
+    leftoverdays = days%7;
+    printf("days= %d\n",days);
+    printf("weeks=%d\n",weeks);
+    printf("left over days =%d\n",leftoverdays);
+    return 0;
+}

@@ -1,0 +1,82 @@
+IMP NOTES -/  System.in is a Standard input Stream buffer.
+                              System.out is a Standard output Stream buffer.
+ In java we also have an access spacefire. like - public ,private ,protected.   
+Scanner class will provide the scanning methord it doesn't provide the allocation memory. 
+System.in will provide an allocation memory but it doesn't allocate a value. /-
+
+# Program with will talk about what we done in IF-else and what not.
+
+class Test
+{
+public static void main(String args[])
+{
+int a=20;                                                                                                                  *Mistakenly
+if(a>10)                                                                                                                     if(a>10) ;     {
+{                                                                                                                                     System.out.println("Greater");    }
+System.out.println("Greater");                                                                        else    {   }
+}                                                                                                                                    // Shows error "else without if "
+else
+{
+System.out.println("smaller");
+}
+System.out.println("Hello");   // This operation is independent to if-else.therefore,this opertion will run at any condition.
+}
+}
+
+# write a program to check that a given number is a leap year or not.
+
+class Test
+
+{
+public static void main(String args[])
+{
+int a = 2022;
+if (a%400 ==0)
+{
+System.out.println("leap");                                                              365 +  6h
+}                                                                                                                               5-55-55
+else if(a%100 ==0)                                                                                    400 -> LY
+{ System.out.println("Non - leap year");                                          100 -> NL
+}                                                                                                                            4 -> LY
+else if (a%4 ==0)
+{
+System.out.println("leap year");
+}
+else {
+System.out.println("Non - leap year");
+}
+}
+}
+
+# write a program to print word formate of the given Number.
+                                            OR
+This Program will simplfy the need of Switch case.
+
+class Test
+{
+ int a= 5;
+if ( a==1)
+{
+System.out.println("one");
+}
+else if(a==2)
+{
+System.out.println("two");
+}
+else if(a==3)
+{
+System.out.println("three");
+}
+else if(a==4)
+{
+System.out.println("four");
+}
+else if(a==5)
+{
+System.out.println("five");
+}
+else 
+{
+System.out.println("Invalid number");
+}
+}

@@ -1,0 +1,54 @@
+#Inheritance
+ ----------------
+
+it is a property by which a class can aquare a properties of another class.
+There are 5 types of inheritance.
+
+i)Single level inheritance
+ -----------------------------
+ if there is a single parent or single child class on a program that there will be single level inheritance.
+
+ii)Multi level inheritance
+  ----------------------------
+if a child class act like a parent class for another class then it will be multilevel inheritance.
+
+iii)Hieraechical inheritance
+   ------------------------------
+A class having more than one child classes.
+
+iv)Multiple inheritance
+   --------------------------
+*if we use this property in class than Ambiguty Error generate So,we use this in form of interfaces.
+A class having more than one Parent classes.
+
+v)Hybrid inheritance(This is also in c++ but it's a situation/scenario in which we call this Dimand Problem )
+  ------------------------
+This is a combination of multiple inheritance or a hieraechical inheritance.
+
+class A
+{
+void show()
+{
+System.out.println("Hello from class A");
+}
+
+class B extends A
+{
+void display()
+{
+System.out.println("Hello from class B");
+}
+}
+
+class Test
+{
+public static void main(String args[])
+{
+A a1 = new A();
+B  b1 = new B();
+a1.show();
+b1.show();
+b1.display();
+}
+}
+

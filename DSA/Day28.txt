@@ -1,0 +1,51 @@
+NOTES
+*Build a Minimum spanning tree and calculate a minimum spanning cost?
+The base algorithm to solve this is Kruskal's algorithm
+---------------------------------------------------------------------------------
+#Graph
+   --------
+i)Matrix representation of a graph
+  -----------------------------------------
+              V1         V2         V3         V4         V5         V6         V7        
+V1         0            1            0            0            0            1            1         
+V2         1            0            1            1            0            1            0
+V3         0            1            0            1            0            0            0
+V4        0            1            1            0            1            0            1
+V5         0            0            0            1            0            1            1
+V6        1            1            0            0            1            0            1
+V7         1            0            0            1            1            1            0
+
+ii) list representation of a graph
+   -------------------------------------
+
+-------    -------    -------    -------   
+|V1|   |->|V2|   |->|V3|   |->|V4|NULL |
+-------    -------    -------    -------   
+
+-------    -------    -------    -------     -------  
+|V2|   |->|V1|   |->|V3|   |->|V4|   |->|V6|NULL|
+-------    -------    -------    -------     -------   
+
+iii)Degree of a Graph
+    -----------------------
+Indegree(d+)             Indegree(d+)
+d^+(v1)=1                 d^+(v1)=2
+d^+(v2)=2                d^+(v2)=2
+d^+(v3)=1                d^+(v3)=1
+d^+(v4)=2                d^+(v4)=2
+d^+(v5)=2                d^+(v5)=1
+d^+(v6)=2                d^+(v6)=2
+d^+(v7)=2                d^+(v7)=2
+
+#Build a Minimum spanning tree and calculate a minimum spanning cost?
+The base algorithm to solve this is Kruskal's algorithm.
+
+#Prims Algorithm
+   --------------------
+              V1         V2         V3         V4         V5         V6                 
+V1         _            16    infinite infinite     19        21                     
+V2       16            _            5            6       infinite   11            
+V3     infinite     5            _           10      infinite infinite           
+V4    infinite     6           10           _          18          14            
+V5        19       infinite infinite   18         _             33            
+V6       21            11        infinite    14      33          _      

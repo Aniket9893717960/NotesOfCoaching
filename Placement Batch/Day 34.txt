@@ -1,0 +1,45 @@
+-----------------------------------------------------
+                      H.W
+Q) write a program to find minimum value of element at lowest Complexity?
+
+#include <stdio.h>
+void main()
+{
+int min,a,i;
+scanf("%d",&min);
+for(i=1;i<5;i++){
+scanf("%d",&a);
+if(min>a)
+min=a;
+}
+printf("\n%d",min);
+}
+
+Q) write a program to find maximum value of element at lowest Complexity?
+
+#include <stdio.h>
+
+void main(){
+int max,a,i;
+scanf("%d",&max);
+for(i=1;i<5;i++){
+scanf("%d",&a);
+if(max<a)
+max=a;
+}
+printf("\n%d",max);
+}
+
+Q) write a program of sum of n number's?
+
+#include <stdio.h>
+void main(){
+int sum=0,a,i;
+for(i=0;i<5;i++){
+scanf("%d",&a);
+sum =sum +a;
+}
+printf("%d",sum);
+}
+
+-----------------------------------------------------
